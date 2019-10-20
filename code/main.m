@@ -1,5 +1,5 @@
 ddeoptions=ddeset('RelTol', 1e-8, 'AbsTol', 1e-8);
-sol = ode23(@ddun, [0, 0.001], [1, 0, 0], ddeoptions);
+sol = ode23(@ddun, [0, 0.0001], [0, 0, pi], ddeoptions);
 plot3(sol.y(1, :),sol.y(2, :),sol.y(3, :));
 %------------------------------------------------------------------
 function dydt = ddun(t,y)
