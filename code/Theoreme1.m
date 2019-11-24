@@ -1,6 +1,6 @@
 global a b K;
 taoP1=10^(-4);
-taoP2=10^(-4);
+taoP2=10^(-3);
 
 hi=0.25;
 eps=0.25;
