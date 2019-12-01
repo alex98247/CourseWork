@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.10)  25 NOV 2019 21:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.10)  1 DEC 2019 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -585,36 +585,46 @@ Package: amsthm 2017/10/31 v2.20.4
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 \c@definition=\count113
+\c@theorem=\count114
 
 (./Cluster_Analysis.aux
 LaTeX Font Info:    Try loading font information for T2A+cmr on input line 3.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/cyrillic/t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-))
+)
+
+LaTeX Warning: Label `etalon_system' multiply defined.
+
+
+LaTeX Warning: Label `first_condition' multiply defined.
+
+
+LaTeX Warning: Label `first_condition' multiply defined.
+
+)
 \openout1 = `Cluster_Analysis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 35.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 36.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 36.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 36.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -652,16 +662,16 @@ LaTeX Font Info:    ... okay on input line 35.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count114
+\scratchcounter=\count115
 \scratchdimen=\dimen127
 \scratchbox=\box30
-\nofMPsegments=\count115
-\nofMParguments=\count116
+\nofMPsegments=\count116
+\nofMParguments=\count117
 \everyMPshowfont=\toks30
-\MPscratchCnt=\count117
+\MPscratchCnt=\count118
 \MPscratchDim=\dimen128
-\MPnumerator=\count118
-\makeMPintoPDFobject=\count119
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
 \everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -715,125 +725,97 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count120
-LaTeX Font Info:    Try loading font information for U+msa on input line 38.
+\c@lstlisting=\count121
+LaTeX Font Info:    Try loading font information for U+msa on input line 40.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 38.
+LaTeX Font Info:    Try loading font information for U+msb on input line 40.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 37--55
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--55
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--55
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--61
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--61
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--70
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--70
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--75
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--75
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 162--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
-
+Overfull \hbox (3.13475pt too wide) in paragraph at lines 198--204
+\T2A/cmr/m/n/14.4 При $\OML/cmm/m/it/14.4 z[] \OMS/cmsy/m/n/14.4 2 \OT1/cmr/m/n
+/14.4 (\OMS/cmsy/m/n/14.4 ^^@ []\OML/cmm/m/it/14.4 ; d[]\OT1/cmr/m/n/14.4 ) \OM
+S/cmsy/m/n/14.4 [ \OT1/cmr/m/n/14.4 (\OML/cmm/m/it/14.4 d[]; \OT1/cmr/m/n/14.4 
++ [])$ $\OML/cmm/m/it/14.4 D \OMS/cmsy/m/n/14.4 ^^U \OT1/cmr/m/n/14.4 0$\T2A/cm
+r/m/n/14.4 , зна-чит $\OML/cmm/m/it/14.4 M[] \OT1/cmr/m/n/14.4 = [] []$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
+Underfull \hbox (badness 10000) in paragraph at lines 198--204
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
-
- []
-
-
-Overfull \hbox (3.82738pt too wide) in paragraph at lines 83--89
-\T2A/cmr/m/n/14.4 Пусть $\U/msb/m/n/14.4 { \OT1/cmr/m/n/14.4 = 1$\T2A/cmr/m/n/1
-4.4 , то-гда кор-ни урав-не-ния $\OML/cmm/m/it/14.4 D \OT1/cmr/m/n/14.4 = 0$ \T
-2A/cmr/m/n/14.4 бу-дут $\OML/cmm/m/it/14.4 d[] \OT1/cmr/m/n/14.4 = []$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--89
-
- []
-
-<Images/filter1.jpg, id=15, 1124.2pt x 843.15pt>
+[3]
+<Images/filter1.jpg, id=27, 1124.2pt x 843.15pt>
 File: Images/filter1.jpg Graphic file (type jpg)
 <use Images/filter1.jpg>
-Package pdftex.def Info: Images/filter1.jpg  used on input line 90.
+Package pdftex.def Info: Images/filter1.jpg  used on input line 205.
 (pdftex.def)             Requested size: 341.43306pt x 256.07324pt.
-[2 <./Images/filter1.jpg>] (./Cluster_Analysis.aux) ) 
+<Images/filter1-1.jpg, id=28, 1124.2pt x 843.15pt>
+File: Images/filter1-1.jpg Graphic file (type jpg)
+<use Images/filter1-1.jpg>
+Package pdftex.def Info: Images/filter1-1.jpg  used on input line 206.
+(pdftex.def)             Requested size: 569.05511pt x 426.78445pt.
+
+Overfull \hbox (71.13187pt too wide) in paragraph at lines 205--207
+[] 
+ []
+
+[4 <./Images/filter1.jpg>] [5 <./Images/filter1-1.jpg>] (./Cluster_Analysis.aux
+)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5997 strings out of 492649
- 82764 string characters out of 6129622
- 176251 words of memory out of 5000000
- 9774 multiletter control sequences out of 15000+600000
- 7045 words of font info for 26 fonts, out of 8000000 for 9000
+ 6054 strings out of 492649
+ 83572 string characters out of 6129622
+ 175251 words of memory out of 5000000
+ 9821 multiletter control sequences out of 15000+600000
+ 17349 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,5n,40p,534b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2018/t
-exmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}</usr/local/texlive/2018/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2018/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/f
-onts/type1/public/cm-super/sfrm1440.pfb>
-Output written on Cluster_Analysis.pdf (2 pages, 169500 bytes).
+ 41i,8n,40p,745b,217s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc
+}{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
+/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/
+texlive/2018/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
+Output written on Cluster_Analysis.pdf (5 pages, 327976 bytes).
 PDF statistics:
- 53 PDF objects out of 1000 (max. 8388607)
- 37 compressed objects within 1 object stream
+ 80 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

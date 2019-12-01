@@ -16,29 +16,7 @@ disp(min(a_1));
 x1 = ((b.^4.\2+2.*b.^3-a.^2.*b.^2+4.*b.^2)+sqrt(D_1))./(2.*a_1);
 x2 = ((b.^4.\2+2.*b.^3-a.^2.*b.^2+4.*b.^2)-sqrt(D_1))./(2.*a_1);
 M1 = max((1-x1).^2,(1-x2).^2);
-
-X1 = min(x1, x2);
-X2 = max(x1, x2);
-for i=1:length(X1)
-    eq = @(x) -(x*a(i)^2-2*x*b(i)-(1/2-x/2)*b(i)^2)+sqrt((-4*b(i)^2-2*a(i)^2*b(i)^2+4*b(i)^3+(a(i)^2-2*b(i)+b(i)^2/2)^2)*x^2 - (b(i)^4/2+2*b(i)^3-a(i)^2*b(i)^2+4*b(i)^2)*x + b(i)^4/4);
-    z11(i) = X1(i);
-    while eq(z11(i)) <= 0
-        z11(i)=z11(i)+0.00001;
-    end
-    z11(i)=z11(i)-0.00001;
-    
-    z12(i) = X2(i);
-    while eq(z12(i)) <= 0
-        z12(i)=z12(i)-0.00001;
-    end
-    z12(i)=z12(i)+0.00001;
-    disp(i+"/"+length(X1));
-end
-z11 = transpose(z11);
-z12 = transpose(z12);
-MM = max(M1, z11);
-M = max(MM, z12);
-plot3(grid(:, 1), grid(:, 2), M);
+plot3(grid(:, 1), grid(:, 2), M1);
 axis equal
 xlabel('taoP1')
 ylabel('taoP2')

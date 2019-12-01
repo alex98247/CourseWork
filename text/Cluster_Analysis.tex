@@ -31,62 +31,178 @@
 }
 
 \newtheorem{definition}{Определение}
+\newtheorem{theorem}{Теорема}
  
 \begin{document} % начало документа
 
+\section{Введение}
+Рассмотрим:
+ \begin{equation}\label{etalon_system}
+ \begin{aligned}
+ &\dot{x} = Ax + b\upsilon_e(\theta_e)\\
+ &\dot{\theta_e} = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
+ \end{aligned}
+\end{equation}
+Найдем стационарные точки системы \ref{etalon_system}
+ \begin{equation}\label{transition}
+ \begin{aligned}
+ &x = -A^{-1}b\upsilon_e(\theta_e)\\
+ &\upsilon_e(\theta_e) = \frac{\omega_e^{free}}{K_{vco}H(0)}
+ \end{aligned}
+\end{equation}
+Возьмем $\theta_e = \theta_s$, для которых выполняется \ref{transition}. Сделаем замену:
+ \begin{equation}\label{replacement1}
+ \begin{aligned}
+ &z =x + A^{-1}b\upsilon_e(\theta_s)\\
+ &\sigma = \theta_e - \theta_s
+ \end{aligned}
+\end{equation}
+После замены система \ref{etalon_system} принимает вид:
+ \begin{equation}\label{etalon_system}
+ \begin{aligned}
+ &\dot{z} = Az + b(\upsilon_e(\sigma + \theta_s) - \frac{\omega_e^{free}}{K_{vco}H(0)})\\
+ &\dot{\sigma} = -K_{vco}(c^*z + h(\upsilon_e(\sigma + \theta_s) - \frac{\omega_e^{free}}{K_{vco}H(0)}))
+ \end{aligned}
+\end{equation}
+
+\section{Теорема}
+Рассмотрим систему:
+ \begin{equation}\label{system}
+ \begin{aligned}
+ &\dot{z} = Az + Bf(\sigma)\\
+ &\dot{\sigma} = C^*z + Rf(\sigma)
+ \end{aligned}
+\end{equation}
+
+Here A, B, C, and R are constant matrices of dimensions n × n, n × m, n × m, and n × n, respectively, whereas the components $\phi_k$, $1 \leq  k \leq m$, of the vector-valued function $f(\sigma)$ are scalar differen-tiable functions $\phi_k$ = $\phi_k(\sigma_k)$, where $\psi_k$ is the k-th component of the vector $\psi$.\\
+
+Recall that any pendulum-like system with a single scalar non-linearity and an irreducible transfer function $\varkappa(p)$ can be written in the form \ref{system} with m = 1 by a nonsingular linear transformation of phase coordinates. Further we assume that the functions $\phi_k(\sigma_k)$ satisfy the followingconditions: $\phi_k(\sigma_k) \equiv 0$\\
+
+\begin{theorem}
+Suppose that the stationary set $\Lambda$ of system \ref{system} consists of isolated points, the pair (A, B) is controllable, the matrix A is Hurwitz, and there exist diagonal m × m matrices $\varepsilon > 0, \delta > 0, \tau \geq 0$, and $\varkappa$ such that the following inequalities are valid:
+ \begin{equation}
+ \begin{aligned}
+&Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)+\mu_1^{-1}ix]^*\tau[K(ix)+\mu_2^{-1}ix])\geq\delta, \forall x \in \mathbb{R}\\
+&4\varepsilon\delta > (\varkappa\nu)^2
+ \end{aligned}
+\end{equation}
+Then system \ref{system} is gradient-like.
+\end{theorem}
+
+Очевидно, что систему \ref{etalon_system} можно привести к системе  \ref{system} положив: 
+ \begin{equation}
+ \begin{aligned}
+&A=A\\
+&B = b\\
+&C = -K_{vco}c^*\\
+&R = -K_{vco}h\\
+&f(\sigma) = \upsilon_e(\sigma + \theta_s) - \frac{\omega_e^{free}}{K_{vco}H(0)}
+\end{aligned}
+\end{equation}
+
+\section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}x)(1+\tau_{p2}x)}$}
  Рассмотрим передаточную функцию:
-$K(x)\frac{1}{(1+\tau_{p1}x)(1+\tau_{p2}x)} = \frac{1}{1+(\tau_{p1}+\tau_{p2})x + \tau_{p1}\tau_{p2}x^2}$\\
-Введем обозначения:
-$a = \tau_{p1}+\tau_{p2}$
-$b = \tau_{p1}\tau_{p2}$\\
-Рассмотрим первое условие теоремы:\\
-$Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delta$\\
-Подставим, рассматриваемую передаточную функцию в условие теоремы:\\
-$K(ix)=\frac{1}{1+ax + bx^2}=\frac{1-bx^2-iax}{(1-bx^2)^2 + a^2x^2}$\\\\
-$K(ix)^*K(ix)=\frac{1}{(1-bx^2)^2 + a^2x^2}$\\
-$\frac{\tau b^2x^6 + (\tau a^2-2*\tau*b)x^4 + (\varkappa*b+\tau)x^2 + (\varkappa-\varepsilon-\tau)}{(1-bx^2)^2 + a^2x^2}\geq\delta$\\
-В результате преобразований условие теоремы принимает следующий вид:\\
-$\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (\varkappa b+\tau-\delta a^2 + 2\delta b)t + (\varkappa-\varepsilon-\tau-\delta) \geq 0 $\\
-Где $t=x^2$\\
-Второе условие теоремы имеет вид: \\
-$4\varepsilon\delta > \nu^2\varkappa^2$\\
-$\frac{4\varepsilon\delta}{\varkappa^2} > \nu^2$\\
-Хотим найти max  $\nu$. Для этого будем искать максимум $\frac{4\varepsilon\delta}{\varkappa^2}$\\\\
+ \begin{equation}\label{filter1}
+ \begin{aligned}
+K(x) = \frac{1}{(1+\tau_{p1}x)(1+\tau_{p2}x)} = \frac{1}{1+(\tau_{p1}+\tau_{p2})x + \tau_{p1}\tau_{p2}x^2}
+ \end{aligned}
+\end{equation}
+Введем обозначения: $a = \tau_{p1}+\tau_{p2}$, $b = \tau_{p1}\tau_{p2}$\\
+Рассмотрим первое условие теоремы:
+\begin{equation}
+ \begin{aligned}
+Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delta
+ \end{aligned}
+\end{equation}
+% $K(ix)=\frac{1}{1+aix + bix^2}=\frac{1-bx^2-iax}{(1-bx^2)^2 + a^2x^2}$\\\\
+% $K(ix)^*K(ix)=\frac{1}{(1-bx^2)^2 + a^2x^2}$\\
+% $\frac{\tau b^2x^6 + (\tau a^2-2*\tau*b)x^4 + (\varkappa*b+\tau)x^2 + (\varkappa-\varepsilon-\tau)}{(1-bx^2)^2 + a^2x^2}\geq\delta$\\
+Подставим, рассматриваемую передаточную функцию в условие теоремы. В результате первое условие теоремы принимает следующий вид:
+\begin{equation}\label{first_condition}
+ \begin{aligned}
+&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (\varkappa b+\tau-\delta a^2 + 2\delta b)t + (\varkappa-\varepsilon-\tau-\delta) \geq 0\\
+&t \geq 0
+ \end{aligned}
+\end{equation}
+Второе условие теоремы имеет вид: 
+\begin{equation}\label{first_condition}
+ \begin{aligned}
+&4\varepsilon\delta > \nu^2\varkappa^2\\
+&\frac{4\varepsilon\delta}{\varkappa^2} > \nu^2\\
+ \end{aligned}
+\end{equation}
+Будем искать максимум $\frac{4\varepsilon\delta}{\varkappa^2}$
 
-1. Очевидно, что  $\varkappa - \varepsilon - \tau - \delta \geq 0$\\
-$\varkappa \geq \varepsilon+\tau+\delta $\\
-$\varkappa^2 \geq \varepsilon^2 + \tau^2 + \delta^2 + 2\varepsilon\tau + 2\varepsilon\delta + 2\tau\delta$\\
-$2 -(\frac{2\varepsilon^2}{\varkappa^2} + \frac{2\delta^2}{\varkappa^2} + \frac{2\tau^2}{\varkappa^2} +\frac{4\varepsilon\tau}{\varkappa^2} + \frac{4\tau\delta}{\varkappa^2}) \geq \frac{4\varepsilon\delta}{\varkappa^2}$\\
-$2 > \frac{4\varepsilon\delta}{\varkappa^2}$\\\\
+\subsection{Оценка максимума $\nu$ константой}
+Очевидно, что для того чтобы выполнялось \ref{first_condition} нужно  $\varkappa - \varepsilon - \tau - \delta \geq 0$
+\begin{equation}\label{first_condition}
+ \begin{aligned}
+&\varkappa \geq \varepsilon+\tau+\delta \\
+&\varkappa^2 \geq \varepsilon^2 + \tau^2 + \delta^2 + 2\varepsilon\tau + 2\varepsilon\delta + 2\tau\delta\\
+&2 -(\frac{2\varepsilon^2}{\varkappa^2} + \frac{2\delta^2}{\varkappa^2} + \frac{2\tau^2}{\varkappa^2} +\frac{4\varepsilon\tau}{\varkappa^2} + \frac{4\tau\delta}{\varkappa^2}) \geq \frac{4\varepsilon\delta}{\varkappa^2}\\
+&2 > \frac{4\varepsilon\delta}{\varkappa^2} > \nu^2
+ \end{aligned}
+\end{equation}
 
+\subsection{Точная оценка максимума $\nu$}
 2. Так как $\varkappa - \varepsilon - \tau - \delta \geq 0$, то $ \varepsilon \leq \varkappa - \tau - \delta$. Для максимизации функции $\frac{4\varepsilon\delta}{\varkappa^2}$ возьмем $\varepsilon = \varkappa - \tau - \delta$\\
-Тогда первое условие теоремы принимает вид:\\
-$\tau b^2t^2 + (\tau a^2-2 \tau b - \delta b^2)t + (\varkappa b+\tau-\delta a^2 + 2\delta b) \geq 0 $\\
-И будем искать максимум следующей функции: $\frac{4\varepsilon\delta}{\varkappa^2} = \frac{4(\varkappa - \tau - \delta)\delta}{\varkappa^2} = 4\frac{\delta}{\varkappa} - 4\frac{\delta}{\varkappa}\frac{\tau}{\varkappa} - 4\frac{\delta^2}{\varkappa^2} = 4z-4z_1z - 4z^2$, \\
-где $z_1 = \frac{\tau}{\varkappa}, z = \frac{\delta}{\varkappa}$\\
-Опустим константу, так как она не влияет на максимизацию функции. Будем рассматривать $f(z) = z-z_1z - z^2$, как функцию от $z$ с параметром $z_1$.\\
-Очевидно, что максимум этой функции достигается при $z_{max} = \frac{1-z_1}{2}$ и $f(z_{max}) = \frac{(1-z_1)^2}{4}$\\
-Для того, что бы выполнялось первое условие теоремы возможны 2 случая: отрицательный дискриминант или оба корня меньше 0.\\\\
+Тогда первое условие теоремы принимает вид:
+\begin{equation}\label{ineq1} 
+ \begin{aligned}
+&\tau b^2t^2 + (\tau a^2-2 \tau b - \delta b^2)t + (\varkappa b+\tau-\delta a^2 + 2\delta b) \geq 0\\
+&t > 0
+ \end{aligned}
+\end{equation}
+И будем искать максимум следующей функции: 
+\begin{equation}
+ \begin{aligned}
+&f(z) = 4z-4z_1z - 4z^2\\
+&z_1 = \frac{\tau}{\varkappa}, z = \frac{\delta}{\varkappa}
+ \end{aligned}
+\end{equation} 
+%&\frac{4\varepsilon\delta}{\varkappa^2} = \frac{4(\varkappa - \tau - \delta)\delta}{\varkappa^2} = 4\frac{\delta}{\varkappa} - 4\frac{\delta}{\varkappa}\frac{\tau}{\varkappa} - 4\frac{\delta^2}{\varkappa^2} = 4z-4z_1z - 4z^2\\
+Будем рассматривать $f(z)$, как функцию от $z$ с параметром $z_1$. Очевидно, что максимум этой функции достигается при $z_{max} = \frac{1-z_1}{2}$ и $f(z_{max}) = (1-z_1)^2$\\
 
-Рассмотрим дискриминант:\\ 
-$D = (\tau a^2-2 \tau b - \delta b^2)^2 - 4\tau b^2 (\varkappa b+\tau-\delta a^2 + 2\delta b)$\\
-Разделим на $\varkappa^2 > 0$\\
-$\frac{D}{\varkappa^2} = (\frac{\tau}{\varkappa} a^2-2 \frac{\tau}{\varkappa}  b - \frac{\delta}{\varkappa}  b^2)^2 - 4\frac{\tau}{\varkappa}  b^2 (b+\frac{\tau}{\varkappa} -\frac{\delta}{\varkappa}  a^2 + 2\frac{\delta}{\varkappa}  b) = (z_1 a^2-2 z_1  b - z  b^2)^2 - 4z_1  b^2 (b+z_1  - z  a^2 + 2z b) = (z_1 a^2-2 z_1  b - \frac{1-z_1}{2} b^2)^2 - 4z_1  b^2 (b+z_1  - \frac{1-z_1}{2}  a^2 + 1-z_1 b)=z_1^2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)-z_1(\frac{b^4}{2}+2b^3-a^2b^2+4b^2) + \frac{b^4}{4}$\\\\
+Рассмотрим дискриминант уравнения \ref{ineq1}:
+\begin{equation}\label{discrimanant}
+ \begin{aligned}
+D = (\tau a^2-2 \tau b - \delta b^2)^2 - 4\tau b^2 (\varkappa b+\tau-\delta a^2 + 2\delta b)\\
+ \end{aligned}
+\end{equation} 
+Разделим на $\varkappa^2 > 0$, тогда \ref{discrimanant} примет вид:
+\begin{equation}\label{discrimanant_transformed}
+ \begin{aligned}
+\frac{D}{\varkappa^2} = z_1^2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)-z_1(\frac{b^4}{2}+2b^3-a^2b^2+4b^2) + \frac{b^4}{4}
+ \end{aligned}
+\end{equation}
+Не умаляя общности положим далее $\varkappa = 1$
+%$\frac{D}{\varkappa^2} = (\frac{\tau}{\varkappa} a^2-2 \frac{\tau}{\varkappa}  b - \frac{\delta}{\varkappa}  b^2)^2 - 4\frac{\tau}{\varkappa}  b^2 (b+\frac{\tau}{\varkappa} -\frac{\delta}{\varkappa}  a^2 + 2\frac{\delta}{\varkappa}  b) = (z_1 a^2-2 z_1  b - z  b^2)^2 - 4z_1  b^2 (b+z_1  - z  a^2 + 2z b) = (z_1 a^2-2 z_1  b - \frac{1-z_1}{2} b^2)^2 - 4z_1  b^2 (b+z_1  - \frac{1-z_1}{2}  a^2 + 1-z_1 b)=z_1^2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)-z_1(\frac{b^4}{2}+2b^3-a^2b^2+4b^2) + \frac{b^4}{4}$\\\\
+Множество допустимых значений $z_1$ состоит из тех $z_1$ для которых:   $D < 0$ или $D \geq 0$ и $x_2 \leq 0$, где $x_2$ наибольший корень уравнения \ref{ineq1}.\\
+Рассмотрим дискриминант уравнения $D = 0$:
+\begin{equation}\label{discrimanant1}
+ \begin{aligned}
+D_1 = (\frac{b^4}{2}+2b^3-a^2b^2+4b^2)^2-b^4(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)
+ \end{aligned}
+\end{equation}
 
-Множество допустимых значений $z_1$ состоит из тех $z_1$ для которых:   $D < 0$ или $D \geq 0$ и $x_2 < 0$, где $x_2$ наибольший корень.\\
-Рассмотрим $D_1 = (\frac{b^4}{2}+2b^3-a^2b^2+4b^2)^2-b^4(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)$. Реализуется случаи:\\\\
-
- 2.1 $D_1 <  0$ и $(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2) > 0$\\
- Пусть $\varkappa = 1$, тогда $D \geq 0$, значит $M = \max\limits_{\frac{(\tau a^2-2 \tau b - \delta b^2)+\sqrt{D(z_1)}}{2\tau b^2}  \leq 0  }{|1-z_1|}$\\
- $f_{max} = \frac{(1-M)^2}{4}$\\\\
+\subsubsection{Первый случай}
+$D_1 <  0$ и $(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2) > 0$, тогда $D \geq 0$, значит 
+\begin{equation}
+ \begin{aligned}
+M = \max\limits_{-(\tau a^2-2 \tau b - \delta b^2)+\sqrt{D(z_1)}  \leq 0  }{|1-z_1|} = \max\limits_{-(\tau a^2-2 \tau b - \delta b^2)+\sqrt{D(z_1)}  = 0  }{|1-z_1|}
+ \end{aligned}
+\end{equation}
+ $f_{max} = (1-M)^2$
  
-  2.2 $D_1 \geq 0$ и $(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2) > 0$\\
- Пусть $\varkappa = 1$, тогда корни уравнения $D = 0$ будут $d_{1,2} = \frac{(\frac{b^4}{2}+2b^3-a^2b^2+4b^2)\pm\sqrt{D_1}}{2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)}$\\
- При $z_1\in(d_1, d_2)$ $ D < 0$, значит $M_1 = \max\limits_{z_1\in(d_1, d_2)}{|1-z_1|}$\\
- При $z_1\in(-\inf, d_1]\cup[d_2, +\inf)$ $ D \geq 0$, значит $M_2 = \max\limits_{\frac{(\tau a^2-2 \tau b - \delta b^2)+\sqrt{D(z_1)}}{2\tau b^2}  \leq 0  }{|1-z_1|}$\\
+ \subsubsection{Второй случай}
+$D_1 \geq 0$ и $(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2) > 0$\\
+Корни уравнения $D = 0$ будут $d_{1,2} = \frac{(\frac{b^4}{2}+2b^3-a^2b^2+4b^2)\pm\sqrt{D_1}}{2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)}$\\
+ При $z_1\in[d_1, d_2]$ $ D \leq 0$, значит $M_1 = \max\limits_{z_1\in[d_1, d_2]}{|1-z_1|}$\\
+ При $z_1\in(-\inf, d_1)\cup(d_2, +\inf)$ $ D \geq 0$, значит $M_2 = \max\limits_{-(\tau a^2-2 \tau b - \delta b^2)+\sqrt{D(z_1)} \leq 0  }{|1-z_1|}$\\
  $M = max\{ M_1, M_2\}$\\
- $f_{max} = \frac{(1-M)^2}{4}$\\
+ $f_{max} = (1-M)^2$\\
  
-\includegraphics[width=12cm]{Images/filter1.jpg}
+\includegraphics[width=12cm]{Images/filter1.jpg}\\
+\includegraphics[width=20cm]{Images/filter1-1.jpg}
  
 \end{document}  % КОНЕЦ ДОКУМЕНТА !
