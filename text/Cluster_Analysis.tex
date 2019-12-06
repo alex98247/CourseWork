@@ -36,7 +36,7 @@
 \begin{document} % начало документа
 
 \section{Введение}
-Рассмотрим:
+Рассмотрим систему:
  \begin{equation}\label{etalon_system}
  \begin{aligned}
  &\dot{x} = Ax + b\upsilon_e(\theta_e)\\
@@ -54,14 +54,14 @@
  \begin{equation}\label{replacement1}
  \begin{aligned}
  &z =x + A^{-1}b\upsilon_e(\theta_s)\\
- &\sigma = \theta_e - \theta_s
+ &\sigma = \theta_e 
  \end{aligned}
 \end{equation}
 После замены система \ref{etalon_system} принимает вид:
  \begin{equation}\label{etalon_system}
  \begin{aligned}
- &\dot{z} = Az + b(\upsilon_e(\sigma + \theta_s) - \frac{\omega_e^{free}}{K_{vco}H(0)})\\
- &\dot{\sigma} = -K_{vco}(c^*z + h(\upsilon_e(\sigma + \theta_s) - \frac{\omega_e^{free}}{K_{vco}H(0)}))
+ &\dot{z} = Az + b(\upsilon_e(\sigma) - \frac{\omega_e^{free}}{K_{vco}H(0)})\\
+ &\dot{\sigma} = -K_{vco}(c^*z + h(\upsilon_e(\sigma) - \frac{\omega_e^{free}}{K_{vco}H(0)}))
  \end{aligned}
 \end{equation}
 
@@ -77,6 +77,40 @@
 Here A, B, C, and R are constant matrices of dimensions n × n, n × m, n × m, and n × n, respectively, whereas the components $\phi_k$, $1 \leq  k \leq m$, of the vector-valued function $f(\sigma)$ are scalar differen-tiable functions $\phi_k$ = $\phi_k(\sigma_k)$, where $\psi_k$ is the k-th component of the vector $\psi$.\\
 
 Recall that any pendulum-like system with a single scalar non-linearity and an irreducible transfer function $\varkappa(p)$ can be written in the form \ref{system} with m = 1 by a nonsingular linear transformation of phase coordinates. Further we assume that the functions $\phi_k(\sigma_k)$ satisfy the followingconditions: $\phi_k(\sigma_k) \equiv 0$\\
+ \begin{equation}
+ \begin{aligned}
+&\mu_{1k} \leq \frac{d\varphi_k(\sigma_k)}{d\sigma_k} \leq \mu_{2k}, \forall \sigma_k \in \mathbb{R}\\
+&\varphi_k(\sigma_k+\Delta_k) = \varphi_k(\sigma_k), \forall \sigma_k \in \mathbb{R}
+ \end{aligned}
+\end{equation}
+Here the $\Delta_k$ are positive numbers. Sometimes, in the study of the specific pendulum-like systems, only one of the inequalities
+ \begin{equation}
+ \begin{aligned}
+\mu_{1k} \leq \frac{d\varphi_k(\sigma_k)}{d\sigma_k}  or \frac{d\varphi_k(\sigma_k)}{d\sigma_k} \leq \mu_{2k}
+ \end{aligned}
+\end{equation}
+is known, so we will assume the number $mu_{1k}$ to be either finite negative or $-\inf$, and the number $\mu_{2k}$ to be either finite positive or $\inf$.
+When $\mu_{1k} = -\inf$ or $\mu_{2k} = \inf$, we will use the notation $\mu_{1k}^{-1} = 0$ or $\mu_{2k}^{-1} = 0$, respectively.\\
+
+Let us introduce the numbers:
+ \begin{equation}
+ \begin{aligned}
+\nu_k = \int_{0}^{\Delta_k} \varphi_k(\sigma) d\sigma (\int_{0}^{\Delta_k} \mid \varphi_k(\sigma) \mid d\sigma)^{-1}
+ \end{aligned}
+\end{equation}
+the transfer matrix of system \ref{system} from its “input” $f$ to its “output” $(-d\sigma/dt)$
+ \begin{equation}
+ \begin{aligned}
+K(p) = C*(A - pI)^{-1}B - R
+\end{aligned}
+\end{equation}
+and the diagonal m × m matrices:
+ \begin{equation}
+ \begin{aligned}
+&\mu_1 = diag [\mu_{11}, . . . , \mu_{1m}],    \mu_2 = diag [\mu_{21}, . . . , \mu_{2m}],\\
+&\nu = diag [\nu, _1. . . , \nu_m]
+\end{aligned}
+\end{equation}
 
 \begin{theorem}
 Suppose that the stationary set $\Lambda$ of system \ref{system} consists of isolated points, the pair (A, B) is controllable, the matrix A is Hurwitz, and there exist diagonal m × m matrices $\varepsilon > 0, \delta > 0, \tau \geq 0$, and $\varkappa$ such that the following inequalities are valid:
@@ -96,7 +130,7 @@ Then system \ref{system} is gradient-like.
 &B = b\\
 &C = -K_{vco}c^*\\
 &R = -K_{vco}h\\
-&f(\sigma) = \upsilon_e(\sigma + \theta_s) - \frac{\omega_e^{free}}{K_{vco}H(0)}
+&f(\sigma) = \upsilon_e(\sigma) - \frac{\omega_e^{free}}{K_{vco}H(0)}
 \end{aligned}
 \end{equation}
 
@@ -120,7 +154,7 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 Подставим, рассматриваемую передаточную функцию в условие теоремы. В результате первое условие теоремы принимает следующий вид:
 \begin{equation}\label{first_condition}
  \begin{aligned}
-&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (\varkappa b+\tau-\delta a^2 + 2\delta b)t + (\varkappa-\varepsilon-\tau-\delta) \geq 0\\
+&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (-\varkappa b+\tau-\delta a^2 + 2\delta b)t + (\varkappa-\varepsilon-\tau-\delta) \geq 0\\
 &t \geq 0
  \end{aligned}
 \end{equation}
@@ -149,7 +183,7 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 Тогда первое условие теоремы принимает вид:
 \begin{equation}\label{ineq1} 
  \begin{aligned}
-&\tau b^2t^2 + (\tau a^2-2 \tau b - \delta b^2)t + (\varkappa b+\tau-\delta a^2 + 2\delta b) \geq 0\\
+&\tau b^2t^2 + (\tau a^2-2 \tau b - \delta b^2)t + (-\varkappa b+\tau-\delta a^2 + 2\delta b) \geq 0\\
 &t > 0
  \end{aligned}
 \end{equation}
@@ -166,43 +200,63 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 Рассмотрим дискриминант уравнения \ref{ineq1}:
 \begin{equation}\label{discrimanant}
  \begin{aligned}
-D = (\tau a^2-2 \tau b - \delta b^2)^2 - 4\tau b^2 (\varkappa b+\tau-\delta a^2 + 2\delta b)\\
+D = (\tau a^2-2 \tau b - \delta b^2)^2 - 4\tau b^2 (-\varkappa b+\tau-\delta a^2 + 2\delta b)
  \end{aligned}
 \end{equation} 
-Разделим на $\varkappa^2 > 0$, тогда \ref{discrimanant} примет вид:
+Не умаляя общности, положим далее $\varkappa = 1$, тогда \ref{discrimanant} примет вид:
 \begin{equation}\label{discrimanant_transformed}
  \begin{aligned}
-\frac{D}{\varkappa^2} = z_1^2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)-z_1(\frac{b^4}{2}+2b^3-a^2b^2+4b^2) + \frac{b^4}{4}
+D = z_1^2\frac{1}{4}(b^4 + 8 b^3 - 4 a^2 b^2 - 16 a^2 b + 4 a^4 )+z_1\frac{1}{4}(- 2 b^4 + 8 b^3 + 4 a^2 b^2) + \frac{b^4}{4}
  \end{aligned}
 \end{equation}
-Не умаляя общности положим далее $\varkappa = 1$
 %$\frac{D}{\varkappa^2} = (\frac{\tau}{\varkappa} a^2-2 \frac{\tau}{\varkappa}  b - \frac{\delta}{\varkappa}  b^2)^2 - 4\frac{\tau}{\varkappa}  b^2 (b+\frac{\tau}{\varkappa} -\frac{\delta}{\varkappa}  a^2 + 2\frac{\delta}{\varkappa}  b) = (z_1 a^2-2 z_1  b - z  b^2)^2 - 4z_1  b^2 (b+z_1  - z  a^2 + 2z b) = (z_1 a^2-2 z_1  b - \frac{1-z_1}{2} b^2)^2 - 4z_1  b^2 (b+z_1  - \frac{1-z_1}{2}  a^2 + 1-z_1 b)=z_1^2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)-z_1(\frac{b^4}{2}+2b^3-a^2b^2+4b^2) + \frac{b^4}{4}$\\\\
-Множество допустимых значений $z_1$ состоит из тех $z_1$ для которых:   $D < 0$ или $D \geq 0$ и $x_2 \leq 0$, где $x_2$ наибольший корень уравнения \ref{ineq1}.\\
+Множество допустимых значений $z_1$ состоит из тех $z_1$ для которых:   $D \leq 0$ или $D \geq 0$ и $x_2 \leq 0$, где $x_2$ наибольший корень уравнения \ref{ineq1}. Обозначим $A = b^4 + 8 b^3 - 4 a^2 b^2 - 16 a^2 b + 4 a^4$
+\subsubsection{$A  = 0$}
 Рассмотрим дискриминант уравнения $D = 0$:
 \begin{equation}\label{discrimanant1}
  \begin{aligned}
-D_1 = (\frac{b^4}{2}+2b^3-a^2b^2+4b^2)^2-b^4(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)
+&D_1 = (\frac{b^4}{2}+2b^3-a^2b^2+4b^2)^2-b^4(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2) =\\
+&= b^4(16 - 8a^2 + b(16 + 8b))
+ \end{aligned}
+\end{equation}
+Заметим, что для $0 < \tau_{p1} < 1$ и $0 < \tau_{p2} < 1,  D_1 > 0$, корни уравнения $D = 0$ будут:
+\begin{equation}
+ \begin{aligned}
+d_{1,2} = \frac{(\frac{b^4}{2}+2b^3-a^2b^2+4b^2)\pm\sqrt{D_1}}{2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)}
  \end{aligned}
 \end{equation}
 
-\subsubsection{Первый случай}
-$D_1 <  0$ и $(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2) > 0$, тогда $D \geq 0$, значит 
 \begin{equation}
  \begin{aligned}
-M = \max\limits_{-(\tau a^2-2 \tau b - \delta b^2)+\sqrt{D(z_1)}  \leq 0  }{|1-z_1|} = \max\limits_{-(\tau a^2-2 \tau b - \delta b^2)+\sqrt{D(z_1)}  = 0  }{|1-z_1|}
+&M_1 = \max\limits_{z_1\in[d_1, d_2]}{|1-z_1|} = max\{|1-d_1|, |1-d_2|\}\\
+&z_1\in[d_1, d_2]
  \end{aligned}
 \end{equation}
- $f_{max} = (1-M)^2$
+
+\begin{equation}
+ \begin{aligned}
+&M2 = \max\limits_{-(z_1 a^2-2 z_1 b - \frac{1-z_1}{2} b^2)+\sqrt{D(z_1)}  \leq 0  }{|1-z_1|} = \max\limits_{-(z_1 a^2-2 z_1 b - \frac{1-z_1}{2} b^2)+\sqrt{D(z_1)}  = 0  }{|1-z_1|}\\
+&z_1\in(-\inf, d_1]\cup[d_2, +\inf)
+ \end{aligned}
+\end{equation} 
+ $M = max\{ M_1, M_2\}$, значит $f_{max} = (1-M)^2$
  
- \subsubsection{Второй случай}
-$D_1 \geq 0$ и $(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2) > 0$\\
-Корни уравнения $D = 0$ будут $d_{1,2} = \frac{(\frac{b^4}{2}+2b^3-a^2b^2+4b^2)\pm\sqrt{D_1}}{2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)}$\\
- При $z_1\in[d_1, d_2]$ $ D \leq 0$, значит $M_1 = \max\limits_{z_1\in[d_1, d_2]}{|1-z_1|}$\\
- При $z_1\in(-\inf, d_1)\cup(d_2, +\inf)$ $ D \geq 0$, значит $M_2 = \max\limits_{-(\tau a^2-2 \tau b - \delta b^2)+\sqrt{D(z_1)} \leq 0  }{|1-z_1|}$\\
- $M = max\{ M_1, M_2\}$\\
- $f_{max} = (1-M)^2$\\
- 
-\includegraphics[width=12cm]{Images/filter1.jpg}\\
-\includegraphics[width=20cm]{Images/filter1-1.jpg}
- 
+%\includegraphics[width=12cm]{Images/filter1.jpg}\\
+%\includegraphics[width=20cm]{Images/filter1-1.jpg}
+
+\section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}$}
+ Рассмотрим передаточную функцию:
+ \begin{equation}\label{filter2}
+ \begin{aligned}
+K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
+ \end{aligned}
+\end{equation}
+Тогда первое условие теоремы принимает вид:
+ \begin{equation}
+ \begin{aligned}
+&\tau_{p1}^4\tau t^3 +(- \tau_{z1}^4\varepsilon - \tau_{z1}^4\tau + 2\tau_{p1}^2\tau- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)t^2  +\\
+&+( \tau- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2\tau+ 4\tau_{z1}b\varkappa- 2\tau_{p1}^2\delta)t + (\varkappa-\varepsilon - \tau - \delta)  \geq 0\\
+&t \geq 0
+ \end{aligned}
+\end{equation}
 \end{document}  % КОНЕЦ ДОКУМЕНТА !
