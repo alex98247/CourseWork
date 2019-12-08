@@ -43,22 +43,22 @@
  &\dot{\theta_e} = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
  \end{aligned}
 \end{equation}
-Найдем стационарные точки системы \ref{etalon_system}
+Найдем стационарные точки системы \eqref{etalon_system}
  \begin{equation}\label{transition}
  \begin{aligned}
  &x = -A^{-1}b\upsilon_e(\theta_e)\\
  &\upsilon_e(\theta_e) = \frac{\omega_e^{free}}{K_{vco}H(0)}
  \end{aligned}
 \end{equation}
-Возьмем $\theta_e = \theta_s$, для которых выполняется \ref{transition}. Сделаем замену:
+Возьмем $\theta_e = \theta_s$, для которых выполняется \eqref{transition}. Сделаем замену:
  \begin{equation}\label{replacement1}
  \begin{aligned}
  &z =x + A^{-1}b\upsilon_e(\theta_s)\\
  &\sigma = \theta_e 
  \end{aligned}
 \end{equation}
-После замены система \ref{etalon_system} принимает вид:
- \begin{equation}\label{etalon_system}
+После замены система \eqref{etalon_system} принимает вид:
+ \begin{equation}
  \begin{aligned}
  &\dot{z} = Az + b(\upsilon_e(\sigma) - \frac{\omega_e^{free}}{K_{vco}H(0)})\\
  &\dot{\sigma} = -K_{vco}(c^*z + h(\upsilon_e(\sigma) - \frac{\omega_e^{free}}{K_{vco}H(0)}))
@@ -76,7 +76,7 @@
 
 Here A, B, C, and R are constant matrices of dimensions n × n, n × m, n × m, and n × n, respectively, whereas the components $\phi_k$, $1 \leq  k \leq m$, of the vector-valued function $f(\sigma)$ are scalar differen-tiable functions $\phi_k$ = $\phi_k(\sigma_k)$, where $\psi_k$ is the k-th component of the vector $\psi$.\\
 
-Recall that any pendulum-like system with a single scalar non-linearity and an irreducible transfer function $\varkappa(p)$ can be written in the form \ref{system} with m = 1 by a nonsingular linear transformation of phase coordinates. Further we assume that the functions $\phi_k(\sigma_k)$ satisfy the followingconditions: $\phi_k(\sigma_k) \equiv 0$\\
+Recall that any pendulum-like system with a single scalar non-linearity and an irreducible transfer function $\varkappa(p)$ can be written in the form \eqref{system} with m = 1 by a nonsingular linear transformation of phase coordinates. Further we assume that the functions $\phi_k(\sigma_k)$ satisfy the followingconditions: $\phi_k(\sigma_k) \equiv 0$\\
  \begin{equation}
  \begin{aligned}
 &\mu_{1k} \leq \frac{d\varphi_k(\sigma_k)}{d\sigma_k} \leq \mu_{2k}, \forall \sigma_k \in \mathbb{R}\\
@@ -98,7 +98,7 @@ Let us introduce the numbers:
 \nu_k = \int_{0}^{\Delta_k} \varphi_k(\sigma) d\sigma (\int_{0}^{\Delta_k} \mid \varphi_k(\sigma) \mid d\sigma)^{-1}
  \end{aligned}
 \end{equation}
-the transfer matrix of system \ref{system} from its “input” $f$ to its “output” $(-d\sigma/dt)$
+the transfer matrix of system \eqref{system} from its “input” $f$ to its “output” $(-d\sigma/dt)$
  \begin{equation}
  \begin{aligned}
 K(p) = C*(A - pI)^{-1}B - R
@@ -113,17 +113,17 @@ and the diagonal m × m matrices:
 \end{equation}
 
 \begin{theorem}
-Suppose that the stationary set $\Lambda$ of system \ref{system} consists of isolated points, the pair (A, B) is controllable, the matrix A is Hurwitz, and there exist diagonal m × m matrices $\varepsilon > 0, \delta > 0, \tau \geq 0$, and $\varkappa$ such that the following inequalities are valid:
+Suppose that the stationary set $\Lambda$ of system \eqref{system} consists of isolated points, the pair (A, B) is controllable, the matrix A is Hurwitz, and there exist diagonal m × m matrices $\varepsilon > 0, \delta > 0, \tau \geq 0$, and $\varkappa$ such that the following inequalities are valid:
  \begin{equation}
  \begin{aligned}
 &Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)+\mu_1^{-1}ix]^*\tau[K(ix)+\mu_2^{-1}ix])\geq\delta, \forall x \in \mathbb{R}\\
 &4\varepsilon\delta > (\varkappa\nu)^2
  \end{aligned}
 \end{equation}
-Then system \ref{system} is gradient-like.
+Then system \eqref{system} is gradient-like.
 \end{theorem}
 
-Очевидно, что систему \ref{etalon_system} можно привести к системе  \ref{system} положив: 
+Очевидно, что систему \eqref{etalon_system} можно привести к системе  \eqref{system} положив: 
  \begin{equation}
  \begin{aligned}
 &A=A\\
@@ -133,7 +133,13 @@ Then system \ref{system} is gradient-like.
 &f(\sigma) = \upsilon_e(\sigma) - \frac{\omega_e^{free}}{K_{vco}H(0)}
 \end{aligned}
 \end{equation}
-
+Положим далее:
+ \begin{equation}
+ \begin{aligned}
+&\upsilon_e(\sigma) =  sin(\sigma)\\
+&\frac{\omega_e^{free}}{K_{vco}H(0)} = \gamma
+\end{aligned}
+\end{equation}
 \section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}x)(1+\tau_{p2}x)}$}
  Рассмотрим передаточную функцию:
  \begin{equation}\label{filter1}
@@ -159,7 +165,7 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
  \end{aligned}
 \end{equation}
 Второе условие теоремы имеет вид: 
-\begin{equation}\label{first_condition}
+\begin{equation}
  \begin{aligned}
 &4\varepsilon\delta > \nu^2\varkappa^2\\
 &\frac{4\varepsilon\delta}{\varkappa^2} > \nu^2\\
@@ -168,8 +174,8 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 Будем искать максимум $\frac{4\varepsilon\delta}{\varkappa^2}$
 
 \subsection{Оценка максимума $\nu$ константой}
-Очевидно, что для того чтобы выполнялось \ref{first_condition} нужно  $\varkappa - \varepsilon - \tau - \delta \geq 0$
-\begin{equation}\label{first_condition}
+Очевидно, что для того чтобы выполнялось \eqref{first_condition} нужно  $\varkappa - \varepsilon - \tau - \delta \geq 0$
+\begin{equation}\label{const_ineq}
  \begin{aligned}
 &\varkappa \geq \varepsilon+\tau+\delta \\
 &\varkappa^2 \geq \varepsilon^2 + \tau^2 + \delta^2 + 2\varepsilon\tau + 2\varepsilon\delta + 2\tau\delta\\
@@ -194,52 +200,79 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 &z_1 = \frac{\tau}{\varkappa}, z = \frac{\delta}{\varkappa}
  \end{aligned}
 \end{equation} 
-%&\frac{4\varepsilon\delta}{\varkappa^2} = \frac{4(\varkappa - \tau - \delta)\delta}{\varkappa^2} = 4\frac{\delta}{\varkappa} - 4\frac{\delta}{\varkappa}\frac{\tau}{\varkappa} - 4\frac{\delta^2}{\varkappa^2} = 4z-4z_1z - 4z^2\\
 Будем рассматривать $f(z)$, как функцию от $z$ с параметром $z_1$. Очевидно, что максимум этой функции достигается при $z_{max} = \frac{1-z_1}{2}$ и $f(z_{max}) = (1-z_1)^2$\\
 
-Рассмотрим дискриминант уравнения \ref{ineq1}:
+Рассмотрим дискриминант уравнения \eqref{ineq1}:
 \begin{equation}\label{discrimanant}
  \begin{aligned}
 D = (\tau a^2-2 \tau b - \delta b^2)^2 - 4\tau b^2 (-\varkappa b+\tau-\delta a^2 + 2\delta b)
  \end{aligned}
 \end{equation} 
-Не умаляя общности, положим далее $\varkappa = 1$, тогда \ref{discrimanant} примет вид:
+Не умаляя общности, положим далее $\varkappa = 1$, тогда \eqref{discrimanant} примет вид:
 \begin{equation}\label{discrimanant_transformed}
  \begin{aligned}
 D = z_1^2\frac{1}{4}(b^4 + 8 b^3 - 4 a^2 b^2 - 16 a^2 b + 4 a^4 )+z_1\frac{1}{4}(- 2 b^4 + 8 b^3 + 4 a^2 b^2) + \frac{b^4}{4}
  \end{aligned}
 \end{equation}
 %$\frac{D}{\varkappa^2} = (\frac{\tau}{\varkappa} a^2-2 \frac{\tau}{\varkappa}  b - \frac{\delta}{\varkappa}  b^2)^2 - 4\frac{\tau}{\varkappa}  b^2 (b+\frac{\tau}{\varkappa} -\frac{\delta}{\varkappa}  a^2 + 2\frac{\delta}{\varkappa}  b) = (z_1 a^2-2 z_1  b - z  b^2)^2 - 4z_1  b^2 (b+z_1  - z  a^2 + 2z b) = (z_1 a^2-2 z_1  b - \frac{1-z_1}{2} b^2)^2 - 4z_1  b^2 (b+z_1  - \frac{1-z_1}{2}  a^2 + 1-z_1 b)=z_1^2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)-z_1(\frac{b^4}{2}+2b^3-a^2b^2+4b^2) + \frac{b^4}{4}$\\\\
-Множество допустимых значений $z_1$ состоит из тех $z_1$ для которых:   $D \leq 0$ или $D \geq 0$ и $x_2 \leq 0$, где $x_2$ наибольший корень уравнения \ref{ineq1}. Обозначим $A = b^4 + 8 b^3 - 4 a^2 b^2 - 16 a^2 b + 4 a^4$
+Множество допустимых значений $z_1$ состоит из тех $z_1$ для которых:   $D \leq 0$ или $D \geq 0$ и $x_2 \leq 0$, где $x_2$ наибольший корень уравнения \eqref{ineq1}. Обозначим:
+\begin{equation}
+ \begin{aligned}
+&A = \frac{1}{4}(b^4 + 8 b^3 - 4 a^2 b^2 - 16 a^2 b + 4 a^4)\\
+&B = \frac{1}{4}(- 2 b^4 + 8 b^3 + 4 a^2 b^2)\\
+&C = \frac{b^4}{4}
+ \end{aligned}
+\end{equation}
 \subsubsection{$A  = 0$}
+ При $b^4 + 8 b^3 - 4 a^2 b^2 - 16 a^2 b + 4 a^4  = 0$ \eqref{discrimanant_transformed} принимает вид:
+\begin{equation}
+ \begin{aligned}
+D = z_1B + C
+ \end{aligned}
+\end{equation}
+Предположим, $B \neq 0$, тогда очевидно, что корень уравнения $D = 0$ будет:
+\begin{equation}
+ \begin{aligned}
+d = - \frac{1}{B}
+ \end{aligned}
+\end{equation}
+При $B > 0$: $z_1 \in (0, d]$ $D \leq 0$, а при $z_1 \in [d, 1)$ $D \geq 0$\\
+При $B < 0$: $z_1 \in [d, 1)$ $D \geq 0$, а при $z_1 \in [d, 1)$ $D \leq 0$\\
+При $B = 0$: $z_1 \in (0, 1)$ $D \geq 0$
+\subsubsection{$A \neq 0$}
 Рассмотрим дискриминант уравнения $D = 0$:
-\begin{equation}\label{discrimanant1}
- \begin{aligned}
-&D_1 = (\frac{b^4}{2}+2b^3-a^2b^2+4b^2)^2-b^4(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2) =\\
-&= b^4(16 - 8a^2 + b(16 + 8b))
- \end{aligned}
-\end{equation}
-Заметим, что для $0 < \tau_{p1} < 1$ и $0 < \tau_{p2} < 1,  D_1 > 0$, корни уравнения $D = 0$ будут:
 \begin{equation}
  \begin{aligned}
-d_{1,2} = \frac{(\frac{b^4}{2}+2b^3-a^2b^2+4b^2)\pm\sqrt{D_1}}{2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)}
+D_1 = B^2 - 4AC
  \end{aligned}
 \end{equation}
+Заметим, что для исследуемых $\tau_{p1}$ и $\tau_{p2}$ $D_1 \geq 0$, тогда корни уравнения $D = 0$ имеют следующий вид:
+\begin{equation}
+ \begin{aligned}
+d_{1,2} = \frac{-B\pm\sqrt{D_1}}{2A}
+ \end{aligned}
+\end{equation}
+Не умаляя общности, будем считать: $0 < d_1 \leq d_2 <1$. \\
+$A > 0$: Тогда при $z_1 \in (0, d_1] \cup [d_2, 1)$ $D \leq 0$, а при $z_1 \in [d_1, d_2]$ $D \geq 0$\\
+$A < 0$: Тогда при $z_1 \in (0, d_1] \cup [d_2, 1)$ $D \geq 0$, а при $z_1 \in [d_1, d_2]$ $D \leq 0$
 
+\subsubsection{Максимизация в зависимости от знака дискриминанта}
+Рассмотрим, например, случай $A > 0$, остальные случаи рассматриваются аналогично. Как было показано выше, при $z_1 \in (0, d_1] \cup [d_2, 1)$ $D \leq 0$. Тогда имеем:
 \begin{equation}
  \begin{aligned}
-&M_1 = \max\limits_{z_1\in[d_1, d_2]}{|1-z_1|} = max\{|1-d_1|, |1-d_2|\}\\
+&M_1 = \max\limits_{-(z_1 a^2-2 z_1 b - \frac{1-z_1}{2} b^2)+\sqrt{D(z_1)}  \leq 0  }{|1-z_1|} = \max\limits_{-(z_1 a^2-2 z_1 b - \frac{1-z_1}{2} b^2)+\sqrt{D(z_1)}  = 0  }{|1-z_1|}\\
+&z_1\in(0, d_1]\cup[d_2, 1)
+ \end{aligned}
+\end{equation} 
+А при $z_1 \in [d_1, d_2]$ $D \geq 0$. Тогда почаем:
+\begin{equation}
+ \begin{aligned}
+&M_2 = \max\limits_{z_1\in[d_1, d_2]}{|1-z_1|} = max\{|1-d_1|, |1-d_2|\}\\
 &z_1\in[d_1, d_2]
  \end{aligned}
 \end{equation}
+Мы максимизировали функцию при отрицательном и неотрицательном дискриминанте. Положим максимум $M = \max \{M_1, M_2\}$. 
 
-\begin{equation}
- \begin{aligned}
-&M2 = \max\limits_{-(z_1 a^2-2 z_1 b - \frac{1-z_1}{2} b^2)+\sqrt{D(z_1)}  \leq 0  }{|1-z_1|} = \max\limits_{-(z_1 a^2-2 z_1 b - \frac{1-z_1}{2} b^2)+\sqrt{D(z_1)}  = 0  }{|1-z_1|}\\
-&z_1\in(-\inf, d_1]\cup[d_2, +\inf)
- \end{aligned}
-\end{equation} 
- $M = max\{ M_1, M_2\}$, значит $f_{max} = (1-M)^2$
  
 %\includegraphics[width=12cm]{Images/filter1.jpg}\\
 %\includegraphics[width=20cm]{Images/filter1-1.jpg}
@@ -252,11 +285,36 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
  \end{aligned}
 \end{equation}
 Тогда первое условие теоремы принимает вид:
- \begin{equation}
+ \begin{equation}\label{second_condition}
  \begin{aligned}
 &\tau_{p1}^4\tau t^3 +(- \tau_{z1}^4\varepsilon - \tau_{z1}^4\tau + 2\tau_{p1}^2\tau- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)t^2  +\\
 &+( \tau- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2\tau+ 4\tau_{z1}b\varkappa- 2\tau_{p1}^2\delta)t + (\varkappa-\varepsilon - \tau - \delta)  \geq 0\\
-&t \geq 0
+&t = x^2 \geq 0
  \end{aligned}
 \end{equation}
+Заметим, что при $\tau_{z1} \neq \tau_{p1}$ функция $\chi (x) = p^{-1}K(x)$ не приводима. Тогда по теореме пара $(A, B)$ управляема.
+\subsection{$\tau = 0$}
+Положим в \eqref{second_condition} $\tau = 0$, тогда первое условие теоремы принимает следующий вид:
+ \begin{equation}
+ \begin{aligned}
+&(\tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta)t^2 +( 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\delta)t + (\varkappa-\varepsilon - \delta)  \geq 0\\
+&t = x^2 \geq 0
+ \end{aligned}
+\end{equation}
+Будем искать максимум $\frac{4\varepsilon\delta}{\varkappa^2}$. 
+
+\includegraphics[width=12cm]{images/filter2.jpg}
+
+\subsection{$\tau > 0$}
+Предположим в \eqref{second_condition} $\tau > 0$ и разделим на $\tau_{p1}^4\tau$. Не умаляя общности, можем считать $\tau = 1$, тогда \eqref{second_condition} принимает следующий вид:
+ \begin{equation}
+ \begin{aligned}
+&t^3 +a^2 +bt + c  \geq 0\\
+&a = \frac{1}{\tau_{p1}^4}(- \tau_{z1}^4\varepsilon - \tau_{z1}^4 + 2\tau_{p1}^2- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)\\
+&b = \frac{1}{\tau_{p1}^4}( 1- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2+ 4\tau_{z1}\tau_{p1}\varkappa- 2\tau_{p1}^2\delta)\\
+&c = \frac{1}{\tau_{p1}^4}(\varkappa-\varepsilon - 1 - \delta)\\
+&t = x^2 \geq 0
+ \end{aligned}
+\end{equation}
+Заметим, что по теореме Декарта: $a \geq 0, b \geq 0, c \geq 0$
 \end{document}  % КОНЕЦ ДОКУМЕНТА !
