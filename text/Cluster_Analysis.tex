@@ -140,6 +140,10 @@ Then system \eqref{system} is gradient-like.
 &\frac{\omega_e^{free}}{K_{vco}H(0)} = \gamma
 \end{aligned}
 \end{equation}
+\section{Теорема Декарта}
+\begin{theorem}
+Если многочлена записанного в стандартной форме действительные и все его корни также заведомо действительные, то число его положительных корней, если учитывать их кратности, равно числу перемен знаков в ряде его коэффициентов. Если же оно имеет и комплексные корни, то число это равно или на некоторое четное число меньше числа этих перемен знаков.
+\end{theorem}
 \section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}x)(1+\tau_{p2}x)}$}
  Рассмотрим передаточную функцию:
  \begin{equation}\label{filter1}
@@ -295,21 +299,49 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
 Заметим, что при $\tau_{z1} \neq \tau_{p1}$ функция $\chi (x) = p^{-1}K(x)$ не приводима. Тогда по теореме пара $(A, B)$ управляема.
 \subsection{$\tau = 0$}
 Положим в \eqref{second_condition} $\tau = 0$, тогда первое условие теоремы принимает следующий вид:
- \begin{equation}
+ \begin{equation}\label{second_condition_tau_zero}
  \begin{aligned}
 &(\tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta)t^2 +( 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\delta)t + (\varkappa-\varepsilon - \delta)  \geq 0\\
 &t = x^2 \geq 0
  \end{aligned}
 \end{equation}
-Будем искать максимум $\frac{4\varepsilon\delta}{\varkappa^2}$. 
+Будем искать максимум $\frac{4\varepsilon\delta}{\varkappa^2}$. Обозначим:
+ \begin{equation}
+ \begin{aligned}
+&a = \tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta\\
+&b = 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\delta\\
+&c = \varkappa-\varepsilon - \delta
+ \end{aligned}
+\end{equation}
+Для того, что бы выполнялось \eqref{second_condition_tau_zero} нужно потребовать: $a > 0, c > 0$, тогда $b > 0$. По теореме Декарта уравнение не имеет положительных корней, т.е. выполняется \eqref{second_condition_tau_zero}.
 
-\includegraphics[width=12cm]{images/filter2.jpg}
+\subsubsection{$\tau_{p1} > \tau_{z1}$}
+Если предположить, что $\tau_{p1} > \tau_{z1}$, тогда из того, что $a > 0, c > 0$ следует, что $\delta < \varepsilon$. Положив $\delta = \varepsilon$ . Разделим на $\varepsilon > 0$ и не умаляя общности положим $\varepsilon = 1$ получим:
+ \begin{equation}
+ \begin{aligned}
+&a = \tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4 - \tau_{p1}^4\\
+&b = 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2 - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\\
+&c = \varkappa-2
+ \end{aligned}
+\end{equation}
+$$\lim_{\varkappa \to 2+} \frac{4\varepsilon\delta}{\varkappa^2} = 1$$
+\subsubsection{$\tau_{p1} < \tau_{z1}$}
+Аналогично предыдущему случаю, предположим, что $\tau_{p1} < \tau_{z1}$, тогда из того, что $a > 0, c > 0$ следует, что $\delta > \varepsilon$. Положив $\varepsilon = \delta$ . Разделим на $\delta > 0$ и не умаляя общности положим $\delta = 1$ получим:
+ \begin{equation}
+ \begin{aligned}
+&a = \tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4 - \tau_{p1}^4\\
+&b = 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2 - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\\
+&c = \varkappa-2
+ \end{aligned}
+\end{equation}
+$$\lim_{\varkappa \to 2+} \frac{4\varepsilon\delta}{\varkappa^2} = 1$$
+%\includegraphics[width=12cm]{images/filter2.jpg}
 
 \subsection{$\tau > 0$}
 Предположим в \eqref{second_condition} $\tau > 0$ и разделим на $\tau_{p1}^4\tau$. Не умаляя общности, можем считать $\tau = 1$, тогда \eqref{second_condition} принимает следующий вид:
  \begin{equation}
  \begin{aligned}
-&t^3 +a^2 +bt + c  \geq 0\\
+&t^3 +at^2 +bt + c  \geq 0\\
 &a = \frac{1}{\tau_{p1}^4}(- \tau_{z1}^4\varepsilon - \tau_{z1}^4 + 2\tau_{p1}^2- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)\\
 &b = \frac{1}{\tau_{p1}^4}( 1- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2+ 4\tau_{z1}\tau_{p1}\varkappa- 2\tau_{p1}^2\delta)\\
 &c = \frac{1}{\tau_{p1}^4}(\varkappa-\varepsilon - 1 - \delta)\\
