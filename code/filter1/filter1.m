@@ -23,7 +23,7 @@ for i=1:length(a)
     
     M1 = fmincon(fun,x0,A,b1,Aeq,beq,lb,ub,@discriminant,options);
     M(i) = -fun(M1);
-    M(i) = 1000*vpasolve(0.5*pi*t/(t*asin(t) + sqrt(1-t^2)) == M(i), t);
+    %M(i) = 1000*vpasolve(0.5*pi*t/(t*asin(t) + sqrt(1-t^2)) == M(i), t);
     disp(i/length(a))
 end
 
