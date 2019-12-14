@@ -5,11 +5,14 @@
 \usepackage{setspace,amsmath}
 \usepackage[left=20mm, top=15mm, right=15mm, bottom=15mm, nohead, footskip=10mm]{geometry} 
 \usepackage[pdftex]{graphicx}
+\usepackage{stix}
 \usepackage{amsfonts}
 \usepackage{listings}
+\usepackage{float}
 \usepackage{amssymb}
 \usepackage{color}
 \usepackage{textcomp}
+\usepackage{subcaption}
 \definecolor{listinggray}{gray}{0.9}
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \usepackage{amsthm}% настройки полей документа
@@ -76,7 +79,7 @@
 
 Here A, B, C, and R are constant matrices of dimensions n × n, n × m, n × m, and n × n, respectively, whereas the components $\phi_k$, $1 \leq  k \leq m$, of the vector-valued function $f(\sigma)$ are scalar differen-tiable functions $\phi_k$ = $\phi_k(\sigma_k)$, where $\psi_k$ is the k-th component of the vector $\psi$.\\
 
-Recall that any pendulum-like system with a single scalar non-linearity and an irreducible transfer function $\varkappa(p)$ can be written in the form \eqref{system} with m = 1 by a nonsingular linear transformation of phase coordinates. Further we assume that the functions $\phi_k(\sigma_k)$ satisfy the followingconditions: $\phi_k(\sigma_k) \equiv 0$\\
+Recall that any pendulum-like system with a single scalar non-linearity and an irreducible transfer function $\varkappa(p)$ can be written in the form \eqref{system} with m = 1 by a nonsingular linear transformation of phase coordinates. Further we assume that the functions $\phi_k(\sigma_k)$ satisfy the followingconditions: $\phi_k(\sigma_k) \nequiv 0$\\
  \begin{equation}
  \begin{aligned}
 &\mu_{1k} \leq \frac{d\varphi_k(\sigma_k)}{d\sigma_k} \leq \mu_{2k}, \forall \sigma_k \in \mathbb{R}\\
@@ -197,89 +200,53 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 &t > 0
  \end{aligned}
 \end{equation}
-И будем искать максимум следующей функции: 
+Введем обозначения:
 \begin{equation}
  \begin{aligned}
-&f(z) = 4z-4z_1z - 4z^2\\
-&z_1 = \frac{\tau}{\varkappa}, z = \frac{\delta}{\varkappa}
+&A = \tau b^2\\
+&B = \tau a^2-2 \tau b - \delta b^2\\
+&C = -\varkappa b+\tau-\delta a^2 + 2\delta b
+ \end{aligned}
+\end{equation}
+Заметим, что для того, что бы выполнялось \eqref{ineq1} необходимо потребовать $A > 0$ и $C \geq 0$, тогда $B \geq 0$. Тогда по теореме Декарта уравнение $At^2 + Bt + C = 0$ не имеет положительных корней, т.е. выполняется \eqref{ineq1}. Не умаляя общности, можем положить $\varkappa = 1$ и будем искать максимум следующей функции: 
+\begin{equation}\label{extr_filter1}
+ \begin{aligned}
+&f(\delta) = 4\delta-4\tau\delta - 4\delta^2\\
  \end{aligned}
 \end{equation} 
-Будем рассматривать $f(z)$, как функцию от $z$ с параметром $z_1$. Очевидно, что максимум этой функции достигается при $z_{max} = \frac{1-z_1}{2}$ и $f(z_{max}) = (1-z_1)^2$\\
-
-Рассмотрим дискриминант уравнения \eqref{ineq1}:
-\begin{equation}\label{discrimanant}
+Получили задачу на условный экстремум, т.е найти максимум \eqref{extr_filter1}, при условии $C \geq 0$.  Заметим, что максимальное значение достигается на границе или в точках понижения ранга. Вычислим градиент \eqref{extr_filter1}:
+\begin{equation}
  \begin{aligned}
-D = (\tau a^2-2 \tau b - \delta b^2)^2 - 4\tau b^2 (-\varkappa b+\tau-\delta a^2 + 2\delta b)
+(4 - 4\tau - 8\delta, 4\delta)
  \end{aligned}
 \end{equation} 
-Не умаляя общности, положим далее $\varkappa = 1$, тогда \eqref{discrimanant} примет вид:
-\begin{equation}\label{discrimanant_transformed}
+Получаем точку понижения ранга: $\delta = 0, \tau = 1$. Это противоречит условию теоремы $\delta > 0$. Рассмотрим $C = 0$, выразим $\tau$ и подставим в \eqref{extr_filter1}:
+\begin{equation}\label{one_var_max}
  \begin{aligned}
-D = z_1^2\frac{1}{4}(b^4 + 8 b^3 - 4 a^2 b^2 - 16 a^2 b + 4 a^4 )+z_1\frac{1}{4}(- 2 b^4 + 8 b^3 + 4 a^2 b^2) + \frac{b^4}{4}
- \end{aligned}
-\end{equation}
-%$\frac{D}{\varkappa^2} = (\frac{\tau}{\varkappa} a^2-2 \frac{\tau}{\varkappa}  b - \frac{\delta}{\varkappa}  b^2)^2 - 4\frac{\tau}{\varkappa}  b^2 (b+\frac{\tau}{\varkappa} -\frac{\delta}{\varkappa}  a^2 + 2\frac{\delta}{\varkappa}  b) = (z_1 a^2-2 z_1  b - z  b^2)^2 - 4z_1  b^2 (b+z_1  - z  a^2 + 2z b) = (z_1 a^2-2 z_1  b - \frac{1-z_1}{2} b^2)^2 - 4z_1  b^2 (b+z_1  - \frac{1-z_1}{2}  a^2 + 1-z_1 b)=z_1^2(-4b^2-2a^2b^2+4b^3+(a^2-2b+\frac{b^2}{2})^2)-z_1(\frac{b^4}{2}+2b^3-a^2b^2+4b^2) + \frac{b^4}{4}$\\\\
-Множество допустимых значений $z_1$ состоит из тех $z_1$ для которых:   $D \leq 0$ или $D \geq 0$ и $x_2 \leq 0$, где $x_2$ наибольший корень уравнения \eqref{ineq1}. Обозначим:
-\begin{equation}
- \begin{aligned}
-&A = \frac{1}{4}(b^4 + 8 b^3 - 4 a^2 b^2 - 16 a^2 b + 4 a^4)\\
-&B = \frac{1}{4}(- 2 b^4 + 8 b^3 + 4 a^2 b^2)\\
-&C = \frac{b^4}{4}
- \end{aligned}
-\end{equation}
-\subsubsection{$A  = 0$}
- При $b^4 + 8 b^3 - 4 a^2 b^2 - 16 a^2 b + 4 a^4  = 0$ \eqref{discrimanant_transformed} принимает вид:
-\begin{equation}
- \begin{aligned}
-D = z_1B + C
- \end{aligned}
-\end{equation}
-Предположим, $B \neq 0$, тогда очевидно, что корень уравнения $D = 0$ будет:
-\begin{equation}
- \begin{aligned}
-d = - \frac{1}{B}
- \end{aligned}
-\end{equation}
-При $B > 0$: $z_1 \in (0, d]$ $D \leq 0$, а при $z_1 \in [d, 1)$ $D \geq 0$\\
-При $B < 0$: $z_1 \in [d, 1)$ $D \geq 0$, а при $z_1 \in [d, 1)$ $D \leq 0$\\
-При $B = 0$: $z_1 \in (0, 1)$ $D \geq 0$
-\subsubsection{$A \neq 0$}
-Рассмотрим дискриминант уравнения $D = 0$:
-\begin{equation}
- \begin{aligned}
-D_1 = B^2 - 4AC
- \end{aligned}
-\end{equation}
-Заметим, что для исследуемых $\tau_{p1}$ и $\tau_{p2}$ $D_1 \geq 0$, тогда корни уравнения $D = 0$ имеют следующий вид:
-\begin{equation}
- \begin{aligned}
-d_{1,2} = \frac{-B\pm\sqrt{D_1}}{2A}
- \end{aligned}
-\end{equation}
-Не умаляя общности, будем считать: $0 < d_1 \leq d_2 <1$. \\
-$A > 0$: Тогда при $z_1 \in (0, d_1] \cup [d_2, 1)$ $D \leq 0$, а при $z_1 \in [d_1, d_2]$ $D \geq 0$\\
-$A < 0$: Тогда при $z_1 \in (0, d_1] \cup [d_2, 1)$ $D \geq 0$, а при $z_1 \in [d_1, d_2]$ $D \leq 0$
-
-\subsubsection{Максимизация в зависимости от знака дискриминанта}
-Рассмотрим, например, случай $A > 0$, остальные случаи рассматриваются аналогично. Как было показано выше, при $z_1 \in (0, d_1] \cup [d_2, 1)$ $D \leq 0$. Тогда имеем:
-\begin{equation}
- \begin{aligned}
-&M_1 = \max\limits_{-(z_1 a^2-2 z_1 b - \frac{1-z_1}{2} b^2)+\sqrt{D(z_1)}  \leq 0  }{|1-z_1|} = \max\limits_{-(z_1 a^2-2 z_1 b - \frac{1-z_1}{2} b^2)+\sqrt{D(z_1)}  = 0  }{|1-z_1|}\\
-&z_1\in(0, d_1]\cup[d_2, 1)
+&f(\delta) = 4\delta(1 - b) - 4\delta^2(a^2 -2b +1)\\
  \end{aligned}
 \end{equation} 
-А при $z_1 \in [d_1, d_2]$ $D \geq 0$. Тогда почаем:
-\begin{equation}
+Максимум  \eqref{one_var_max} достигается при $\delta = \frac{1-b}{2(a^2 - 2b + 1)}$ и равен
+\begin{equation}\label{filter1_max}
  \begin{aligned}
-&M_2 = \max\limits_{z_1\in[d_1, d_2]}{|1-z_1|} = max\{|1-d_1|, |1-d_2|\}\\
-&z_1\in[d_1, d_2]
+\frac{(b - 1)^2}{a^2 - 2b + 1} = \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1} 
  \end{aligned}
-\end{equation}
-Мы максимизировали функцию при отрицательном и неотрицательном дискриминанте. Положим максимум $M = \max \{M_1, M_2\}$. 
+\end{equation} 
 
- 
-%\includegraphics[width=12cm]{Images/filter1.jpg}\\
-%\includegraphics[width=20cm]{Images/filter1-1.jpg}
+\begin{figure}[H]
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=9cm]{images/filter1e.jpg}
+  \caption{Численное приближение в MATLAB}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+\includegraphics[width=9cm]{images/filter1_1.jpg}
+  \caption{Вычисленный по \eqref{filter1_max}}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$}
+\label{fig:filter1_fig}
+\end{figure}
 
 \section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}$}
  Рассмотрим передаточную функцию:
@@ -305,37 +272,21 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
 &t = x^2 \geq 0
  \end{aligned}
 \end{equation}
-Будем искать максимум $\frac{4\varepsilon\delta}{\varkappa^2}$. Обозначим:
+Обозначим:
  \begin{equation}
  \begin{aligned}
-&a = \tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta\\
-&b = 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\delta\\
-&c = \varkappa-\varepsilon - \delta
+&A = \tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta\\
+&B = 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\delta\\
+&C = \varkappa-\varepsilon - \delta
  \end{aligned}
 \end{equation}
-Для того, что бы выполнялось \eqref{second_condition_tau_zero} нужно потребовать: $a > 0, c > 0$, тогда $b > 0$. По теореме Декарта уравнение не имеет положительных корней, т.е. выполняется \eqref{second_condition_tau_zero}.
+Для того, что бы выполнялось \eqref{second_condition_tau_zero} нужно потребовать: $A \geq 0$ и $C \geq 0$, тогда  при $B \geq 0$, по теореме Декарта уравнение не имеет положительных корней, т.е. выполняется \eqref{second_condition_tau_zero}. Не умаляя общности можем считать $\varkappa = 1$. Получили нелинейную оптимизационную задачу с линейными ограничениями, где максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
 
-\subsubsection{$\tau_{p1} > \tau_{z1}$}
-Если предположить, что $\tau_{p1} > \tau_{z1}$, тогда из того, что $a > 0, c > 0$ следует, что $\delta < \varepsilon$. Положив $\delta = \varepsilon$ . Разделим на $\varepsilon > 0$ и не умаляя общности положим $\varepsilon = 1$ получим:
- \begin{equation}
- \begin{aligned}
-&a = \tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4 - \tau_{p1}^4\\
-&b = 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2 - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\\
-&c = \varkappa-2
- \end{aligned}
-\end{equation}
-$$\lim_{\varkappa \to 2+} \frac{4\varepsilon\delta}{\varkappa^2} = 1$$
-\subsubsection{$\tau_{p1} < \tau_{z1}$}
-Аналогично предыдущему случаю, предположим, что $\tau_{p1} < \tau_{z1}$, тогда из того, что $a > 0, c > 0$ следует, что $\delta > \varepsilon$. Положив $\varepsilon = \delta$ . Разделим на $\delta > 0$ и не умаляя общности положим $\delta = 1$ получим:
- \begin{equation}
- \begin{aligned}
-&a = \tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4 - \tau_{p1}^4\\
-&b = 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2 - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\\
-&c = \varkappa-2
- \end{aligned}
-\end{equation}
-$$\lim_{\varkappa \to 2+} \frac{4\varepsilon\delta}{\varkappa^2} = 1$$
-%\includegraphics[width=12cm]{images/filter2.jpg}
+\includegraphics[width=12cm]{images/filter2_tau0.jpg}\\
+
+Если $a > 0, c > 0$, тогда  при $b < 0$, уравнение может иметь 2 положительных корня. Дополнительно потребуем, что бы дискримининт уравнения $at^2 + bt +c = 0$ был не положительным. В этойм случаем получаем нелинейную оптимизационную задачу с нелинейными ограничениями, максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
+
+\includegraphics[width=12cm]{images/filter2_tau0_1.jpg}\\
 
 \subsection{$\tau > 0$}
 Предположим в \eqref{second_condition} $\tau > 0$ и разделим на $\tau_{p1}^4\tau$. Не умаляя общности, можем считать $\tau = 1$, тогда \eqref{second_condition} принимает следующий вид:

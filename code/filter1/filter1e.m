@@ -7,13 +7,16 @@ grid = [taoP1(:) taoP2(:)];
 a = grid(:, 1)+grid(:, 2);
 b = grid(:, 1).*grid(:, 2);
 
+%x(1) = tau
+%x(2) = delta
+%x(3) = kappa
 M = [];
 A = [];
 B = [];
-fun = @(x)-(4*x(1)*x(2)/(x(3))^2);
-x0 = [0.05, 0.5, 1, 0.7];
-lb = [0.00000001,0.0001, 0.00001, 0.00000001];
-ub = [10000,10000,10000, 1000000];
+fun = @(x)-(4*(x(3)-x(1)-x(2))*x(2)/(x(3))^2);
+x0 = [0.05, 0.5, 1];
+lb = [0.00000001,0.0001, 0.00001];
+ub = [10000,10000,10000];
 AA = [];
 b1 = [];
 Aeq = [];
@@ -23,22 +26,28 @@ for i=1:length(a)
     bi = b(i);
     options = optimoptions('fmincon','Display','off','Algorithm','sqp');
     M1 = fmincon(fun,x0,AA,b1,Aeq,beq,lb,ub,@discriminant,options);
-        if((-M1(3)*bi+M1(4)-M1(2)*ai^2 + 2*M1(2)*bi) > 0 && (M1(4)*ai^2-2*M1(4)*bi - M1(2)*bi^2) > 0 && M1(4) > 0)
+        if((-M1(3)*bi+M1(1)-M1(2)*ai^2 + 2*M1(2)*bi) > 0 && (M1(1)*ai^2-2*M1(1)*bi - M1(2)*bi^2) > 0 && M1(1) > 0)
             M(i) = -fun(M1);
-            A(i) = ai;
-            B(i) = bi;
-            disp(-M1(3)*bi+M1(4)-M1(2)*ai^2 + 2*M1(2)*bi)
+            A(i) = grid(i, 1);
+            B(i) = grid(i, 2);
+            disp(i/length(a));
         end
-    %M(i) = 1000*vpasolve(0.5*pi*t/(t*asin(t) + sqrt(1-t^2)) == M(i), t);
 end
 
-plot3(grid(:, 1), grid(:, 2), M);
+plot3(A, B, M,'.');
+axis equal
+xlabel('tauP1')
+ylabel('tauP2')
+zlabel('nu^2')
 
+%a > 0
+%b > 0
+%c > 0
 function [c,ceq] = discriminant(x)
-c(1) = -(-x(3)*bi+x(4)-x(2)*ai^2 + 2*x(2)*bi);
-c(2) = -(x(4)*ai^2-2*x(4)*bi - x(2)*bi^2);
-c(3) = -bi^2*x(4);
-c(4) = -(x(3)-x(2)-1-x(1));
+c(1) = -(-x(3)*bi+x(1)-x(2)*ai^2 + 2*x(2)*bi);
+c(2) = -(x(1)*ai^2-2*x(1)*bi - x(2)*bi^2);
+c(3) = -bi^2*x(1);
+c(4) = -(x(3)-x(2)-x(1));
 ceq = [];
 end
 end

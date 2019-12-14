@@ -27,4 +27,8 @@ f2 = p*Ki - q*f - r*f1 - s;
 f3 = subs(f2, r, 0);
 disp(simplify(real(f3)));
 
+
+f = 4*s*(1 - b) - 4*s^2*(a^2 -2*b +1);
+f = subs(f, s, (1-b)/(2*(a^2 - 2*b +1)));
+disp(simplify(real(f)));
 end

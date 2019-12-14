@@ -39,6 +39,10 @@ for i=1:length(a)
 end
 
 plot3(A, B, M);
+axis equal
+xlabel('tauP1')
+ylabel('tauZ1')
+zlabel('f')
 
 %a > 0
 %c > 0
