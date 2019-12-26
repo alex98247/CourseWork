@@ -1,43 +1,85 @@
-\documentclass[a4paper]{article}
-\usepackage[14pt]{extsizes} % для того чтобы задать нестандартный 14-ый размер шрифта
+\documentclass[a4paper,14pt]{extarticle} % 14й шрифт
+\usepackage{extsizes}
+\usepackage{cmap} % для кодировки шрифтов в pdf
+\usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
-\usepackage{setspace,amsmath}
-\usepackage[left=20mm, top=15mm, right=15mm, bottom=15mm, nohead, footskip=10mm]{geometry} 
-\usepackage[pdftex]{graphicx}
-\usepackage{stix}
-\usepackage{amsfonts}
-\usepackage{listings}
+\usepackage{amssymb,amsfonts,amsmath,amsthm} % математические дополнения от АМС
+\usepackage[left=20mm, top=15mm, right=15mm, bottom=15mm, nohead, footskip=10mm]{geometry} % настройки полей документа
+\usepackage{graphicx}
 \usepackage{float}
-\usepackage{amssymb}
-\usepackage{color}
 \usepackage{textcomp}
 \usepackage{subcaption}
-\definecolor{listinggray}{gray}{0.9}
-\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \usepackage{amsthm}% настройки полей документа
-\lstset{
-    language=java,
-    upquote=true,
-    aboveskip={1.5\baselineskip},
-    columns=fullflexible,
-    showstringspaces=false,
-    extendedchars=true,
-    breaklines=true,
-    showtabs=false,
-    showspaces=false,
-    showstringspaces=false,
-    identifierstyle=\ttfamily,
-    keywordstyle=\color[rgb]{0,0,1},
-    commentstyle=\color[rgb]{0.133,0.545,0.133},
-    stringstyle=\color[rgb]{0.627,0.126,0.941},
-}
+
+\renewcommand{\rmdefault}{ftm} % Times New Roman
+\frenchspacing
 
 \newtheorem{definition}{Определение}
 \newtheorem{theorem}{Теорема}
  
 \begin{document} % начало документа
 
+
+ 
+% НАЧАЛО ТИТУЛЬНОГО ЛИСТА
+\begin{center}
+\hfill \break
+\normalsize{Санкт-Петербургский государственный университет}\\ 
+\hfill \break
+\normalsize{Отделение прикладной математики и информатики}\\
+\normalsize{\textbf{Кафедра прикладной кибернетики}}\\
+\hfill \break
+\hfill \break 
+\hfill \break
+\hfill \break
+\hfill\break
+\hfill \break
+\normalsize{Миронов Алексей Владиславович}\\
+\hfill \break
+\large{Оценка области захвата для систем ФАПЧ 3 порядка}\\
+\hfill \break
+\small{Выпускная квалификационная работа}\\
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\end{center}
+ 
+\hfill \break
+\hfill \break
+\hfill \break
+ 
+ \small{
+\begin{flushright}
+Научный руководитель:\\
+доцент, профессор Юлдашев Р. В.
+\end{flushright}
+}
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\hfill \break
+\begin{center} Санкт-Петербург \\
+2019 \end{center}
+\thispagestyle{empty} % выключаем отображение номера для этой страницы
+ 
+% КОНЕЦ ТИТУЛЬНОГО ЛИСТА
+
+\newpage
 \section{Введение}
 Рассмотрим систему:
  \begin{equation}\label{etalon_system}
@@ -79,7 +121,7 @@
 
 Here A, B, C, and R are constant matrices of dimensions n × n, n × m, n × m, and n × n, respectively, whereas the components $\phi_k$, $1 \leq  k \leq m$, of the vector-valued function $f(\sigma)$ are scalar differen-tiable functions $\phi_k$ = $\phi_k(\sigma_k)$, where $\psi_k$ is the k-th component of the vector $\psi$.\\
 
-Recall that any pendulum-like system with a single scalar non-linearity and an irreducible transfer function $\varkappa(p)$ can be written in the form \eqref{system} with m = 1 by a nonsingular linear transformation of phase coordinates. Further we assume that the functions $\phi_k(\sigma_k)$ satisfy the followingconditions: $\phi_k(\sigma_k) \nequiv 0$\\
+Recall that any pendulum-like system with a single scalar non-linearity and an irreducible transfer function $\chi(p)$ can be written in the form \eqref{system} with m = 1 by a nonsingular linear transformation of phase coordinates. Further we assume that the functions $\phi_k(\sigma_k)$ satisfy the followingconditions: $\phi_k(\sigma_k) \equiv 0$\\
  \begin{equation}
  \begin{aligned}
 &\mu_{1k} \leq \frac{d\varphi_k(\sigma_k)}{d\sigma_k} \leq \mu_{2k}, \forall \sigma_k \in \mathbb{R}\\
@@ -115,7 +157,7 @@ and the diagonal m × m matrices:
 \end{aligned}
 \end{equation}
 
-\begin{theorem}
+\begin{theorem}\label{th1}
 Suppose that the stationary set $\Lambda$ of system \eqref{system} consists of isolated points, the pair (A, B) is controllable, the matrix A is Hurwitz, and there exist diagonal m × m matrices $\varepsilon > 0, \delta > 0, \tau \geq 0$, and $\varkappa$ such that the following inequalities are valid:
  \begin{equation}
  \begin{aligned}
@@ -145,7 +187,7 @@ Then system \eqref{system} is gradient-like.
 \end{equation}
 \section{Теорема Декарта}
 \begin{theorem}
-Если многочлена записанного в стандартной форме действительные и все его корни также заведомо действительные, то число его положительных корней, если учитывать их кратности, равно числу перемен знаков в ряде его коэффициентов. Если же оно имеет и комплексные корни, то число это равно или на некоторое четное число меньше числа этих перемен знаков.
+Если у полинома записанного в стандартной форме все коэффициенты действительные и все его корни также заведомо действительные, то число его положительных корней, если учитывать их кратности, равно числу перемен знаков в ряде его коэффициентов. Если же он имеет и комплексные корни, то это число равно или на четное число меньше числа знакоперемен.
 \end{theorem}
 \section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}x)(1+\tau_{p2}x)}$}
  Рассмотрим передаточную функцию:
@@ -155,7 +197,7 @@ K(x) = \frac{1}{(1+\tau_{p1}x)(1+\tau_{p2}x)} = \frac{1}{1+(\tau_{p1}+\tau_{p2})
  \end{aligned}
 \end{equation}
 Введем обозначения: $a = \tau_{p1}+\tau_{p2}$, $b = \tau_{p1}\tau_{p2}$\\
-Рассмотрим первое условие теоремы:
+Рассмотрим первое условие теоремы \ref{th1}
 \begin{equation}
  \begin{aligned}
 Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delta
@@ -164,24 +206,23 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 % $K(ix)=\frac{1}{1+aix + bix^2}=\frac{1-bx^2-iax}{(1-bx^2)^2 + a^2x^2}$\\\\
 % $K(ix)^*K(ix)=\frac{1}{(1-bx^2)^2 + a^2x^2}$\\
 % $\frac{\tau b^2x^6 + (\tau a^2-2*\tau*b)x^4 + (\varkappa*b+\tau)x^2 + (\varkappa-\varepsilon-\tau)}{(1-bx^2)^2 + a^2x^2}\geq\delta$\\
-Подставим, рассматриваемую передаточную функцию в условие теоремы. В результате первое условие теоремы принимает следующий вид:
+Подставим \eqref{filter1} в условие теоремы \ref{th1} и перенесем все в левую часть неравенства. В результате преобразований первое условие теоремы \ref{th1} принимает следующий вид:
 \begin{equation}\label{first_condition}
  \begin{aligned}
 &\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (-\varkappa b+\tau-\delta a^2 + 2\delta b)t + (\varkappa-\varepsilon-\tau-\delta) \geq 0\\
 &t \geq 0
  \end{aligned}
 \end{equation}
-Второе условие теоремы имеет вид: 
+Из второго условие теоремы \ref{th1} получаем: 
 \begin{equation}
  \begin{aligned}
-&4\varepsilon\delta > \nu^2\varkappa^2\\
-&\frac{4\varepsilon\delta}{\varkappa^2} > \nu^2\\
+\frac{4\varepsilon\delta}{\varkappa^2} > \nu^2
  \end{aligned}
 \end{equation}
-Будем искать максимум $\frac{4\varepsilon\delta}{\varkappa^2}$
+Для оценки полосы захвата системы \eqref{etalon_system} будем искать максимум $\nu$.
 
 \subsection{Оценка максимума $\nu$ константой}
-Очевидно, что для того чтобы выполнялось \eqref{first_condition} нужно  $\varkappa - \varepsilon - \tau - \delta \geq 0$
+Очевидно, что для того чтобы выполнялось \eqref{first_condition} нужно потребовать  $\varkappa - \varepsilon - \tau - \delta \geq 0$, тогда
 \begin{equation}\label{const_ineq}
  \begin{aligned}
 &\varkappa \geq \varepsilon+\tau+\delta \\
@@ -208,7 +249,7 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 &C = -\varkappa b+\tau-\delta a^2 + 2\delta b
  \end{aligned}
 \end{equation}
-Заметим, что для того, что бы выполнялось \eqref{ineq1} необходимо потребовать $A > 0$ и $C \geq 0$, тогда $B \geq 0$. Тогда по теореме Декарта уравнение $At^2 + Bt + C = 0$ не имеет положительных корней, т.е. выполняется \eqref{ineq1}. Не умаляя общности, можем положить $\varkappa = 1$ и будем искать максимум следующей функции: 
+Заметим, что для того, что бы выполнялось \eqref{ineq1} необходимо потребовать $A \geq 0$ и $C \geq 0$, тогда $B \geq 0$. Тогда по теореме Декарта уравнение $At^2 + Bt + C = 0$ не имеет положительных корней, т.е. выполняется \eqref{ineq1}. Не умаляя общности, можем положить $\varkappa = 1$ и будем искать максимум следующей функции: 
 \begin{equation}\label{extr_filter1}
  \begin{aligned}
 &f(\delta) = 4\delta-4\tau\delta - 4\delta^2\\
@@ -229,7 +270,7 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 Максимум  \eqref{one_var_max} достигается при $\delta = \frac{1-b}{2(a^2 - 2b + 1)}$ и равен
 \begin{equation}\label{filter1_max}
  \begin{aligned}
-\frac{(b - 1)^2}{a^2 - 2b + 1} = \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1} 
+\frac{(b - 1)^2}{a^2 - 2b + 1} = \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1} > \nu^2
  \end{aligned}
 \end{equation} 
 
@@ -280,7 +321,24 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
 &C = \varkappa-\varepsilon - \delta
  \end{aligned}
 \end{equation}
-Для того, что бы выполнялось \eqref{second_condition_tau_zero} нужно потребовать: $A \geq 0$ и $C \geq 0$, тогда  при $B \geq 0$, по теореме Декарта уравнение не имеет положительных корней, т.е. выполняется \eqref{second_condition_tau_zero}. Не умаляя общности можем считать $\varkappa = 1$. Получили нелинейную оптимизационную задачу с линейными ограничениями, где максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
+Для того, что бы выполнялось \eqref{second_condition_tau_zero} нужно потребовать: $A \geq 0$ и $C \geq 0$, тогда  при $B \geq 0$, по теореме Декарта уравнение не имеет положительных корней, т.е. выполняется \eqref{second_condition_tau_zero}. Не умаляя общности можем считать $\varkappa = 1$. Получили задачу нахождения условного экстремума при условии:
+ \begin{equation}\label{filter2_1_area}
+ \begin{aligned}
+&\tau_{z1}^2\tau_{p1}^2 - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta \geq 0\\
+&4\tau_{z1}\tau_{p1} - \tau_{z1}^2 - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2 - 2\tau_{p1}^2\delta \geq 0\\
+&1-\varepsilon - \delta \geq 0
+ \end{aligned}
+\end{equation}
+Максимум может достигаться на границе, или в точках понижения ранга. Представим $\varepsilon$ как $\varepsilon(\delta)$ и рассмотрим функцию $\varepsilon\delta$ на границе области \eqref{filter2_1_area}
+ \begin{equation}\label{filter2_1_area_border}
+ \begin{aligned}
+&\frac{\tau_{p1}^2}{\tau_{z1}^2} - \frac{\tau_{p1}^4}{\tau_{z1}^4}\delta =\varepsilon\\
+&2\frac{\tau_{p1}}{\tau_{z1}} - \frac{1}{2} - \frac{\tau_{p1}^2}{2\tau_{z1}^2} - \frac{\tau_{p1}^2}{\tau_{z1}^2}\delta =  \varepsilon\\
+&\varepsilon = 1 - \delta
+ \end{aligned}
+\end{equation}
+ Для этого найдем пересечения прямых \eqref{filter2_1_area_border}:
+  Максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
 
 \includegraphics[width=12cm]{images/filter2_tau0.jpg}\\
 
@@ -293,11 +351,28 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
  \begin{equation}
  \begin{aligned}
 &t^3 +at^2 +bt + c  \geq 0\\
-&a = \frac{1}{\tau_{p1}^4}(- \tau_{z1}^4\varepsilon - \tau_{z1}^4 + 2\tau_{p1}^2- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)\\
-&b = \frac{1}{\tau_{p1}^4}( 1- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2+ 4\tau_{z1}\tau_{p1}\varkappa- 2\tau_{p1}^2\delta)\\
-&c = \frac{1}{\tau_{p1}^4}(\varkappa-\varepsilon - 1 - \delta)\\
+&A = \frac{1}{\tau_{p1}^4}(- \tau_{z1}^4\varepsilon - \tau_{z1}^4 + 2\tau_{p1}^2- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)\\
+&B = \frac{1}{\tau_{p1}^4}( 1- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2+ 4\tau_{z1}\tau_{p1}\varkappa- 2\tau_{p1}^2\delta)\\
+&C = \frac{1}{\tau_{p1}^4}(\varkappa-\varepsilon - 1 - \delta)\\
 &t = x^2 \geq 0
  \end{aligned}
 \end{equation}
 Заметим, что по теореме Декарта: $a \geq 0, b \geq 0, c \geq 0$
+
+ \begin{equation}
+ \begin{aligned}
+ &\dot{z} = Az + B\varphi(\sigma)\\
+ &\dot{\sigma} = C^*z + Rvarphi(\sigma)
+ \end{aligned}
+\end{equation}
+ \begin{equation}
+ \begin{aligned}
+& \mu_1^{-1} = -1, \mu_2^{-1} = 1\\
+ \end{aligned}
+\end{equation}
+ \begin{equation}
+ \begin{aligned}
+& 2 > \nu^2
+ \end{aligned}
+\end{equation}
 \end{document}  % КОНЕЦ ДОКУМЕНТА !
