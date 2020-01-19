@@ -338,11 +338,30 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
  \end{aligned}
 \end{equation}
  Для этого найдем пересечения прямых \eqref{filter2_1_area_border}:
+  \begin{equation}
+ \begin{aligned}
+&\delta = \frac{1}{1+z^2}, \varepsilon = \frac{z^2}{1+z^2}\\
+&\delta = \frac{1-q}{1-z^2}, \varepsilon = \frac{q-z^2}{1-z^2}\\
+&\delta = \frac{z^2-q}{z^4-z^2}, \varepsilon = z^2 - \frac{z^4(z^2-q)}{z^4-z^2}\\
+&z = \frac{\tau_{p1}}{\tau_{z1}}\\
+&q = 2z - \frac{1}{2} - \frac{1}{2}z^2\\
+ \end{aligned}
+\end{equation}
+Оценки максимума на границе \eqref{filter2_1_area_border}:
+  \begin{equation}
+ \begin{aligned}
+&\delta = \frac{1}{2}, \varepsilon = \frac{1}{2}, \varepsilon\delta = \frac{1}{4}\\
+&\delta = \frac{1}{2z^2}, \varepsilon = \frac{z^2}{2}, \varepsilon\delta = \frac{1}{4}\\
+&\delta = \frac{q}{2z^2}, \varepsilon = \frac{q}{2}, \varepsilon\delta = \frac{q^2}{4z^2}\\
+ \end{aligned}
+\end{equation}
   Максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
 
 \includegraphics[width=12cm]{images/filter2_tau0.jpg}\\
 
-Если $a > 0, c > 0$, тогда  при $b < 0$, уравнение может иметь 2 положительных корня. Дополнительно потребуем, что бы дискримининт уравнения $at^2 + bt +c = 0$ был не положительным. В этойм случаем получаем нелинейную оптимизационную задачу с нелинейными ограничениями, максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
+
+
+Если $a > 0, c > 0$, тогда  при $b < 0$, уравнение может иметь 2 положительных корня. Дополнительно потребуем, что бы дискримининт уравнения $at^2 + bt +c = 0$ был не положительным. В этом случае получаем нелинейную оптимизационную задачу с нелинейными ограничениями, максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
 
 \includegraphics[width=12cm]{images/filter2_tau0_1.jpg}\\
 
@@ -358,4 +377,27 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
  \end{aligned}
 \end{equation}
 Заметим, что по теореме Декарта: $a \geq 0, b \geq 0, c \geq 0$
+
+\section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}$}
+ Рассмотрим передаточную функцию:
+ \begin{equation}\label{filter3}
+ \begin{aligned}
+K(x) = \frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}
+ \end{aligned}
+\end{equation}
+
+ \begin{equation}
+ \begin{aligned}
+&-\varepsilon + \varkappa - \delta + (- \alpha_2\varkappa + 2\alpha_2\delta - \alpha_1^2\delta - \alpha_1^2 \beta_1^2\varepsilon - \beta_2\alpha_2\varkappa + 2\beta_2\alpha_2\varepsilon + \alpha_1^2\beta_1\varkappa)t + \\
++& (\beta_2\alpha_2^2\varkappa - \beta_2^2\alpha_2^2\varepsilon - \alpha_2^2\delta)t^2 \geq 0
+ \end{aligned}
+\end{equation}
+
+ \begin{equation}
+ \begin{aligned}
+&-\varepsilon + 1 - \delta + (- \alpha_2 + 2\alpha_2\delta - \alpha_1^2\delta - \alpha_1^2 \beta_1^2\varepsilon - \beta_2\alpha_2 + 2\beta_2\alpha_2\varepsilon + \alpha_1^2\beta_1)t + \\
++& (\beta_2\alpha_2^2 - \beta_2^2\alpha_2^2\varepsilon - \alpha_2^2\delta)t^2 \geq 0
+ \end{aligned}
+\end{equation}
+Тогда первое условие теоремы принимает вид:
 \end{document}  % КОНЕЦ ДОКУМЕНТА !

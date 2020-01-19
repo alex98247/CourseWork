@@ -30,7 +30,7 @@ for i=1:length(a)
     end
 end
 
-plot3(A, B, M);
+plot3(A, B, M, '.');
 axis equal
 xlabel('tauP1')
 ylabel('tauZ1')
