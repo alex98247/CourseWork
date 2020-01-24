@@ -359,7 +359,19 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
 
 \includegraphics[width=12cm]{images/filter2_tau0.jpg}\\
 
+При $B < 0$ по теореме Декарта уравнение может иметь 2 корня. В этой ситуации потребуем отрицательность дискриминанта:
+  \begin{equation}
+ \begin{aligned}
+&-4\tau_{z1}^4 \varepsilon \delta + 8\tau_{z1}^4 \varepsilon + \tau_{z1}^4 - 16\tau_{z1}^3 \tau_{p1} \varepsilon - 8\tau_{z1}^3 \tau_{p1} + 8\tau_{z1}^2 \tau_{p1}^2 \varepsilon \delta + 8\tau_{z1}^2 \tau_{p1}^2 \varepsilon + 8\tau_{z1}^2 \tau_{p1}^2 \delta + \\
+& + 14\tau_{z1}^2 \tau_{p1}^2 - 16\tau_{z1} \tau_{p1}^3 \delta - 8\tau_{z1} \tau_{p1}^3 - 4\tau_{p1}^4 \varepsilon \delta + 8\tau_{p1}^4 \delta + \tau_{p1}^4 \leq 0
+ \end{aligned}
+\end{equation}
 
+  \begin{equation}
+ \begin{aligned}
+a\varepsilon + b\delta \geq \varepsilon\delta
+ \end{aligned}
+\end{equation}
 
 Если $a > 0, c > 0$, тогда  при $b < 0$, уравнение может иметь 2 положительных корня. Дополнительно потребуем, что бы дискримининт уравнения $at^2 + bt +c = 0$ был не положительным. В этом случае получаем нелинейную оптимизационную задачу с нелинейными ограничениями, максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
 
@@ -385,19 +397,18 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
 K(x) = \frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}
  \end{aligned}
 \end{equation}
-
+Тогда первое условие теоремы принимает вид:
  \begin{equation}
  \begin{aligned}
 &-\varepsilon + \varkappa - \delta + (- \alpha_2\varkappa + 2\alpha_2\delta - \alpha_1^2\delta - \alpha_1^2 \beta_1^2\varepsilon - \beta_2\alpha_2\varkappa + 2\beta_2\alpha_2\varepsilon + \alpha_1^2\beta_1\varkappa)t + \\
 +& (\beta_2\alpha_2^2\varkappa - \beta_2^2\alpha_2^2\varepsilon - \alpha_2^2\delta)t^2 \geq 0
  \end{aligned}
 \end{equation}
-
+Не умаляя общности положим $\varkappa = 1$:
  \begin{equation}
  \begin{aligned}
-&-\varepsilon + 1 - \delta + (- \alpha_2 + 2\alpha_2\delta - \alpha_1^2\delta - \alpha_1^2 \beta_1^2\varepsilon - \beta_2\alpha_2 + 2\beta_2\alpha_2\varepsilon + \alpha_1^2\beta_1)t + \\
-+& (\beta_2\alpha_2^2 - \beta_2^2\alpha_2^2\varepsilon - \alpha_2^2\delta)t^2 \geq 0
+&(\beta_2\alpha_2^2 - \beta_2^2\alpha_2^2\varepsilon - \alpha_2^2\delta)t^2 + (- \alpha_2 + 2\alpha_2\delta - \alpha_1^2\delta - \alpha_1^2 \beta_1^2\varepsilon - \beta_2\alpha_2 + 2\beta_2\alpha_2\varepsilon + \alpha_1^2\beta_1)t +\\
+&  + 1 -\varepsilon - \delta  \geq 0
  \end{aligned}
 \end{equation}
-Тогда первое условие теоремы принимает вид:
 \end{document}  % КОНЕЦ ДОКУМЕНТА !

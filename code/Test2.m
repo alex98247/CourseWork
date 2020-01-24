@@ -23,6 +23,8 @@ f = Ki*conj(Ki);
 f1 = conj(Ki-1i*x)*(Ki+1i*x);
 f2 = p*Ki - q*f - r*f1 - s;
 f3 = subs(f2, r, 0);
+f3 = subs(f3, s, 1-s);
+f3 = subs(f3, p, 1);
 disp(simplify(real(f3)));
 
 K = (1+2*a*x+a^2*x^2)/(1+2*b*x+b^2*x^2);
@@ -37,4 +39,8 @@ f3 = subs(f2, r, 0);
 f = 4*s*(1 - b) - 4*s^2*(a^2 -2*b +1);
 f = subs(f, s, (1-b)/(2*(a^2 - 2*b +1)));
 %disp(simplify(real(f)));
+
+%Discriminant for filter 2
+f = (4*a*b-a^2-2*a^2*q-b^2-2*b^2*s)^2-4*(a^2*b^2-a^4*q-b^4*s)*(1-q-s);
+disp(simplify(f));
 end
