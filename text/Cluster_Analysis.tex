@@ -397,18 +397,61 @@ a\varepsilon + b\delta \geq \varepsilon\delta
 K(x) = \frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}
  \end{aligned}
 \end{equation}
-Тогда первое условие теоремы принимает вид:
+Подставим \eqref{filter3} в условие теоремы \ref{th1} и перенесем все в левую часть неравенства. В результате преобразований первое условие теоремы \ref{th1} принимает следующий вид:
  \begin{equation}
  \begin{aligned}
-&-\varepsilon + \varkappa - \delta + (- \alpha_2\varkappa + 2\alpha_2\delta - \alpha_1^2\delta - \alpha_1^2 \beta_1^2\varepsilon - \beta_2\alpha_2\varkappa + 2\beta_2\alpha_2\varepsilon + \alpha_1^2\beta_1\varkappa)t + \\
-+& (\beta_2\alpha_2^2\varkappa - \beta_2^2\alpha_2^2\varepsilon - \alpha_2^2\delta)t^2 \geq 0
+&(-\varepsilon\alpha_2^2\beta_2^2 + \varkappa\alpha_2^2\beta_2 - \delta\alpha_2^2)t^2 + (-\varepsilon\alpha_1^2\beta_1^2 + \varkappa\alpha_1^2\beta_1 - \delta\alpha_1^2 - \alpha_2\varkappa + 2\alpha_2\delta - \alpha_2\beta_2\varkappa + 2\alpha_2\beta_2\varepsilon)t +\\
+& + \varkappa - \varepsilon - \delta \geq 0
  \end{aligned}
 \end{equation}
-Не умаляя общности положим $\varkappa = 1$:
+Не умаляя общности можем считать $\varkappa = 1$:
  \begin{equation}
  \begin{aligned}
-&(\beta_2\alpha_2^2 - \beta_2^2\alpha_2^2\varepsilon - \alpha_2^2\delta)t^2 + (- \alpha_2 + 2\alpha_2\delta - \alpha_1^2\delta - \alpha_1^2 \beta_1^2\varepsilon - \beta_2\alpha_2 + 2\beta_2\alpha_2\varepsilon + \alpha_1^2\beta_1)t +\\
-&  + 1 -\varepsilon - \delta  \geq 0
+&(-\varepsilon\alpha_2^2\beta_2^2 + \alpha_2^2\beta_2 - \delta\alpha_2^2)t^2 + (-\varepsilon\alpha_1^2\beta_1^2 + \alpha_1^2\beta_1 - \delta\alpha_1^2 - \alpha_2 + 2\alpha_2\delta - \alpha_2\beta_2 + 2\alpha_2\beta_2\varepsilon)t +\\
+& + 1 - \varepsilon - \delta \geq 0
  \end{aligned}
 \end{equation}
+Заметим, что $\varepsilon \leq 1 - \delta$. Для максимизации $\varepsilon\delta$ положим $\varepsilon = 1-\delta$.
+ \begin{equation}
+ \begin{aligned}
+(\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta)t + \alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geq 0
+ \end{aligned}
+\end{equation}
+Нужно потребовать что бы выполнялось следущее условие
+ \begin{equation}
+ \begin{aligned}
+\alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geq 0
+ \end{aligned}
+\end{equation}
+Тогда
+ \begin{equation}
+ \begin{aligned}
+&\alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2(\beta_1 - \delta - \beta_1^2 + \beta_1^2\delta) - 2\alpha_2\beta_2\delta \geq 0 \\
+&\alpha_1^2 \geq \frac{\alpha_2(1-\beta_2) - 2\alpha_2\delta(1-\beta_2)}{\beta_1(1-\beta_1) - \delta + \beta_1^2\delta} > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1) - \delta + \beta_1^2\delta} \xrightarrow[\delta \rightarrow 0]{} \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
+ \end{aligned}
+\end{equation}
+Получили
+ \begin{equation}
+ \begin{aligned}
+\alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
+ \end{aligned}
+\end{equation}
+Так как максимальное значение достигается на границе положим 
+ \begin{equation}
+ \begin{aligned}
+\alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta = 0
+ \end{aligned}
+\end{equation}
+Тогда 
+ \begin{equation}
+ \begin{aligned}
+\delta = \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)}
+ \end{aligned}
+ \end{equation}
+Получили, что
+ \begin{equation}
+ \begin{aligned}
+\nu^2 < 4\frac{[\alpha_1^2(1-\beta_1) - \alpha_2(1-\beta_2)][\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)]}{[\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)]^2}
+ \end{aligned}
+ \end{equation}
 \end{document}  % КОНЕЦ ДОКУМЕНТА !
