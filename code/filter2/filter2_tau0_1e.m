@@ -1,4 +1,4 @@
-function [M] = filter2_tau0_1e()
+function [M, A, B] = filter2_tau0_1e()
 x = sym('x');
 
 %For tau = 0
@@ -28,13 +28,12 @@ for i=1:length(a)
 
     if(ai ~= bi)
         M1 = fmincon(fun,x0,AA,b1,Aeq,beq,lb,ub,@con,options);
-        if((-ai^4*M1(1)- bi^4*M1(2)+ ai^2*bi^2*M1(3)) > 0 && (ai^2*M1(3)+ 2*ai^2*M1(1)+ bi^2*M1(3)+ 2*bi^2*M1(2)- 4*ai*bi*M1(3)) > 0 && (-M1(1) + M1(3) - M1(2)) > 0)
+        %if((-ai^4*M1(1)- bi^4*M1(2)+ ai^2*bi^2*M1(3)) > 0 && (ai^2*M1(3)+ 2*ai^2*M1(1)+ bi^2*M1(3)+ 2*bi^2*M1(2)- 4*ai*bi*M1(3)) > 0 && (-M1(1) + M1(3) - M1(2)) > 0 && M1(1) > 0&& M1(2) > 0&& M1(3) > 0)
             M(i) = -fun(M1);
             A(i) = ai;
             B(i) = bi;
-            %M(i) = Kvco*vpasolve(0.5*pi*x/(x*asin(x)+sqrt(1-x^2)) - M(i));
             disp(i*100/length(a));
-        end
+        %end
     end
 end
 
@@ -42,15 +41,18 @@ plot3(A, B, M,'.');
 axis equal
 xlabel('tauP1')
 ylabel('tauZ1')
-zlabel('f')
+zlabel('nu^2')
 
 %a > 0
 %c > 0
 %b > 0
 function [c,ceq] = con(x)
 c(1) = -(-ai^4*x(1)- bi^4*x(2)+ ai^2*bi^2*x(3));
-c(2) = -(ai^2*x(3)+ 2*ai^2*x(1)+ bi^2*x(3)+ 2*bi^2*x(2)- 4*ai*bi*x(3));
+c(2) = -(-ai^2*x(3)- 2*ai^2*x(1)- bi^2*x(3)- 2*bi^2*x(2)+ 4*ai*bi*x(3));
 c(3) = -(-x(1) + x(3) - x(2));
+c(4) = -x(1);
+c(5) = -x(2);
+c(6) = -x(3);
 ceq = [];
 end
 end

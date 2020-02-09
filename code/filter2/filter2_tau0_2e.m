@@ -32,13 +32,12 @@ for i=1:length(a)
             M(i) = -fun(M1);
             A(i) = ai;
             B(i) = bi;
-            %M(i) = Kvco*vpasolve(0.5*pi*x/(x*asin(x)+sqrt(1-x^2)) - M(i));
             disp(i*100/length(a));
         end
     end
 end
 
-plot3(A, B, M);
+plot3(A, B, M, '.');
 axis equal
 xlabel('tauP1')
 ylabel('tauZ1')
@@ -46,13 +45,11 @@ zlabel('f')
 
 %a > 0
 %c > 0
-%b < 0
 %D < 0
 function [c,ceq] = con(x)
 c(1) = (ai^2*x(3)+ 2*ai^2*x(1)+ bi^2*x(3)+ 2*bi^2*x(2)- 4*ai*bi*x(3))^2-4*(ai^4*x(1)+ bi^4*x(2)- ai^2*bi^2*x(3))*(x(1) - x(3) + x(2));
 c(2) = -(-ai^4*x(1)- bi^4*x(2)+ ai^2*bi^2*x(3));
-c(3) = (ai^2*x(3)+ 2*ai^2*x(1)+ bi^2*x(3)+ 2*bi^2*x(2)- 4*ai*bi*x(3));
-c(4) = -(-x(1) + x(3) - x(2));
+c(3) = -(-x(1) + x(3) - x(2));
 ceq = [];
 end
 end

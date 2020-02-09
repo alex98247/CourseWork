@@ -1,4 +1,4 @@
-function [M] = filter2_tau0_1()
+function [M, A, B] = filter2_tau0_1()
 
 %For tau = 0
 %a > 0
@@ -10,25 +10,25 @@ grid = [taoP1(:) taoZ1(:)];
 a = grid(:, 1);
 b = grid(:, 2);
 
-A = [];
-B = [];
-M = [];
+A1 = [];
+B1 = [];
+M1 = [];
 
 for i=1:length(a)
     if(a(i) > b(i))
-        A(i) = a(i);
-        B(i) = b(i);
-        M(i) = 4*maximize(a(i), b(i));
+        tmp = 4*maximize(a(i), b(i));
+        if tmp ~= 0
+            A1(i) = a(i);
+            B1(i) = b(i);
+            M1(i) = tmp;
+        end
     end
 end
 
-for i=1:length(a)
-    if(a(i) < b(i))
-        A(i+length(a)) = a(i);
-        B(i+length(a)) = b(i);
-        M(i+length(a)) = 4*maximize(b(i), a(i));
-    end
-end
+%symmetry with respect to a line x=y
+A = [A1, B1];
+B = [B1, A1];
+M = [M1, M1];
 
 plot3(A, B, M, '.');
 axis equal
