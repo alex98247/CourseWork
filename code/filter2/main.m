@@ -1,4 +1,4 @@
-[M1, A1, B1] = filter2_tau0_1e();
+[M1, A1, B1] = filter2_tau0_2e();
 [M2, A2, B2] = filter2_tau0_1();
 
 %Show results of exact and calculated values nu^2 

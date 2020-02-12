@@ -1,10 +1,8 @@
-function [M] = filter2()
-x = sym('x');
+function [M, A, B] = filter2_tau0_2e()
 
 %For tau = 0
 [taoP1,taoP2] = meshgrid(0:0.01:1,0:0.01:1);
 grid = [taoP1(:) taoP2(:)];
-Kvco = 1000;
 
 a = grid(:, 1);
 b = grid(:, 2);
@@ -41,7 +39,7 @@ plot3(A, B, M, '.');
 axis equal
 xlabel('tauP1')
 ylabel('tauZ1')
-zlabel('f')
+zlabel('nu^2')
 
 %a > 0
 %c > 0

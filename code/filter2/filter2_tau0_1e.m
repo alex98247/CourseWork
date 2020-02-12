@@ -28,12 +28,12 @@ for i=1:length(a)
 
     if(ai ~= bi)
         M1 = fmincon(fun,x0,AA,b1,Aeq,beq,lb,ub,@con,options);
-        %if((-ai^4*M1(1)- bi^4*M1(2)+ ai^2*bi^2*M1(3)) > 0 && (ai^2*M1(3)+ 2*ai^2*M1(1)+ bi^2*M1(3)+ 2*bi^2*M1(2)- 4*ai*bi*M1(3)) > 0 && (-M1(1) + M1(3) - M1(2)) > 0 && M1(1) > 0&& M1(2) > 0&& M1(3) > 0)
+        if((-ai^4*M1(1)- bi^4*M1(2)+ ai^2*bi^2*M1(3)) > 0 && (ai^2*M1(3)+ 2*ai^2*M1(1)+ bi^2*M1(3)+ 2*bi^2*M1(2)- 4*ai*bi*M1(3)) > 0 && (-M1(1) + M1(3) - M1(2)) > 0 && M1(1) > 0&& M1(2) > 0&& M1(3) > 0)
             M(i) = -fun(M1);
             A(i) = ai;
             B(i) = bi;
             disp(i*100/length(a));
-        %end
+        end
     end
 end
 

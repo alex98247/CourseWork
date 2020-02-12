@@ -358,9 +358,29 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
 &\delta = \frac{q}{2z^2}, \varepsilon = \frac{q}{2}, \varepsilon\delta = \frac{q^2}{4z^2}\\
  \end{aligned}
 \end{equation}
-  Максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
 
-При $B < 0$ по теореме Декарта уравнение может иметь 2 корня. В этой ситуации потребуем отрицательность дискриминанта:
+  Максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
+  \begin{figure}[H]
+\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=9cm]{images/filter2_tau0_1e.jpg}
+  \caption{Численное приближение в MATLAB}
+  \label{filter2:sub1}
+\end{subfigure}%
+ \begin{subfigure}{.5\textwidth}
+  \includegraphics[width=9cm]{images/filter2_tau0_1.jpg}
+  \caption{Вычисленный график}
+  \label{filter2:sub2}
+\end{subfigure}%
+\caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$}
+\label{filter2:filter2_fig}
+\end{figure}
+
+  \begin{figure}[H]
+\includegraphics[width=9cm]{images/main.jpg}
+\caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$.  Синим цветом представлено точное решение, а оранжевым цветам представлено вычисленное решение параметра $\nu^2$}
+\end{figure}
+
+При $B < 0$ уравнение может иметь 2 корня. В этой ситуации потребуем отрицательность дискриминанта:
  \begin{equation}
  \begin{aligned}
 &-4\tau_{z1}^4 \varepsilon \delta + 8\tau_{z1}^4 \varepsilon + \tau_{z1}^4 - 16\tau_{z1}^3 \tau_{p1} \varepsilon - 8\tau_{z1}^3 \tau_{p1} + 8\tau_{z1}^2 \tau_{p1}^2 \varepsilon \delta + 8\tau_{z1}^2 \tau_{p1}^2 \varepsilon + 8\tau_{z1}^2 \tau_{p1}^2 \delta + \\
@@ -380,12 +400,6 @@ K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
  \end{aligned}
 \end{equation}
 
-  \begin{equation}
- \begin{aligned}
-a\varepsilon + b\delta \geq \varepsilon\delta
- \end{aligned}
-\end{equation}
-
 \subsection{$\tau > 0$}
 Предположим в \eqref{second_condition} $\tau > 0$ и разделим на $\tau_{p1}^4\tau$. Не умаляя общности, можем считать $\tau = 1$, тогда \eqref{second_condition} принимает следующий вид:
  \begin{equation}
@@ -397,7 +411,6 @@ a\varepsilon + b\delta \geq \varepsilon\delta
 &t = x^2 \geq 0
  \end{aligned}
 \end{equation}
-Заметим, что по теореме Декарта: $a \geq 0, b \geq 0, c \geq 0$
 
 \section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}$}
  Рассмотрим передаточную функцию:
@@ -467,7 +480,7 @@ K(x) = \frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}
  \begin{equation}
  \begin{aligned}
 &\alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2(\beta_1 - \delta - \beta_1^2 + \beta_1^2\delta) - 2\alpha_2\beta_2\delta \geq 0 \\
-&\alpha_1^2 \geq \frac{\alpha_2(1-\beta_2) - 2\alpha_2\delta(1-\beta_2)}{\beta_1(1-\beta_1) - \delta + \beta_1^2\delta} > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1) - \delta + \beta_1^2\delta} \xrightarrow[\delta \rightarrow 0]{} \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
+&\alpha_1^2 \geq \frac{\alpha_2(1-\beta_2) - 2\alpha_2\delta(1-\beta_2)}{\beta_1(1-\beta_1) - \delta + \beta_1^2\delta} > \frac{\alpha_2(1-\beta_2) - 2\alpha_2\delta(1-\beta_2)}{\beta_1(1-\beta_1)} \xrightarrow[\delta \rightarrow 0]{} \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
  \end{aligned}
 \end{equation}
 Получили
