@@ -15,6 +15,13 @@
 \renewcommand{\rmdefault}{ftm} % Times New Roman
 \frenchspacing
 
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{circuits}
+\usetikzlibrary{circuits.ee}
+\usetikzlibrary{circuits.ee.IEC}
+\usetikzlibrary{circuits.logic.IEC}
+
 \newtheorem{definition}{Определение}
 \newtheorem{theorem}{Теорема}
  
@@ -81,6 +88,24 @@
  \tableofcontents
 \newpage
 \section{Введение}
+Система фазовой автоподстройки частоты (ФАПЧ) -- это система с обратной связью, используемая для синхронизации сигналов эталонного и подстраиваемого генератора. При постоянной частоте эталонного генератора система ФАПЧ позволяет получить различные степени синхронизации. Например, система ФАПЧ 2 порядка, теоретически позволяет получить полную синхронизацию сигналов, т.е. получить сигнал с той же частотой и постоянну разность фаз. Наряду с системами ФАПЧ второго порядка исследуют системы третьего порядка. Одним из преимушеств ФАПЧ 3 порядка является хорошее подавлении шума и более низкая стационарная ошибка, чем в ФАПЧ второго порядка.
+\\\\
+\begin{tikzpicture}
+
+\node at (2,0) [draw, text width=4cm, align=center, rectangle] (a) {Фазовый детектор \par(компаратор)};
+\node[draw, align=center, rectangle] (loop_filter) [right=of a] {Фильтр};
+\node[draw, align=center, rectangle] (VCO) [right=of loop_filter] {ГУН};
+
+\draw[->] (-3,0) -- (a.west);
+\draw[->] (a.east) -- (loop_filter.west);
+\draw[->] (loop_filter.east) -- (VCO.west);
+\draw[->] (VCO.east) -- (11,0);
+\draw[->] (10,0) --  +(0,-2) --  +(-12,-2) --  +(-12,0);
+
+\end{tikzpicture}
+
+\newpage
+\section{Постановка задачи}
 Рассмотрим систему:
  \begin{equation}\label{etalon_system}
  \begin{aligned}
