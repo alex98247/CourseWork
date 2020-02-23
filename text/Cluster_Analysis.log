@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  22 FEB 2020 13:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  23 FEB 2020 15:23
 entering extended mode
 **./Cluster_Analysis.tex
 (Cluster_Analysis.tex
@@ -1279,102 +1279,116 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--114
  []
 
 [3]
+Overfull \hbox (9.82173pt too wide) in paragraph at lines 138--140
+\T2A/ftm/bx/n/12 си-стем с дис-крет-ным вре-ме-нем. Су-ще-ству-ют раз-лич-ные р
+е-а-ли-за-ции ана-ло-го-вых(непрерывных)
+ []
+
+[4] [5]
 LaTeX Font Info:    Trying to load font information for TS1+ftm on input line 1
-55.
-LaTeX Font Info:    No file TS1ftm.fd. on input line 155.
+82.
+LaTeX Font Info:    No file TS1ftm.fd. on input line 182.
 
 
 LaTeX Font Warning: Font shape `TS1/ftm/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `texttimes' on input line 155.
+(Font)              for symbol `texttimes' on input line 182.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--158
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--172
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
-[4]
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--199
+
+ []
+
 
 LaTeX Font Warning: Font shape `T2A/ftm/m/it' undefined
-(Font)              using `T2A/ftm/m/n' instead on input line 193.
+(Font)              using `T2A/ftm/m/n' instead on input line 220.
 
 
 LaTeX Font Warning: Font shape `TS1/ftm/m/it' undefined
 (Font)              using `TS1/ftm/m/n' instead
-(Font)              for symbol `texttimes' on input line 194.
+(Font)              for symbol `texttimes' on input line 221.
 
-[5]
-<images/filter1e.jpg, id=40, 1124.2pt x 843.15pt>
+[6] [7] [8]
+<images/filter1e.jpg, id=50, 1124.2pt x 843.15pt>
 File: images/filter1e.jpg Graphic file (type jpg)
 <use images/filter1e.jpg>
-Package pdftex.def Info: images/filter1e.jpg  used on input line 309.
+Package pdftex.def Info: images/filter1e.jpg  used on input line 337.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 309--310
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 337--338
 [][] 
  []
 
-<images/filter1_1.jpg, id=41, 1124.2pt x 843.15pt>
+<images/filter1_1.jpg, id=51, 1124.2pt x 843.15pt>
 File: images/filter1_1.jpg Graphic file (type jpg)
 <use images/filter1_1.jpg>
-Package pdftex.def Info: images/filter1_1.jpg  used on input line 314.
+Package pdftex.def Info: images/filter1_1.jpg  used on input line 342.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 314--315
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 342--343
 [][] 
  []
 
-[6] [7 <./images/filter1e.jpg> <./images/filter1_1.jpg>]
-<images/filter2_tau0_1e.jpg, id=52, 1124.2pt x 843.15pt>
+[9 <./images/filter1e.jpg> <./images/filter1_1.jpg>] [10]
+<images/filter2_tau0_1e.jpg, id=61, 1124.2pt x 843.15pt>
 File: images/filter2_tau0_1e.jpg Graphic file (type jpg)
 <use images/filter2_tau0_1e.jpg>
-Package pdftex.def Info: images/filter2_tau0_1e.jpg  used on input line 398.
+Package pdftex.def Info: images/filter2_tau0_1e.jpg  used on input line 427.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 398--399
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 427--428
 [][] 
  []
 
-<images/filter2_tau0_1.jpg, id=53, 1124.2pt x 843.15pt>
+<images/filter2_tau0_1.jpg, id=62, 1124.2pt x 843.15pt>
 File: images/filter2_tau0_1.jpg Graphic file (type jpg)
 <use images/filter2_tau0_1.jpg>
-Package pdftex.def Info: images/filter2_tau0_1.jpg  used on input line 403.
+Package pdftex.def Info: images/filter2_tau0_1.jpg  used on input line 432.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 403--404
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 432--433
 [][] 
  []
 
-[8]
-<images/main.jpg, id=57, 1124.2pt x 843.15pt>
+<images/main.jpg, id=63, 1124.2pt x 843.15pt>
 File: images/main.jpg Graphic file (type jpg)
 <use images/main.jpg>
-Package pdftex.def Info: images/main.jpg  used on input line 412.
+Package pdftex.def Info: images/main.jpg  used on input line 441.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
- [9 <./images/filter2_tau0_1e.jpg> <./images/filter2_tau0_1.jpg> <./images/main
-.jpg>] [10] [11] (Cluster_Analysis.aux)
+[11 <./images/filter2_tau0_1e.jpg> <./images/filter2_tau0_1.jpg>] [12 <./images
+/main.jpg>] [13]
+
+LaTeX Warning: Citation `Vshivkov' on page 14 undefined on input line 573.
+
+
+LaTeX Warning: Citation `LiuLiu' undefined on input line 574.
+
+[14] [15] (Cluster_Analysis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 18886 strings out of 492484
- 383760 string characters out of 3122053
- 430172 words of memory out of 3000000
- 22770 multiletter control sequences out of 15000+200000
- 19140 words of font info for 62 fonts, out of 3000000 for 9000
+ 18897 strings out of 492484
+ 383912 string characters out of 3122053
+ 430190 words of memory out of 3000000
+ 22775 multiletter control sequences out of 15000+200000
+ 19785 words of font info for 65 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,17n,76p,1658b,571s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,17n,76p,1628b,571s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Alex\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\t
 crm1200.pk> <C:\Users\Alex\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/d
 pi600\larm2074.pk> <C:\Users\Alex\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/l
@@ -1396,9 +1410,9 @@ s/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmsy8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on Cluster_Analysis.pdf (11 pages, 629697 bytes).
+Output written on Cluster_Analysis.pdf (15 pages, 642636 bytes).
 PDF statistics:
- 358 PDF objects out of 1000 (max. 8388607)
+ 385 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
