@@ -1,0 +1,114 @@
+\documentclass{beamer}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\mode<presentation> {
+\usetheme{Madrid}
+}
+
+\usepackage{graphicx}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Оценка области захвата для систем]{Оценка области захвата для систем ФАПЧ 3 порядка} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Миронов Алексей Владиславович} % Your name
+\institute[СПБГУ] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+Санкт-Петербургский государственный университет\\ % Your institution for the title page
+\vspace{0.7cm}
+    Научный руководитель:  д.ф.-м. н., профессор Юлдашев Р. В. \\
+    \vspace{0.7cm}
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Постановка задачи}
+Оценить полосу захвата для систем, описывающихся следующими передаточными функциями:
+ \begin{equation*}
+ \begin{aligned}
+&F(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}\\
+&\\
+&F(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\\
+&\\
+&F(s) = \frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)}
+ \end{aligned}
+\end{equation*}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Фильтр $F(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
+Оценка параметра $\nu^2$ для фильтра $F(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$
+\begin{equation*}
+\frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1} > \nu^2
+\end{equation*} 
+\begin{figure}[H]
+\includegraphics[width=6cm]{../images/filter1e.jpg}%
+\includegraphics[width=6cm]{../images/filter1_1.jpg}%
+\caption{1. Численное приближение в MATLAB 2. Аналитическое решение}
+\end{figure}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Фильтр $F(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
+
+Оценка параметра $\nu^2$ для фильтра $F(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$
+  \begin{figure}[H]
+  \includegraphics[width=5.7cm]{../images/filter2_tau0_1e.jpg}
+  \includegraphics[width=5.7cm]{../images/filter2_tau0_1.jpg}
+    \caption{1. Численное приближение в MATLAB 2. Аналитическое решение}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Фильтр $F(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
+
+  \begin{figure}[H] 
+  \includegraphics[width=7cm]{../images/main.jpg}
+\caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$.  Синим цветом представлено точное решение. Оранжевым цветом представлено аналитическое решение.}
+\end{figure}
+
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Фильтр $F(s) = \frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
+При рассмотрении фильтра $F(s) = \frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$  получаем следующую оценку параметра $\nu^2$:
+ \begin{equation*}
+ \begin{aligned}
+&\nu^2 < 4\frac{[\alpha_1^2(1-\beta_1) - \alpha_2(1-\beta_2)][\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)]}{[\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)]^2}\\
+&\alpha_1 = \tau_{p1} + \tau_{p2}\text{,}\quad 
+\alpha_2 = \tau_{p1}\tau_{p2}\text{,}\quad 
+\beta_1 = \frac{\tau_{z1}+\tau_{z2}}{\tau_{p1}+\tau_{p2}}\text{,}\quad 
+\beta_2 = \frac{\tau_{z1}\tau_{z2}}{\tau_{p1}\tau_{p2}}
+ \end{aligned}
+\end{equation*}
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+\Huge{\centerline{Спасибо за внимание}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
