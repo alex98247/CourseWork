@@ -140,10 +140,16 @@
 Сигнал эталонного генератора подается на вход кольца ФАПЧ. Фазовый детектор (компаратор) принимает сигнал от эталонного и подстраиваемого генераторов, в результате воздействия компаратора на выходе появляется сигнал
  \begin{equation*}
  \begin{aligned}
-\phi(\theta(t) - \eta(t))
+\upsilon_e(\theta_{ref}(t) - \theta_{vco}(t))
  \end{aligned}
 \end{equation*}
-Где $\eta(t)$ - фаза подстраиваемого генератора, $\theta(t)$ - фаза эталонного генератора, $\phi(\sigma)$ - характеристика фазового детектора, являющаяся $2\pi$ периодической функцией. Часто используют следующие характеристики фазового детектора: $\alpha$ $sin(\sigma)$ и 
+Где $\theta_{vco}(t)$ - фаза подстраиваемого генератора, $\theta_{ref}(t)$ - фаза эталонного генератора, $\upsilon_e(\theta_e(t))$ - характеристика фазового детектора, являющаяся $2\pi$ периодической функцией и функцию
+ \begin{equation*}
+ \begin{aligned}
+\theta_e(t) = \theta_{ref}(t) - \theta_{vco}(t)
+ \end{aligned}
+\end{equation*}
+называют фазовой ошибкой. На практике часто используют следующие характеристики фазового детектора: $\alpha$ $sin(\sigma)$ и 
 
 \begin{equation*}
 \phi(\sigma) = 
@@ -154,129 +160,96 @@
 \end{equation*}
 В настоящее время инженерами реализованы различные фазовые детекторы в виде микросхем, которые применяются в классических системах ФАПЧ и их модификациях.
 
-Cигнал компратора $\xi(t) = \phi(\theta(t) - \eta(t))$ поступает на вход фильтра нижних частот. Фильтр нижних частот является линейным оператором, входной $\xi(t)$ и выходной $\psi(t)$ сигналы которого связаны уравнениями
+Cигнал полученный на выходе компаратора $\upsilon_e(\theta_e(t))$ поступает на вход фильтра нижних частот. Связь входного $\upsilon_e(\theta_e(t))$ и выходного $\upsilon_f(t)$ сигналов фильтра нажних частот может быть описана уранениями
  \begin{equation*}
  \begin{aligned}
-\frac{dx}{dt} = Ax + b\xi(t) \\
-\psi(t) = c^*x + \rho\xi(t)
+\dot{x} = Ax + b\upsilon_e(\theta_e(t)) \text{,} \quad 
+\upsilon_f(t) = c^*x + h\upsilon_e(\theta_e(t))
  \end{aligned}
 \end{equation*}
-Где $A$ - постоянная матрица $n \times n$, $b$ и $c$ постоянные $n$-мерные векторы, $\rho$ - константа, $x(t)$ - $n$-мерный вектор состояний системы. Для практических применений инженерами были физически реализованы аналоговые(непрерывные) фильтры в виде RL-цепей, RLC-цепей и др., а для цифровые(дискретные) -- на цифровых элементах.
+Где $A$ - постоянная матрица $n \times n$, $b$ и $c$ постоянные $n$-мерные векторы, $h$ - константа, $x(t)$ - $n$-мерный вектор состояний системы. Для практических применений инженерами были физически реализованы аналоговые(непрерывные) фильтры в виде RL-цепей, RLC-цепей и др., а цифровые(дискретные) фильтры нижних частот реализуются на цифровых элементах.
 
 Выходной сигнал фильтра нижних частот поступает на вход генератора, управляемого напряжением. Происходит подстройка частоты ГУН
  \begin{equation*}
  \begin{aligned}
-\dot{\theta(t)} = \theta(0) + K_{vco}\psi(t)
+\dot{\theta}_{vco}(t) = \omega_{vco}(t) = \omega^{free}_{vco} + K_{vco}\upsilon_f(t)
  \end{aligned}
 \end{equation*}
+Где $\omega^{free}_{vco}$ - частота свободных колебаний ГУН, $K_{vco}$ - коэфициент передачи. При этом полагаем, что эталонный генератор работает на постоянной частоте
+ \begin{equation*}
+ \begin{aligned}
+\dot{\theta}_{ref}(t) = \omega_{ref}(t) \equiv \omega_{ref}
+ \end{aligned}
+\end{equation*}
+Разность между частотой эталонного генератора и частотой свободных колебаний ГУН обозначим
+ \begin{equation*}
+ \begin{aligned}
+\omega_e^{free} \equiv \omega_{ref} - \omega^{free}_{vco}
+ \end{aligned}
+\end{equation*}
+В результате получим систему дифференциальных уравнений, описывающих ФАПЧ
+ \begin{equation}\label{pllequations}
+ \begin{aligned}
+ &\dot{x} = Ax + b\upsilon_e(\theta_e)\\
+ &\dot{\theta}_e = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
+ \end{aligned}
+\end{equation}
+В системе \eqref{pllequations} сделаем следующие преобразования $-K_{vco}c -> c$, $-K_{vco}h -> h$. Тогда система \eqref{pllequations} принимает вид
+ \begin{equation}
+ \begin{aligned}
+ &\dot{x} = Ax + b\upsilon_e(\theta_e)\\
+ &\dot{\theta}_e = \omega_e^{free} - c^*x + h\upsilon_e(\theta_e)
+ \end{aligned}
+\end{equation}
+Сделаем замену
+ \begin{equation}
+ \begin{aligned}
+ &z = x + A^{-1}b\gamma \\
+ &\gamma = \frac{\omega_e^{free}}{c^*A^{-1}b-h}
+ \end{aligned}
+\end{equation}
+В результате получим систему
+ \begin{equation}\label{system}
+ \begin{aligned}
+ &\dot{z} = Az + b(\upsilon_e(\theta_e) - \gamma)\\
+ &\dot{\theta_e} = c^*z + h(\upsilon_e(\theta_e) - \gamma))
+ \end{aligned}
+\end{equation}
 
 \newpage
 \section{Постановка задачи}
-Рассмотрим систему:
- \begin{equation}\label{etalon_system}
- \begin{aligned}
- &\dot{x} = Ax + b\upsilon_e(\theta_e)\\
- &\dot{\theta_e} = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
- \end{aligned}
-\end{equation}
-Найдем стационарные точки системы \eqref{etalon_system}
- \begin{equation}\label{transition}
- \begin{aligned}
- &x = -A^{-1}b\upsilon_e(\theta_e)\\
- &\upsilon_e(\theta_e) = \frac{\omega_e^{free}}{K_{vco}H(0)}
- \end{aligned}
-\end{equation}
-Возьмем $\theta_e = \theta_s$, для которых выполняется \eqref{transition}. Сделаем замену:
- \begin{equation}\label{replacement1}
- \begin{aligned}
- &z =x + A^{-1}b\upsilon_e(\theta_s)\\
- &\sigma = \theta_e 
- \end{aligned}
-\end{equation}
-После замены система \eqref{etalon_system} принимает вид:
- \begin{equation}
- \begin{aligned}
- &\dot{z} = Az + b(\upsilon_e(\sigma) - \frac{\omega_e^{free}}{K_{vco}H(0)})\\
- &\dot{\sigma} = -K_{vco}(c^*z + h(\upsilon_e(\sigma) - \frac{\omega_e^{free}}{K_{vco}H(0)}))
- \end{aligned}
-\end{equation}
+Как было сказано ранее, системы фазовой автоподстройки частоты широко применяются в различных утройствах, таких как компьютеры, приемники и др., поэтому проводятся исследования систем ФАПЧ. Учеными было получено, что для эффективной работы по устранению расфазировки необходим синхронный запуск генераторов, т.е. начальное совпадение частот. Для практической реализации систем ФАПЧ огроное значение имеет анализ устойчивости режима удержания, поскольку это является достаточным условием устранения расфазировки.
 
-\newpage
-\section{Теорема}
-Рассмотрим систему:
- \begin{equation}\label{system}
+Рассмотрим систему\eqref{system}, предполагая, что функция $\upsilon_e(\theta_e)$ дифференцируема на $\mathbb {R}$ и удовлетворяет условиям
+ \begin{equation}\label{theoreme_inequation}
  \begin{aligned}
- &\dot{z} = Az + Bf(\sigma)\\
- &\dot{\sigma} = C^*z + Rf(\sigma)
+\mu_1 \leq \frac{d\varphi(\sigma)}{d\sigma} \leq \mu_2
  \end{aligned}
 \end{equation}
+В некоторых расчетах устойчивости иногда удобно учитывать только одно из неравенств \eqref{theoreme_inequation}: $\mu_1 \leq \varphi^\prime(\sigma)$ или $\mu_2 \geq \varphi^\prime(\sigma)$ будем считать в \eqref{theoreme_inequation} $\mu_1$ - либо некоторое отрицательное число, либо $-\infty$, а $\mu_2$ - либо некоторое положительное число, либо $+\infty$. В случае если $\mu_1 = 0$, примем обозначение $\mu_1^{-1} = 0$. Аналогично, если $\mu_2 = 0$, то -- $\mu_2^{-1} = 0$.
 
-Here A, B, C, and R are constant matrices of dimensions n × n, n × m, n × m, and n × n, respectively, whereas the components $\phi_k$, $1 \leq  k \leq m$, of the vector-valued function $f(\sigma)$ are scalar differen-tiable functions $\phi_k$ = $\phi_k(\sigma_k)$, where $\psi_k$ is the k-th component of the vector $\psi$.\\
-
-Recall that any pendulum-like system with a single scalar non-linearity and an irreducible transfer function $\chi(p)$ can be written in the form \eqref{system} with m = 1 by a nonsingular linear transformation of phase coordinates. Further we assume that the functions $\phi_k(\sigma_k)$ satisfy the followingconditions: $\phi_k(\sigma_k) \equiv 0$\\
+Введем в рассмотрение число:
  \begin{equation}
  \begin{aligned}
-&\mu_{1k} \leq \frac{d\varphi_k(\sigma_k)}{d\sigma_k} \leq \mu_{2k}, \forall \sigma_k \in \mathbb{R}\\
-&\varphi_k(\sigma_k+\Delta_k) = \varphi_k(\sigma_k), \forall \sigma_k \in \mathbb{R}
+\nu = \int_{0}^{2\pi} (\varphi(\sigma) - \gamma) d\sigma (\int_{0}^{2\pi} \mid \varphi(\sigma) - \gamma \mid d\sigma)^{-1}
  \end{aligned}
 \end{equation}
-Here the $\Delta_k$ are positive numbers. Sometimes, in the study of the specific pendulum-like systems, only one of the inequalities
+Напомним, что комплекснозначная функция
  \begin{equation}
  \begin{aligned}
-\mu_{1k} \leq \frac{d\varphi_k(\sigma_k)}{d\sigma_k}  or \frac{d\varphi_k(\sigma_k)}{d\sigma_k} \leq \mu_{2k}
- \end{aligned}
-\end{equation}
-is known, so we will assume the number $mu_{1k}$ to be either finite negative or $-\inf$, and the number $\mu_{2k}$ to be either finite positive or $\inf$.
-When $\mu_{1k} = -\inf$ or $\mu_{2k} = \inf$, we will use the notation $\mu_{1k}^{-1} = 0$ or $\mu_{2k}^{-1} = 0$, respectively.\\
-
-Let us introduce the numbers:
- \begin{equation}
- \begin{aligned}
-\nu_k = \int_{0}^{\Delta_k} \varphi_k(\sigma) d\sigma (\int_{0}^{\Delta_k} \mid \varphi_k(\sigma) \mid d\sigma)^{-1}
- \end{aligned}
-\end{equation}
-the transfer matrix of system \eqref{system} from its “input” $f$ to its “output” $(-d\sigma/dt)$
- \begin{equation}
- \begin{aligned}
-K(p) = C*(A - pI)^{-1}B - R
+K(s) = -c^*(A - sI)^{-1}b + h
 \end{aligned}
 \end{equation}
-and the diagonal m × m matrices:
- \begin{equation}
- \begin{aligned}
-&\mu_1 = diag [\mu_{11}, . . . , \mu_{1m}],    \mu_2 = diag [\mu_{21}, . . . , \mu_{2m}],\\
-&\nu = diag [\nu, _1. . . , \nu_m]
-\end{aligned}
-\end{equation}
+называется передаточной функцией системы \eqref{system}.
 
 \begin{theorem}\label{th1}
-Suppose that the stationary set $\Lambda$ of system \eqref{system} consists of isolated points, the pair (A, B) is controllable, the matrix A is Hurwitz, and there exist diagonal m × m matrices $\varepsilon > 0, \delta > 0, \tau \geq 0$, and $\varkappa$ such that the following inequalities are valid:
- \begin{equation}
- \begin{aligned}
-&Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)+\mu_1^{-1}ix]^*\tau[K(ix)+\mu_2^{-1}ix])\geq\delta, \forall x \in \mathbb{R}\\
+Пусть все нули функции $\varphi(\sigma) - \gamma$ изолированы, пара $(A, b)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные частии существуют числа $\varepsilon > 0, \delta > 0, \tau \geq 0$, и $\varkappa$, такие что имеют место неравенства:
+ \begin{align}
+&Re(\varkappa K(ix)- \varepsilon(K(ix))^2-[K(ix)+\mu_1^{-1}ix]^*\tau[K(ix)+\mu_2^{-1}ix])\geq\delta\text{,}\quad \forall x \in \mathbb{R}\label{first_th_eq}\\
 &4\varepsilon\delta > (\varkappa\nu)^2
- \end{aligned}
-\end{equation}
-Then system \eqref{system} is gradient-like.
+\end{align}
+Тогда система \eqref{system} глобально ассимптотически устойчива.
 \end{theorem}
-
-Очевидно, что систему \eqref{etalon_system} можно привести к системе  \eqref{system} положив: 
- \begin{equation}
- \begin{aligned}
-&A=A\\
-&B = b\\
-&C = -K_{vco}c^*\\
-&R = -K_{vco}h\\
-&f(\sigma) = \upsilon_e(\sigma) - \frac{\omega_e^{free}}{K_{vco}H(0)}
-\end{aligned}
-\end{equation}
-Положим далее:
- \begin{equation}
- \begin{aligned}
-&\upsilon_e(\sigma) =  sin(\sigma)\\
-&\frac{\omega_e^{free}}{K_{vco}H(0)} = \gamma
-\end{aligned}
-\end{equation}
 
 \newpage
 \section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
@@ -287,20 +260,10 @@ W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}
  \end{aligned}
 \end{equation}
 Введем обозначения: $a = \tau_{p1}+\tau_{p2}$, $b = \tau_{p1}\tau_{p2}$\\
-Рассмотрим первое условие теоремы \ref{th1}
-\begin{equation}
- \begin{aligned}
-Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delta
- \end{aligned}
-\end{equation}
-% $K(ix)=\frac{1}{1+aix + bix^2}=\frac{1-bx^2-iax}{(1-bx^2)^2 + a^2x^2}$\\\\
-% $K(ix)^*K(ix)=\frac{1}{(1-bx^2)^2 + a^2x^2}$\\
-% $\frac{\tau b^2x^6 + (\tau a^2-2*\tau*b)x^4 + (\varkappa*b+\tau)x^2 + (\varkappa-\varepsilon-\tau)}{(1-bx^2)^2 + a^2x^2}\geq\delta$\\
-Подставим \eqref{filter1} в условие теоремы \ref{th1} и перенесем все в левую часть неравенства. В результате преобразований первое условие теоремы \ref{th1} принимает следующий вид:
+Рассмотрим первое условие теоремы \ref{th1}. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. В результате преобразований получим
 \begin{equation}\label{first_condition}
  \begin{aligned}
-&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (-\varkappa b+\tau-\delta a^2 + 2\delta b)t + (\varkappa-\varepsilon-\tau-\delta) \geq 0\\
-&t \geq 0
+&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (-\varkappa b+\tau-\delta a^2 + 2\delta b)t + (\varkappa-\varepsilon-\tau-\delta) \geq 0 \text{,}\quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
 Из второго условия теоремы \ref{th1} получаем: 
@@ -312,7 +275,7 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 Для оценки полосы захвата системы \eqref{etalon_system} будем искать максимум $\nu$.
 
 \subsection{Оценка максимума $\nu$ константой}
-Очевидно, что для того чтобы выполнялось \eqref{first_condition} нужно потребовать  $\varkappa - \varepsilon - \tau - \delta \geq 0$, тогда
+Очевидно, что для того чтобы выполнялось \eqref{first_th_eq} нужно потребовать  $\varkappa - \varepsilon - \tau - \delta \geq 0$, тогда
 \begin{equation}\label{const_ineq}
  \begin{aligned}
 &\varkappa \geq \varepsilon+\tau+\delta \\
@@ -323,12 +286,11 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 \end{equation}
 
 \subsection{Точная оценка максимума $\nu$}
-2. Так как $\varkappa - \varepsilon - \tau - \delta \geq 0$, то $ \varepsilon \leq \varkappa - \tau - \delta$. Для максимизации функции $\frac{4\varepsilon\delta}{\varkappa^2}$ возьмем $\varepsilon = \varkappa - \tau - \delta$\\
+Так как $\varkappa - \varepsilon - \tau - \delta \geq 0$, то $ \varepsilon \leq \varkappa - \tau - \delta$. Для максимизации функции $\frac{4\varepsilon\delta}{\varkappa^2}$ возьмем $\varepsilon = \varkappa - \tau - \delta$\\
 Тогда первое условие теоремы принимает вид:
 \begin{equation}\label{ineq1} 
  \begin{aligned}
-&\tau b^2t^2 + (\tau a^2-2 \tau b - \delta b^2)t + (-\varkappa b+\tau-\delta a^2 + 2\delta b) \geq 0\\
-&t > 0
+&\tau b^2t^2 + (\tau a^2-2 \tau b - \delta b^2)t + (-\varkappa b+\tau-\delta a^2 + 2\delta b) \geq 0 \text{,}\quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
 Введем обозначения:
@@ -339,7 +301,7 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 &C = -\varkappa b+\tau-\delta a^2 + 2\delta b
  \end{aligned}
 \end{equation}
-Заметим, что для того, что бы выполнялось \eqref{ineq1} необходимо потребовать $A \geq 0$ и $C \geq 0$, тогда $B \geq 0$. Тогда по теореме Декарта уравнение $At^2 + Bt + C = 0$ не имеет положительных корней, т.е. выполняется \eqref{ineq1}. Не умаляя общности, можем положить $\varkappa = 1$ и будем искать максимум следующей функции: 
+Заметим, что для того, что бы выполнялось \eqref{ineq1} необходимо потребовать $A \geq 0$ и $C \geq 0$, тогда $B \geq 0$. В этом случае уравнение $At^2 + Bt + C = 0$ не имеет положительных корней, т.е. выполняется \eqref{ineq1}. Не умаляя общности, можем положить $\varkappa = 1$ и будем искать максимум следующей функции: 
 \begin{equation}\label{extr_filter1}
  \begin{aligned}
 &f(\delta) = 4\delta-4\tau\delta - 4\delta^2\\
@@ -380,11 +342,11 @@ Re(\varkappa K(ix)-K(ix)^*\varepsilon K(ix)-[K(ix)-ix]^*\tau[K(ix)+ix])\geq\delt
 \end{figure}
 
 \newpage
-\section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}$}
+\section{Оценка области захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
  Рассмотрим передаточную функцию:
  \begin{equation}\label{filter2}
  \begin{aligned}
-K(x) = \frac{(1+\tau_{z1}x)^2}{(1+\tau_{p1}x)^2}
+W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}
  \end{aligned}
 \end{equation}
 Предположим, что нелинейность $f(\sigma)=\phi(\sigma)$ имеет изолированные нули и удовлетворяет ???????.
@@ -563,31 +525,6 @@ K(x) = \frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}
  \begin{equation}\label{filter3-3}
  \begin{aligned}
 (\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta)t + \alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geq 0
- \end{aligned}
-\end{equation}
-Заметим, что 
- \begin{equation}
- \begin{aligned}
-\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta \geq 0
- \end{aligned}
-\end{equation}
-Для того что бы выполнялось \eqref{filter3-3} нужно потребовать, что бы выполнялось следущее условие
- \begin{equation}
- \begin{aligned}
-\alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geq 0
- \end{aligned}
-\end{equation}
-Тогда
- \begin{equation}
- \begin{aligned}
-&\alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2(\beta_1 - \delta - \beta_1^2 + \beta_1^2\delta) - 2\alpha_2\beta_2\delta \geq 0 \\
-&\alpha_1^2 \geq \frac{\alpha_2(1-\beta_2) - 2\alpha_2\delta(1-\beta_2)}{\beta_1(1-\beta_1) - \delta + \beta_1^2\delta} > \frac{\alpha_2(1-\beta_2) - 2\alpha_2\delta(1-\beta_2)}{\beta_1(1-\beta_1)} \xrightarrow[\delta \rightarrow 0]{} \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
- \end{aligned}
-\end{equation}
-Получили
- \begin{equation}
- \begin{aligned}
-\alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
  \end{aligned}
 \end{equation}
 Так как максимальное значение достигается на границе положим 
