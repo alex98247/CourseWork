@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  29 FEB 2020 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  1 MAR 2020 14:01
 entering extended mode
 **./template.tex
 (template.tex
@@ -459,7 +459,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \c@c_tab=\count121
 )
 (template.aux
-LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 5
+LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 7
 .
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cyrillic\t2acmr.fd"
@@ -467,20 +467,20 @@ File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
 \openout1 = `template.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -565,41 +565,37 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 460.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
 
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
 
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Citation `thirdOrderPLL' on page 1 undefined on input line 61.
-
 [1
 Non-PDF special ignored!
 <special> papersize=597.50787pt,845.04684pt
 
 {C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Overfull \hbox (35.12032pt too wide) detected at line 157
+Overfull \hbox (35.12032pt too wide) detected at line 82
 []
  []
 
-[2]
-Overfull \hbox (74.32358pt too wide) detected at line 172
-[][]
+[2] [3]
+
+LaTeX Warning: Reference `th1' on page 4 undefined on input line 152.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 192--193
+[]\T2A/cmr/m/n/10 Best R.E. Phase-Locked Loops: Design, Simulation, and
  []
 
-[3]
-Overfull \hbox (57.038pt too wide) detected at line 232
-[][]
- []
-
-[4] (template.aux)
+[5] (template.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -608,13 +604,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 5474 strings out of 492484
- 75259 string characters out of 3122053
- 157342 words of memory out of 3000000
- 9714 multiletter control sequences out of 15000+200000
+ 5483 strings out of 492484
+ 75373 string characters out of 3122053
+ 158386 words of memory out of 3000000
+ 9723 multiletter control sequences out of 15000+200000
  18387 words of font info for 46 fonts, out of 3000000 for 9000
  1142 hyphenation exceptions out of 8191
- 62i,10n,46p,586b,192s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,10n,46p,601b,192s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Alex\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lat
 i1000.pk> <C:\Users\Alex\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi
 600\larm0800.pk> <C:\Users\Alex\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-
@@ -632,11 +628,12 @@ pe1/public/amsfonts/cm/cmr5.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Alex/AppData/Local/Programs
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData/Lo
 cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Alex
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.p
-fb>
-Output written on template.pdf (4 pages, 188822 bytes).
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.p
+fb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb>
+Output written on template.pdf (5 pages, 216607 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
+ 381 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

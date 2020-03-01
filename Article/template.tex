@@ -1,27 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                                                                 %%%
-%%%     Санкт-Петербургский государственный университет             %%%
-%%%     факультет Прикладной математики — процессов управления      %%%
-%%%                                                                 %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                                                                 %%%
-%%%     Шаблон для подготовки статьи, набранной в пакете MikTeX,    %%%
-%%%     для ежегодной конференции аспирантов и студентов            %%%
-%%%                                                                 %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                                                                 %%%
-%%%                        ОСНОВНЫЕ ПРАВИЛА                         %%%
-%%%                                                                 %%%
-%%%     1. при оформлении основных элементов статьи следует         %%%
-%%%        использовать ниже описанные конструкции                  %%%
-%%%     2. изменять стилевой файл ЗАПРЕЩАЕТСЯ                       %%%
-%%%                                                                 %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                                                                 %%%
-%%%     Дата последнего изменения: 10.01.2020                       %%%
-%%%                                                                 %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass[a4paper]{article}
 \usepackage{pmstyle}
 
@@ -56,72 +32,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \razdel{Введение}
-В повседневной жизни мы пользумся компьютерами, телевизорами, GPS и другими устройствами, для эффективной работы которых необходима синхронизация частот сигналов. Для решения это задачи в первой половине XX века была изобретена система фазовой автоподстройки частоты (ФАПЧ) -- система с обратной связью, используемая для синхронизации сигналов эталонного и подстраиваемого генераторов. В настоящее время системы ФАПЧ и их модификации применяются в различных телекоммуникационном оборудовании, системах передачи данных и навигационных системах (GPS, ГЛОНАСС и Галилео).
+В повседневной жизни мы пользумся компьютерами, телевизорами, GPS и другими устройствами, для эффективной работы которых необходима синхронизация частот сигналов. Для решения это задачи в первой половине XX века была изобретена система фазовой автоподстройки частоты \cite{appleton} (ФАПЧ)~--- система с обратной связью, используемая для синхронизации сигналов эталонного и подстраиваемого генераторов. В настоящее время системы ФАПЧ применяются в различных телекоммуникационном оборудовании, навигационных системах и др.
 
-На практике часто рассматривают системы ФАПЧ второго порядка. Однако одиним из недостатков таких систем является, недостаточное подавление высокочастотного шума, который может существенно повлиять на функционирование системы в целом. Именно поэтому наряду с системами ФАПЧ второго порядка исследуются системы третьего порядка. Основными преимушествами ФАПЧ третьего порядка является хорошее подавление шума и более низкая стационарная ошибка \cite{thirdOrderPLL}.
+На практике часто рассматривают системы ФАПЧ второго порядка. Однако одиним из недостатков таких систем является, недостаточное подавление высокочастотного шума, который может существенно повлиять на функционирование системы, поэтому наряду с системами ФАПЧ второго порядка исследуются системы третьего порядка. Преимушествами ФАПЧ третьего порядка является хорошее подавление шума и более низкая стационарная ошибка \cite{thirdOrderPLL}.
 
-\iffalse
-\razdel{Устройство ФАПЧ} 
-Рассмотрим классическую систему фазовой автоподстройки частоты, которая состоит из фазового детектора (компоратора), фильтра нижних частот и генератора, управляемого напряжением.
-
-На вход кольца ФАПЧ поступает сигнал эталонного генератора. Фазовый детектор (компаратор) принимает сигнал от эталонного и подстраиваемого генераторов, в результате на выходе появляется сигнал
- \begin{equation*}
- \begin{aligned}
-\upsilon_e(\theta_{ref}(t) - \theta_{vco}(t))
- \end{aligned}
-\end{equation*}
-Где $\theta_{vco}(t)$ - фаза подстраиваемого генератора, $\theta_{ref}(t)$ - фаза эталонного генератора, $\upsilon_e(\theta_e(t))$ - $2\pi$ периодическая функция, называемая характеристикой фазового детектора.
- \begin{equation*}
- \begin{aligned}
-\theta_e(t) = \theta_{ref}(t) - \theta_{vco}(t)
- \end{aligned}
-\end{equation*}
-называют фазовой ошибкой. На практике часто используют следующую характеристику фазового детектора: $\alpha$ $sin(\theta_e)$.
-В настоящее время инженерами реализованы различные фазовые детекторы в виде микросхем, которые применяются в классических системах ФАПЧ и их модификациях.
-
-Cигнал полученный на выходе компаратора $\upsilon_e(\theta_e(t))$ поступает на вход фильтра нижних частот. Связь входного $\upsilon_e(\theta_e(t))$ и выходного $\upsilon_f(t)$ сигналов фильтра нижних частот может быть описана уранениями
- \begin{equation*}
- \begin{aligned}
-\dot{x} = Ax + b\upsilon_e(\theta_e(t)) \text{,} \quad 
-\upsilon_f(t) = c^*x + h\upsilon_e(\theta_e(t))
- \end{aligned}
-\end{equation*}
-Где $A$ - постоянная матрица $n \times n$, $b$ и $c$ постоянные $n$-мерные векторы, $h$ - константа, $x(t)$ - $n$-мерный вектор состояний системы.
-
-Выходной сигнал фильтра нижних частот поступает на вход генератора, управляемого напряжением, и происходит подстройка частоты ГУН
- \begin{equation*}
- \begin{aligned}
-\dot{\theta}_{vco}(t) = \omega_{vco}(t) = \omega^{free}_{vco} + K_{vco}\upsilon_f(t)
- \end{aligned}
-\end{equation*}
-Где $\omega^{free}_{vco}$ - частота свободных колебаний ГУН, $K_{vco}$ - коэфициент передачи. При этом полагаем, что эталонный генератор работает на постоянной частоте
- \begin{equation*}
- \begin{aligned}
-\dot{\theta}_{ref}(t) = \omega_{ref}(t) \equiv \omega_{ref}
- \end{aligned}
-\end{equation*}
-Разность между частотой эталонного генератора и частотой свободных колебаний ГУН обозначим
- \begin{equation*}
- \begin{aligned}
-\omega_e^{free} \equiv \omega_{ref} - \omega^{free}_{vco}
- \end{aligned}
-\end{equation*}
-\fi
-
-Хорошо изветна система дифференциальных уравнений, описывающих ФАПЧ \cite{}
+Хорошо изветна система дифференциальных уравнений, описывающих ФАПЧ \cite{kuznetsov_article}
  \begin{equation}\label{pllequations}
  \begin{aligned}
  &\dot{x} = Ax + b\upsilon_e(\theta_e)\\
  &\dot{\theta}_e = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
  \end{aligned}
 \end{equation}
-Где $A$ - постоянная матрица $n \times n$, $b$ и $c$ постоянные $n$-мерные векторы, $h$ - константа, $x(t)$ - $n$-мерный вектор состояний системы, $\omega^{free}_{vco}$ - частота свободных колебаний ГУН, $K_{vco}$ - коэфициент передачи. При этом предполагается, что эталонный генератор работает на постоянной частоте.
+Где $A$~--- постоянная матрица $n \times n$, $b$ и $c$ постоянные $n$~--- мерные векторы, $h$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы, $\omega^{free}_{vco}$~--- частота свободных колебаний ГУН, $K_{vco}$~--- коэфициент передачи. При этом предполагается, что эталонный генератор работает на постоянной частоте.
 
 В системе \eqref{pllequations} сделаем следующие преобразования $-K_{vco}c \rightarrow c$, $-K_{vco}h \rightarrow h$ и замену 
- \begin{equation}
+ \begin{equation}\label{replacement}
  \begin{aligned}
- &z = x + A^{-1}b\gamma \\
- &\gamma = \frac{\omega_e^{free}}{c^*A^{-1}b-h}
+ z = x + A^{-1}b\gamma \text{,} \quad \gamma = \frac{\omega_e^{free}}{c^*A^{-1}b-h}
  \end{aligned}
 \end{equation}
 Тогда система \eqref{pllequations} принимает вид
@@ -135,11 +62,9 @@ Cигнал полученный на выходе компаратора $\upsilon_e(\theta_e(t))$ поступает на в
 Рассмотрим систему\eqref{system}, предполагая, что функция $\upsilon_e(\theta_e)$ дифференцируема на $\mathbb {R}$ и удовлетворяет условиям
  \begin{equation}\label{theoreme_inequation}
  \begin{aligned}
-\mu_1 \leq \frac{d\upsilon_e(\theta_e)}{d\theta_e} \leq \mu_2
+\mu_1 \leqslant \frac{d\upsilon_e(\theta_e)}{d\theta_e} \leqslant \mu_2
  \end{aligned}
 \end{equation}
-Будем считать в \eqref{theoreme_inequation} $\mu_1$ - либо некоторое отрицательное число, либо $-\infty$, а $\mu_2$ - либо некоторое положительное число, либо $+\infty$. В случае если $\mu_1 = -\infty$, примем обозначение $\mu_1^{-1} = 0$. Аналогично, если $\mu_2 = +\infty$, то -- $\mu_2^{-1} = 0$.
-
 Введем в рассмотрение число:
  \begin{equation}
  \begin{aligned}
@@ -147,46 +72,53 @@ Cигнал полученный на выходе компаратора $\upsilon_e(\theta_e(t))$ поступает на в
  \end{aligned}
 \end{equation}
 
-\Theorem{
-Пусть все нули функции $\upsilon_e(\theta_e) - \gamma$ изолированы, пара $(A, b)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные частии существуют числа $\varepsilon > 0, \delta > 0, \tau \geq 0$, и $\varkappa$, такие что имеют место неравенства:
+\TheoremCite{leonov}{
+Пусть все нули функции $\upsilon_e(\theta_e) - \gamma$ изолированы, пара $(A, b)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:
  \begin{align}
-&\operatorname{Re}\left( \varkappa K(ix)- \varepsilon\left[K(ix)\right]^2-\left[ K(ix)+\mu_1^{-1}ix \right]^*\tau\left[K(ix)+\mu_2^{-1}ix \right]\right)  \geq \delta\text{,}\quad \forall x \in \mathbb{R}\label{first_th_eq}\\
+&\operatorname{Re}\left( \varkappa K(ix)- \varepsilon\left[K(ix)\right]^2-\left[ K(ix)+\mu_1^{-1}ix \right]^*\tau\left[K(ix)+\mu_2^{-1}ix \right]\right)  \geqslant \delta\text{,}\quad \forall x \in \mathbb{R}\label{first_th_eq}\\
 &4\varepsilon\delta > (\varkappa\nu)^2
 \end{align}
 Тогда система \eqref{system} глобально ассимптотически устойчива.
-}\label{th1}
-
+}
+\razdel{Инженерное применение}
+Приведенная теорема не отвечает на вопрос как найти полосу захвата, т.\,е. максимальный интервал $\omega_e^{free} \in [0, \omega_{pull-in}]$, при котором система \eqref{pllequations} глобально ассимптотически устойчива. Этот вопрос является важным для инженеров при физической реализации ФАПЧ. Для ответа рассмотрим некоторые фильтры 2 порядка. Найдем $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие условию теоремы так, что бы максимизировать $\nu$. При характеристике фазового детектора $\upsilon(\theta_e) = sin(\theta_e)$, $\nu$ выражается следующим образом
+ \begin{equation}\label{gamma}
+ \begin{aligned}
+\mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
+ \end{aligned}
+\end{equation}
+Из \eqref{gamma} и второго уравнения \eqref{replacement} можно однозначно найти $\omega_e^{free}$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система \eqref{pllequations} глобально ассимтотически устойчива.
 \razdel{Оценка области захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
 Рассмотрим передаточную функцию:
  \begin{equation}\label{filter1}
  \begin{aligned}
-W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}
+&W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}\\
+&a = \tau_{p1}+\tau_{p2} \text{,} \quad b = \tau_{p1}\tau_{p2} \text{,} \quad 0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1
  \end{aligned}
 \end{equation}
-Введем обозначения: $a = \tau_{p1}+\tau_{p2}$, $b = \tau_{p1}\tau_{p2}$\\
-Рассмотрим первое условие теоремы \ref{th1}. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. В результате преобразований получим
+Поскольку $\text{det}(sI-A) = s^2 + ab^{-1}s + b^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, b\right)$ вполне управляема. Для максимизации $\nu$ подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. В результате преобразований получим
 \begin{equation}\label{first_condition}
  \begin{aligned}
-&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (-\varkappa b+\tau-\delta a^2 + 2\delta b)t + (\varkappa-\varepsilon-\tau-\delta) \geq 0 \text{,}\quad \forall t \in \mathbb{R_+}
+&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (-\varkappa b+\tau-\delta a^2 + 2\delta b)t +\\
+&+ \varkappa-\varepsilon-\tau-\delta \geqslant 0 \text{,}\quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Для оценки полосы захвата системы \eqref{pllequations} будем искать максимум $\nu$.
-Так как $\varkappa - \varepsilon - \tau - \delta \geq 0$, то $ \varepsilon \leq \varkappa - \tau - \delta$. Возьмем $\varepsilon = \varkappa - \tau - \delta$. Не умаляя общности, можем положить $\varkappa = 1$, тогда первое условие теоремы принимает вид:
+Заметим, что $ \varepsilon \leqslant \varkappa - \tau - \delta$ является необходимым условием для \eqref{first_condition}. Положим $\varepsilon = \varkappa - \tau - \delta$. Не умаляя общности, можем считать $\varkappa = 1$, тогда первое условие теоремы принимает вид
 \begin{equation}\label{ineq1} 
  \begin{aligned}
-&At^2 + Bt + C \geq 0 \text{,}\quad \forall t \in \mathbb{R_+}\\
+&At^2 + Bt + C \geqslant 0 \text{,}\quad \forall t \in \mathbb{R_+}\\
 &A = \tau b^2 \text{,}\quad
 B = \tau a^2-2 \tau b - \delta b^2 \text{,}\quad
 C = - b+\tau-\delta a^2 + 2\delta b
  \end{aligned}
 \end{equation}
-Заметим, что для того, что бы выполнялось \eqref{ineq1} необходимо потребовать $A \geq 0$ и $C \geq 0$, тогда $B \geq 0$. В этом случае уравнение $At^2 + Bt + C = 0$ не имеет положительных корней, т.е. выполняется \eqref{ineq1}. Будем искать максимум следующей функции: 
+Для того, что бы выполнялось \eqref{ineq1} необходимо потребовать $A \geqslant 0$ и $C \geqslant 0$, тогда $B \geqslant 0$. В этом случае уравнение $At^2 + Bt + C = 0$ не имеет положительных корней, т.\,е. выполняется \eqref{ineq1}. Будем искать максимум следующей функции 
 \begin{equation}\label{extr_filter1}
  \begin{aligned}
 \nu^2 < 4\delta-4\tau\delta - 4\delta^2
  \end{aligned}
 \end{equation} 
-Получили задачу на условный экстремум, т.е найти максимум \eqref{extr_filter1}, при условии $C \geq 0$.  Заметим, что максимальное значение достигается на границе или в точках понижения ранга. Однако точки падения ранга противоречат условию теоремы. Рассмотри границу допустимой области, т.е. $C = 0$, выразим $\tau$ через $\delta$ и подставим в \eqref{extr_filter1}:
+Получили задачу на условный экстремум, т.\,е. найти максимум \eqref{extr_filter1}, при условии $C \geqslant 0$.  Заметим, что максимальное значение достигается на границе или в точках понижения ранга. Однако точки падения ранга противоречат условию теоремы. Рассмотри границу допустимой области, т.\,е. $C = 0$, выразим $\tau$ через $\delta$ и подставим в \eqref{extr_filter1}
 \begin{equation}\label{one_var_max}
  \begin{aligned}
 \nu^2 < 4\delta(1 - b) - 4\delta^2(a^2 -2b +1)
@@ -200,45 +132,40 @@ C = - b+\tau-\delta a^2 + 2\delta b
 \end{equation} 
 
 \razdel{Оценка области захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
- Рассмотрим передаточную функцию:
+ Рассмотрим передаточную функцию
  \begin{equation}\label{filter3}
  \begin{aligned}
 &W(x) = \frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}\\
 &\alpha_1 = \tau_{p1} + \tau_{p2}\text{,}\quad 
 \alpha_2 = \tau_{p1}\tau_{p2}\text{,}\quad 
 \beta_1 = \frac{\tau_{z1}+\tau_{z2}}{\tau_{p1}+\tau_{p2}}\text{,}\quad 
-\beta_2 = \frac{\tau_{z1}\tau_{z2}}{\tau_{p1}\tau_{p2}}
+\beta_2 = \frac{\tau_{z1}\tau_{z2}}{\tau_{p1}\tau_{p2}}\\
+&0 < \tau_{p1} < 1 \text{,}\quad 0 < \tau_{p2} <1 \text{,}\quad 0 < \tau_{z1} <1 \text{,}\quad 0 < \tau_{z2} <1
  \end{aligned}
 \end{equation}
-Предположим:
+Предположим
  \begin{equation}\label{restriction-1}
  \begin{aligned}
 \beta_1 < \beta_2 < 1
  \end{aligned}
 \end{equation}
-Пусть нелинейность $f(\theta_e)=\upsilon_e(\theta_e) - \gamma$ имеет изолированные нули и удовлетворяет ???????.
-Неравенство \eqref{restriction-1} гарантирует, что функция $\chi(p) = x^{-1}W(x)$ не приводима. Тогда по теореме ???? пара $(A, b)$ управляема. Заметим
- \begin{equation}
+Поскольку $\text{det}(sI-A) = s^2 + \alpha_1\alpha_2^{-1}s + \alpha_2^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, b\right)$ вполне управляема. Для максимизации $\nu$ подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Положим $\tau = 0$, и не умаляя общности можем считать $\varkappa = 1$. В результате преобразований первое условие теоремы \ref{th1} принимает следующий вид
+ \begin{equation}\label{filter3_first_condition}
  \begin{aligned}
-\text{det}(xI-A) = x^2 + \alpha_1\alpha_2^{-1}x + \alpha_2^{-1}
+&(-\varepsilon\alpha_2^2\beta_2^2 + \alpha_2^2\beta_2 - \delta\alpha_2^2)t^2 + \\
+&+ (-\varepsilon\alpha_1^2\beta_1^2 + \alpha_1^2\beta_1 - \delta\alpha_1^2 - \alpha_2 + 2\alpha_2\delta - \alpha_2\beta_2 + 2\alpha_2\beta_2\varepsilon)t +\\
+& + 1 - \varepsilon - \delta \geqslant 0  \text{,}\quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-матрица $A$ - устойчива. Найдем $\varepsilon, \delta, \varkappa, \tau$ так, что бы максимизировать $\nu$. Для этого подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Положим $\tau = 0$, и не умаляя общности можем считать $\varkappa = 1$. В результате преобразований первое условие теоремы \ref{th1} принимает следующий вид:
- \begin{equation}
- \begin{aligned}
-&(-\varepsilon\alpha_2^2\beta_2^2 + \alpha_2^2\beta_2 - \delta\alpha_2^2)t^2 + (-\varepsilon\alpha_1^2\beta_1^2 + \alpha_1^2\beta_1 - \delta\alpha_1^2 - \alpha_2 + 2\alpha_2\delta - \alpha_2\beta_2 + 2\alpha_2\beta_2\varepsilon)t +\\
-& + 1 - \varepsilon - \delta \geq 0
- \end{aligned}
-\end{equation}
-Заметим, что $\varepsilon \leq 1 - \delta$. Для максимизации $4\varepsilon\delta$ положим $\varepsilon = 1-\delta$. Тогда \eqref{first_th_eq} принимает вид
+Заметим, что $\varepsilon \leqslant 1 - \delta$ является необходимым условием для \eqref{filter3_first_condition}. Для максимизации $4\varepsilon\delta$ положим $\varepsilon = 1-\delta$. Тогда \eqref{first_th_eq} принимает вид
  \begin{equation}\label{filter3-3}
  \begin{aligned}
- &At+B \geq 0 \text{,}\quad \forall t \in \mathbb{R_+} \\
+ &At+B \geqslant 0 \text{,}\quad \forall t \in \mathbb{R_+} \\
 &A = \alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta \\
 &B = \alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta
  \end{aligned}
 \end{equation}
-Выполнение \eqref{restriction-1} влечет $A>0$. Так как максимальное значение достигается в точках падения ранга или на границе положим $B = 0$. Тогда из $B = 0$ получаем
+Выполнение \eqref{restriction-1} влечет $A > 0$. Так как максимальное значение достигается в точках падения ранга или на границе положим $B = 0$. Тогда из $B = 0$ получаем
  \begin{equation}\label{filter3_positive_numerator}
  \begin{aligned}
 \delta = \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)}
@@ -257,5 +184,16 @@ C = - b+\tau-\delta a^2 + 2\delta b
 \nu^2 < 4\frac{[\alpha_1^2(1-\beta_1) - \alpha_2(1-\beta_2)][\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)]}{[\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)]^2}
  \end{aligned}
  \end{equation}
+Эта оценка была получена в \cite{kuznetsov}, однако вывод был пропущен.
 \razdel{Заключение}
+В настояцее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный будет интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.
+
+\begin{thebibliography}{40}
+\bibitem{best}  Best~R.\:E. Phase-Locked Loops: Design, Simulation, and Applications / McGraw-Hill Education, 2007. P.~195--207.
+\bibitem{kuznetsov}  Leonov~G.\:A., Kuznetsov~N.\:V. Nonlinear mathematical models of phase-locked loops : stability and oscillations / Cambridge Scientific Publishers, 2014. P.~112--113.
+\bibitem{leonov}  Леонов~Г.\:А., Селеджи~С.\:М. Системы фазовой синхронизации в аналоговой и цифровой схемотехнике / СПб.:~Изд-во Невский диалект, 2014. P.~195--207.
+\bibitem{kuznetsov_article} Kuznetsov~N.\:V., Leonov~G.\:A., Yuldashev~M.\:V., Yuldashev~R.\:V. Solution of the Gardner problem on the lock-in range of phase-locked loop // ArXiv e-prints. 2017. 1705.05013. P.~289--298.
+\bibitem{appleton} Appleton~E.\:E. Automatic synchronization of triode oscillators // Proc. Camb. Phil. Soc. 1923. Vol.~21, No~3. P.~231.
+\bibitem{thirdOrderPLL} Feng~L., Wu~C., Jin~B., Wu~Z. A Passive Third-order Cascade PLL Filter // Trans Tech Publications. 2011. Vols. 255-260. P.~1.
+\end{thebibliography}
 \end{document}
