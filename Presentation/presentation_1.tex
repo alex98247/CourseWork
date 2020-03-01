@@ -6,6 +6,13 @@
 \usetheme{Madrid}
 }
 
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{circuits}
+\usetikzlibrary{circuits.ee}
+\usetikzlibrary{circuits.ee.IEC}
+\usetikzlibrary{circuits.logic.IEC}
+
 \usepackage{graphicx}
 
 %----------------------------------------------------------------------------------------
@@ -35,6 +42,24 @@
 %----------------------------------------------------------------------------------------
 
 \begin{frame}
+\resizebox{\columnwidth}{!}{%
+\begin{tikzpicture}
+
+\node at (2,0) [draw, text width=4cm, align=center, rectangle] (a) {Фазовый детектор \par(компаратор)};
+\node[draw, align=center, rectangle] (loop_filter) [right=of a] {Фильтр};
+\node[draw, align=center, rectangle] (VCO) [right=of loop_filter] {ГУН};
+
+\draw[->] (-3,0) -- (a.west);
+\draw[->] (a.east) -- (loop_filter.west);
+\draw[->] (loop_filter.east) -- (VCO.west);
+\draw[->] (VCO.east) -- (11,0);
+\draw[->] (10,0) --  +(0,-2) --  +(-8,-2) --  (a.south);
+
+\end{tikzpicture}
+}
+\end{frame}
+
+\begin{frame}
 \frametitle{Постановка задачи}
 Оценить полосу захвата для систем, описывающихся следующими передаточными функциями:
  \begin{equation*}
@@ -56,11 +81,21 @@
 \begin{equation*}
 \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1} > \nu^2
 \end{equation*} 
-\begin{figure}[H]
-\includegraphics[width=6cm]{../images/filter1e.jpg}%
-\includegraphics[width=6cm]{../images/filter1_1.jpg}%
-\caption{1. Численное приближение в MATLAB 2. Аналитическое решение}
+\begin{columns}[onlytextwidth]
+\begin{column}{.45\textwidth}
+\begin{figure}
+  \includegraphics[width=\textwidth]{images/filter1e.jpg}
+  \caption{First image}
 \end{figure}
+\end{column}
+\hfill
+\begin{column}{.45\textwidth}
+\begin{figure}
+  \includegraphics[width=\textwidth]{images/filter1_1.jpg}
+  \caption{Second image}
+\end{figure}
+\end{column}
+\end{columns}
 \end{frame}
 
 %------------------------------------------------
@@ -70,8 +105,8 @@
 
 Оценка параметра $\nu^2$ для фильтра $F(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$
   \begin{figure}[H]
-  \includegraphics[width=5.7cm]{../images/filter2_tau0_1e.jpg}
-  \includegraphics[width=5.7cm]{../images/filter2_tau0_1.jpg}
+  \includegraphics[width=5.7cm]{images/filter2_tau0_1e.jpg}
+  \includegraphics[width=5.7cm]{images/filter2_tau0_1.jpg}
     \caption{1. Численное приближение в MATLAB 2. Аналитическое решение}
     \end{figure}
 
@@ -81,7 +116,7 @@
 \frametitle{Фильтр $F(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
 
   \begin{figure}[H] 
-  \includegraphics[width=7cm]{../images/main.jpg}
+  \includegraphics[width=7cm]{images/main.jpg}
 \caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$.  Синим цветом представлено точное решение. Оранжевым цветом представлено аналитическое решение.}
 \end{figure}
 
