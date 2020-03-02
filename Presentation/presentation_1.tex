@@ -42,9 +42,10 @@
 %----------------------------------------------------------------------------------------
 
 \begin{frame}
-\resizebox{\columnwidth}{!}{%
+\frametitle{Принцип работы ФАПЧ}
+\begin{center}
+\resizebox{0.8\columnwidth}{!}{%
 \begin{tikzpicture}
-
 \node at (2,0) [draw, text width=4cm, align=center, rectangle] (a) {Фазовый детектор \par(компаратор)};
 \node[draw, align=center, rectangle] (loop_filter) [right=of a] {Фильтр};
 \node[draw, align=center, rectangle] (VCO) [right=of loop_filter] {ГУН};
@@ -57,6 +58,140 @@
 
 \end{tikzpicture}
 }
+\end{center}
+В результате воздействия компаратора появляется сигнал
+ \begin{equation}
+ \begin{aligned}
+\upsilon_e(\theta_{ref}(t) - \theta_{vco}(t))
+ \end{aligned}
+\end{equation}
+
+Где $\theta_{vco}(t)$ - фаза подстраиваемого генератора, $\theta_{ref}(t)$ - фаза эталонного генератора, $\upsilon_e(\theta_e(t))$ - $2\pi$ периодическая функция
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Принцип работы ФАПЧ}
+\begin{center}
+\resizebox{0.8\columnwidth}{!}{%
+\begin{tikzpicture}
+\node at (2,0) [draw, text width=4cm, align=center, rectangle] (a) {Фазовый детектор \par(компаратор)};
+\node[draw, align=center, rectangle] (loop_filter) [right=of a] {Фильтр};
+\node[draw, align=center, rectangle] (VCO) [right=of loop_filter] {ГУН};
+
+\draw[->] (-3,0) -- (a.west);
+\draw[->] (a.east) -- (loop_filter.west);
+\draw[->] (loop_filter.east) -- (VCO.west);
+\draw[->] (VCO.east) -- (11,0);
+\draw[->] (10,0) --  +(0,-2) --  +(-8,-2) --  (a.south);
+
+\end{tikzpicture}
+}
+\end{center}
+Связь входного $\upsilon_e(\theta_e(t))$ и выходного $\upsilon_f(t)$ сигналов фильтра нижних частот может быть описана уранениями
+ \begin{equation*}
+ \begin{aligned}
+\dot{x} = Ax + b\upsilon_e(\theta_e(t)) \text{,} \quad 
+\upsilon_f(t) = c^*x + h\upsilon_e(\theta_e(t))
+ \end{aligned}
+\end{equation*}
+Где $A$ - постоянная матрица $n \times n$, $b$ и $c$ постоянные $n$-мерные векторы, $h$ - константа, $x(t)$ - $n$-мерный вектор состояний системы.
+\end{frame}
+
+\begin{frame}
+\frametitle{Принцип работы ФАПЧ}
+\begin{center}
+\resizebox{0.8\columnwidth}{!}{%
+\begin{tikzpicture}
+\node at (2,0) [draw, text width=4cm, align=center, rectangle] (a) {Фазовый детектор \par(компаратор)};
+\node[draw, align=center, rectangle] (loop_filter) [right=of a] {Фильтр};
+\node[draw, align=center, rectangle] (VCO) [right=of loop_filter] {ГУН};
+
+\draw[->] (-3,0) -- (a.west);
+\draw[->] (a.east) -- (loop_filter.west);
+\draw[->] (loop_filter.east) -- (VCO.west);
+\draw[->] (VCO.east) -- (11,0);
+\draw[->] (10,0) --  +(0,-2) --  +(-8,-2) --  (a.south);
+
+\end{tikzpicture}
+}
+\end{center}
+Подстройка частоты ГУН
+ \begin{equation}
+ \begin{aligned}
+\dot{\theta}_{vco}(t) = \omega_{vco}(t) = \omega^{free}_{vco} + K_{vco}\upsilon_f(t)
+ \end{aligned}
+\end{equation}
+Где $\omega^{free}_{vco}$ - частота свободных колебаний ГУН, $K_{vco}$ - коэфициент передачи. \\
+Если эталонный генератор работает на постоянной частоте
+ \begin{equation}
+ \begin{aligned}
+\dot{\theta}_{ref}(t) = \omega_{ref}(t) \equiv \omega_{ref}
+ \end{aligned}
+\end{equation}
+Разность частот эталонного генератора и частотой свободных колебаний ГУН
+ \begin{equation}
+ \begin{aligned}
+\omega_e^{free} \equiv \omega_{ref} - \omega^{free}_{vco}
+ \end{aligned}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Принцип работы ФАПЧ}
+Система дифференциальных уравнений описывающих работу ФАПЧ
+ \begin{equation}\label{pllequations}
+ \begin{aligned}
+ \dot{x} = Ax + b\upsilon_e(\theta_e)  \text{,} \quad \dot{\theta}_e = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
+ \end{aligned}
+\end{equation}
+В системе \eqref{pllequations} сделаем следующие преобразования $-K_{vco}c \rightarrow c$, $-K_{vco}h \rightarrow h$ и замену
+ \begin{equation}
+ \begin{aligned}
+ z = x + A^{-1}b\gamma  \text{,} \quad \gamma = \frac{\omega_e^{free}}{c^*A^{-1}b-h}
+ \end{aligned}
+\end{equation}
+В результате \eqref{pllequations} примет вид
+ \begin{equation}\label{system}
+ \begin{aligned}
+ &\dot{z} = Az + b(\upsilon_e(\theta_e) - \gamma) \text{,} \quad \dot{\theta_e} = c^*z + h(\upsilon_e(\theta_e) - \gamma))
+ \end{aligned}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Теорема}
+Рассмотрим систему \eqref{system}
+ \begin{equation}
+ \begin{aligned}
+ &\dot{z} = Az + b(\upsilon_e(\theta_e) - \gamma) \text{,} \quad \dot{\theta_e} = c^*z + h(\upsilon_e(\theta_e) - \gamma))
+ \end{aligned}
+\end{equation}
+Пусть $\upsilon_e(\theta_e)$ дифференцируема на $\mathbb {R}$ и удовлетворяет условиям
+ \begin{equation}\label{theoreme_inequation}
+ \begin{aligned}
+\mu_1 \leq \frac{d\varphi(\sigma)}{d\sigma} \leq \mu_2
+ \end{aligned}
+\end{equation}
+Введем в рассмотрение число:
+ \begin{equation}
+ \begin{aligned}
+\nu = \int_{0}^{2\pi} (\varphi(\sigma) - \gamma) d\sigma (\int_{0}^{2\pi} \mid \varphi(\sigma) - \gamma \mid d\sigma)^{-1}
+ \end{aligned}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Теорема}
+\begin{theorem}\label{th1}
+Пусть все нули функции $\varphi(\sigma) - \gamma$ изолированы, пара $(A, b)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geq 0$, и $\varkappa$, такие что имеют место неравенства:
+ \begin{align}
+&Re(\varkappa K(ix)- \varepsilon(K(ix))^2-[K(ix)+\mu_1^{-1}ix]^*\tau[K(ix)+\mu_2^{-1}ix])\geq\delta\text{,}\quad \forall x \in \mathbb{R}\label{first_th_eq}\\
+&4\varepsilon\delta > (\varkappa\nu)^2
+\end{align}
+Тогда система \eqref{system} глобально ассимптотически устойчива.
+\end{theorem}
 \end{frame}
 
 \begin{frame}
