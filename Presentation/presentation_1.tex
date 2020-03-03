@@ -50,19 +50,6 @@
 
 \begin{frame}
 \frametitle{Принцип работы ФАПЧ}
-\begin{definition}
-Система фазовой автоподстройки частоты (ФАПЧ) - система предназначенная для синхронизации частот эталонного и подстраиваемого генераторов
-\end{definition}
-Применение системы ФАПЧ
-\begin{enumerate}
-\item Телекоммуникационное обородование
-\item Навигационное оборудование (GPS, Глонасс, Галилео)
-\item Компьютеры (микропроцессоры)
-\end{enumerate}
-\end{frame}
-
-\begin{frame}
-\frametitle{Принцип работы ФАПЧ}
 \begin{center}
 \resizebox{0.8\columnwidth}{!}{%
 \begin{tikzpicture}
@@ -79,40 +66,90 @@
 \end{tikzpicture}
 }
 \end{center}
+\begin{definition}
+Система фазовой автоподстройки частоты (ФАПЧ)~--- система предназначенная для синхронизации частот эталонного и подстраиваемого генераторов
+\end{definition}
+Применение системы ФАПЧ
+\begin{enumerate}
+\item Телекоммуникационное обородование
+\item Навигационное оборудование (GPS, Глонасс, Галилео)
+\item Компьютеры (микропроцессоры)
+\item Военном оборудовании (frequency hopping)
+\end{enumerate}
+\end{frame}
 
-Система дифференциальных уравнений описывающих работу ФАПЧ
+\begin{frame}
+\frametitle{Принцип работы ФАПЧ}
+Дифференциальные уравнения ФАПЧ
  \begin{equation}\label{pllequations}
  \begin{aligned}
  &\dot{x} = Ax + b\upsilon_e(\theta_e) \\
  &\dot{\theta}_e = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
  \end{aligned}
 \end{equation}
-В системе \eqref{pllequations} сделаем следующие преобразования $-K_{vco}c \rightarrow c$, $-K_{vco}h \rightarrow h$ и замену
+
+\begin{definition}
+Полоса захвата~--- максимальная разность частот опорного сигнала и ГУН $\omega_e^{free}$, при которой система ФАПЧ глобально ассимптотически устойчива. 
+\end{definition}
+\end{frame}
+
+\begin{frame}
+\frametitle{Постановка задачи}
+Для реализации ФАПЧ важно знать диапазон частот, для которых возможна синхронизация.
+\begin{center}
+\Large
+Оценим полосу захвата систем ФАПЧ с фильтрами
+\end{center}
+\begin{equation*}
+ \begin{aligned}
+&W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}\\[5pt]
+&W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\\[5pt]
+&W(s) = \frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)}
+ \end{aligned}
+\end{equation*}
+\begin{equation*}
+ \begin{aligned}
+&0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad 0 < \tau_{z1} < 1 \text{,} \quad 0 < \tau_{z2} <1
+ \end{aligned}
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Постановка задачи}
+Рассмотрим систему \eqref{pllequations}
+ \begin{equation*}
+ \begin{aligned}
+ &\dot{x} = Ax + b\upsilon_e(\theta_e) \\
+ &\dot{\theta}_e = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
+ \end{aligned}
+\end{equation*}
+Сделаем преобразования $-K_{vco}c \rightarrow c$, $-K_{vco}h \rightarrow h$ и замену
  \begin{equation}
  \begin{aligned}
  z = x + A^{-1}b\gamma  \text{,} \quad \gamma = \frac{\omega_e^{free}}{c^*A^{-1}b-h}
  \end{aligned}
 \end{equation}
 В результате \eqref{pllequations} примет вид
- \begin{equation}\label{system}
+ \begin{equation}
  \begin{aligned}
  &\dot{z} = Az + b(\upsilon_e(\theta_e) - \gamma) \\
  & \dot{\theta_e} = c^*z + h(\upsilon_e(\theta_e) - \gamma))
  \end{aligned}
 \end{equation}
-\end{frame}
-
-\begin{frame}
-Рассмотрим систему \eqref{system}
- \begin{equation*}
- \begin{aligned}
- &\dot{z} = Az + b(\upsilon_e(\theta_e) - \gamma) \text{,} \quad \dot{\theta_e} = c^*z + h(\upsilon_e(\theta_e) - \gamma))
- \end{aligned}
-\end{equation*}
-Пусть $\upsilon_e(\theta_e)$ дифференцируема на $\mathbb {R}$ и удовлетворяет $\mu_1 \leq \frac{d\upsilon_e(\theta_e)}{d\theta_e} \leq \mu_2$
+Пусть $\upsilon_e(\theta_e)$ дифференцируема на $\mathbb {R}$ и удовлетворяет $\mu_1 \leq \frac{d\upsilon_e(\theta_e)}{d\theta_e} \leq \mu_2$. Введем в рассмотрение число
  \begin{equation}
  \begin{aligned}
 \nu = \int_{0}^{2\pi} (\upsilon_e(\theta_e) - \gamma) d\theta_e \left(\int_{0}^{2\pi} \mid \upsilon_e(\theta_e) - \gamma \mid d\theta_e\right)^{-1}
+ \end{aligned}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Постановка задачи}
+ \begin{equation}\label{system}
+ \begin{aligned}
+ &\dot{z} = Az + b(\upsilon_e(\theta_e) - \gamma) \\
+ & \dot{\theta_e} = c^*z + h(\upsilon_e(\theta_e) - \gamma))
  \end{aligned}
 \end{equation}
 \begin{theorem}
@@ -125,43 +162,85 @@
 \end{theorem}
 \end{frame}
 
+
+
 \begin{frame}
-\frametitle{Постановка задачи}
-Оценить полосу захвата для систем, описывающихся следующими передаточными функциями:
+\frametitle{Общая идея оценки полосы захвата}
+Найдем $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие условию теоремы так, что бы максимизировать $\nu$. При характеристике компаратора $\upsilon(\theta_e) = sin(\theta_e)$, $\nu$ выражается следующим образом
+ \begin{equation}\label{gamma}
+ \begin{aligned}
+\mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
+ \end{aligned}
+\end{equation}
+Из \eqref{gamma} и 
+ \begin{equation}
+ \begin{aligned}
+ z = x + A^{-1}b\gamma  \text{,} \quad \gamma = \frac{\omega_e^{free}}{c^*A^{-1}b-h}
+ \end{aligned}
+\end{equation}
+ можно однозначно найти $\omega_e^{free}$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система 
  \begin{equation*}
  \begin{aligned}
-&F(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}\\
-&\\
-&F(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\\
-&\\
-&F(s) = \frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)}
+ &\dot{x} = Ax + b\upsilon_e(\theta_e)\text{,} \quad \dot{\theta}_e = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
  \end{aligned}
-\end{equation*}
+\end{equation*} 
+глобально ассимтотически устойчива.
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Фильтр $F(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
-Оценка параметра $\nu^2$ для фильтра $F(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$
-\begin{equation*}
-\frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1} > \nu^2
-\end{equation*} 
+\frametitle{Фильтр $W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
+Рассмотрим передаточную функцию:
+ \begin{equation}\label{filter1}
+ \begin{aligned}
+&W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}\\
+&a = \tau_{p1}+\tau_{p2} \text{,} \quad b = \tau_{p1}\tau_{p2}
+ \end{aligned}
+\end{equation}
+Подставим \eqref{filter1} в первое условие теоремы. Можем считать $\varkappa = 1$. Положим $\varepsilon = \varkappa - \tau - \delta$.
+\begin{equation}
+ \begin{aligned}
+&At^2 + Bt+C \geq 0 \text{,}\quad \forall t \in \mathbb{R_+}\\
+&A = \tau b^2 \text{,} \quad B = \tau a^2-2 \tau b - \delta b^2 \text{,} \quad C = - b+\tau-\delta a^2 + 2\delta b
+ \end{aligned}
+\end{equation}
+Будем искать максимум следующей функции: 
+\begin{equation}\label{extr_filter1}
+ \begin{aligned}
+\nu^2 < 4\delta-4\tau\delta - 4\delta^2
+ \end{aligned}
+\end{equation} 
+Из $C = 0$, выразим $\tau$ и подставим в \eqref{extr_filter1} тогда максимум достигается при 
+\begin{equation}
+ \begin{aligned}
+\delta = \frac{1-b}{2(a^2 - 2b + 1)}
+ \end{aligned}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+\frametitle{Фильтр $W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
 \begin{columns}[onlytextwidth]
 \begin{column}{.45\textwidth}
 \begin{figure}
   \includegraphics[width=\textwidth]{images/filter1e.jpg}
-  \caption{First image}
+  \caption{Численное решение}
 \end{figure}
 \end{column}
 \hfill
 \begin{column}{.45\textwidth}
 \begin{figure}
   \includegraphics[width=\textwidth]{images/filter1_1.jpg}
-  \caption{Second image}
+  \caption{Аналитическое решение}
 \end{figure}
 \end{column}
 \end{columns}
+\begin{equation}\label{filter1_max}
+ \begin{aligned}
+\nu^2 < \frac{(b - 1)^2}{a^2 - 2b + 1} = \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1}
+ \end{aligned}
+\end{equation} 
 \end{frame}
 
 %------------------------------------------------
