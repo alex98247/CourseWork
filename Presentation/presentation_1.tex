@@ -91,6 +91,15 @@
 \begin{definition}
 Полоса захвата~--- максимальная разность частот опорного сигнала и ГУН $\omega_e^{free}$, при которой система ФАПЧ глобально ассимптотически устойчива. 
 \end{definition}
+\begin{definition}
+Функция  
+\begin{equation}\label{system}
+ \begin{aligned}
+ W(s) = -c^*\left(A-sI\right)^{-1}b + h
+ \end{aligned}
+\end{equation}
+Назыввется передаточной функцией системы \eqref{pllequations}
+\end{definition}
 \end{frame}
 
 \begin{frame}
@@ -115,8 +124,41 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Постановка задачи}
-Рассмотрим систему \eqref{pllequations}
+\frametitle{Теорема}
+Положим, что функция $\upsilon_e(\theta_e)$ дифференцируема на $\mathbb {R}$ и удовлетворяет
+ \begin{equation}
+ \begin{aligned}
+\mu_1 \leq \frac{d\upsilon_e(\theta_e)}{d\theta_e} \leq \mu_2
+ \end{aligned}
+ \end{equation}
+Введем в рассмотрение
+  \begin{equation}
+ \begin{aligned}
+\nu = \int_{0}^{2\pi} (\upsilon_e(\theta_e) - \gamma) d\theta_e \left(\int_{0}^{2\pi} \mid \upsilon_e(\theta_e) - \gamma \mid d\theta_e\right)^{-1}
+ \end{aligned}
+\end{equation}
+\begin{theorem}
+Пусть все нули функции $\upsilon_e(\theta_e) - \gamma$ изолированы, пара $(A, b)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geq 0$, и $\varkappa$, такие что имеют место неравенства:
+ \begin{align*}
+&Re(\varkappa K(ix)- \varepsilon(K(ix))^2-[K(ix)+\mu_1^{-1}ix]^*\tau[K(ix)+\mu_2^{-1}ix])\geq\delta\text{,}\forall x \in \mathbb{R}\label{first_th_eq}\\
+&4\varepsilon\delta > (\varkappa\nu)^2
+\end{align*}
+\end{theorem}
+\end{frame}
+
+\begin{frame}
+\frametitle{Теорема}
+\begin{theorem}
+Тогда система 
+ \begin{equation}\label{system}
+ \begin{aligned}
+ &\dot{z} = Az + b(\upsilon_e(\theta_e) - \gamma) \\
+ & \dot{\theta_e} = c^*z + h(\upsilon_e(\theta_e) - \gamma))
+ \end{aligned}
+\end{equation}
+глобально ассимптотически устойчива.
+\end{theorem}
+Рассмотрим систему ДУ ФАПЧ \eqref{pllequations}
  \begin{equation*}
  \begin{aligned}
  &\dot{x} = Ax + b\upsilon_e(\theta_e) \\
@@ -129,59 +171,29 @@
  z = x + A^{-1}b\gamma  \text{,} \quad \gamma = \frac{\omega_e^{free}}{c^*A^{-1}b-h}
  \end{aligned}
 \end{equation}
-В результате \eqref{pllequations} примет вид
- \begin{equation}
- \begin{aligned}
- &\dot{z} = Az + b(\upsilon_e(\theta_e) - \gamma) \\
- & \dot{\theta_e} = c^*z + h(\upsilon_e(\theta_e) - \gamma))
- \end{aligned}
-\end{equation}
-Пусть $\upsilon_e(\theta_e)$ дифференцируема на $\mathbb {R}$ и удовлетворяет $\mu_1 \leq \frac{d\upsilon_e(\theta_e)}{d\theta_e} \leq \mu_2$. Введем в рассмотрение число
- \begin{equation}
- \begin{aligned}
-\nu = \int_{0}^{2\pi} (\upsilon_e(\theta_e) - \gamma) d\theta_e \left(\int_{0}^{2\pi} \mid \upsilon_e(\theta_e) - \gamma \mid d\theta_e\right)^{-1}
- \end{aligned}
-\end{equation}
-\end{frame}
-
-\begin{frame}
-\frametitle{Постановка задачи}
- \begin{equation}\label{system}
- \begin{aligned}
- &\dot{z} = Az + b(\upsilon_e(\theta_e) - \gamma) \\
- & \dot{\theta_e} = c^*z + h(\upsilon_e(\theta_e) - \gamma))
- \end{aligned}
-\end{equation}
-\begin{theorem}
-Пусть все нули функции $\upsilon_e(\theta_e) - \gamma$ изолированы, пара $(A, b)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geq 0$, и $\varkappa$, такие что имеют место неравенства:
- \begin{align}
-&Re(\varkappa K(ix)- \varepsilon(K(ix))^2-[K(ix)+\mu_1^{-1}ix]^*\tau[K(ix)+\mu_2^{-1}ix])\geq\delta\text{,}\forall x \in \mathbb{R}\label{first_th_eq}\\
-&4\varepsilon\delta > (\varkappa\nu)^2
-\end{align}
-Тогда система \eqref{system} глобально ассимптотически устойчива.
-\end{theorem}
+В результате \eqref{pllequations} примет вид \eqref{system}
 \end{frame}
 
 
 
 \begin{frame}
-\frametitle{Общая идея оценки полосы захвата}
-Найдем $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие условию теоремы так, что бы максимизировать $\nu$. При характеристике компаратора $\upsilon(\theta_e) = sin(\theta_e)$, $\nu$ выражается следующим образом
- \begin{equation}\label{gamma}
+\frametitle{Общая идея}
+Найти $\varepsilon, \delta, \varkappa, \tau$, из условия теоремы, что бы максимизировать $\nu$. Тогда из определения $\nu$ 
+\begin{equation}
  \begin{aligned}
-\mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
- \end{aligned}
+\nu = \int_{0}^{2\pi} (\upsilon_e(\theta_e) - \gamma) d\theta_e \left(\int_{0}^{2\pi} \mid \upsilon_e(\theta_e) - \gamma \mid d\theta_e\right)^{-1} \end{aligned}
 \end{equation}
-Из \eqref{gamma} и 
+и замены
  \begin{equation}
  \begin{aligned}
  z = x + A^{-1}b\gamma  \text{,} \quad \gamma = \frac{\omega_e^{free}}{c^*A^{-1}b-h}
  \end{aligned}
 \end{equation}
- можно однозначно найти $\omega_e^{free}$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система 
+ найдется $\omega_e^{free}$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система ДУ ФАПЧ
  \begin{equation*}
  \begin{aligned}
- &\dot{x} = Ax + b\upsilon_e(\theta_e)\text{,} \quad \dot{\theta}_e = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
+ &\dot{x} = Ax + b\upsilon_e(\theta_e) \\ 
+ &\dot{\theta}_e = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
  \end{aligned}
 \end{equation*} 
 глобально ассимтотически устойчива.
@@ -194,53 +206,40 @@
 Рассмотрим передаточную функцию:
  \begin{equation}\label{filter1}
  \begin{aligned}
-&W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}\\
-&a = \tau_{p1}+\tau_{p2} \text{,} \quad b = \tau_{p1}\tau_{p2}
+&W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}
  \end{aligned}
 \end{equation}
-Подставим \eqref{filter1} в первое условие теоремы. Можем считать $\varkappa = 1$. Положим $\varepsilon = \varkappa - \tau - \delta$.
+Подставим \eqref{filter1} в первое условие теоремы. Для максимизации $\nu$ положим 
 \begin{equation}
  \begin{aligned}
-&At^2 + Bt+C \geq 0 \text{,}\quad \forall t \in \mathbb{R_+}\\
-&A = \tau b^2 \text{,} \quad B = \tau a^2-2 \tau b - \delta b^2 \text{,} \quad C = - b+\tau-\delta a^2 + 2\delta b
+\varkappa = 1 \text{,} \quad \varepsilon = 1 - \tau - \delta \text{,} \quad \tau = \delta \tau_{p1}^2 + \delta \tau_{p2}^2 + \tau_{p1}\tau_{p2}
  \end{aligned}
 \end{equation}
-Будем искать максимум следующей функции: 
-\begin{equation}\label{extr_filter1}
+Получим оценку для $\nu^2$
+\begin{equation}\label{filter1_max}
  \begin{aligned}
-\nu^2 < 4\delta-4\tau\delta - 4\delta^2
+\nu^2 < \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1}
  \end{aligned}
 \end{equation} 
-Из $C = 0$, выразим $\tau$ и подставим в \eqref{extr_filter1} тогда максимум достигается при 
-\begin{equation}
- \begin{aligned}
-\delta = \frac{1-b}{2(a^2 - 2b + 1)}
- \end{aligned}
-\end{equation}
 \end{frame}
 
 \begin{frame}
 \frametitle{Фильтр $W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
 \begin{columns}[onlytextwidth]
-\begin{column}{.45\textwidth}
+\begin{column}{.5\textwidth}
 \begin{figure}
   \includegraphics[width=\textwidth]{images/filter1e.jpg}
   \caption{Численное решение}
 \end{figure}
 \end{column}
 \hfill
-\begin{column}{.45\textwidth}
+\begin{column}{.5\textwidth}
 \begin{figure}
   \includegraphics[width=\textwidth]{images/filter1_1.jpg}
   \caption{Аналитическое решение}
 \end{figure}
 \end{column}
 \end{columns}
-\begin{equation}\label{filter1_max}
- \begin{aligned}
-\nu^2 < \frac{(b - 1)^2}{a^2 - 2b + 1} = \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1}
- \end{aligned}
-\end{equation} 
 \end{frame}
 
 %------------------------------------------------
@@ -281,6 +280,26 @@
 \beta_2 = \frac{\tau_{z1}\tau_{z2}}{\tau_{p1}\tau_{p2}}
  \end{aligned}
 \end{equation*}
+\end{frame}
+
+\begin{frame}
+\frametitle{Итог}
+\begin{enumerate}
+\item Для фильтра 
+ \begin{equation*}
+ \begin{aligned}
+W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}
+ \end{aligned}
+\end{equation*} 
+была найдена оценка полосы захвата
+\item Для фильтра 
+ \begin{equation*}
+ \begin{aligned}
+W(s) = \frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)}
+ \end{aligned}
+\end{equation*}
+был восстановлен вывод оценки полосы захвата
+\end{enumerate}
 \end{frame}
 
 %------------------------------------------------
