@@ -35,6 +35,7 @@
 Система фазовой автоподстройки частоты (ФАПЧ)~--- система с обратной связью, используемая для синхронизации сигналов эталонного и подстраиваемого генераторов. Она появилась в первой половине XX века \cite{appleton}. В настоящее время системы ФАПЧ применяются в различном телекоммуникационном оборудовании, навигационных системах и т.\,д. \cite{best}.
 
 На практике часто используют системы ФАПЧ второго порядка. Наряду с системами ФАПЧ второго порядка исследуются системы третьего порядка, отличающиеся хорошим подавлением шума и более низкой стационарной ошибкой \cite{thirdOrderPLL}.
+\Figure{0.85\textwidth}{images/PLL.png}{Схема классической системы ФАПЧ}
 
 Хорошо известна система дифференциальных уравнений, описывающих ФАПЧ \cite{kuznetsov_article}
  \begin{equation}\label{pllequations}
@@ -81,7 +82,7 @@
 Тогда система \eqref{system} глобально ассимптотически устойчива.
 }
 \razdel{Инженерное применение}
-Приведенная теорема не отвечает на вопрос как найти полосу захвата, т.\,е. максимальный интервал $\omega_e^{free} \in [0, \omega_{pull-in}]$, при котором система \eqref{pllequations} глобально ассимптотически устойчива. Этот вопрос является важным для инженеров при физической реализации ФАПЧ. Для ответа рассмотрим некоторые фильтры 2 порядка. Найдем $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие условию теоремы так, что бы максимизировать $\nu$. При характеристике фазового детектора $\upsilon(\theta_e) = sin(\theta_e)$, $\nu$ выражается следующим образом
+Приведенная теорема не отвечает на вопрос как найти полосу захвата, т.\,е. максимальную разность частот опорного сигнала и ГУН $\omega_e^{free}$, при котором система \eqref{pllequations} глобально ассимптотически устойчива. Этот вопрос является важным для инженеров при физической реализации ФАПЧ. Для ответа рассмотрим некоторые фильтры 2 порядка. Найдем $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие условию теоремы так, что бы максимизировать $\nu$. При характеристике фазового детектора $\upsilon(\theta_e) = sin(\theta_e)$, $\nu$ выражается следующим образом
  \begin{equation}\label{gamma}
  \begin{aligned}
 \mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
@@ -96,30 +97,19 @@
 &a = \tau_{p1}+\tau_{p2} \text{,} \quad b = \tau_{p1}\tau_{p2} \text{,} \quad 0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1
  \end{aligned}
 \end{equation}
-Поскольку $\text{det}(sI-A) = s^2 + ab^{-1}s + b^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, b\right)$ вполне управляема. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. Для максимизации $\nu$ положим $\varepsilon = \varkappa - \tau - \delta$. Не умаляя общности, можем считать $\varkappa = 1$, тогда первое условие теоремы принимает вид
+Поскольку $\text{det}(sI-A) = s^2 + ab^{-1}s + b^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, b\right)$ вполне управляема. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену $t = s^2$. Для максимизации $\nu$ положим $\varkappa = 1$ и $\varepsilon = 1 - \tau - \delta$, тогда \eqref{first_th_eq} принимает вид
 \begin{equation}\label{ineq1} 
  \begin{aligned}
-&At^2 + Bt + C \geqslant 0 \text{,}\quad \forall t \in \mathbb{R_+}\\
-&A = \tau b^2 \text{,}\quad
-B = \tau a^2-2 \tau b - \delta b^2 \text{,}\quad
-C = - b+\tau-\delta a^2 + 2\delta b
+&\widehat At^2 + \widehat Bt + \widehat C \geqslant 0 \text{,}\quad \forall t \in \mathbb{R_+}\\
+&\widehat A = \tau b^2 \text{,}\quad
+\widehat B = \tau a^2-2 \tau b - \delta b^2 \text{,}\quad
+\widehat C = - b+\tau-\delta a^2 + 2\delta b
  \end{aligned}
 \end{equation}
-Для того, что бы выполнялось \eqref{ineq1} необходимо потребовать $A \geqslant 0$ и $C \geqslant 0$, тогда $B \geqslant 0$. Будем искать максимум следующей функции 
-\begin{equation}\label{extr_filter1}
- \begin{aligned}
-\nu^2 < 4\delta-4\tau\delta - 4\delta^2
- \end{aligned}
-\end{equation} 
-\Figure{\textwidth}{images/agregated.jpg}{Точное и вычисленное решения для фильтра \eqref{filter1}}
+Потребуем $\widehat A \geqslant 0$ и $\widehat C \geqslant 0$, тогда $\widehat B \geqslant 0$. 
+\Figure{\textwidth}{images/agregated.jpg}{Численное и аналитическое решения для фильтра \eqref{filter1}}
 
-Получили задачу на условный экстремум, т.\,е. найти максимум \eqref{extr_filter1}, при условии $C \geqslant 0$.  Заметим, что максимальное значение достигается на границе или в точках понижения ранга. Однако точки падения ранга противоречат условию теоремы. Рассмотри границу допустимой области, т.\,е. $C = 0$, выразим $\tau$ через $\delta$ и подставим в \eqref{extr_filter1}
-\begin{equation}\label{one_var_max}
- \begin{aligned}
-\nu^2 < 4\delta(1 - b) - 4\delta^2(a^2 -2b +1)
- \end{aligned}
-\end{equation} 
-Максимум  \eqref{one_var_max} достигается при $\delta = \frac{1-b}{2(a^2 - 2b + 1)}$ и равен
+Максимизируем $\nu$, при условии $\widehat C \geqslant 0$. Рассмотри границу допустимой области, т.\,е. $\widehat C = 0$. Из второго условия теоремы и $\delta = \frac{1-b}{2(a^2 - 2b + 1)}$ получаем
 \begin{equation}\label{filter1_max}
  \begin{aligned}
 \nu^2 < \frac{(b - 1)^2}{a^2 - 2b + 1} = \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1}
@@ -139,21 +129,21 @@ W(x) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 \beta_1 < \beta_2 < 1
  \end{aligned}
 \end{equation}
-Поскольку $\text{det}(sI-A) = s^2 + \alpha_1\alpha_2^{-1}s + \alpha_2^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, b\right)$ вполне управляема. Подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Положим $\tau = 0$, и не умаляя общности можем считать $\varkappa = 1$.  Для максимизации $\nu$ положим $\varepsilon = 1-\delta$. Тогда \eqref{first_th_eq} принимает вид
+Поскольку $\text{det}(sI-A) = s^2 + \alpha_1\alpha_2^{-1}s + \alpha_2^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, b\right)$ вполне управляема. Подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим $\tau = 0$, $\varkappa = 1$ и $\varepsilon = 1-\delta$. Тогда \eqref{first_th_eq} принимает вид
  \begin{equation}\label{filter3-3}
  \begin{aligned}
- &(\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta)t+\alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \\
- &- \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geqslant 0 \text{,}\quad \forall t \in \mathbb{R_+}
+ &\widehat At + \widehat B \geqslant 0 \text{,}\quad \forall t \in \mathbb{R_+}\\
+ &\widehat A = \alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta\\
+ &\widehat B = \alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta
  \end{aligned}
 \end{equation}
-Выполнение \eqref{restriction-1} влечет положительность старшего коэффициента. Так как максимальное значение достигается в точках падения ранга или на границе положим, что свободный член раыен нулю. Получаем
+Выполнение \eqref{restriction-1} влечет $\widehat A > 0$. Максимизируем $\nu$ на границе области \eqref{filter3-3}, т.\,е. $\widehat B = 0$.
  \begin{equation}\label{filter3_positive_numerator}
  \begin{aligned}
 \delta = \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)}
  \end{aligned}
  \end{equation}
-Для того что бы $\delta > 0$ потребуем $\alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}$. Это условие гарантирует положительность числителя и знаменателя \eqref{filter3_positive_numerator}.
-В результате преобразований получили оценку для $\nu^2$
+Потребуем $\alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}$. Это условие гарантирует положительность  \eqref{filter3_positive_numerator}. Из второго условия теоремы и \eqref{filter3_positive_numerator}
  \begin{equation}
  \begin{aligned}
 \nu^2 < 4\frac{[\alpha_1^2(1-\beta_1) - \alpha_2(1-\beta_2)][\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)]}{[\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)]^2}
@@ -161,9 +151,9 @@ W(x) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
  \end{equation}
 Эта оценка была получена в \cite{kuznetsov}, однако вывод был пропущен.
 \razdel{Заключение}
-В настояцее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный резкльтат будет интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.
+В настояцее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный результат будет интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.
 
-\begin{thebibliography}{40}
+\begin{thebibliography}{6}
 \bibitem{best}  Best~R.\:E. Phase-Locked Loops: Design, Simulation, and Applications / McGraw-Hill Education, 2007. P.~195--207.
 \bibitem{kuznetsov}  Leonov~G.\:A., Kuznetsov~N.\:V. Nonlinear mathematical models of phase-locked loops : stability and oscillations / Cambridge Scientific Publishers, 2014. P.~112--113.
 \bibitem{leonov}  Леонов~Г.\:А., Селеджи~С.\:М. Системы фазовой синхронизации в аналоговой и цифровой схемотехнике / СПб.:~Изд-во Невский диалект, 2014. P.~195--207.
