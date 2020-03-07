@@ -129,7 +129,7 @@
 \node[draw, align=center, rectangle] (loop_filter) [right=of a] {Фильтр};
 \node[draw, align=center, rectangle] (VCO) [right=of loop_filter] {ГУН};
 
-\draw[->] (-3,0) -- (a.west);
+\draw[->] (-3,0) -- (a.west) node[midway,above,inner sep=2pt] {sin($\theta_{ref}(t)$)};
 \draw[->] (a.east) -- (loop_filter.west);
 \draw[->] (loop_filter.east) -- (VCO.west);
 \draw[->] (VCO.east) -- (11,0);
@@ -364,7 +364,6 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}
 &t = x^2 \geq 0
  \end{aligned}
 \end{equation}
-\subsection{$\tau = 0$}
 Положим в \eqref{second_condition} $\tau = 0$, тогда первое условие теоремы принимает следующий вид:
  \begin{equation}\label{second_condition_tau_zero}
  \begin{aligned}
@@ -453,18 +452,6 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}
  \begin{equation}
  \begin{aligned}
 4(\tau_{z1}+\tau_{p1})^2(2\varepsilon\tau_{z1}^2-\varepsilon\delta+2\delta\tau_{p1}^2)+(\tau_{z1}^2-6\tau_{z1}\tau_{p1}+\tau_{p1}^2)\leq 0
- \end{aligned}
-\end{equation}
-
-\subsection{$\tau > 0$}
-Предположим в \eqref{second_condition} $\tau > 0$ и разделим на $\tau_{p1}^4\tau$. Не умаляя общности, можем считать $\tau = 1$, тогда \eqref{second_condition} принимает следующий вид:
- \begin{equation}
- \begin{aligned}
-&t^3 +at^2 +bt + c  \geq 0\\
-&A = \frac{1}{\tau_{p1}^4}(- \tau_{z1}^4\varepsilon - \tau_{z1}^4 + 2\tau_{p1}^2- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)\\
-&B = \frac{1}{\tau_{p1}^4}( 1- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2+ 4\tau_{z1}\tau_{p1}\varkappa- 2\tau_{p1}^2\delta)\\
-&C = \frac{1}{\tau_{p1}^4}(\varkappa-\varepsilon - 1 - \delta)\\
-&t = x^2 \geq 0
  \end{aligned}
 \end{equation}
 
