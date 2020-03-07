@@ -1,0 +1,121 @@
+\documentclass[14pt,a4paper,twoside]{extarticle}
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[cp1251]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{cite}
+
+\newcommand{\lquot}{``}
+\newcommand{\rquot}{''}
+
+%To change the layout of the itemize (no vertical spacing between)
+\def\itemhook{%
+  \setlength{\topsep}{8pt plus 3pt minus 3pt}%
+  \setlength{\itemsep}{4pt plus 1pt minus 1pt}%
+  \setlength{\partopsep}{0pt}%
+  \setlength{\parsep}{0pt}}
+  
+\makeatletter
+\def\itemize{%
+  \ifnum \@itemdepth >\thr@@\@toodeep\else
+    \advance\@itemdepth\@ne
+    \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+    \expandafter
+    \list
+      \csname\@itemitem\endcsname
+      {\def\makelabel##1{\hss\llap{##1}}%
+        \itemhook \csname itemhook\romannumeral\the\@itemdepth\endcsname}%
+  \fi}
+\makeatother
+
+\oddsidemargin=0pt
+\evensidemargin=0pt
+\textwidth=165mm
+
+\topmargin=2.4mm
+\headheight=0mm
+\headsep=0mm
+\textheight=248mm
+
+\sloppy
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+\textsc{САНКТ-ПЕТЕРБУРГСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ}\\
+\end{center}
+\vspace{1.5cm}
+\begin{flushright}
+{На правах рукописи}
+\end{flushright}
+\vspace{1.5cm}
+\begin{center}
+{Борменталь Галина Леопардовна}
+\par
+\vspace{2cm}
+\textsc{ВЛИЯНИЕ ЛУННОГО СВЕТА НА РОСТ ТЕЛЕГРАФНЫХ СТОЛБОВ}
+\par
+\vspace{2cm}
+{05.13.11 --- Математическое и программное обеспечение\\
+вычислительных машин, комплексов и компьютерных сетей}
+\par
+\vspace{2cm}
+{АВТОРЕФЕРАТ\\
+диссертации на соискание ученой степени\\
+кандидата физико-математических наук}
+\end{center}
+\par
+\vspace{3.5cm}
+\begin{center}
+{Санкт-Петербург\\
+1889}
+\end{center}
+\end{titlepage}
+
+\thispagestyle{empty}
+{Работа выполнена на кафедре БЕЗсистемного программирования ма\-те\-ма\-ти\-ко-ме\-ха\-ни\-чес\-ко\-го
+факультета Санкт-Петербургского государственного университета.
+
+\vspace{0.8cm}
+
+\begin{tabbing}
+Научный руководитель:\quad\quad\=доктор физико-математических наук,\\
+\quad\>проф. ЛЬВОВ Гепард Тигранович\\
+\>\\
+Официальные оппоненты:\>доктор физико-математических наук,\\
+\quad\>проф. ПРЕОБРАЖЕНСКИЙ Филипп Филиппович\\
+\quad\>(ОАО \lquot НИИЧАВО\rquot, Москва)\\
+\>\\
+\>кандидат физико-математических наук,\\
+\quad\>ЧУДАКУЛЛИ Наверн Орландович\\
+\quad\>(Unseen University, Анк-Морпорк)\\
+\>\\
+Ведущая организация:\>Институт благородных девиц\\
+\quad\>(Смоленск)\\
+\>
+\end{tabbing}
+
+
+\vspace{0.8cm}
+\noindent Защита диссертации состоится ``\underline{\phantom{332}}''\underline{\phantom{xxxxxxxxxx}} 1889 года
+в \underline{\phantom{25}} часов на заседании совета Д212.232.51 по защите
+докторских и кандидатских диссертаций при Санкт-Петербургском государственном университете по адресу: 198504, Санкт-Петербург, Петродворец, Университетский пр., д.~28, математико-механический факультет, ауд. 3В.
+
+\vspace{0.8cm}
+\noindent С диссертацией можно ознакомиться в Научной библиотеке Санкт-Пе\-тер\-бург\-ского государственного
+университета по адресу: 199034, Санкт-Петербург, Университетская наб., д.~7/9.
+
+\vspace{0.8cm}
+Автореферат разослан ``\underline{\phantom{332}}''\underline{\phantom{xxxxxxxxxx}} 1889 года.
+
+\vspace{2.5cm}
+\noindent Ученый секретарь\\
+диссертационного совета\\
+доктор физико-математических наук,\\
+профессор\phantom{xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}Перфокартов. И. К.
+}
+\end{document}
+
