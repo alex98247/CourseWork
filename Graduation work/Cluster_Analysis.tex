@@ -132,8 +132,8 @@
 \draw[->] (-3,0) -- (a.west) node[midway,above,inner sep=2pt] {sin($\theta_{ref}(t)$)};
 \draw[->] (a.east) -- (loop_filter.west);
 \draw[->] (loop_filter.east) -- (VCO.west);
-\draw[->] (VCO.east) -- (11,0);
-\draw[->] (10,0) --  +(0,-2) --  +(-8,-2) --  (a.south);
+\draw[->] (VCO.east) -- (12.5,0) node[midway,above,inner sep=2pt] {cos($\theta_{vco}(t)$)};
+\draw[->] (12,0) --  +(0,-2) --  +(-10,-2) --  (a.south);
 
 \end{tikzpicture}
 \end{center}

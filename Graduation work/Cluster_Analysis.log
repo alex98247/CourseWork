@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  7 MAR 2020 12:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  9 MAR 2020 00:27
 entering extended mode
 **./Cluster_Analysis.tex
 (Cluster_Analysis.tex
@@ -1323,14 +1323,11 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
  18894 strings out of 492484
- 384016 string characters out of 3122053
- 430218 words of memory out of 3000000
+ 384017 string characters out of 3122053
+ 430216 words of memory out of 3000000
  22773 multiletter control sequences out of 15000+200000
  19448 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1354,7 +1351,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Local
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
 sers/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb>
-Output written on Cluster_Analysis.pdf (15 pages, 631286 bytes).
+Output written on Cluster_Analysis.pdf (15 pages, 631221 bytes).
 PDF statistics:
  379 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -32,10 +32,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \razdel{Введение}
-Система фазовой автоподстройки частоты (ФАПЧ)~--- система с обратной связью, используемая для синхронизации сигналов эталонного и подстраиваемого генераторов. Она появилась в первой половине XX века \cite{appleton}. В настоящее время системы ФАПЧ применяются в различном телекоммуникационном оборудовании, навигационных системах и т.\,д. \cite{best}.
+Система фазовой автоподстройки частоты (ФАПЧ)~--- система с обратной связью, которая подстраивает частоту сигнала генератора, управляемого напряжением (ГУН) под частоту опорного сигнала. Она появилась в первой половине XX века \cite{appleton}. В настоящее время системы ФАПЧ применяются в различном телекоммуникационном оборудовании, навигационных системах и т.\,д. \cite{best}.
 
 На практике часто используют системы ФАПЧ второго порядка. Наряду с системами ФАПЧ второго порядка исследуются системы третьего порядка, отличающиеся хорошим подавлением шума и более низкой стационарной ошибкой \cite{thirdOrderPLL}.
-\Figure{0.85\textwidth}{images/PLL.png}{Схема классической системы ФАПЧ}
+\Figure{0.85\textwidth}{images/PLL.jpg}{Схема классической системы ФАПЧ, где $\operatorname{sin} (\theta_{ref}(t))$~--- опорный сигнал с фазой $\theta_{ref}(t)$, $\operatorname{cos} (\theta_{vco}(t))$~--- сигнал ГУН с фазой $\theta_{vco}(t)$}
 
 Хорошо известна система дифференциальных уравнений, описывающих ФАПЧ \cite{kuznetsov_article}
  \begin{equation}\label{system}
@@ -44,14 +44,13 @@
  &\dot{\theta_e} = -K_{vco}C^\intercal x -K_{vco}D(\operatorname{sin}(\theta_e) - \gamma))
  \end{aligned}
 \end{equation}
-Где $A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$~--- мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы, $\omega^{free}_{e}$~--- разность частоты опорного сигнала и частоты свободных колебаний ГУН, $K_{vco}$~--- коэфициент передачи и $\gamma$ определяется следующим образом
+Где $A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$~--- мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы, $K_{vco}$~--- коэфициент передачи, $\gamma$ определяется следующим образом
  \begin{equation}\label{gamma}
  \begin{aligned}
 \gamma = \frac{\omega_e^{free}}{K_{vco}\left(D-C^\intercal A^{-1}B\right)}
  \end{aligned}
 \end{equation}
- При этом предполагается, что эталонный генератор работает на постоянной частоте.
-Введем в рассмотрение число:
+ $\omega^{free}_{e}$~--- разность частоты опорного сигнала и частоты свободных колебаний ГУН. При этом предполагается, что эталонный генератор работает на постоянной частоте. Введем в рассмотрение число:
  \begin{equation}
  \begin{aligned}
 \mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
@@ -74,14 +73,13 @@
 &W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1
  \end{aligned}
 \end{equation}
-Поскольку $\text{det}(sI-A) = s^2 + ab^{-1}s + b^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, b\right)$ вполне управляема. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим
- \begin{equation}
+Поскольку $\text{det}(sI-A) = s^2 + (\tau_{p1}^{-1}+\tau_{p2}^{-1})s + \tau_{p1}^{-1}\tau_{p2}^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, B\right)$ вполне управляема. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим
+ \begin{equation*}
  \begin{aligned}
-\varkappa = 1 \text{,} \quad \varepsilon = 1 - \tau - \delta \text{,} \quad \tau =  \text{,} \quad \delta = \frac{1-b}{2(a^2 - 2b + 1)}
+\varkappa = 1 \text{,} \quad \varepsilon = 1 - \tau - \delta \text{,} \quad \tau = \tau_{p1}\tau_{p2} + \delta(\tau_{p1}^2+\tau_{p2}^2) \text{,} \quad \delta = \frac{1-\tau_{p1}\tau_{p2}}{2(\tau_{p1}^2+\tau_{p2}^2 + 1)}
  \end{aligned}
-\end{equation}
-\Figure{\textwidth}{images/agregated.jpg}{Численное и аналитическое решения для фильтра \eqref{filter1}}
-
+\end{equation*}
+\Figure{\textwidth}{images/agregated.jpg}{Численная оптимизация $\nu^2$ в MATLAB с помощью функции fmincon и график $\nu^2$ построенный по \eqref{filter1_max}}
 \begin{equation}\label{filter1_max}
  \begin{aligned}
 \nu^2 < \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1}
@@ -101,15 +99,15 @@ W(x) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 \beta_1 < \beta_2 < 1
  \end{aligned}
 \end{equation}
-Поскольку $\text{det}(sI-A) = s^2 + \alpha_1\alpha_2^{-1}s + \alpha_2^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, b\right)$ вполне управляема. Подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим 
- \begin{equation}\label{filter3-3}
+Поскольку $\text{det}(sI-A) = s^2 + \alpha_1\alpha_2^{-1}s + \alpha_2^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, B\right)$ вполне управляема. Подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим 
+ \begin{equation*}
  \begin{aligned}
  \tau = 0 \text{,} \quad
  \varkappa = 1 \text{,} \quad
  \varepsilon = 1-\delta \text{,} \quad
  \delta = \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)}
  \end{aligned}
-\end{equation}
+\end{equation*}
 Потребуем 
  \begin{equation}\label{restriction-2}
  \begin{aligned}
@@ -127,11 +125,11 @@ W(x) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 В настояцее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный результат будет интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.
 
 \begin{thebibliography}{6}
-\bibitem{best}  Best~R.\:E. Phase-Locked Loops: Design, Simulation, and Applications / McGraw-Hill Education, 2007. P.~195--207.
+\bibitem{best}  Best~R.\:E. Phase-Locked Loops: Design, Simulation, and Applications / McGraw-Hill Education, 2007. P.~115--116.
 \bibitem{kuznetsov}  Leonov~G.\:A., Kuznetsov~N.\:V. Nonlinear mathematical models of phase-locked loops : stability and oscillations / Cambridge Scientific Publishers, 2014. P.~112--113.
-\bibitem{leonov}  Леонов~Г.\:А., Селеджи~С.\:М. Системы фазовой синхронизации в аналоговой и цифровой схемотехнике / СПб.:~Изд-во Невский диалект, 2014. P.~195--207.
-\bibitem{kuznetsov_article} Kuznetsov~N.\:V., Leonov~G.\:A., Yuldashev~M.\:V., Yuldashev~R.\:V. Solution of the Gardner problem on the lock-in range of phase-locked loop // ArXiv e-prints. 2017. 1705.05013. P.~289--298.
+\bibitem{leonov}  Леонов~Г.\:А., Селеджи~С.\:М. Системы фазовой синхронизации в аналоговой и цифровой схемотехнике / СПб.:~Изд-во Невский диалект, 2014. P.~58--66.
+\bibitem{kuznetsov_article} Kuznetsov~N.\:V., Leonov~G.\:A., Yuldashev~M.\:V., Yuldashev~R.\:V. Hold-In, Pull-In, and Lock-In Ranges of PLLCircuits: Rigorous Mathematical Definitions andLimitations of Classical Theory // Transactions on Circuits and Systems I: Regular Papers. 2015. Vol.~62, No~10. P.~2455.
 \bibitem{appleton} Appleton~E.\:E. Automatic synchronization of triode oscillators // Proc. Camb. Phil. Soc. 1923. Vol.~21, No~3. P.~231.
-\bibitem{thirdOrderPLL} Feng~L., Wu~C., Jin~B., Wu~Z. A Passive Third-order Cascade PLL Filter // Trans Tech Publications. 2011. Vols. 255-260. P.~1.
+\bibitem{thirdOrderPLL} Feng~L., Wu~C., Jin~B., Wu~Z. A Passive Third-order Cascade PLL Filter // Trans Tech Publications. 2011. Vols. 255-260. P.~2262.
 \end{thebibliography}
 \end{document}
