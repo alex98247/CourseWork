@@ -86,6 +86,31 @@
  \end{aligned}
 \end{equation} 
 
+\razdel{Оценка области захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
+ Рассмотрим передаточную функцию
+ \begin{equation}\label{filter2}
+ \begin{aligned}
+W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad \tau_{p1} \neq \tau_{p2}
+ \end{aligned}
+\end{equation}
+Поскольку $\text{det}(sI-A) = s^2 +  2\tau_{p1}^{-1}s + \tau_{p1}^{-2}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, B\right)$ вполне управляема. Подставим \eqref{filter2} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим $\varkappa = 1$, $\tau = 0$
+ \begin{equation*}
+ \varepsilon = 
+\left\{
+\begin{aligned}
+    &z^2 - z^4\delta \text{,} \quad \delta \in [\delta_1, \delta_2] \\
+    &q - z^2\delta \text{,} \quad \delta \in (\delta_2, \delta_3]\\
+    &1 - \delta \text{,} \quad \delta \in (\delta_3, \delta_4]
+\end{aligned}\right.
+\end{equation*}
+ где $z = \frac{\tau_{p1}}{\tau_{z1}}$, $q = 2z - \frac{1}{2} - \frac{1}{2}z^2$, $\delta_i$, $i=\overline{1,4}$~--- точки разбивающие $[0, 1]$ на неперсекающиеся полуинтервалы, в зависимости от  $z$. Положим  $\delta$  равным одним из $\frac{1}{1+z^2}$, $\frac{1-q}{1-z^2}$, $\frac{z^2-q}{z^4-z^2}$, $\frac{q}{2z^2}$, $\frac{1}{2z^2}$, $\frac{1}{2}$ в зависимости от $z$. Тогда $4\varepsilon\delta$ пределяется одним из следущих соотношений:
+ \begin{equation}\label{filter2_max}
+\begin{aligned}
+\frac{q^2}{z^2}\text{,} \quad 1 \text{,} \quad \frac{4z^2}{1+z^2} \text{,} \quad \frac{4(1-q)(q-z^2)}{1-z^2} \text{,} \quad \frac{z^2-q}{z^4-z^2}\left(z^2 - \frac{z^2(z^2-q)}{z^2-1}\right)
+\end{aligned}
+\end{equation}
+\Figure{0.5\textwidth}{images/main.jpg}{Численная оптимизация $\nu^2$ в MATLAB с помощью функции fmincon и график $\nu^2$ построенный по \eqref{filter2_max}}
+
 \razdel{Оценка области захвата для систем ФАПЧ с фильтром $\frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}$}
  Рассмотрим передаточную функцию
  \begin{equation}\label{filter3}
