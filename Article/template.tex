@@ -32,25 +32,28 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \razdel{Введение}
-Система фазовой автоподстройки частоты (ФАПЧ)~--- система с обратной связью, которая подстраивает частоту сигнала генератора, управляемого напряжением (ГУН) под частоту опорного сигнала. Она появилась в первой половине XX века \cite{appleton}. В настоящее время системы ФАПЧ применяются в различном телекоммуникационном оборудовании, навигационных системах и т.\,д. \cite{best}.
-
-На практике часто используют системы ФАПЧ второго порядка. Наряду с системами ФАПЧ второго порядка исследуются системы третьего порядка, отличающиеся хорошим подавлением шума и более низкой стационарной ошибкой \cite{thirdOrderPLL}.
-\Figure{0.85\textwidth}{images/PLL.png}{Схема классической системы ФАПЧ, где $\operatorname{sin} (\theta_{ref}(t))$~--- опорный сигнал с фазой $\theta_{ref}(t)$, $\operatorname{cos} (\theta_{vco}(t))$~--- сигнал ГУН с фазой $\theta_{vco}(t)$}
+Система фазовой автоподстройки частоты (ФАПЧ)~--- система с обратной связью, которая подстраивает частоту сигнала генератора, управляемого напряжением (ГУН) под частоту опорного сигнала. В настоящее время системы ФАПЧ применяются в телекоммуникационном оборудовании\cite{best}, навигационных системах\cite{curran} и д.\,р. На практике часто используют системы ФАПЧ второго и третьего порядка. Системы ФАПЧ третьего порядка, отличаются хорошим подавлением шума и более низкой стационарной ошибкой\cite{thirdOrderPLL}. Основными параметрами ФАПЧ являются удержание, захват и захват без проскальзывания. В данной работе будут получены оценки полосы захвата для некоторых фильтров 2 порядка.
+\razdel{Математическая модель ФАПЧ}
+\Figure{\textwidth}{images/PLL.jpg}{Схема классической системы ФАПЧ, где $\theta_{ref}(t)$~--- фаза опорного сигнала, $\theta_{vco}(t)$~--- фаза сигнала ГУН, $\upsilon_f(t)$~--- выходной сигнал фильтра, $\omega_{vco}^{free}$~--- частота свободных колебаний ГУН, $\theta_e(t) = \theta_{ref}(t)-\theta_{vco}(t)$}
 
 Хорошо известна система дифференциальных уравнений, описывающих ФАПЧ \cite{kuznetsov_article}
  \begin{equation}\label{system}
  \begin{aligned}
  &\dot{x} = Ax + B(\operatorname{sin}(\theta_e) - \gamma)\\
- &\dot{\theta_e} = -K_{vco}C^\intercal x -K_{vco}D(\operatorname{sin}(\theta_e) - \gamma))
+ &\dot{\theta_e} = -K_{vco}C^T x -K_{vco}D(\operatorname{sin}(\theta_e) - \gamma))
  \end{aligned}
 \end{equation}
 Где $A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$~--- мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы, $K_{vco}$~--- коэфициент передачи, $\gamma$ определяется следующим образом
  \begin{equation}\label{gamma}
  \begin{aligned}
-\gamma = \frac{\omega_e^{free}}{K_{vco}\left(D-C^\intercal A^{-1}B\right)}
+\gamma = \frac{\omega_e^{free}}{K_{vco}\left(D-C^T A^{-1}B\right)}
  \end{aligned}
 \end{equation}
- $\omega^{free}_{e}$~--- разность частоты опорного сигнала и частоты свободных колебаний ГУН. При этом предполагается, что эталонный генератор работает на постоянной частоте. Введем в рассмотрение число:
+ $\omega^{free}_{e}$~--- разность частоты опорного сигнала и частоты свободных колебаний ГУН. При этом предполагается, что эталонный генератор работает на постоянной частоте.
+\razdel{Оценка области захвата}
+Введем определение полосы захвата.
+\Definition {Полоса захвата~--- максимальная разность по модулю частот опорного сигнала и ГУН $|\omega_e^{free}|$, при котором система \eqref{system} глобально ассимптотически устойчива.}\\
+Введем в рассмотрение число:
  \begin{equation}
  \begin{aligned}
 \mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
@@ -59,72 +62,60 @@
 \TheoremCite{leonov}{
 Пусть все нули функции $\operatorname{sin}(\theta_e) - \gamma$ изолированы, пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:
  \begin{align}
-&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\left[ W(ix)-ix \right]^\intercal\tau\left[W(ix)+ix \right]\right)  \geqslant \delta\text{,}\quad \forall x \in \mathbb{R}\label{first_th_eq}\\
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\left[ W(ix)-ix \right]^T\tau\left[W(ix)+ix \right]\right)  \geqslant \delta\text{,}\quad \forall x \in \mathbb{R}\label{first_th_eq}\\
 &4\varepsilon\delta > (\varkappa\nu)^2
 \end{align}
 Тогда система \eqref{system} глобально ассимптотически устойчива.
 }
 
-Приведенная теорема не отвечает на вопрос как найти полосу захвата, т.\,е. максимальную разность частот опорного сигнала и ГУН $\omega_e^{free}$, при котором система \eqref{system} глобально ассимптотически устойчива. Этот вопрос является важным для инженеров при физической реализации ФАПЧ. Для ответа рассмотрим некоторые фильтры 2 порядка. Найдем $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие условию теоремы так, что бы максимизировать $\nu$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система \eqref{system} глобально ассимтотически устойчива.
-\razdel{Оценка области захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
-Рассмотрим передаточную функцию:
+Найдем $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие условию теоремы так, что бы максимизировать $\nu$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система \eqref{system} глобально ассимтотически устойчива.
+\podrazdel{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
+Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:
  \begin{equation}\label{filter1}
  \begin{aligned}
 &W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1
  \end{aligned}
 \end{equation}
-Поскольку $\text{det}(sI-A) = s^2 + (\tau_{p1}^{-1}+\tau_{p2}^{-1})s + \tau_{p1}^{-1}\tau_{p2}^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, B\right)$ вполне управляема. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим
+Рассмотрим управляемую реализацию пары $\left(A, B\right)$. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим
  \begin{equation*}
  \begin{aligned}
 \varkappa = 1 \text{,} \quad \varepsilon = 1 - \tau - \delta \text{,} \quad \tau = \tau_{p1}\tau_{p2} + \delta(\tau_{p1}^2+\tau_{p2}^2) \text{,} \quad \delta = \frac{1-\tau_{p1}\tau_{p2}}{2(\tau_{p1}^2+\tau_{p2}^2 + 1)}
  \end{aligned}
 \end{equation*}
-\Figure{\textwidth}{images/agregated.jpg}{Численная оптимизация $\nu^2$ в MATLAB с помощью функции fmincon и график $\nu^2$ построенный по \eqref{filter1_max}}
+\Figure{\textwidth}{images/agregated.jpg}{Численная оценка $\nu^2$ в MATLAB с помощью функции fmincon и график $\nu^2$ построенный по \eqref{filter1_max}}
 \begin{equation}\label{filter1_max}
  \begin{aligned}
 \nu^2 < \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1}
  \end{aligned}
 \end{equation} 
-
-\razdel{Оценка области захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
- Рассмотрим передаточную функцию
+\podrazdel{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
+Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:
  \begin{equation}\label{filter2}
  \begin{aligned}
 W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad \tau_{p1} \neq \tau_{p2}
  \end{aligned}
 \end{equation}
-Поскольку $\text{det}(sI-A) = s^2 +  2\tau_{p1}^{-1}s + \tau_{p1}^{-2}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, B\right)$ вполне управляема. Подставим \eqref{filter2} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим $\varkappa = 1$, $\tau = 0$
- \begin{equation*}
- \varepsilon = 
-\left\{
+Рассмотрим управляемую реализацию пары $\left(A, B\right)$. Подставим \eqref{filter2} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим $\varkappa = 1$, $\tau = 0$. Рассмотрим прямые
+ \begin{equation}\label{lines}
 \begin{aligned}
-    &z^2 - z^4\delta \text{,} \quad \delta \in [\delta_1, \delta_2] \\
-    &q - z^2\delta \text{,} \quad \delta \in (\delta_2, \delta_3]\\
-    &1 - \delta \text{,} \quad \delta \in (\delta_3, \delta_4]
-\end{aligned}\right.
-\end{equation*}
- где $z = \frac{\tau_{p1}}{\tau_{z1}}$, $q = 2z - \frac{1}{2} - \frac{1}{2}z^2$, $\delta_i$, $i=\overline{1,4}$~--- точки разбивающие $[0, 1]$ на неперсекающиеся полуинтервалы, в зависимости от  $z$. Положим  $\delta$  равным одним из $\frac{1}{1+z^2}$, $\frac{1-q}{1-z^2}$, $\frac{z^2-q}{z^4-z^2}$, $\frac{q}{2z^2}$, $\frac{1}{2z^2}$, $\frac{1}{2}$ в зависимости от $z$. Тогда $4\varepsilon\delta$ пределяется одним из следущих соотношений:
- \begin{equation}\label{filter2_max}
-\begin{aligned}
-\frac{q^2}{z^2}\text{,} \quad 1 \text{,} \quad \frac{4z^2}{1+z^2} \text{,} \quad \frac{4(1-q)(q-z^2)}{1-z^2} \text{,} \quad \frac{z^2-q}{z^4-z^2}\left(z^2 - \frac{z^2(z^2-q)}{z^2-1}\right)
+\varepsilon(\delta)=z^2 - z^4\delta \text{,}\quad \varepsilon(\delta)=q - z^2\delta\text{,}\quad \varepsilon(\delta)=1 - \delta
 \end{aligned}
 \end{equation}
-\Figure{0.5\textwidth}{images/main.jpg}{Численная оптимизация $\nu^2$ в MATLAB с помощью функции fmincon и график $\nu^2$ построенный по \eqref{filter2_max}}
-
-\razdel{Оценка области захвата для систем ФАПЧ с фильтром $\frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}$}
- Рассмотрим передаточную функцию
+где $z = \frac{\tau_{p1}}{\tau_{z1}}$, $q = 2z - \frac{1}{2} - \frac{1}{2}z^2$. \eqref{lines} вместе с прямыми $\delta = 0$, $\varepsilon = 0$ образуют выпуклый многоугольник. В зависимости от многоугольника положим  $\delta$  равным одним из $\frac{1}{1+z^2}$, $\frac{1-q}{1-z^2}$, $\frac{z^2-q}{z^4-z^2}$, $\frac{q}{2z^2}$, $\frac{1}{2z^2}$, $\frac{1}{2}$ и $\varepsilon$ из \eqref{lines}. Тогда $4\varepsilon\delta$ пределяется одним из следущих соотношений:
+ \begin{equation}\label{filter2_max}
+\begin{aligned}
+\frac{q^2}{z^2}\text{,} \quad 1 \text{,} \quad \frac{4z^2}{1+z^2} \text{,} \quad \frac{4(1-q)(q-z^2)}{1-z^2} \text{,} \quad \frac{z^2-q}{z^2-1} - \left(\frac{z^2-q}{z^2-1}\right)^2
+\end{aligned}
+\end{equation}
+\Figure{0.5\textwidth}{images/main.jpg}{Численная оценка $\nu^2$ в MATLAB с помощью функции fmincon и график $\nu^2$ построенный по \eqref{filter2_max}}
+\podrazdel{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}$}
+Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:
  \begin{equation}\label{filter3}
  \begin{aligned}
-W(x) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
+W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2} \text{,}\quad 0 < \beta_1 < \beta_2 < 1 \text{,}\quad 0 < \alpha_1 \text{,} \alpha_2
  \end{aligned}
 \end{equation}
-Где $\alpha_1$, $\alpha_2$, $\beta_1$, $\beta_2$ вещественные положительные числа. Предположим
- \begin{equation}\label{restriction-1}
- \begin{aligned}
-\beta_1 < \beta_2 < 1
- \end{aligned}
-\end{equation}
-Поскольку $\text{det}(sI-A) = s^2 + \alpha_1\alpha_2^{-1}s + \alpha_2^{-1}$, матрица $A$~--- устойчива. Очевидно, что пара $\left(A, B\right)$ вполне управляема. Подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим 
+Рассмотрим управляемую реализацию пары $\left(A, B\right)$. Подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации $\nu$ положим 
  \begin{equation*}
  \begin{aligned}
  \tau = 0 \text{,} \quad
@@ -139,7 +130,7 @@ W(x) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 \alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
  \end{aligned}
 \end{equation}
-Это условие гарантирует положительность числителя и знаменателя $\delta$. 
+\eqref{restriction-2} гарантирует положительность числителя и знаменателя $\delta$. Тогда получим оценку
  \begin{equation}
  \begin{aligned}
 \nu^2 < 4\frac{[\alpha_1^2(1-\beta_1) - \alpha_2(1-\beta_2)][\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)]}{[\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)]^2}
@@ -154,7 +145,7 @@ W(x) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 \bibitem{kuznetsov}  Leonov~G.\:A., Kuznetsov~N.\:V. Nonlinear mathematical models of phase-locked loops : stability and oscillations / Cambridge Scientific Publishers, 2014. P.~112--113.
 \bibitem{leonov}  Леонов~Г.\:А., Селеджи~С.\:М. Системы фазовой синхронизации в аналоговой и цифровой схемотехнике / СПб.:~Изд-во Невский диалект, 2014. P.~58--66.
 \bibitem{kuznetsov_article} Kuznetsov~N.\:V., Leonov~G.\:A., Yuldashev~M.\:V., Yuldashev~R.\:V. Hold-In, Pull-In, and Lock-In Ranges of PLLCircuits: Rigorous Mathematical Definitions andLimitations of Classical Theory // Transactions on Circuits and Systems I: Regular Papers. 2015. Vol.~62, No~10. P.~2455.
-\bibitem{appleton} Appleton~E.\:E. Automatic synchronization of triode oscillators // Proc. Camb. Phil. Soc. 1923. Vol.~21, No~3. P.~231.
-\bibitem{thirdOrderPLL} Feng~L., Wu~C., Jin~B., Wu~Z. A Passive Third-order Cascade PLL Filter // Trans Tech Publications. 2011. Vols. 255-260. P.~2262.
+\bibitem{thirdOrderPLL} Feng~L., Wu~C., Jin~B., Wu~Z. A Passive Third-order Cascade PLL Filter // Trans Tech Publications. 2011. Vol. 255-260. P.~2262.
+\bibitem{curran} Curran~J.\:T., Lachapelle~G., Murphy~C.\:C. Digital GNSS PLL Design Conditioned on Thermal and Oscillator Phase Noise // IEEE Transactions on Aerospace and Electronic Systems. 2012. Vol.~48, No~1. P.~180.
 \end{thebibliography}
 \end{document}

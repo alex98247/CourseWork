@@ -125,15 +125,15 @@
 \begin{center}
 \begin{tikzpicture}
 
-\node at (2,0) [draw, text width=4cm, align=center, rectangle] (a) {Фазовый детектор \par(компаратор)};
-\node[draw, align=center, rectangle] (loop_filter) [right=of a] {Фильтр};
-\node[draw, align=center, rectangle] (VCO) [right=of loop_filter] {ГУН};
+\node at (0.5,0) [draw, text width=4cm, align=center, rectangle] (a) {Фазовый детектор \par(компаратор)};
+\node at (5.2,0) [draw, label=below:{Фильтр}, align=center, rectangle] (loop_filter) {$W(s)$};
+\node at (9.6,0) [draw, label={[align=center]below:Генератор,\\управляемый напряжением}] (VCO) {$\omega_{vco}(t) = \omega_{vco}^{free}+K_{vco}\upsilon_f(t)$};
 
-\draw[->] (-3,0) -- (a.west) node[midway,above,inner sep=2pt] {sin($\theta_{ref}(t)$)};
-\draw[->] (a.east) -- (loop_filter.west);
-\draw[->] (loop_filter.east) -- (VCO.west);
-\draw[->] (VCO.east) -- (12.5,0) node[midway,above,inner sep=2pt] {cos($\theta_{vco}(t)$)};
-\draw[->] (12,0) --  +(0,-2) --  +(-10,-2) --  (a.south);
+\draw[->] (-4,0) -- (a.west) node[midway,above,inner sep=2pt] {sin($\theta_{ref}(t)$)};
+\draw[->] (a.east) -- (loop_filter.west) node[midway,above,inner sep=2pt] {sin($\theta_{e}(t)$)};
+\draw[->] (loop_filter.east) -- (VCO.west) node[midway,above,inner sep=2pt] {$\upsilon_f(t)$};
+\draw[->] (VCO.east) -- (14.5,0) node[midway,above,inner sep=2pt] {cos($\theta_{vco}(t)$)};
+\draw[->] (14,0) --  +(0,-2) --  +(-13.5,-2) --  (a.south);
 
 \end{tikzpicture}
 \end{center}
