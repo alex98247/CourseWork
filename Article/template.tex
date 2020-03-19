@@ -43,7 +43,7 @@
  &\dot{\theta_e} = -K_{vco}C^T x -K_{vco}D(\operatorname{sin}(\theta_e) - \gamma))\text{,}
  \end{aligned}
 \end{equation}
-где $A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$~--- мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы. $W(s)=C^T \left(A-sI\right)^{-1}B - D$~--- передаточная функция фильтра. $K_{vco}$~--- коэфициент передачи, $\gamma$ определяется следующим образом
+где $A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$~--- мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы. $W(s)=C^T \left(A-sI\right)^{-1}B - D$~--- передаточная функция фильтра. $K_{vco}$~--- коэффициент передачи, $\gamma$ определяется следующим образом
  \begin{equation}\label{gamma}
  \begin{aligned}
 \gamma = \frac{\omega_e^{free}}{K_{vco}\left(D-C^T A^{-1}B\right)}\text{,}
@@ -53,7 +53,7 @@
 \razdel{Оценка области захвата}
 Введем определение полосы захвата согласно \cite{kuznetsov_article}.
 \Definition {Полоса захвата~--- максимальная разность по модулю частот опорного сигнала и ГУН $|\omega_p|$ такая, что система \eqref{system} глобально асимптотически устойчива для всех $0<|\omega_e^{free}|<|\omega_p|$.}
-\Definition {Система \eqref{system} называется глобально асимптотически устойчивой,если любое решение $x(t, x_0)$  стремится к некоторому состоянию равновесия при $t \rightarrow +\infty$}.\\
+\Definition {Система \eqref{system} называется глобально асимптотически устойчивой, если любое решение $x(t, x_0)$  стремится к некоторому состоянию равновесия при $t \rightarrow +\infty$}.\\
 Введем в рассмотрение число:
  \begin{equation}
  \begin{aligned}
@@ -70,7 +70,7 @@
 Тогда система \eqref{system} глобально асимптотически устойчива.
 }
 
-Далее будем выбирать $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие \eqref{first_th_eq} так, что бы максимизировать $\nu$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система \eqref{system} глобально асимтотически устойчива.
+Далее будем выбирать $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие \eqref{first_th_eq} так, чтобы максимизировать $\nu$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система \eqref{system} глобально асимптотически устойчива.
 \podrazdel{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
 Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:
  \begin{equation}\label{filter1}
@@ -78,7 +78,7 @@
 &W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1
  \end{aligned}
 \end{equation}
-Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Тогда оценка $\nu$ будет наибольшей при следующих значениях параметров
+Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Тогда оценка $\nu$ будет наибольшей при следующих значениях параметров:
  \begin{equation*}
  \begin{aligned}
 \varkappa = 1 \text{,} \quad \varepsilon = 1 - \tau - \delta \text{,} \quad \tau = \tau_{p1}\tau_{p2} + \delta(\tau_{p1}^2+\tau_{p2}^2) \text{,} \quad \delta = \frac{1-\tau_{p1}\tau_{p2}}{2(\tau_{p1}^2+\tau_{p2}^2 + 1)}
@@ -99,23 +99,20 @@
 W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad \tau_{p1} \neq \tau_{p2}
  \end{aligned}
 \end{equation}
-Подставим \eqref{filter2} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Положим $\varkappa = 1$, $\tau = 0$. Оценка $\nu$ будет наибольшей если параметры $\varepsilon$, $\delta$ лежат на одной из граней выпуклого многоугольника, ограниченного прямыми $\delta = 0$, $\varepsilon = 0$ и
+Подставим \eqref{filter2} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Положим $\varkappa = 1$, $\tau = 0$. Оценка $\nu$ будет наибольшей, если параметры $\varepsilon$, $\delta$ лежат на одной из граней выпуклого многоугольника, ограниченного прямыми $\delta = 0$, $\varepsilon = 0$ и
  \begin{equation}\label{lines}
 \begin{aligned}
 \varepsilon(\delta)=z^2 - z^4\delta \text{,}\quad \varepsilon(\delta)=q - z^2\delta\text{,}\quad \varepsilon(\delta)=1 - \delta \text{,}
 \end{aligned}
 \end{equation}
 где $z = \frac{\tau_{p1}}{\tau_{z1}}$, $q = 2z - \frac{1}{2} - \frac{1}{2}z^2$. 
-\iffalse
-В зависимости от многоугольника положим  $\delta$  равным одним из $\frac{1}{1+z^2}$, $\frac{1-q}{1-z^2}$, $\frac{z^2-q}{z^4-z^2}$, $\frac{q}{2z^2}$, $\frac{1}{2z^2}$, $\frac{1}{2}$ и $\varepsilon$ из \eqref{lines}.
-\fi
-Тогда $4\varepsilon\delta$ пределяется одним из следущих соотношений:
+Тогда $4\varepsilon\delta$ определяется одним из следущих соотношений:
  \begin{equation}\label{filter2_max}
 \begin{aligned}
 \frac{q^2}{z^2}\text{,} \quad 1 \text{,} \quad \frac{4z^2}{1+z^2} \text{,} \quad \frac{4(1-q)(q-z^2)}{1-z^2} \text{,} \quad \frac{z^2-q}{z^2-1} - \left(\frac{z^2-q}{z^2-1}\right)^2
 \end{aligned}
 \end{equation}
-\Figure{0.5\textwidth}{images/main.eps}{Синим цветом представлена численная оценка $\nu^2$ согласно \eqref{first_th_eq}, \eqref{second_th_eq} в MATLAB с помощью функции fmincon. Красным цветом представлен график $\nu^2$ построенный по \eqref{filter2_max}, как максимум по всем граням многоугольника}
+\Figure{0.5\textwidth}{images/main.eps}{Синим цветом представлена численная оценка $\nu^2$ согласно \eqref{first_th_eq}, \eqref{second_th_eq} в MATLAB с помощью функции fmincon. Красным цветом представлен график $\nu^2$, построенный по \eqref{filter2_max}, как максимум по всем граням многоугольника}
 \podrazdel{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}$}
 Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:
  \begin{equation}\label{filter3}
@@ -123,7 +120,7 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 
 W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2} \text{,}\quad 0 < \beta_1 < \beta_2 < 1 \text{,}\quad 0 < \alpha_1 \text{,} \alpha_2
  \end{aligned}
 \end{equation}
-Подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации оценки $\nu$ положим 
+Подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации оценки $\nu$ положим: 
  \begin{equation}\label{filter3-params}
  \begin{aligned}
  \tau = 0 \text{,} \quad
@@ -132,13 +129,13 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
  \delta = \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)}
  \end{aligned}
 \end{equation}
-Чтобы гарантировать положительность $\delta$ потребуем
+Чтобы гарантировать положительность $\delta$ потребуем:
  \begin{equation}\label{restriction-2}
  \begin{aligned}
 \alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
  \end{aligned}
 \end{equation}
-Тогда, подставив \eqref{filter3-params} в \eqref{first_th_eq} и применив \eqref{second_th_eq}, получим оценку
+Тогда, подставив \eqref{filter3-params} в \eqref{first_th_eq} и применив \eqref{second_th_eq}, получим оценку:
  \begin{equation}
  \begin{aligned}
 \nu^2 < 4\frac{[\alpha_1^2(1-\beta_1) - \alpha_2(1-\beta_2)][\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)]}{[\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)]^2}
@@ -146,7 +143,7 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
  \end{equation}
 Эта оценка совпадает с оценкой, полученной в \cite{kuznetsov}.
 \razdel{Заключение}
-В настояцее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный результат может быть интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.
+В настоящее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный результат может быть интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.
 
 \begin{thebibliography}{6}
 \bibitem{best}  Best~R.\:E. Phase-Locked Loops: Design, Simulation, and Applications / McGraw-Hill Education, 2007. P.~115--116.
