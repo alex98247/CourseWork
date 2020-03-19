@@ -1,9 +1,12 @@
 \babel@toc {russian}{}
 \contentsline {section}{\numberline {1}Введение}{3}%
-\contentsline {section}{\numberline {2}Теоретический аспект}{5}%
+\contentsline {subsection}{\numberline {1.1}Примеры расфазировки}{3}%
+\contentsline {subsection}{\numberline {1.2}Применение ФАПЧ}{3}%
+\contentsline {section}{\numberline {2}Математическая модель ФАПЧ}{5}%
 \contentsline {section}{\numberline {3}Постановка задачи}{7}%
 \contentsline {section}{\numberline {4}Оценка области захвата для систем ФАПЧ с фильтром $\frac {1}{(1+\tau _{p1}s)(1+\tau _{p2}s)}$}{8}%
 \contentsline {subsection}{\numberline {4.1}Оценка максимума $\nu $ константой}{8}%
 \contentsline {subsection}{\numberline {4.2}Точная оценка максимума $\nu $}{8}%
 \contentsline {section}{\numberline {5}Оценка области захвата для систем ФАПЧ с фильтром $\frac {(1+\tau _{z1}s)^2}{(1+\tau _{p1}s)^2}$}{10}%
 \contentsline {section}{\numberline {6}Оценка области захвата для систем ФАПЧ с фильтром $\frac {(1+\tau _{z1}x)(1+\tau _{z2}x)}{(1+\tau _{p1}x)(1+\tau _{p2}x)}$}{13}%
+\contentsline {section}{\numberline {7}Заключение}{15}%

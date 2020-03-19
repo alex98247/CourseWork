@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  17 MAR 2020 12:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  19 MAR 2020 13:41
 entering extended mode
 **./Cluster_Analysis.tex
 (Cluster_Analysis.tex
@@ -1019,40 +1019,78 @@ pes/circuits\pgflibraryshapes.gates.ee.IEC.code.tex"))
 pes/circuits\pgflibraryshapes.gates.logic.IEC.code.tex"
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/sha
 pes/circuits\pgflibraryshapes.gates.logic.code.tex")))
-\c@definition=\count133
-\c@theorem=\count134
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tocloft\tocloft.sty
+"
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip49
+\cftbeforetoctitleskip=\skip50
+\cftaftertoctitleskip=\skip51
+\cftbeforepartskip=\skip52
+\cftpartnumwidth=\skip53
+\cftpartindent=\skip54
+\cftbeforesecskip=\skip55
+\cftsecindent=\skip56
+\cftsecnumwidth=\skip57
+\cftbeforesubsecskip=\skip58
+\cftsubsecindent=\skip59
+\cftsubsecnumwidth=\skip60
+\cftbeforesubsubsecskip=\skip61
+\cftsubsubsecindent=\skip62
+\cftsubsubsecnumwidth=\skip63
+\cftbeforeparaskip=\skip64
+\cftparaindent=\skip65
+\cftparanumwidth=\skip66
+\cftbeforesubparaskip=\skip67
+\cftsubparaindent=\skip68
+\cftsubparanumwidth=\skip69
+\cftbeforeloftitleskip=\skip70
+\cftafterloftitleskip=\skip71
+\cftbeforefigskip=\skip72
+\cftfigindent=\skip73
+\cftfignumwidth=\skip74
+\c@lofdepth=\count133
+\c@lotdepth=\count134
+\cftbeforelottitleskip=\skip75
+\cftafterlottitleskip=\skip76
+\cftbeforetabskip=\skip77
+\cfttabindent=\skip78
+\cfttabnumwidth=\skip79
+)
+\c@definition=\count135
+\c@theorem=\count136
  (Cluster_Analysis.aux)
 \openout1 = `Cluster_Analysis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
-8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
+2.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Trying to load font information for T2A+ftm on input line 2
-8.
-LaTeX Font Info:    No file T2Aftm.fd. on input line 28.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Trying to load font information for T2A+ftm on input line 3
+2.
+LaTeX Font Info:    No file T2Aftm.fd. on input line 32.
 
 
 LaTeX Font Warning: Font shape `T2A/ftm/m/n' undefined
-(Font)              using `T2A/cmr/m/n' instead on input line 28.
+(Font)              using `T2A/cmr/m/n' instead on input line 32.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1092,16 +1130,16 @@ LaTeX Font Warning: Font shape `T2A/ftm/m/n' undefined
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
 f.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count135
+\scratchcounter=\count137
 \scratchdimen=\dimen190
 \scratchbox=\box43
-\nofMPsegments=\count136
-\nofMParguments=\count137
+\nofMPsegments=\count138
+\nofMParguments=\count139
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count138
+\MPscratchCnt=\count140
 \MPscratchDim=\dimen191
-\MPnumerator=\count139
-\makeMPintoPDFobject=\count140
+\MPnumerator=\count141
+\makeMPintoPDFobject=\count142
 \everyMPtoPDFconversion=\toks45
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstop
@@ -1160,75 +1198,75 @@ Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
 
 LaTeX Font Warning: Font shape `T2A/ftm/bx/n' undefined
-(Font)              using `T2A/ftm/m/n' instead on input line 38.
+(Font)              using `T2A/ftm/m/n' instead on input line 42.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--61
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--61
+Underfull \hbox (badness 10000) in paragraph at lines 62--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--61
+Underfull \hbox (badness 10000) in paragraph at lines 62--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 62--65
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
@@ -1241,56 +1279,57 @@ LaTeX Font Info:    No file OT1ftm.fd. on input line 1.
 LaTeX Font Warning: Font shape `OT1/ftm/m/n' undefined
 (Font)              using `OT1/cmr/m/n' instead on input line 1.
 
-<<ot1.cmap>> [1
-
-{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]<<oml.cmap>><
-<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+)
+[1
+
+{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `Cluster_Analysis.toc'.
 
-[2] [3] [4]
-Overfull \hbox (28.8525pt too wide) in paragraph at lines 138--139
+ [2]
+[3] [4]
+Overfull \hbox (0.42027pt too wide) in paragraph at lines 143--144
  [] 
  []
 
 [5] [6]
 
 LaTeX Font Warning: Font shape `T2A/ftm/m/it' undefined
-(Font)              using `T2A/ftm/m/n' instead on input line 245.
+(Font)              using `T2A/ftm/m/n' instead on input line 250.
 
 [7]
 
-LaTeX Warning: Reference `etalon_system' on page 8 undefined on input line 275.
+LaTeX Warning: Reference `etalon_system' on page 8 undefined on input line 280.
 
 
 [8]
 <images/filter1e.jpg, id=49, 1124.2pt x 843.15pt>
 File: images/filter1e.jpg Graphic file (type jpg)
 <use images/filter1e.jpg>
-Package pdftex.def Info: images/filter1e.jpg  used on input line 331.
+Package pdftex.def Info: images/filter1e.jpg  used on input line 336.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 331--332
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 336--337
 [][] 
  []
 
 <images/filter1_1.jpg, id=50, 1124.2pt x 843.15pt>
 File: images/filter1_1.jpg Graphic file (type jpg)
 <use images/filter1_1.jpg>
-Package pdftex.def Info: images/filter1_1.jpg  used on input line 336.
+Package pdftex.def Info: images/filter1_1.jpg  used on input line 341.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 336--337
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 341--342
 [][] 
  []
 
@@ -1298,30 +1337,30 @@ Overfull \hbox (7.11317pt too wide) in paragraph at lines 336--337
 <images/filter2_tau0_1e.jpg, id=59, 1124.2pt x 843.15pt>
 File: images/filter2_tau0_1e.jpg Graphic file (type jpg)
 <use images/filter2_tau0_1e.jpg>
-Package pdftex.def Info: images/filter2_tau0_1e.jpg  used on input line 420.
-(pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
-
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 420--421
-[][] 
- []
-
-<images/filter2_tau0_1.jpg, id=60, 1124.2pt x 843.15pt>
-File: images/filter2_tau0_1.jpg Graphic file (type jpg)
-<use images/filter2_tau0_1.jpg>
-Package pdftex.def Info: images/filter2_tau0_1.jpg  used on input line 425.
+Package pdftex.def Info: images/filter2_tau0_1e.jpg  used on input line 425.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
 Overfull \hbox (7.11317pt too wide) in paragraph at lines 425--426
 [][] 
  []
 
+<images/filter2_tau0_1.jpg, id=60, 1124.2pt x 843.15pt>
+File: images/filter2_tau0_1.jpg Graphic file (type jpg)
+<use images/filter2_tau0_1.jpg>
+Package pdftex.def Info: images/filter2_tau0_1.jpg  used on input line 430.
+(pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
+
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 430--431
+[][] 
+ []
+
 <images/main.jpg, id=61, 1124.2pt x 843.15pt>
 File: images/main.jpg Graphic file (type jpg)
 <use images/main.jpg>
-Package pdftex.def Info: images/main.jpg  used on input line 434.
+Package pdftex.def Info: images/main.jpg  used on input line 439.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 [11 <./images/filter2_tau0_1e.jpg> <./images/filter2_tau0_1.jpg>] [12 <./images
-/main.jpg>] [13] [14] [15] (Cluster_Analysis.aux)
+/main.jpg>] [13] [14] [15] [16] (Cluster_Analysis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1330,10 +1369,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 18896 strings out of 492484
- 384065 string characters out of 3122053
- 430218 words of memory out of 3000000
- 22775 multiletter control sequences out of 15000+200000
+ 19154 strings out of 492484
+ 387935 string characters out of 3122053
+ 435149 words of memory out of 3000000
+ 23029 multiletter control sequences out of 15000+200000
  19448 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,13n,76p,2189b,645s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1356,9 +1395,9 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Local
 ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
 sers/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols
 /msbm10.pfb>
-Output written on Cluster_Analysis.pdf (15 pages, 631474 bytes).
+Output written on Cluster_Analysis.pdf (16 pages, 634253 bytes).
 PDF statistics:
- 379 PDF objects out of 1000 (max. 8388607)
+ 386 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
