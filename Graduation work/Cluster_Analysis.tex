@@ -129,10 +129,10 @@
 \node at (5.2,0) [draw, label=below:{Фильтр}, align=center, rectangle] (loop_filter) {$W(s)$};
 \node at (9.6,0) [draw, label={[align=center]below:Генератор,\\управляемый напряжением}] (VCO) {$\omega_{vco}(t) = \omega_{vco}^{free}+K_{vco}\upsilon_f(t)$};
 
-\draw[->] (-4,0) -- (a.west) node[midway,above,inner sep=2pt] {sin($\theta_{ref}(t)$)};
-\draw[->] (a.east) -- (loop_filter.west) node[midway,above,inner sep=2pt] {sin($\theta_{e}(t)$)};
+\draw[->] (-4,0) -- (a.west) node[midway,above,inner sep=2pt] {sin($\omega_{ref}t$)};
+\draw[->] (a.east) -- (loop_filter.west) node[midway,above,inner sep=2pt] {sin($\omega_{e}t$)};
 \draw[->] (loop_filter.east) -- (VCO.west) node[midway,above,inner sep=2pt] {$\upsilon_f(t)$};
-\draw[->] (VCO.east) -- (14.5,0) node[midway,above,inner sep=2pt] {cos($\theta_{vco}(t)$)};
+\draw[->] (VCO.east) -- (14.5,0) node[midway,above,inner sep=2pt] {cos($\omega_{vco}t$)};
 \draw[->] (14,0) --  +(0,-2) --  +(-13.5,-2) --  (a.south);
 
 \end{tikzpicture}
