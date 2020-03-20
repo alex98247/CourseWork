@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.12.21)  19 MAR 2020 13:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  20 MAR 2020 15:43
 entering extended mode
 **./Cluster_Analysis.tex
 (Cluster_Analysis.tex
@@ -1370,34 +1370,35 @@ LaTeX Warning: There were undefined references.
  ) 
 Here is how much of TeX's memory you used:
  19154 strings out of 492484
- 387935 string characters out of 3122053
+ 387935 string characters out of 3122054
  435149 words of memory out of 3000000
  23029 multiletter control sequences out of 15000+200000
  19448 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,13n,76p,2189b,645s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Alex\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi600\lar
-m2074.pk> <C:\Users\Alex\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-t2a/dpi
-600\larm1200.pk> <C:\Users\Alex\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/lh/lh-
-t2a/dpi600\larm1728.pk> <C:\Users\Alex\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
-/lh/lh-t2a/dpi600\larm1440.pk><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Ale
-x/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C
-:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/A
-ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/U
-sers/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols
-/msbm10.pfb>
-Output written on Cluster_Analysis.pdf (16 pages, 634253 bytes).
+{C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-
+super-t2a.enc}<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Alex/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Alex/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Use
+rs/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.
+pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Alex/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/
+Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm12
+00.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-s
+uper/sfrm1440.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/cm-super/sfrm1728.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/cm-super/sfrm2074.pfb>
+Output written on Cluster_Analysis.pdf (16 pages, 631728 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
+ 132 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

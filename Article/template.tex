@@ -14,7 +14,7 @@
 \author{Миронов~А.\:В., Юлдашев~Р.\:В.}
 
 %%%%%%%%%   Название статьи
-\title{Оценка области захвата для систем ФАПЧ 3 порядка}
+\title{Оценка полосы захвата для систем ФАПЧ 3 порядка}
 
 \renewcommand{\thefootnote}{ }
 {\footnotetext{{\it Миронов Алексей Владиславович} -- студент, Санкт-Петербургский государственный университет; e-mail: alexmir2015@yandex.ru}}
@@ -32,18 +32,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \razdel{Введение}
-Система фазовой автоподстройки частоты (ФАПЧ)~--- система с обратной связью, подстраивающая частоту сигнала генератора, управляемого напряжением (ГУН) под частоту опорного сигнала. В настоящее время системы ФАПЧ применяются в телекоммуникационном оборудовании \cite{best}, навигационных системах \cite{rao} и д.\,р. Основными параметрами ФАПЧ являются полосы удержания, захвата и захвата без проскальзывания \cite{shahgildyan}. В данной работе получены оценки полосы захвата для некоторых систем ФАПЧ 3 порядка, которые отличаются хорошим подавлением шума и низкой стационарной ошибкой, по сравнению с системами ФАПЧ 2 порядка \cite{thirdOrderPLL}.
+Система фазовой автоподстройки частоты~--- система с обратной связью, подстраивающая частоту сигнала генератора, управляемого напряжением (ГУН) под частоту опорного сигнала. В настоящее время системы ФАПЧ применяются в телекоммуникационном оборудовании \cite{best}, навигационных системах \cite{rao} и д.\,р. Основными параметрами ФАПЧ являются полосы удержания, захвата и захвата без проскальзывания \cite{shahgildyan}. В данной работе получены оценки полосы захвата для некоторых систем ФАПЧ 3 порядка, которые отличаются хорошим подавлением шума и низкой стационарной ошибкой, по сравнению с системами ФАПЧ 2 порядка \cite{thirdOrderPLL}.
 \razdel{Математическая модель ФАПЧ}
 \Figure{\textwidth}{images/PLL.eps}{Схема классической системы ФАПЧ, где $\omega_{ref}$~--- частота опорного сигнала, $\omega_{vco}$~--- частота сигнала ГУН, $\upsilon_f(t)$~--- выходной сигнал фильтра, $\omega_{vco}^{free}$~--- частота свободных колебаний ГУН, $\omega_e = \omega_{ref}-\omega_{vco}$\label{pll_circuit}}
-
 Хорошо известна система дифференциальных уравнений, описывающих ФАПЧ \cite{kuznetsov_article}, рис.~\ref{pll_circuit}
  \begin{equation}\label{system}
  \begin{aligned}
- &\dot{x} = Ax + B(\operatorname{sin}(\theta_e) - \gamma)\text{,}\\
+ &\dot{x} = Ax + B(\operatorname{sin}(\theta_e) - \gamma)\text{,}\\[0.3pt]
  &\dot{\theta_e} = -K_{vco}C^T x -K_{vco}D(\operatorname{sin}(\theta_e) - \gamma))\text{,}
  \end{aligned}
 \end{equation}
-где $A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$~--- мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы. $W(s)=C^T \left(A-sI\right)^{-1}B - D$~--- передаточная функция фильтра. $K_{vco}$~--- коэффициент передачи, $\gamma$ определяется следующим образом
+где $A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$~--- мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы. $W(s)=C^T \left(A-sI\right)^{-1}B - D$~--- передаточная функция фильтра. $K_{vco}$~--- коэффициент передачи, $\gamma$ определяется следующим образом\vspace{-1mm}
  \begin{equation}\label{gamma}
  \begin{aligned}
 \gamma = \frac{\omega_e^{free}}{K_{vco}\left(D-C^T A^{-1}B\right)}\text{,}
@@ -54,18 +53,19 @@
 Введем определение полосы захвата согласно \cite{kuznetsov_article}.
 \Definition {Полоса захвата~--- максимальная разность по модулю частот опорного сигнала и ГУН $|\omega_p|$ такая, что система \eqref{system} глобально асимптотически устойчива для всех $0<|\omega_e^{free}|<|\omega_p|$.}
 \Definition {Система \eqref{system} называется глобально асимптотически устойчивой, если любое решение $x(t, x_0)$  стремится к некоторому состоянию равновесия при $t \rightarrow +\infty$}.\\
-Введем в рассмотрение число:
+Введем в рассмотрение число:\vspace{-1mm}
  \begin{equation}
  \begin{aligned}
 \mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
  \end{aligned}
 \end{equation}
-Следующая теорема дает условие глобальной асимптотической устойчивости \eqref{system}.
+Следующая теорема дает условие глобальной асимптотической \\ устойчивости \eqref{system}.
 \TheoremCite{leonov}{
-Пусть все нули функции $\operatorname{sin}(\theta_e) - \gamma$ изолированы, пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:
+Пусть все нули функции $\operatorname{sin}(\theta_e) - \gamma$ изолированы, пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:\vspace{-2mm}
  \begin{align}
-&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\left[ W(ix)-ix \right]^T\tau\left[W(ix)+ix \right]\right)  \geqslant \delta\text{,}\quad \forall x \in \mathbb{R}\label{first_th_eq}\\
-&4\varepsilon\delta > (\varkappa\nu)^2\label{second_th_eq}
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\label{first_th_eq}\\
+&\hspace{250pt minus 1fil} \forall x \in \mathbb{R}\notag \hfilneg \\
+&\varepsilon\delta > (\varkappa\nu)^2\label{second_th_eq}
 \end{align}
 Тогда система \eqref{system} глобально асимптотически устойчива.
 }
@@ -81,11 +81,10 @@
 Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Тогда оценка $\nu$ будет наибольшей при следующих значениях параметров:
  \begin{equation*}
  \begin{aligned}
-\varkappa = 1 \text{,} \quad \varepsilon = 1 - \tau - \delta \text{,} \quad \tau = \tau_{p1}\tau_{p2} + \delta(\tau_{p1}^2+\tau_{p2}^2) \text{,} \quad \delta = \frac{1-\tau_{p1}\tau_{p2}}{2(\tau_{p1}^2+\tau_{p2}^2 + 1)}
+\varkappa = 1 \text{,} \enskip  \varepsilon = 1 - \tau - \delta \text{,} \enskip \tau = \tau_{p1}\tau_{p2} + \delta(\tau_{p1}^2+\tau_{p2}^2) \text{,} \enskip \delta = \frac{1-\tau_{p1}\tau_{p2}}{2(\tau_{p1}^2+\tau_{p2}^2 + 1)}
  \end{aligned}
 \end{equation*}
 \Figure{\textwidth}{images/agregated.eps}{Слева численная оценка $\nu^2$ в MATLAB с помощью функции fmincon. Справа график $\nu^2$, построенный по \eqref{filter1_max}}
-
 Таким образом, получим следующую оценку:
 \begin{equation}\label{filter1_max}
  \begin{aligned}
@@ -94,33 +93,35 @@
 \end{equation} 
 \podrazdel{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
 Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:
- \begin{equation}\label{filter2}
- \begin{aligned}
+ \begin{align}\label{filter2}
 W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad \tau_{p1} \neq \tau_{p2}
- \end{aligned}
-\end{equation}
-Подставим \eqref{filter2} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Положим $\varkappa = 1$, $\tau = 0$. Оценка $\nu$ будет наибольшей, если параметры $\varepsilon$, $\delta$ лежат на одной из граней выпуклого многоугольника, ограниченного прямыми $\delta = 0$, $\varepsilon = 0$ и
- \begin{equation}\label{lines}
+ \end{align}
+Подставим \eqref{filter2} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Положим $\varkappa = 1$, $\tau = 0$. Оценка $\nu$ будет наибольшей, если параметры $\varepsilon$, $\delta$ лежат на одной из граней выпуклого многоугольника, ограниченного прямыми $\delta = 0$, $\varepsilon = 0$ и 
+ \begin{equation*}
 \begin{aligned}
-\varepsilon(\delta)=z^2 - z^4\delta \text{,}\quad \varepsilon(\delta)=q - z^2\delta\text{,}\quad \varepsilon(\delta)=1 - \delta \text{,}
+\varepsilon(\delta)=z^2 - z^4\delta \text{,} \quad \varepsilon(\delta)=q - z^2\delta \text{,}
+\quad \varepsilon(\delta)=1 - \delta \text{,}
 \end{aligned}
-\end{equation}
+\end{equation*}
 где $z = \frac{\tau_{p1}}{\tau_{z1}}$, $q = 2z - \frac{1}{2} - \frac{1}{2}z^2$. 
 Тогда $4\varepsilon\delta$ определяется одним из следущих соотношений:
+\vspace{-2mm}
  \begin{equation}\label{filter2_max}
 \begin{aligned}
 \frac{q^2}{z^2}\text{,} \quad 1 \text{,} \quad \frac{4z^2}{1+z^2} \text{,} \quad \frac{4(1-q)(q-z^2)}{1-z^2} \text{,} \quad \frac{z^2-q}{z^2-1} - \left(\frac{z^2-q}{z^2-1}\right)^2
 \end{aligned}
 \end{equation}
+\vspace{-2mm}
 \Figure{0.5\textwidth}{images/main.eps}{Синим цветом представлена численная оценка $\nu^2$ согласно \eqref{first_th_eq}, \eqref{second_th_eq} в MATLAB с помощью функции fmincon. Красным цветом представлен график $\nu^2$, построенный по \eqref{filter2_max}, как максимум по всем граням многоугольника}
 \podrazdel{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}$}
-Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:
+Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:\vspace{-1mm}
  \begin{equation}\label{filter3}
  \begin{aligned}
 W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2} \text{,}\quad 0 < \beta_1 < \beta_2 < 1 \text{,}\quad 0 < \alpha_1 \text{,} \alpha_2
  \end{aligned}
 \end{equation}
 Подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации оценки $\nu$ положим: 
+\vspace{-2mm}
  \begin{equation}\label{filter3-params}
  \begin{aligned}
  \tau = 0 \text{,} \quad
@@ -144,7 +145,6 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 Эта оценка совпадает с оценкой, полученной в \cite{kuznetsov}.
 \razdel{Заключение}
 В настоящее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный результат может быть интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.
-
 \begin{thebibliography}{6}
 \bibitem{best}  Best~R.\:E. Phase-Locked Loops: Design, Simulation, and Applications / McGraw-Hill Education, 2007. P.~115--116.
 \bibitem{kuznetsov}  Leonov~G.\:A., Kuznetsov~N.\:V. Nonlinear mathematical models of phase-locked loops : stability and oscillations / Cambridge: Cambridge Scientific Publishers, 2014. P.~112--113.
