@@ -1,0 +1,7 @@
+Best R. E. Phase-Locked Loops: Design, Simulation, and Applications. New York: McGraw-Hill Education, 2007. 421 с.
+Leonov G. A., Kuznetsov N. V. Nonlinear mathematical models of phase-locked loops : stability and oscillations. Cambridge: Cambridge Scientific Publishers, 2014. 218 с.
+Leonov G. A., Reitmann V., Smirnova V. B. Non-Local Methods for Pendulum-Like Feedback Systems. Wiesbaden: Vieweg+Teubner Verlag, 1992. 242 с.
+Kuznetsov N. V., Leonov G. A., Yuldashev M. V., Yuldashev R. V. Hold-In, Pull-In, and Lock-In Ranges of PLL Circuits: Rigorous Mathematical Definitions and Limitations of Classical Theory // Transactions on Circuits and Systems I: Regular Papers. 2015. №10. С. 2454-2464.
+Feng L., Wu C., Jin B., Wu Z. A Passive Third-order Cascade PLL Filter // Trans Tech Publications. 2011. С. 2262-2266.
+Шахгильдян В.В., Ляховкин А.А. Фазовая автоподстройка частоты. 2-е изд. М.: Связь, 1972. 447 с.
+Rao R. B., Kunysz W., Fante R., McDonald K. GPS/GNSS Antennas. Boston: Artech House, 2013. 420 с.
