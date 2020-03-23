@@ -1,23 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  20 MAR 2020 15:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  23 MAR 2020 23:29
 entering extended mode
 **./Cluster_Analysis.tex
 (Cluster_Analysis.tex
 LaTeX2e <2019-10-01> patch level 3
-
-("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/extsizes\extarticle
-.cls"
-Document Class: extarticle 1996/10/08 v1.0 Non Standard LaTeX document class
-("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/extsizes\size14.clo
-"
-File: size14.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
-) ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\exscale.sty"
-Package: exscale 2018/09/24 v2.1i Standard LaTeX package exscale
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> OMX/cmex/m/n on input line 57.
-\big@size=\dimen102
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\article.cls"
+Document Class: article 2019/10/25 v1.4k Standard LaTeX document class
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -29,7 +18,7 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 \c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
-\bibindent=\dimen103
+\bibindent=\dimen102
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/extsizes\extsizes.s
 ty"
@@ -281,7 +270,7 @@ Language: russian 2017/08/12 1.3j Russian support for the Babel system
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\babel.def"
 File: babel.def 2019/11/14 3.36 Babel common definitions
 \babel@savecnt=\count88
-\U@D=\dimen104
+\U@D=\dimen103
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babel\txtbabel.de
 f")
@@ -317,11 +306,11 @@ Package: amstext 2000/06/29 v2.01 AMS text
 "
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
-\ex@=\dimen105
+\ex@=\dimen104
 ))
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen106
+\pmbraise@=\dimen105
 ) ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmath\amsopn.st
 y"
 Package: amsopn 2016/03/08 v2.02 operator names
@@ -338,7 +327,7 @@ LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
-\big@size=\dimen107
+\big@size=\dimen106
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \macc@depth=\count95
@@ -351,12 +340,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \column@=\count100
 \maxfields@=\count101
 \andhelp@=\toks19
-\eqnshift@=\dimen108
-\alignsep@=\dimen109
-\tagshift@=\dimen110
-\tagwidth@=\dimen111
-\totwidth@=\dimen112
-\lineht@=\dimen113
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
 \@envbody=\toks20
 \multlinegap=\skip44
 \multlinetaggap=\skip45
@@ -400,14 +389,14 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 \Gm@cnth=\count102
 \Gm@cntv=\count103
 \c@Gm@tempcnt=\count104
-\Gm@bindingoffset=\dimen114
-\Gm@wd@mp=\dimen115
-\Gm@odd@mp=\dimen116
-\Gm@even@mp=\dimen117
-\Gm@layoutwidth=\dimen118
-\Gm@layoutheight=\dimen119
-\Gm@layouthoffset=\dimen120
-\Gm@layoutvoffset=\dimen121
+\Gm@bindingoffset=\dimen113
+\Gm@wd@mp=\dimen114
+\Gm@odd@mp=\dimen115
+\Gm@even@mp=\dimen116
+\Gm@layoutwidth=\dimen117
+\Gm@layoutheight=\dimen118
+\Gm@layouthoffset=\dimen119
+\Gm@layoutvoffset=\dimen120
 \Gm@dimlist=\toks29
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/geometry\geometry.c
@@ -433,8 +422,8 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 .def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen122
-\Gin@req@width=\dimen123
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
@@ -615,13 +604,13 @@ Package: caption 2019/10/18 v3.4a Customizing captions (AR)
 y"
 Package: caption3 2019/09/09 v1.8e caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen124
-\captionmargin@=\dimen125
-\captionwidth=\dimen126
-\caption@tempdima=\dimen127
-\caption@indent=\dimen128
-\caption@parindent=\dimen129
-\caption@hangindent=\dimen130
+\captionmargin=\dimen123
+\captionmargin@=\dimen124
+\captionwidth=\dimen125
+\caption@tempdima=\dimen126
+\caption@indent=\dimen127
+\caption@parindent=\dimen128
+\caption@hangindent=\dimen129
 Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count106
@@ -640,8 +629,8 @@ s.sty"
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgf
 util-common.tex"
 \pgfutil@everybye=\toks32
-\pgfutil@tempdima=\dimen131
-\pgfutil@tempdimb=\dimen132
+\pgfutil@tempdima=\dimen130
+\pgfutil@tempdimb=\dimen131
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgf
 util-common-lists.tex"))
@@ -677,16 +666,16 @@ keys.code.tex"
 keysfiltered.code.tex"
 \pgfkeys@tmptoks=\toks35
 ))
-\pgf@x=\dimen133
-\pgf@y=\dimen134
-\pgf@xa=\dimen135
-\pgf@ya=\dimen136
-\pgf@xb=\dimen137
-\pgf@yb=\dimen138
-\pgf@xc=\dimen139
-\pgf@yc=\dimen140
-\pgf@xd=\dimen141
-\pgf@yd=\dimen142
+\pgf@x=\dimen132
+\pgf@y=\dimen133
+\pgf@xa=\dimen134
+\pgf@ya=\dimen135
+\pgf@xb=\dimen136
+\pgf@yb=\dimen137
+\pgf@xc=\dimen138
+\pgf@yc=\dimen139
+\pgf@xd=\dimen140
+\pgf@yd=\dimen141
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
 \c@pgf@counta=\count110
@@ -752,7 +741,7 @@ alc.code.tex"
 til.code.tex")
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathp
 arser.code.tex"
-\pgfmath@dimen=\dimen143
+\pgfmath@dimen=\dimen142
 \pgfmath@count=\count117
 \pgfmath@box=\box32
 \pgfmath@toks=\toks39
@@ -786,32 +775,32 @@ ode.tex")
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen144
-\pgf@picmaxx=\dimen145
-\pgf@picminy=\dimen146
-\pgf@picmaxy=\dimen147
-\pgf@pathminx=\dimen148
-\pgf@pathmaxx=\dimen149
-\pgf@pathminy=\dimen150
-\pgf@pathmaxy=\dimen151
-\pgf@xx=\dimen152
-\pgf@xy=\dimen153
-\pgf@yx=\dimen154
-\pgf@yy=\dimen155
-\pgf@zx=\dimen156
-\pgf@zy=\dimen157
+\pgf@picminx=\dimen143
+\pgf@picmaxx=\dimen144
+\pgf@picminy=\dimen145
+\pgf@picmaxy=\dimen146
+\pgf@pathminx=\dimen147
+\pgf@pathmaxx=\dimen148
+\pgf@pathminy=\dimen149
+\pgf@pathmaxy=\dimen150
+\pgf@xx=\dimen151
+\pgf@xy=\dimen152
+\pgf@yx=\dimen153
+\pgf@yy=\dimen154
+\pgf@zx=\dimen155
+\pgf@zy=\dimen156
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen158
-\pgf@path@lasty=\dimen159
+\pgf@path@lastx=\dimen157
+\pgf@path@lasty=\dimen158
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen160
-\pgf@shorten@start@additional=\dimen161
+\pgf@shorten@end@additional=\dimen159
+\pgf@shorten@start@additional=\dimen160
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorescopes.code.tex"
@@ -824,14 +813,14 @@ File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen162
+\pgflinewidth=\dimen161
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen163
-\pgf@pt@y=\dimen164
-\pgf@pt@temp=\dimen165
+\pgf@pt@x=\dimen162
+\pgf@pt@y=\dimen163
+\pgf@pt@temp=\dimen164
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorequick.code.tex"
@@ -848,12 +837,12 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen166
+\pgfarrowsep=\dimen165
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen167
+\pgf@max=\dimen166
 \pgf@sys@shading@range@num=\count120
 \pgf@shadingcount=\count121
 )
@@ -894,8 +883,8 @@ File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\p
 gfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen168
-\pgf@nodesepend=\dimen169
+\pgf@nodesepstart=\dimen167
+\pgf@nodesepend=\dimen168
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\p
 gfcomp-version-1-18.sty"
@@ -917,8 +906,8 @@ Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.
 code.tex")
-\pgffor@iter=\dimen170
-\pgffor@skip=\dimen171
+\pgffor@iter=\dimen169
+\pgffor@skip=\dimen170
 \pgffor@stack=\toks42
 \pgffor@toks=\toks43
 ))
@@ -930,16 +919,16 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 libraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@plot@mark@count=\count122
-\pgfplotmarksize=\dimen172
+\pgfplotmarksize=\dimen171
 )
-\tikz@lastx=\dimen173
-\tikz@lasty=\dimen174
-\tikz@lastxsaved=\dimen175
-\tikz@lastysaved=\dimen176
-\tikz@lastmovetox=\dimen177
-\tikz@lastmovetoy=\dimen178
-\tikzleveldistance=\dimen179
-\tikzsiblingdistance=\dimen180
+\tikz@lastx=\dimen172
+\tikz@lasty=\dimen173
+\tikz@lastxsaved=\dimen174
+\tikz@lastysaved=\dimen175
+\tikz@lastmovetox=\dimen176
+\tikz@lastmovetoy=\dimen177
+\tikzleveldistance=\dimen178
+\tikzsiblingdistance=\dimen179
 \tikz@figbox=\box38
 \tikz@figbox@bg=\box39
 \tikz@tempbox=\box40
@@ -978,21 +967,21 @@ File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 /tikz/libraries\tikzlibrarydecorations.code.tex"
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfmo
 duledecorations.code.tex"
-\pgfdecoratedcompleteddistance=\dimen181
-\pgfdecoratedremainingdistance=\dimen182
-\pgfdecoratedinputsegmentcompleteddistance=\dimen183
-\pgfdecoratedinputsegmentremainingdistance=\dimen184
-\pgf@decorate@distancetomove=\dimen185
+\pgfdecoratedcompleteddistance=\dimen180
+\pgfdecoratedremainingdistance=\dimen181
+\pgfdecoratedinputsegmentcompleteddistance=\dimen182
+\pgfdecoratedinputsegmentremainingdistance=\dimen183
+\pgf@decorate@distancetomove=\dimen184
 \pgf@decorate@repeatstate=\count131
-\pgfdecorationsegmentamplitude=\dimen186
-\pgfdecorationsegmentlength=\dimen187
+\pgfdecorationsegmentamplitude=\dimen185
+\pgfdecorationsegmentlength=\dimen186
 )
 \tikz@lib@dec@box=\box42
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/dec
 orations\pgflibrarydecorations.markings.code.tex"))
 \tikz@lib@circ@count=\count132
-\tikzcircuitssizeunit=\dimen188
+\tikzcircuitssizeunit=\dimen187
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlayer
 /tikz/libraries/circuits\tikzlibrarycircuits.ee.code.tex"
@@ -1007,7 +996,7 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pgf
 libraryarrows.code.tex"
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen189
+\arrowsize=\dimen188
 ))
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/sha
 pes/circuits\pgflibraryshapes.gates.ee.IEC.code.tex"))
@@ -1019,78 +1008,43 @@ pes/circuits\pgflibraryshapes.gates.ee.IEC.code.tex"))
 pes/circuits\pgflibraryshapes.gates.logic.IEC.code.tex"
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries/sha
 pes/circuits\pgflibraryshapes.gates.logic.code.tex")))
-("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tocloft\tocloft.sty
-"
-Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
-Package tocloft Info: The document has section divisions on input line 51.
-\cftparskip=\skip49
-\cftbeforetoctitleskip=\skip50
-\cftaftertoctitleskip=\skip51
-\cftbeforepartskip=\skip52
-\cftpartnumwidth=\skip53
-\cftpartindent=\skip54
-\cftbeforesecskip=\skip55
-\cftsecindent=\skip56
-\cftsecnumwidth=\skip57
-\cftbeforesubsecskip=\skip58
-\cftsubsecindent=\skip59
-\cftsubsecnumwidth=\skip60
-\cftbeforesubsubsecskip=\skip61
-\cftsubsubsecindent=\skip62
-\cftsubsubsecnumwidth=\skip63
-\cftbeforeparaskip=\skip64
-\cftparaindent=\skip65
-\cftparanumwidth=\skip66
-\cftbeforesubparaskip=\skip67
-\cftsubparaindent=\skip68
-\cftsubparanumwidth=\skip69
-\cftbeforeloftitleskip=\skip70
-\cftafterloftitleskip=\skip71
-\cftbeforefigskip=\skip72
-\cftfigindent=\skip73
-\cftfignumwidth=\skip74
-\c@lofdepth=\count133
-\c@lotdepth=\count134
-\cftbeforelottitleskip=\skip75
-\cftafterlottitleskip=\skip76
-\cftbeforetabskip=\skip77
-\cfttabindent=\skip78
-\cfttabnumwidth=\skip79
+\c@definition=\count133
+\c@theorem=\count134
+ (Cluster_Analysis.aux
+
+LaTeX Warning: Label `thirdOrderPLL' multiply defined.
+
 )
-\c@definition=\count135
-\c@theorem=\count136
- (Cluster_Analysis.aux)
 \openout1 = `Cluster_Analysis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 3
-2.
-
-("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+8.
+ ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Trying to load font information for T2A+ftm on input line 3
-2.
-LaTeX Font Info:    No file T2Aftm.fd. on input line 32.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Trying to load font information for T2A+ftm on input line 2
+8.
+LaTeX Font Info:    No file T2Aftm.fd. on input line 28.
 
 
 LaTeX Font Warning: Font shape `T2A/ftm/m/n' undefined
-(Font)              using `T2A/cmr/m/n' instead on input line 32.
+(Font)              using `T2A/cmr/m/n' instead on input line 28.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1130,16 +1084,16 @@ LaTeX Font Warning: Font shape `T2A/ftm/m/n' undefined
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
 f.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count137
-\scratchdimen=\dimen190
+\scratchcounter=\count135
+\scratchdimen=\dimen189
 \scratchbox=\box43
-\nofMPsegments=\count138
-\nofMParguments=\count139
+\nofMPsegments=\count136
+\nofMParguments=\count137
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count140
-\MPscratchDim=\dimen191
-\MPnumerator=\count141
-\makeMPintoPDFobject=\count142
+\MPscratchCnt=\count138
+\MPscratchDim=\dimen190
+\MPnumerator=\count139
+\makeMPintoPDFobject=\count140
 \everyMPtoPDFconversion=\toks45
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstop
@@ -1198,79 +1152,141 @@ Package caption Info: End \AtBeginDocument code.
  ABD: EveryShipout initializing macros
 
 LaTeX Font Warning: Font shape `T2A/ftm/bx/n' undefined
-(Font)              using `T2A/ftm/m/n' instead on input line 42.
+(Font)              using `T2A/ftm/m/n' instead on input line 37.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
+Underfull \hbox (badness 10000) in paragraph at lines 57--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--65
+Underfull \hbox (badness 10000) in paragraph at lines 57--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 57--60
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--87
+Underfull \hbox (badness 10000) in paragraph at lines 71--81
 
  []
 
-(Cluster_Analysis.toc
+[1
+
+{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--136
+
+ []
+
+[2] (Cluster_Analysis.toc
 LaTeX Font Info:    Trying to load font information for OT1+ftm on input line 1
 .
 LaTeX Font Info:    No file OT1ftm.fd. on input line 1.
@@ -1280,102 +1296,106 @@ LaTeX Font Warning: Font shape `OT1/ftm/m/n' undefined
 (Font)              using `OT1/cmr/m/n' instead on input line 1.
 
 <<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
-LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-[1
-
-{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}])
+))
 \tf@toc=\write4
 \openout4 = `Cluster_Analysis.toc'.
 
- [2]
-[3] [4]
-Overfull \hbox (0.42027pt too wide) in paragraph at lines 143--144
+[3] [4] [5]
+Overfull \hbox (0.42027pt too wide) in paragraph at lines 197--198
  [] 
  []
 
-[5] [6]
+[6] [7]
 
 LaTeX Font Warning: Font shape `T2A/ftm/m/it' undefined
-(Font)              using `T2A/ftm/m/n' instead on input line 250.
-
-[7]
-
-LaTeX Warning: Reference `etalon_system' on page 8 undefined on input line 280.
-
+(Font)              using `T2A/ftm/m/n' instead on input line 283.
 
 [8]
-<images/filter1e.jpg, id=49, 1124.2pt x 843.15pt>
+Overfull \hbox (33.21352pt too wide) in paragraph at lines 322--322
+[]\T2A/ftm/bx/n/17.28 ќценка по-ло-сы за-хва-та дл€ си-стем ‘јѕ„ с филь-тром $[
+]$ 
+ []
+
+
+LaTeX Warning: Reference `etalon_system' on page 9 undefined on input line 342.
+
+
+[9]
+<images/filter1e.jpg, id=55, 1124.2pt x 843.15pt>
 File: images/filter1e.jpg Graphic file (type jpg)
 <use images/filter1e.jpg>
-Package pdftex.def Info: images/filter1e.jpg  used on input line 336.
+Package pdftex.def Info: images/filter1e.jpg  used on input line 398.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 336--337
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 398--399
 [][] 
  []
 
-<images/filter1_1.jpg, id=50, 1124.2pt x 843.15pt>
+<images/filter1_1.jpg, id=56, 1124.2pt x 843.15pt>
 File: images/filter1_1.jpg Graphic file (type jpg)
 <use images/filter1_1.jpg>
-Package pdftex.def Info: images/filter1_1.jpg  used on input line 341.
+Package pdftex.def Info: images/filter1_1.jpg  used on input line 403.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 341--342
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 403--404
 [][] 
  []
 
-[9 <./images/filter1e.jpg> <./images/filter1_1.jpg>] [10]
-<images/filter2_tau0_1e.jpg, id=59, 1124.2pt x 843.15pt>
+[10 <./images/filter1e.jpg> <./images/filter1_1.jpg>] [11]
+<images/filter2_tau0_1e.jpg, id=63, 1124.2pt x 843.15pt>
 File: images/filter2_tau0_1e.jpg Graphic file (type jpg)
 <use images/filter2_tau0_1e.jpg>
-Package pdftex.def Info: images/filter2_tau0_1e.jpg  used on input line 425.
+Package pdftex.def Info: images/filter2_tau0_1e.jpg  used on input line 487.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 425--426
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 487--488
 [][] 
  []
 
-<images/filter2_tau0_1.jpg, id=60, 1124.2pt x 843.15pt>
+<images/filter2_tau0_1.jpg, id=64, 1124.2pt x 843.15pt>
 File: images/filter2_tau0_1.jpg Graphic file (type jpg)
 <use images/filter2_tau0_1.jpg>
-Package pdftex.def Info: images/filter2_tau0_1.jpg  used on input line 430.
+Package pdftex.def Info: images/filter2_tau0_1.jpg  used on input line 492.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (7.11317pt too wide) in paragraph at lines 430--431
+Overfull \hbox (7.11317pt too wide) in paragraph at lines 492--493
 [][] 
  []
 
-<images/main.jpg, id=61, 1124.2pt x 843.15pt>
+<images/main.jpg, id=65, 1124.2pt x 843.15pt>
 File: images/main.jpg Graphic file (type jpg)
 <use images/main.jpg>
-Package pdftex.def Info: images/main.jpg  used on input line 439.
+Package pdftex.def Info: images/main.jpg  used on input line 501.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
-[11 <./images/filter2_tau0_1e.jpg> <./images/filter2_tau0_1.jpg>] [12 <./images
-/main.jpg>] [13] [14] [15] [16] (Cluster_Analysis.aux)
+[12 <./images/filter2_tau0_1e.jpg> <./images/filter2_tau0_1.jpg> <./images/main
+.jpg>] [13] [14] [15] [16] (Cluster_Analysis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 19154 strings out of 492484
- 387935 string characters out of 3122054
- 435149 words of memory out of 3000000
- 23029 multiletter control sequences out of 15000+200000
- 19448 words of font info for 64 fonts, out of 3000000 for 9000
+ 18900 strings out of 492484
+ 383751 string characters out of 3122054
+ 431499 words of memory out of 3000000
+ 22785 multiletter control sequences out of 15000+200000
+ 17902 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,76p,2189b,645s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,12n,76p,2190b,645s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-
 super-t2a.enc}<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
@@ -1390,15 +1410,16 @@ lic/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Alex/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/
-Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm12
-00.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-s
-uper/sfrm1440.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
-public/cm-super/sfrm1728.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/cm-super/sfrm2074.pfb>
-Output written on Cluster_Analysis.pdf (16 pages, 631728 bytes).
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/
+Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/cm-super/sfrm1200.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/cm-super/sfrm1440.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/cm-super/sfrm1728.pfb><C:/Users/Alex/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm2074.pfb>
+Output written on Cluster_Analysis.pdf (16 pages, 652407 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
+ 136 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
