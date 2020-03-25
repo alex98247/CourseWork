@@ -196,78 +196,78 @@ Blagov~M.\:V.
 
 \end{tikzpicture}
 \end{center}
-Опорный сигнал подается на вход кольца ФАПЧ. Фазовый детектор (компаратор) принимает опорный сигнал и сигнал подстраиваемого генераторов, в результате воздействия компаратора на выходе появляется сигнал
+Опорный сигнал подается на вход кольца ФАПЧ. Фазовый детектор (компаратор) принимает опорный сигнал и сигнал генератора, управляемого напряжением, в результате воздействия компаратора на выходе появляется сигнал:
  \begin{equation*}
  \begin{aligned}
-\upsilon_e(\theta_{ref}(t) - \theta_{vco}(t))
+\upsilon_e(\theta_{ref}(t) - \theta_{vco}(t)),
  \end{aligned}
 \end{equation*}
-Где $\theta_{vco}(t)$ - фаза подстраиваемого генератора, $\theta_{ref}(t)$ - фаза эталонного генератора, $\upsilon_e(\theta_e(t))$ - характеристика фазового детектора, являющаяся $2\pi$ периодической функцией и функцию
+где $\theta_{vco}(t)$~--- фаза подстраиваемого генератора, $\theta_{ref}(t)$~--- фаза эталонного генератора, $\upsilon_e(\theta_e(t))$~--- характеристика фазового детектора, являющаяся $2\pi$ периодической функцией. Функцию
  \begin{equation*}
  \begin{aligned}
 \theta_e(t) = \theta_{ref}(t) - \theta_{vco}(t)
  \end{aligned}
 \end{equation*}
-называют фазовой ошибкой. На практике часто используют следующие характеристики фазового детектора: $\alpha$ $sin(\sigma)$ и 
+называют фазовой ошибкой. На практике часто используют следующие характеристики фазового детектора: $\alpha$ $\operatorname{sin}(\sigma)$ и 
 
 \begin{equation*}
 \varphi(\sigma) = 
  \begin{cases}
-   \sigma &\text{$\sigma \in [0,  \frac{\pi}{2})$}\\
-   -\sigma &\text{$\sigma \in [\frac{\pi}{2},  \pi)$}
+   \sigma, &\text{$\sigma \in [0,  \frac{\pi}{2})$}\\
+   -\sigma, &\text{$\sigma \in [\frac{\pi}{2},  \pi)$}
  \end{cases}
 \end{equation*}
 В настоящее время инженерами реализованы различные фазовые детекторы в виде микросхем, которые применяются в классических системах ФАПЧ и их модификациях.
 
-Cигнал, полученный на выходе компаратора $\upsilon_e(\theta_e(t))$ поступает на вход фильтра нижних частот. Связь входного $\upsilon_e(\theta_e(t))$ и выходного $\upsilon_f(t)$ сигналов фильтра нижних частот может быть описана уранениями
+Cигнал, полученный на выходе компаратора $\upsilon_e(\theta_e(t))$ поступает на вход фильтра нижних частот. Связь входного $\upsilon_e(\theta_e(t))$ и выходного $\upsilon_f(t)$ сигналов фильтра нижних частот может быть описана уранениями:
  \begin{equation*}
  \begin{aligned}
-\dot{x} = Ax + b\upsilon_e(\theta_e(t)) \text{,} \quad 
-\upsilon_f(t) = c^*x + h\upsilon_e(\theta_e(t))
+&\dot{x} = Ax + b\upsilon_e(\theta_e(t))\\
+&\upsilon_f(t) = c^Tx + h\upsilon_e(\theta_e(t)),
  \end{aligned}
 \end{equation*}
-Где $A$ - постоянная матрица $n \times n$, $b$ и $c$ постоянные $n$-мерные векторы, $h$ - константа, $x(t)$ - $n$-мерный вектор состояний системы. Для практических применений инженерами были физически реализованы аналоговые(непрерывные) фильтры в виде RL-цепей, RLC-цепей и др., а цифровые(дискретные) фильтры нижних частот реализуются на цифровых элементах.
+где $A$~--- постоянная матрица $n \times n$, $b$ и $c$ постоянные $n$-мерные векторы, $h$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы. Для практических применений инженерами были физически реализованы аналоговые(непрерывные) фильтры в виде RL-цепей, RLC-цепей и др., а цифровые(дискретные) фильтры нижних частот реализуются на цифровых элементах.
 
-Выходной сигнал фильтра нижних частот поступает на вход генератора, управляемого напряжением. Происходит подстройка частоты ГУН
+Выходной сигнал фильтра нижних частот поступает на вход генератора, управляемого напряжением. Происходит подстройка частоты ГУН:
  \begin{equation*}
  \begin{aligned}
-\dot{\theta}_{vco}(t) = \omega_{vco}(t) = \omega^{free}_{vco} + K_{vco}\upsilon_f(t)
+\dot{\theta}_{vco}(t) = \omega_{vco}(t) = \omega^{free}_{vco} + K_{vco}\upsilon_f(t),
  \end{aligned}
 \end{equation*}
-Где $\omega^{free}_{vco}$ - частота свободных колебаний ГУН, $K_{vco}$ - коэфициент передачи. При этом полагаем, что эталонный генератор работает на постоянной частоте
+где $\omega^{free}_{vco}$~--- частота свободных колебаний ГУН, $K_{vco}$~--- коэфициент передачи. При этом полагаем, что эталонный генератор работает на постоянной частоте:
  \begin{equation*}
  \begin{aligned}
 \dot{\theta}_{ref}(t) = \omega_{ref}(t) \equiv \omega_{ref}
  \end{aligned}
 \end{equation*}
-Разность между частотой эталонного генератора и частотой свободных колебаний ГУН обозначим
+Разность между частотой эталонного генератора и частотой свободных колебаний ГУН обозначим:
  \begin{equation*}
  \begin{aligned}
 \omega_e^{free} \equiv \omega_{ref} - \omega^{free}_{vco}
  \end{aligned}
 \end{equation*}
-В результате получим систему дифференциальных уравнений, описывающих ФАПЧ
+В результате получим систему дифференциальных уравнений, описывающих ФАПЧ:
  \begin{equation}\label{pllequations}
  \begin{aligned}
  &\dot{x} = Ax + b\upsilon_e(\theta_e)\\
  &\dot{\theta}_e = \omega_e^{free} - K_{vco}(c^*x + h\upsilon_e(\theta_e))
  \end{aligned}
 \end{equation}
-В системе \eqref{pllequations} сделаем следующие преобразования $-K_{vco}c -> c$, $-K_{vco}h -> h$. Тогда система \eqref{pllequations} принимает вид
- \begin{equation}
+В системе \eqref{pllequations} сделаем следующие преобразования $-K_{vco}c -> c$, $-K_{vco}h -> h$. Тогда система \eqref{pllequations} принимает вид:
+ \begin{equation}\label{pllequations-1}
  \begin{aligned}
  &\dot{x} = Ax + b\upsilon_e(\theta_e)\\
- &\dot{\theta}_e = \omega_e^{free} - c^*x + h\upsilon_e(\theta_e)
+ &\dot{\theta}_e = \omega_e^{free} - c^Tx + h\upsilon_e(\theta_e)
  \end{aligned}
 \end{equation}
-Сделаем замену
+В системе \eqref{pllequations-1} сделаем замену:
  \begin{equation}
  \begin{aligned}
  &z = x + A^{-1}b\gamma \\
  &\gamma = \frac{\omega_e^{free}}{c^*A^{-1}b-h}
  \end{aligned}
 \end{equation}
-В результате получим систему
+В результате преобразований получим систему:
  \begin{equation}\label{system}
  \begin{aligned}
  &\dot{z} = Az + b(\upsilon_e(\theta_e) - \gamma)\\
@@ -312,96 +312,87 @@ K(s) = -c^*(A - sI)^{-1}b + h
 Пусть все нули функции $\varphi(\sigma) - \gamma$ изолированы, пара $(A, b)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные частии существуют числа $\varepsilon > 0, \delta > 0, \tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:
  \begin{align}
 &Re(\varkappa K(ix)- \varepsilon(K(ix))^2-[K(ix)+\mu_1^{-1}ix]^*\tau[K(ix)+\mu_2^{-1}ix])\geqslant\delta\text{,}\quad \forall x \in \mathbb{R}\label{first_th_eq}\\
-&4\varepsilon\delta > (\varkappa\nu)^2
+&4\varepsilon\delta > (\varkappa\nu)^2\label{second_th_eq}
 \end{align}
 Тогда система \eqref{system} глобально асимптотически устойчива.
 \end{theorem}
 
 \pagebreak
 \section{Оценка полосы захвата}
-\subsection{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
- Рассмотрим передаточную функцию:
+\subsection{Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
+Оценим полосу захвата для систем ФАПЧ с фильтром, определяемым передаточной функцией:
  \begin{equation}\label{filter1}
  \begin{aligned}
-W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}
+W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}, \quad 0<\tau_{p1},\tau_{p2} < 1
  \end{aligned}
 \end{equation}
-Введем обозначения: $a = \tau_{p1}+\tau_{p2}$, $b = \tau_{p1}\tau_{p2}$\\
-Рассмотрим первое условие теоремы \ref{th1}. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. В результате преобразований получим
+Введем обозначения: $a = \tau_{p1}+\tau_{p2}$, $b = \tau_{p1}\tau_{p2}$. Рассмотрим первое условие теоремы \ref{th1}. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. Не умаляя общности, можем положить $\varkappa = 1$. В результате преобразований \eqref{first_th_eq} принимает вид:
 \begin{equation}\label{first_condition}
  \begin{aligned}
-&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (-\varkappa b+\tau-\delta a^2 + 2\delta b)t + (\varkappa-\varepsilon-\tau-\delta) \geqslant 0 \text{,}\quad \forall t \in \mathbb{R_+}
+&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (- b+\tau-\delta a^2 + 2\delta b)t + (1-\varepsilon-\tau-\delta) \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Из второго условия теоремы \ref{th1} получаем: 
-\begin{equation}
- \begin{aligned}
-\frac{4\varepsilon\delta}{\varkappa^2} > \nu^2
- \end{aligned}
-\end{equation}
-Для оценки полосы захвата системы \eqref{etalon_system} будем искать максимум $\nu$.
 
 \subsubsection{Оценка максимума $\nu$ константой}
-Очевидно, что для того чтобы выполнялось \eqref{first_th_eq} нужно потребовать  $\varkappa - \varepsilon - \tau - \delta \geqslant 0$, тогда
+Очевидно, что для того чтобы выполнялось \eqref{first_th_eq} нужно потребовать  $1 - \varepsilon - \tau - \delta \geqslant 0$, тогда
 \begin{equation}\label{const_ineq}
  \begin{aligned}
-&\varkappa \geqslant \varepsilon+\tau+\delta \\
-&\varkappa^2 \geqslant \varepsilon^2 + \tau^2 + \delta^2 + 2\varepsilon\tau + 2\varepsilon\delta + 2\tau\delta\\
-&2 -(\frac{2\varepsilon^2}{\varkappa^2} + \frac{2\delta^2}{\varkappa^2} + \frac{2\tau^2}{\varkappa^2} +\frac{4\varepsilon\tau}{\varkappa^2} + \frac{4\tau\delta}{\varkappa^2}) \geqslant \frac{4\varepsilon\delta}{\varkappa^2}\\
-&2 > \frac{4\varepsilon\delta}{\varkappa^2} > \nu^2
+&1 \geqslant \varepsilon+\tau+\delta \\
+&1 \geqslant \varepsilon^2 + \tau^2 + \delta^2 + 2\varepsilon\tau + 2\varepsilon\delta + 2\tau\delta\\
+&2 -(2\varepsilon^2 + 2\delta^2 + 2\tau^2 +4\varepsilon\tau + 4\tau\delta) \geqslant 4\varepsilon\delta\\
+&2 > 4\varepsilon\delta > \nu^2
  \end{aligned}
 \end{equation}
 
 \subsubsection{Точная оценка максимума $\nu$}
-Так как $\varkappa - \varepsilon - \tau - \delta \geqslant 0$, то $ \varepsilon \leqslant \varkappa - \tau - \delta$. Для максимизации функции $\frac{4\varepsilon\delta}{\varkappa^2}$ возьмем $\varepsilon = \varkappa - \tau - \delta$\\
-Тогда первое условие теоремы принимает вид:
+Неравенство $1 - \varepsilon - \tau - \delta \geqslant 0$ является необходимым условием справедливости \eqref{first_condition}. Для максимизации $\nu$ положим $\varepsilon = 1 - \tau - \delta$. Тогда \eqref{first_condition} принимает вид:
 \begin{equation}\label{ineq1} 
  \begin{aligned}
-&\tau b^2t^2 + (\tau a^2-2 \tau b - \delta b^2)t + (-\varkappa b+\tau-\delta a^2 + 2\delta b) \geqslant 0 \text{,}\quad \forall t \in \mathbb{R_+}
+&\tau b^2t^2 + (\tau a^2-2 \tau b - \delta b^2)t + (- b+\tau-\delta a^2 + 2\delta b) \geqslant 0 \text{,}\quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
 Введем обозначения:
 \begin{equation}
  \begin{aligned}
-&A = \tau b^2\\
-&B = \tau a^2-2 \tau b - \delta b^2\\
-&C = -\varkappa b+\tau-\delta a^2 + 2\delta b
+\widetilde A = \tau b^2, \quad 
+\widetilde B = \tau a^2-2 \tau b - \delta b^2, \quad
+\widetilde C = - b+\tau-\delta a^2 + 2\delta b
  \end{aligned}
 \end{equation}
-Заметим, что для того, что бы выполнялось \eqref{ineq1} необходимо потребовать $A \geqslant 0$ и $C \geqslant 0$, тогда $B \geqslant 0$. В этом случае уравнение $At^2 + Bt + C = 0$ не имеет положительных корней, т.е. выполняется \eqref{ineq1}. Не умаляя общности, можем положить $\varkappa = 1$ и будем искать максимум следующей функции: 
+Заметим, что для того, что бы выполнялось \eqref{ineq1} необходимо потребовать $\widetilde A \geqslant 0$ и $\widetilde C \geqslant 0$, откуда следует $\widetilde B \geqslant 0$. Подставим $\varepsilon = 1 - \tau - \delta$, $\varkappa = 1$ в \eqref{second_th_eq} и выразим $\nu^2$, тогда \eqref{second_th_eq} принимает вид:
 \begin{equation}\label{extr_filter1}
  \begin{aligned}
-&f(\delta) = 4\delta-4\tau\delta - 4\delta^2\\
+\nu^2 < 4\delta-4\tau\delta - 4\delta^2
  \end{aligned}
 \end{equation} 
-Получили задачу на условный экстремум, т.е найти максимум \eqref{extr_filter1}, при условии $C \geqslant 0$.  Заметим, что максимальное значение достигается на границе или в точках понижения ранга. Вычислим градиент \eqref{extr_filter1}:
+Максимизируем \eqref{extr_filter1}, при условии $\widetilde C \geqslant 0$.  Заметим, что максимальное значение достигается на границе или в точках понижения ранга. Вычислим градиент \eqref{extr_filter1}:
 \begin{equation}
  \begin{aligned}
 (4 - 4\tau - 8\delta, 4\delta)
  \end{aligned}
 \end{equation} 
-Получаем точку понижения ранга: $\delta = 0, \tau = 1$. Это противоречит условию теоремы $\delta > 0$. Рассмотрим $C = 0$, выразим $\tau$ и подставим в \eqref{extr_filter1}:
+Точка понижения ранга: $\delta = 0, \tau = 1$. Это противоречит условию теоремы $\delta > 0$. Рассмотрим границу допустимой области $\widetilde C = 0$, выразим $\tau$ и подставим в \eqref{extr_filter1}:
 \begin{equation}\label{one_var_max}
  \begin{aligned}
-&f(\delta) = 4\delta(1 - b) - 4\delta^2(a^2 -2b +1)\\
+\nu^2 < 4\delta(1 - b) - 4\delta^2(a^2 -2b +1)\\
  \end{aligned}
 \end{equation} 
-Максимум  \eqref{one_var_max} достигается при $\delta = \frac{1-b}{2(a^2 - 2b + 1)}$ и равен
+Максимум  \eqref{one_var_max} достигается при $\delta = \frac{1-b}{2(a^2 - 2b + 1)}$ и равен:
 \begin{equation}\label{filter1_max}
  \begin{aligned}
-\frac{(b - 1)^2}{a^2 - 2b + 1} = \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1} > \nu^2
+\nu^2 < \frac{(b - 1)^2}{a^2 - 2b + 1} = \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1}
  \end{aligned}
 \end{equation} 
 
 \begin{figure}[H]
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=9cm]{images/filter1e.jpg}
-  \caption{Численное приближение в MATLAB}
+  \caption{Численная оценка $\nu^2$ в MATLAB с помощью функции fmincon.}
   \label{fig:sub1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
 \includegraphics[width=9cm]{images/filter1_1.jpg}
-  \caption{Вычисленный по \eqref{filter1_max}}
+  \caption{График $\nu^2$, построенный по \eqref{filter1_max}}
   \label{fig:sub2}
 \end{subfigure}
 \caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$}
@@ -409,44 +400,34 @@ W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}
 \end{figure}
 
 \pagebreak
-\subsection{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
- Рассмотрим передаточную функцию:
+\subsection{Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
+Оценим полосу захвата для систем ФАПЧ с фильтром, определяемым передаточной функцией:
  \begin{equation}\label{filter2}
  \begin{aligned}
-W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}
+W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}, \quad 0<\tau_{p1},\tau_{z1} < 1, \quad \tau_{p1} \neq \tau_{z1}
  \end{aligned}
 \end{equation}
-Предположим, что нелинейность $f(\sigma)=\phi(\sigma)$ имеет изолированные нули и удовлетворяет ???????.
-Неравенство $\tau_{z1} \neq \tau_{p1}$ гарантирует, что функция $\chi(p) = x^{-1}K(x)$ не приводима. Тогда по теореме ???? пара $(A,B)$ управляема. Заметим
+Будем рассматривать управляемую реализацию системы \eqref{system}. Заметим
  \begin{equation}
  \begin{aligned}
-\text{det}(xI-A) = x^2 + 2\tau_{z1}^{-1}x + \tau_{z1}^{-2}
+\text{det}(sI-A) = s^2 + 2\tau_{z1}^{-1}s + \tau_{z1}^{-2}
  \end{aligned}
 \end{equation}
-матрица $A$ - матрица Гурвица. Найдем $\varepsilon, \delta, \varkappa, \tau$ так, что бы максимизировать $\nu$. Для этого подставим \eqref{filter2} в условие теоремы \ref{th1} и перенесем все в левую часть неравенства. В результате преобразований первое условие теоремы \ref{th1} принимает следующий вид:
+матрица $A$ - устойчива. Найдем $\varepsilon, \delta, \varkappa, \tau$ так, что бы максимизировать $\nu$. Для этого подставим \eqref{filter2} в первое условие теоремы \ref{th1} и перенесем все в левую часть неравенства. Сделаем замену $t = s^2$. В результате преобразований \eqref{first_th_eq} принимает следующий вид:
  \begin{equation}\label{second_condition}
  \begin{aligned}
-&\tau_{p1}^4\tau t^3 +(- \tau_{z1}^4\varepsilon - \tau_{z1}^4\tau + 2\tau_{p1}^2\tau- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)t^2  +\\
-&+( \tau- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2\tau+ 4\tau_{z1}b\varkappa- 2\tau_{p1}^2\delta)t + (\varkappa-\varepsilon - \tau - \delta)  \geqslant 0\\
-&t = x^2 \geqslant 0
+&\tau_{p1}^4\tau t^3 +(- \tau_{z1}^4\varepsilon - \tau_{z1}^4\tau + 2\tau_{p1}^2\tau- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)t^2 +( \tau- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2\tau+ \\
+&+ 4\tau_{z1}b\varkappa- 2\tau_{p1}^2\delta)t + (\varkappa-\varepsilon - \tau - \delta)  \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Положим в \eqref{second_condition} $\tau = 0$, тогда первое условие теоремы принимает следующий вид:
+Положим в \eqref{second_condition} $\tau = 0$. Не умаляя общности можем считать $\varkappa = 1$. Тогда \eqref{second_condition} принимает вид:
  \begin{equation}\label{second_condition_tau_zero}
  \begin{aligned}
-&(\tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta)t^2 +( 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\delta)t + (\varkappa-\varepsilon - \delta)  \geqslant 0\\
-&t = x^2 \geqslant 0
+&(\tau_{z1}^2\tau_{p1}^2\ - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta)t^2 +( 4\tau_{z1}\tau_{p1} - \tau_{z1}^2 - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2 - 2\tau_{p1}^2\delta)t + \\
+&+ (1-\varepsilon - \delta)  \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Обозначим:
- \begin{equation}
- \begin{aligned}
-&A = \tau_{z1}^2\tau_{p1}^2\varkappa - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta\\
-&B = 4\tau_{z1}\tau_{p1}\varkappa - \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa - 2\tau_{p1}^2\delta\\
-&C = \varkappa-\varepsilon - \delta
- \end{aligned}
-\end{equation}
-Для того, что бы выполнялось \eqref{second_condition_tau_zero} нужно потребовать: $A \geqslant 0$ и $C \geqslant 0$, тогда  при $B \geqslant 0$, тогда уравнение не имеет положительных корней, т.е. выполняется \eqref{second_condition_tau_zero}. Не умаляя общности можем считать $\varkappa = 1$. Получили задачу нахождения условного экстремума при условии:
+Для того, что бы выполнялось \eqref{second_condition_tau_zero} потребуем: 
  \begin{equation}\label{filter2_1_area}
  \begin{aligned}
 &\tau_{z1}^2\tau_{p1}^2 - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta \geqslant 0\\
@@ -454,34 +435,30 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}
 &1-\varepsilon - \delta \geqslant 0
  \end{aligned}
 \end{equation}
-Максимум может достигаться на границе, или в точках понижения ранга. Представим $\varepsilon$ как $\varepsilon(\delta)$ и рассмотрим функцию $\varepsilon\delta$ на границе области \eqref{filter2_1_area}
+Оценка $\nu$ будет наибольшей, если параметры $\varepsilon$, $\delta$ лежат на границе допустимой области \eqref{filter2_1_area} и $\delta > 0$, $\varepsilon > 0$. Граница допустимой области является  выпуклым многоугольником, ограниченным прямыми $\delta = 0$, $\varepsilon = 0$ и
  \begin{equation}\label{filter2_1_area_border}
- \begin{aligned}
-&\frac{\tau_{p1}^2}{\tau_{z1}^2} - \frac{\tau_{p1}^4}{\tau_{z1}^4}\delta =\varepsilon\\
-&2\frac{\tau_{p1}}{\tau_{z1}} - \frac{1}{2} - \frac{\tau_{p1}^2}{2\tau_{z1}^2} - \frac{\tau_{p1}^2}{\tau_{z1}^2}\delta =  \varepsilon\\
-&\varepsilon = 1 - \delta
- \end{aligned}
+\begin{aligned}
+\varepsilon(\delta)=z^2 - z^4\delta \text{,} \quad \varepsilon(\delta)=q - z^2\delta \text{,}
+\quad \varepsilon(\delta)=1 - \delta \text{,}
+\end{aligned}
 \end{equation}
- Для этого найдем пересечения прямых \eqref{filter2_1_area_border}:
+где $z = \frac{\tau_{p1}}{\tau_{z1}}$, $q = 2z - \frac{1}{2} - \frac{1}{2}z^2$. Найдем точки пересечения прямых \eqref{filter2_1_area_border}:
   \begin{equation}
  \begin{aligned}
-&\delta = \frac{1}{1+z^2}, \varepsilon = \frac{z^2}{1+z^2}\\
-&\delta = \frac{1-q}{1-z^2}, \varepsilon = \frac{q-z^2}{1-z^2}\\
-&\delta = \frac{z^2-q}{z^4-z^2}, \varepsilon = z^2 - \frac{z^2(z^2-q)}{z^2-1}\\
-&z = \frac{\tau_{p1}}{\tau_{z1}}\\
-&q = 2z - \frac{1}{2} - \frac{1}{2}z^2\\
+&\delta = \frac{1}{1+z^2}, \quad \varepsilon = \frac{z^2}{1+z^2}\\
+&\delta = \frac{1-q}{1-z^2}, \quad  \varepsilon = \frac{q-z^2}{1-z^2}\\
+&\delta = \frac{z^2-q}{z^4-z^2}, \quad  \varepsilon = z^2 - \frac{z^2(z^2-q)}{z^2-1}\\
  \end{aligned}
 \end{equation}
-Оценки максимума на границе \eqref{filter2_1_area_border}:
+Положим $4\varepsilon\delta$ как максимум по всем граням многоугольника. Тогда $4\varepsilon\delta$ определяется одним из следующих соотношений, в зависимости от того, где достигается максимум: на грани или вершинах многоугольника.
   \begin{equation}
  \begin{aligned}
-&\delta = \frac{1}{2}, \varepsilon = \frac{1}{2}, \varepsilon\delta = \frac{1}{4}\\
-&\delta = \frac{1}{2z^2}, \varepsilon = \frac{z^2}{2}, \varepsilon\delta = \frac{1}{4}\\
-&\delta = \frac{q}{2z^2}, \varepsilon = \frac{q}{2}, \varepsilon\delta = \frac{q^2}{4z^2}\\
+&\delta = \frac{1}{2}, \quad \varepsilon = \frac{1}{2}, \quad 4\varepsilon\delta = 1\\
+&\delta = \frac{1}{2z^2}, \quad \varepsilon = \frac{z^2}{2}, \quad 4\varepsilon\delta = 1\\
+&\delta = \frac{q}{2z^2}, \quad \varepsilon = \frac{q}{2}, \quad 4\varepsilon\delta = \frac{q^2}{z^2}\\
  \end{aligned}
 \end{equation}
 
-  Максимум функции $\nu^2 = \frac{4\varepsilon\delta}{\varkappa^2}$ представлен на графике.
   \begin{figure}[H]
 \begin{subfigure}{.5\textwidth}
   \includegraphics[width=9cm]{images/filter2_tau0_1e.jpg}
@@ -497,30 +474,10 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}
 \label{filter2:filter2_fig}
 \end{figure}
 
-  \begin{figure}[H]
+\begin{figure}[H]
 \includegraphics[width=9cm]{images/main.jpg}
-\caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$.  Синим цветом представлено точное решение, а оранжевым цветам представлено вычисленное решение параметра $\nu^2$}
+\caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$. Синим цветом представлена численная оценка $\nu^2$ согласно \eqref{first_th_eq}, \eqref{second_th_eq} в MATLAB с помощью функции fmincon. Красным цветом представлен график $\nu^2$, построенный по \eqref{filter2_max}, как максимум по всем граням многоугольника}
 \end{figure}
-
-При $B < 0$ уравнение может иметь 2 корня. В этой ситуации потребуем отрицательность дискриминанта:
- \begin{equation}
- \begin{aligned}
-&-4\tau_{z1}^4 \varepsilon \delta + 8\tau_{z1}^4 \varepsilon + \tau_{z1}^4 - 16\tau_{z1}^3 \tau_{p1} \varepsilon - 8\tau_{z1}^3 \tau_{p1} + 8\tau_{z1}^2 \tau_{p1}^2 \varepsilon \delta + 8\tau_{z1}^2 \tau_{p1}^2 \varepsilon + 8\tau_{z1}^2 \tau_{p1}^2 \delta + \\
-& + 14\tau_{z1}^2 \tau_{p1}^2 - 16\tau_{z1} \tau_{p1}^3 \delta - 8\tau_{z1} \tau_{p1}^3 - 4\tau_{p1}^4 \varepsilon \delta + 8\tau_{p1}^4 \delta + \tau_{p1}^4 \leqslant 0
- \end{aligned}
-\end{equation}
-
- \begin{equation}
- \begin{aligned}
-4(\tau_{z1}^2-\tau_{p1}^2)^2(2\varepsilon\tau_{z1}^2-\varepsilon\delta+2\delta\tau_{p1}^2)+(\tau_{z1}-\tau_{p1})^2(\tau_{z1}^2-6\tau_{z1}\tau_{p1}+\tau_{p1}^2)\leqslant 0
- \end{aligned}
-\end{equation}
-
- \begin{equation}
- \begin{aligned}
-4(\tau_{z1}+\tau_{p1})^2(2\varepsilon\tau_{z1}^2-\varepsilon\delta+2\delta\tau_{p1}^2)+(\tau_{z1}^2-6\tau_{z1}\tau_{p1}+\tau_{p1}^2)\leqslant 0
- \end{aligned}
-\end{equation}
 
 \pagebreak
 \subsection{Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}$}
@@ -551,7 +508,7 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 \beta_1 < \beta_2 < 1
  \end{aligned}
 \end{equation}
-Тогда по теореме ???? пара $(A,B)$ управляема. Заметим
+Будем рассматривать управляемую реализацию системы \eqref{system}. Заметим
  \begin{equation}
  \begin{aligned}
 \text{det}(sI-A) = s^2 + \alpha_1\alpha_2^{-1}s + \alpha_2^{-1}
@@ -565,38 +522,46 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 &+ \varkappa - \varepsilon - \tau - \delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Положим $\tau = 0$. И не умаляя общности можем считать $\varkappa = 1$. Тогда \eqref{filter3-th_first-1} принимает вид:
+Положим $\tau = 0$. Не умаляя общности можем считать $\varkappa = 1$. Тогда \eqref{filter3-th_first-1} принимает вид:
  \begin{equation}\label{filter3-th_first-2}
  \begin{aligned}
 &(-\varepsilon\alpha_2^2\beta_2^2 + \alpha_2^2\beta_2 - \delta\alpha_2^2)t^2 + (-\varepsilon\alpha_1^2\beta_1^2 + \alpha_1^2\beta_1 - \delta\alpha_1^2 - \alpha_2 + 2\alpha_2\delta - \alpha_2\beta_2 + 2\alpha_2\beta_2\varepsilon)t +\\
 & + 1 - \varepsilon - \delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Заметим, что $\varepsilon \leqslant 1 - \delta$ является необходимым условием справедливости \eqref{filter3-th_first-2}. Для максимизации $4\varepsilon\delta$ положим $\varepsilon = 1-\delta$.
+Заметим, что $\varepsilon \leqslant 1 - \delta$ является необходимым условием справедливости \eqref{filter3-th_first-2}. Для максимизации $4\varepsilon\delta$ положим $\varepsilon = 1-\delta$. Тогда получим:
  \begin{equation}\label{filter3-3}
  \begin{aligned}
-(\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta)t + \alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geqslant 0
+&(\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta)t + \alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \\
+&\alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Так как максимальное значение достигается на границе положим 
+Заметим, что условия \eqref{restriction-1} и $1-\delta > 0$ гарантируют положительность старшего коэффициента \eqref{filter3-3}: 
  \begin{equation}
+ \begin{aligned}
+&\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta = \alpha_2^2(1-\beta_2)( - \delta(1+\beta_2) + \beta_2) > 0\\
+&1 > \frac{\beta_2}{1+\beta_2} > \delta
+ \end{aligned}
+\end{equation}
+Неотрицательность свободного коэффициента \eqref{filter3-3} является необходимым условием положительности \eqref{filter3-3}. Так как максимальное значение достигается на границе допустимой области положим:
+ \begin{equation}\label{free_coef}
  \begin{aligned}
 \alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta = 0
  \end{aligned}
 \end{equation}
-Тогда 
+Тогда из \eqref{free_coef} выразим $\delta$:
  \begin{equation}\label{filter3_positive_numerator}
  \begin{aligned}
 \delta = \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)}
  \end{aligned}
  \end{equation}
-Для того что бы $\delta > 0$ потребуем положительность числителя \eqref{filter3_positive_numerator}, что равносильно
+Для того что бы $\delta > 0$ потребуем положительность числителя \eqref{filter3_positive_numerator}, что равносильно следующему условию:
  \begin{equation}
  \begin{aligned}
 \alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
  \end{aligned}
  \end{equation}
-Это условие гарантирует положительность знаменателя и $\delta$
+Покажем, что это условие гарантирует положительность знаменателя $\delta$:
  \begin{equation}
  \begin{aligned}
 \alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2) > \frac{\alpha_2(1-\beta_2)}{\beta_1}(1+\beta_1) - 2\alpha_2(1-\beta_2)= \frac{\alpha_2(1-\beta_2)(1 - \beta_1)}{\beta_1} > 0
@@ -620,6 +585,7 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
  Для \eqref{first}, \eqref{second} были получены аналитические оценки полосы захвата, которые были подтверждены численно. Полоса захвата систем ФАПЧ с фильтром, определяемым передаточной функцией \eqref{third} исследовалась ранее Леоновым~Г.\:А. Для нее был восстановлен вывод. 
  
  В настоящее время системы фазовой автоподстройки частоты используются в различных устройствах. Аналитические оценки, полученные в данной работе, могут быть интерсны инженерам и могут использоваться при проектировании и реализации систем ФАПЧ 3 порядка.
+ 
 \pagebreak
 \begin{thebibliography}{3}
 \bibitem{UsageOfThirdOrder1}

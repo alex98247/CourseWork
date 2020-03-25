@@ -5,9 +5,9 @@
 \contentsline {section}{\numberline {2}Математическая модель ФАПЧ}{6}%
 \contentsline {section}{\numberline {3}Постановка задачи}{8}%
 \contentsline {section}{\numberline {4}Оценка полосы захвата}{9}%
-\contentsline {subsection}{\numberline {4.1}Оценка полосы захвата для систем ФАПЧ с фильтром $\frac {1}{(1+\tau _{p1}s)(1+\tau _{p2}s)}$}{9}%
+\contentsline {subsection}{\numberline {4.1}Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac {1}{(1+\tau _{p1}s)(1+\tau _{p2}s)}$}{9}%
 \contentsline {subsubsection}{\numberline {4.1.1}Оценка максимума $\nu $ константой}{9}%
 \contentsline {subsubsection}{\numberline {4.1.2}Точная оценка максимума $\nu $}{9}%
-\contentsline {subsection}{\numberline {4.2}Оценка полосы захвата для систем ФАПЧ с фильтром $\frac {(1+\tau _{z1}s)^2}{(1+\tau _{p1}s)^2}$}{11}%
-\contentsline {subsection}{\numberline {4.3}Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac {(1+\tau _{z1}x)(1+\tau _{z2}x)}{(1+\tau _{p1}x)(1+\tau _{p2}x)}$}{14}%
+\contentsline {subsection}{\numberline {4.2}Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac {(1+\tau _{z1}s)^2}{(1+\tau _{p1}s)^2}$}{11}%
+\contentsline {subsection}{\numberline {4.3}Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac {(1+\tau _{z1}x)(1+\tau _{z2}x)}{(1+\tau _{p1}x)(1+\tau _{p2}x)}$}{13}%
 \contentsline {section}{\numberline {5}Заключение}{15}%
