@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  24 MAR 2020 18:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  26 MAR 2020 20:14
 entering extended mode
 **./template.tex
 (template.tex
@@ -458,7 +458,13 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \c@c_sle=\count120
 \c@c_tab=\count121
 )
-No file template.aux.
+(template.aux
+LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 9
+.
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cyrillic\t2acmr.fd"
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+))
 \openout1 = `template.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -474,16 +480,11 @@ LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 4.
-LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 4
-.
-("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cyrillic\t2acmr.fd"
-File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-)
 LaTeX Font Info:    ... okay on input line 4.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.sty
-"
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.sty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color.
@@ -576,31 +577,16 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Citation `best' on page 1 undefined on input line 35.
-
-
-LaTeX Warning: Citation `rao' on page 1 undefined on input line 35.
-
-
-LaTeX Warning: Citation `shahgildyan' on page 1 undefined on input line 35.
-
-
-LaTeX Warning: Citation `thirdOrderPLL' on page 1 undefined on input line 35.
-
 Package epstopdf Info: Source file: <images/PLL.eps>
-(epstopdf)                    date: 2020-03-20 11:35:23
+(epstopdf)                    date: 2020-03-26 11:26:43
 (epstopdf)                    size: 80753 bytes
 (epstopdf)             Output file: <images/PLL-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-03-26 11:26:43
+(epstopdf)                    size: 67938 bytes
 (epstopdf)             Command: <epstopdf --outfile=images/PLL-eps-converted-to
 .pdf images/PLL.eps>
 (epstopdf)             \includegraphics on input line 37.
-runsystem(epstopdf --outfile=images/PLL-eps-converted-to.pdf images/PLL.eps)...
-executed (allowed).
-
-Package epstopdf Info: Result file: <images/PLL-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-03-24 18:08:41
-(epstopdf)                    size: 67938 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./images/PLL-eps-converted-to.pdf): PDF inclusio
@@ -611,64 +597,22 @@ File: images/PLL-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/PLL-eps-converted-to.pdf  used on input line 37
 .
 (pdftex.def)             Requested size: 312.9803pt x 45.4162pt.
-
-LaTeX Warning: Citation `kuznetsov_article' on page 1 undefined on input line 3
-8.
-
-
-LaTeX Warning: Reference `pll_circuit' on page 1 undefined on input line 38.
-
 [1
 Non-PDF special ignored!
 <special> papersize=597.50787pt,845.04684pt
 
 {C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/PLL
--eps-converted-to.pdf>]
-
-LaTeX Warning: Citation `kuznetsov_article' on page 2 undefined on input line 5
-3.
-
-
-LaTeX Warning: Reference `system' on page 2 undefined on input line 54.
-
-
-LaTeX Warning: Reference `system' on page 2 undefined on input line 55.
-
-
-LaTeX Warning: Reference `system' on page 2 undefined on input line 62.
-
-
-LaTeX Warning: Citation `leonov' on page 2 undefined on input line 71.
-
-
-LaTeX Warning: Reference `system' on page 2 undefined on input line 71.
-
-
-LaTeX Warning: Reference `first_th_eq' on page 2 undefined on input line 73.
-
-
-LaTeX Warning: Reference `system' on page 2 undefined on input line 73.
-
-[2]
-
-LaTeX Warning: Reference `filter1' on page 3 undefined on input line 81.
-
-
-LaTeX Warning: Reference `first_th_eq' on page 3 undefined on input line 81.
-
+-eps-converted-to.pdf>] [2]
 Package epstopdf Info: Source file: <images/agregated.eps>
-(epstopdf)                    date: 2020-03-20 00:20:26
+(epstopdf)                    date: 2020-03-26 11:26:43
 (epstopdf)                    size: 305610 bytes
 (epstopdf)             Output file: <images/agregated-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-03-26 11:26:43
+(epstopdf)                    size: 242276 bytes
 (epstopdf)             Command: <epstopdf --outfile=images/agregated-eps-conver
 ted-to.pdf images/agregated.eps>
 (epstopdf)             \includegraphics on input line 87.
-runsystem(epstopdf --outfile=images/agregated-eps-converted-to.pdf images/agreg
-ated.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <images/agregated-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-03-24 18:08:42
-(epstopdf)                    size: 242276 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./images/agregated-eps-converted-to.pdf): PDF in
@@ -679,32 +623,17 @@ File: images/agregated-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/agregated-eps-converted-to.pdf  used on input l
 ine 87.
 (pdftex.def)             Requested size: 312.9803pt x 110.86772pt.
-
-LaTeX Warning: Reference `filter1_max' on page 3 undefined on input line 87.
-
-
-LaTeX Warning: Reference `filter1_max' on page 3 undefined on input line 87.
-
-
-LaTeX Warning: Reference `filter2' on page 3 undefined on input line 99.
-
-
-LaTeX Warning: Reference `first_th_eq' on page 3 undefined on input line 99.
-
 [3 <./images/agregated-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/main.eps>
-(epstopdf)                    date: 2020-03-20 12:23:47
+(epstopdf)                    date: 2020-03-26 11:26:43
 (epstopdf)                    size: 181977 bytes
 (epstopdf)             Output file: <images/main-eps-converted-to.pdf>
+(epstopdf)                    date: 2020-03-26 11:26:43
+(epstopdf)                    size: 146417 bytes
 (epstopdf)             Command: <epstopdf --outfile=images/main-eps-converted-t
 o.pdf images/main.eps>
 (epstopdf)             \includegraphics on input line 115.
-runsystem(epstopdf --outfile=images/main-eps-converted-to.pdf images/main.eps).
-..executed (allowed).
-
-Package epstopdf Info: Result file: <images/main-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-03-24 18:08:43
-(epstopdf)                    size: 146417 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 
 pdfTeX warning: pdflatex (file ./images/main-eps-converted-to.pdf): PDF inclusi
@@ -715,45 +644,7 @@ File: images/main-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/main-eps-converted-to.pdf  used on input line 1
 15.
 (pdftex.def)             Requested size: 156.49014pt x 100.04774pt.
-
-LaTeX Warning: Reference `first_th_eq' on page 4 undefined on input line 115.
-
-
-LaTeX Warning: Reference `second_th_eq' on page 4 undefined on input line 115.
-
-
-LaTeX Warning: Reference `filter2_max' on page 4 undefined on input line 115.
-
-
-LaTeX Warning: Reference `first_th_eq' on page 4 undefined on input line 115.
-
-
-LaTeX Warning: Reference `second_th_eq' on page 4 undefined on input line 115.
-
-
-LaTeX Warning: Reference `filter2_max' on page 4 undefined on input line 115.
-
-
-LaTeX Warning: Reference `filter3' on page 4 undefined on input line 123.
-
-
-LaTeX Warning: Reference `first_th_eq' on page 4 undefined on input line 123.
-
-
-LaTeX Warning: Reference `filter3-params' on page 4 undefined on input line 139
-.
-
-
-LaTeX Warning: Reference `first_th_eq' on page 4 undefined on input line 139.
-
-
-LaTeX Warning: Reference `second_th_eq' on page 4 undefined on input line 139.
-
 [4 <./images/main-eps-converted-to.pdf>]
-
-LaTeX Warning: Citation `kuznetsov' on page 5 undefined on input line 145.
-
-
 Underfull \hbox (badness 1127) in paragraph at lines 150--151
 []\T2A/cmr/m/n/10 Leonov G.A., Kuznetsov N.V. Nonlinear mathematical models
  []
@@ -764,51 +655,44 @@ Underfull \hbox (badness 1163) in paragraph at lines 150--151
 
  []
 
-[5] (template.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[5] (template.aux) ) 
 Here is how much of TeX's memory you used:
- 5499 strings out of 492484
- 75870 string characters out of 3122054
- 156215 words of memory out of 3000000
+ 5501 strings out of 492484
+ 75935 string characters out of 3122054
+ 156342 words of memory out of 3000000
  9735 multiletter control sequences out of 15000+200000
  19207 words of font info for 47 fonts, out of 3000000 for 9000
  1142 hyphenation exceptions out of 8191
- 62i,10n,46p,2406b,437s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-
-super-t2a.enc}<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Alex/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Alex/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/User
-s/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmr5.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Alex/AppData/Local/Progra
-ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Ale
-x/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C
-:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-msy8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
-sfonts/symbols/msam10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Alex/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx0800.pfb><C:/Users/Alex/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Alex
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1200.pfb><C:
-/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm0
-800.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-
-super/sfrm1000.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/cm-super/sfti0800.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/
-fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on template.pdf (5 pages, 782695 bytes).
+ 62i,10n,46p,2406b,426s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/
+dvips/cm-super/cm-super-t2a.enc}<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Al
+ex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
+C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmmi8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Alex/AppData/Local/Programs
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Alex/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Use
+rs/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Alex/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Alex/App
+Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx0800.pfb><C:/Use
+rs/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1000.
+pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-supe
+r/sfbx1200.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/cm-super/sfrm0800.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/cm-super/sfrm1000.pfb><C:/Users/Alex/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/cm-super/sfti0800.pfb><C:/Users/Alex/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on template.pdf (5 pages, 782493 bytes).
 PDF statistics:
  123 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
