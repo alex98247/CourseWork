@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  25 MAR 2020 11:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  26 MAR 2020 13:29
 entering extended mode
 **./Cluster_Analysis.tex
 (Cluster_Analysis.tex
@@ -1010,11 +1010,7 @@ pes/circuits\pgflibraryshapes.gates.logic.IEC.code.tex"
 pes/circuits\pgflibraryshapes.gates.logic.code.tex")))
 \c@definition=\count133
 \c@theorem=\count134
- (Cluster_Analysis.aux
-
-LaTeX Warning: Label `thirdOrderPLL' multiply defined.
-
-)
+ (Cluster_Analysis.aux)
 \openout1 = `Cluster_Analysis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -1034,7 +1030,8 @@ LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
 8.
- ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 28.
@@ -1392,18 +1389,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 18903 strings out of 492484
- 383790 string characters out of 3122054
- 430523 words of memory out of 3000000
- 22788 multiletter control sequences out of 15000+200000
+ 18908 strings out of 492484
+ 383819 string characters out of 3122054
+ 430508 words of memory out of 3000000
+ 22793 multiletter control sequences out of 15000+200000
  17902 words of font info for 58 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,12n,76p,2190b,645s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,12n,76p,2163b,645s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-
 super-t2a.enc}<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
@@ -1425,7 +1419,7 @@ c/cm-super/sfrm1200.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/public/cm-super/sfrm1440.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX
  2.9/fonts/type1/public/cm-super/sfrm1728.pfb><C:/Users/Alex/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm2074.pfb>
-Output written on Cluster_Analysis.pdf (16 pages, 651365 bytes).
+Output written on Cluster_Analysis.pdf (16 pages, 651996 bytes).
 PDF statistics:
  136 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
