@@ -220,11 +220,11 @@ Blagov~M.\:V.
  \end{aligned}
 \end{equation*}
 где $\theta_{vco}(t)$~--- фаза подстраиваемого генератора, $\theta_{ref}(t)$~--- фаза эталонного генератора, $\upsilon_e(\theta_e(t))$~--- характеристика фазового детектора, являющаяся $2\pi$ периодической функцией. Функцию
- \begin{equation*}
+ \begin{equation}\label{phase_error}
  \begin{aligned}
 \theta_e(t) = \theta_{ref}(t) - \theta_{vco}(t)
  \end{aligned}
-\end{equation*}
+\end{equation}
 называют фазовой ошибкой. На практике часто используют следующие характеристики фазового детектора: $\alpha$ $\operatorname{sin}(\sigma)$ и 
 
 \begin{equation*}
@@ -237,33 +237,33 @@ Blagov~M.\:V.
 В настоящее время инженерами реализованы различные фазовые детекторы в виде микросхем, которые применяются в классических системах ФАПЧ и их модификациях.
 
 Cигнал, полученный на выходе компаратора $\upsilon_e(\theta_e(t))$ поступает на вход фильтра нижних частот. Связь входного $\upsilon_e(\theta_e(t))$ и выходного $\upsilon_f(t)$ сигналов фильтра нижних частот может быть описана уранениями:
- \begin{equation*}
+ \begin{equation}\label{linear_block_eq}
  \begin{aligned}
 &\dot{x} = Ax + B\upsilon_e(\theta_e(t))\\
 &\upsilon_f(t) = C^Tx + D\upsilon_e(\theta_e(t)),
  \end{aligned}
-\end{equation*}
+\end{equation}
 где $A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$-мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы. Для практических применений инженерами были физически реализованы аналоговые(непрерывные) фильтры в виде RL-цепей, RLC-цепей и др., а цифровые(дискретные) фильтры нижних частот реализуются на цифровых элементах.
 
 Выходной сигнал фильтра нижних частот поступает на вход генератора, управляемого напряжением. Происходит подстройка частоты ГУН:
- \begin{equation*}
+ \begin{equation}\label{VCO_eq}
  \begin{aligned}
 \dot{\theta}_{vco}(t) = \omega_{vco}(t) = \omega^{free}_{vco} + K_{vco}\upsilon_f(t),
  \end{aligned}
-\end{equation*}
+\end{equation}
 где $\omega^{free}_{vco}$~--- частота свободных колебаний ГУН, $K_{vco}$~--- коэфициент передачи. При этом полагаем, что эталонный генератор работает на постоянной частоте:
- \begin{equation*}
+ \begin{equation}
  \begin{aligned}
 \dot{\theta}_{ref}(t) = \omega_{ref}(t) \equiv \omega_{ref}
  \end{aligned}
-\end{equation*}
+\end{equation}
 Разность между частотой эталонного генератора и частотой свободных колебаний ГУН обозначим:
- \begin{equation*}
+ \begin{equation}\label{constant_frequency}
  \begin{aligned}
 \omega_e^{free} \equiv \omega_{ref} - \omega^{free}_{vco}
  \end{aligned}
-\end{equation*}
-В результате получим систему дифференциальных уравнений, описывающих ФАПЧ:
+\end{equation}
+Из \eqref{phase_error} и \eqref{linear_block_eq}-\eqref{constant_frequency} получим систему дифференциальных уравнений, описывающих ФАПЧ:
  \begin{equation}\label{pllequations}
  \begin{aligned}
  &\dot{x} = Ax + B\upsilon_e(\theta_e)\\
@@ -343,21 +343,29 @@ Cигнал, полученный на выходе компаратора $\ups
  \begin{align}
 &W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}\\[5pt]
 &W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\\[5pt]
-&W(s) = \frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}
+&W(s) = \frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}\\
+&0<\tau_{pi},\tau_{zj} < 1, \quad \tau_{pi} \neq \tau_{zj}, \quad i=1,2, \quad j=1,2
  \end{align}
+ 
+ Для оценки полосы захвата будем выбирать $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие \eqref{first_th_eq} и \eqref{second_th_eq} так, чтобы максимизировать $\nu$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система \eqref{system} глобально асимптотически устойчива.
 
 \pagebreak
 \section{Оценка полосы захвата}
-Для оценки полосы захвата будем выбирать $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие \eqref{first_th_eq} и \eqref{second_th_eq} так, чтобы максимизировать $\nu$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система \eqref{system} глобально асимптотически устойчива.
 
 \subsection{Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
 Оценим полосу захвата для систем ФАПЧ с фильтром, определяемым передаточной функцией:
  \begin{equation}\label{filter1}
  \begin{aligned}
-W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}, \quad 0<\tau_{p1},\tau_{p2} < 1
+W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}, \quad 0<\tau_{p1},\tau_{p2} < 1,
  \end{aligned}
 \end{equation}
-Введем обозначения: $a = \tau_{p1}+\tau_{p2}$, $b = \tau_{p1}\tau_{p2}$. Рассмотрим первое условие теоремы \ref{th1}. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. Не умаляя общности, можем положить $\varkappa = 1$. В результате преобразований \eqref{first_th_eq} принимает вид:
+где $a = \tau_{p1}+\tau_{p2}$, $b = \tau_{p1}\tau_{p2}$. Будем рассматривать управляемую реализацию системы \eqref{system}. Заметим
+ \begin{equation}
+ \begin{aligned}
+\text{det}(sI-A) = s^2 + ab^{-1}s + b^{-1}
+ \end{aligned}
+\end{equation}
+матрица $A$ - устойчива.Рассмотрим первое условие теоремы \ref{th1}. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. Не умаляя общности, можем положить $\varkappa = 1$. В результате преобразований \eqref{first_th_eq} принимает вид:
 \begin{equation}\label{first_condition}
  \begin{aligned}
 &\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (- b+\tau-\delta a^2 + 2\delta b)t + (1-\varepsilon-\tau-\delta) \geqslant 0, \quad \forall t \in \mathbb{R_+}
@@ -366,13 +374,11 @@ W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}, \quad 0<\
 
 \subsubsection{Оценка максимума $\nu$ константой}
 Очевидно, что для того чтобы выполнялось \eqref{first_th_eq} нужно потребовать неотрицательность свободного коэффициента $1 - \varepsilon - \tau - \delta \geqslant 0$, тогда
-\begin{equation}\label{const_ineq}
- \begin{aligned}
+ \begin{align}
 &\varepsilon+\tau+\delta \leqslant 1 \\
 &\varepsilon^2 + \tau^2 + \delta^2 + 2\varepsilon\tau + 2\varepsilon\delta + 2\tau\delta \leqslant 1\\
-&4\varepsilon\delta \leqslant 2 -(2\varepsilon^2 + 2\delta^2 + 2\tau^2 +4\varepsilon\tau + 4\tau\delta)
- \end{aligned}
-\end{equation}
+&4\varepsilon\delta \leqslant 2 -(2\varepsilon^2 + 2\delta^2 + 2\tau^2 +4\varepsilon\tau + 4\tau\delta)\label{const_ineq}
+ \end{align}
 Из \eqref{const_ineq} и \eqref{second_th_eq} получаем оценку для $\nu^2$:
 \begin{equation}
  \begin{aligned}
@@ -449,7 +455,7 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}, \quad 0<\tau_{p1},\tau_{z1} < 
 \text{det}(sI-A) = s^2 + 2\tau_{z1}^{-1}s + \tau_{z1}^{-2}
  \end{aligned}
 \end{equation}
-матрица $A$ - устойчива. Найдем $\varepsilon, \delta, \varkappa, \tau$ так, что бы максимизировать $\nu$. Для этого подставим \eqref{filter2} в первое условие теоремы \ref{th1} и перенесем все в левую часть неравенства. Сделаем замену $t = s^2$. В результате преобразований \eqref{first_th_eq} принимает следующий вид:
+матрица $A$ - устойчива. Найдем $\varepsilon, \delta, \varkappa, \tau$ так, что бы максимизировать $\nu$. Для этого подставим \eqref{filter2} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену $t = s^2$. В результате преобразований \eqref{first_th_eq} принимает следующий вид:
  \begin{equation}\label{second_condition}
  \begin{aligned}
 &\tau_{p1}^4\tau t^3 +(- \tau_{z1}^4\varepsilon - \tau_{z1}^4\tau + 2\tau_{p1}^2\tau- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)t^2 +( \tau- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2\tau+ \\
@@ -463,7 +469,7 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}, \quad 0<\tau_{p1},\tau_{z1} < 
 &+ (1-\varepsilon - \delta)  \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Для того, что бы выполнялось \eqref{second_condition_tau_zero} потребуем: 
+Для того, что бы выполнялось \eqref{second_condition_tau_zero} потребуем положительность коэффициентов: 
  \begin{equation}\label{filter2_1_area}
  \begin{aligned}
 &\tau_{z1}^2\tau_{p1}^2 - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta \geqslant 0\\
@@ -486,31 +492,30 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}, \quad 0<\tau_{p1},\tau_{z1} < 
 &\delta = \frac{z^2-q}{z^4-z^2}, \quad  \varepsilon = z^2 - \frac{z^2(z^2-q)}{z^2-1}\\
  \end{aligned}
 \end{equation}
-Положим $4\varepsilon\delta$ как максимум по всем граням многоугольника. Тогда $4\varepsilon\delta$ определяется одним из следующих соотношений, в зависимости от того, где достигается максимум: на грани или вершинах многоугольника.
-  \begin{equation}
- \begin{aligned}
-&\delta = \frac{1}{2}, \quad \varepsilon = \frac{1}{2}, \quad 4\varepsilon\delta = 1\\
-&\delta = \frac{1}{2z^2}, \quad \varepsilon = \frac{z^2}{2}, \quad 4\varepsilon\delta = 1\\
-&\delta = \frac{q}{2z^2}, \quad \varepsilon = \frac{q}{2}, \quad 4\varepsilon\delta = \frac{q^2}{z^2}\\
- \end{aligned}
+Положим $4\varepsilon\delta$ как максимум по всем граням многоугольника. Тогда $4\varepsilon\delta$ определяется одним из следующих соотношений, в зависимости от того, где достигается максимум: на грани или вершинах многоугольника:
+ \begin{equation}\label{filter2_max}
+\begin{aligned}
+\frac{q^2}{z^2}\text{,} \quad 1 \text{,} \quad \frac{4z^2}{1+z^2} \text{,} \quad \frac{4(1-q)(q-z^2)}{1-z^2} \text{,} \quad \frac{z^2-q}{z^2-1} - \left(\frac{z^2-q}{z^2-1}\right)^2
+\end{aligned}
 \end{equation}
 
-  \begin{figure}[H]
-\begin{subfigure}{.5\textwidth}
-  \includegraphics[width=9cm]{images/filter2_tau0_1e.jpg}
-  \caption{Численное приближение в MATLAB}
-  \label{filter2:sub1}
-\end{subfigure}%
- \begin{subfigure}{.5\textwidth}
-  \includegraphics[width=9cm]{images/filter2_tau0_1.jpg}
-  \caption{Вычисленный график}
-  \label{filter2:sub2}
-\end{subfigure}%
-\caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$}
-\label{filter2:filter2_fig}
-\end{figure}
+%  \begin{figure}[H]
+%\begin{subfigure}{.5\textwidth}
+%  \includegraphics[width=9cm]{images/filter2_tau0_1e.jpg}
+%  \caption{Численное приближение в MATLAB}
+%  \label{filter2:sub1}
+%\end{subfigure}%
+% \begin{subfigure}{.5\textwidth}
+%  \includegraphics[width=9cm]{images/filter2_tau0_1.jpg}
+%  \caption{Вычисленный график}
+%  \label{filter2:sub2}
+%\end{subfigure}%
+%\caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$}
+%\label{filter2:filter2_fig}
+%\end{figure}
 
 \begin{figure}[H]
+\centering
 \includegraphics[width=9cm]{images/main.jpg}
 \caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$. Синим цветом представлена численная оценка $\nu^2$ согласно \eqref{first_th_eq}, \eqref{second_th_eq} в MATLAB с помощью функции fmincon. Красным цветом представлен график $\nu^2$, построенный по \eqref{filter2_max}, как максимум по всем граням многоугольника}
 \end{figure}
@@ -538,7 +543,7 @@ W(s) = \frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)}, \quad 
 W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
  \end{aligned}
 \end{equation}
-Предположим:
+Положим:
  \begin{equation}\label{restriction-1}
  \begin{aligned}
 \beta_1 < \beta_2 < 1
@@ -550,7 +555,7 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 \text{det}(sI-A) = s^2 + \alpha_1\alpha_2^{-1}s + \alpha_2^{-1}
  \end{aligned}
 \end{equation}
-Матрица $A$ устойчива. Найдем $\varepsilon, \delta, \varkappa, \tau$ так, что бы максимизировать $\nu$. Для этого подставим \eqref{filter3-1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = x^2$. В результате преобразований \eqref{first_th_eq} принимает следующий вид:
+матрица $A$ устойчива. Найдем $\varepsilon, \delta, \varkappa, \tau$ так, что бы максимизировать $\nu$. Для этого подставим \eqref{filter3-1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = x^2$. В результате преобразований \eqref{first_th_eq} принимает следующий вид:
  \begin{equation}\label{filter3-th_first-1}
  \begin{aligned}
 &\alpha_2^2\tau t^3 + (\alpha_1^2\tau - 2\alpha_2\tau - \alpha_2^2\delta - \alpha_2^2\beta_2^2\varepsilon - \alpha_2^2\beta_2^2\tau + \alpha_2^2\beta_2\varkappa)t^2 +\\
@@ -565,45 +570,57 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 & + 1 - \varepsilon - \delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Заметим, что $\varepsilon \leqslant 1 - \delta$ является необходимым условием справедливости \eqref{filter3-th_first-2}. Для максимизации $4\varepsilon\delta$ положим $\varepsilon = 1-\delta$. Тогда получим:
+Заметим, что $\varepsilon \leqslant 1 - \delta$ является необходимым условием справедливости \eqref{filter3-th_first-2}. Для максимизации $\nu$ положим $\varepsilon = 1-\delta$, тогда:
  \begin{equation}\label{filter3-3}
  \begin{aligned}
 &(\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta)t + \alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \\
 &\alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Заметим, что условия \eqref{restriction-1} и $1-\delta > 0$ гарантируют положительность старшего коэффициента \eqref{filter3-3}: 
- \begin{equation}
+Необходимым и достаточным условием справедливости \eqref{filter3-3} является неотрицательность коэффициента при $t$ и свободного коэфициента:
+ \begin{equation}\label{filter3-restriction1}
  \begin{aligned}
-&\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta = \alpha_2^2(1-\beta_2)( - \delta(1+\beta_2) + \beta_2) > 0\\
-&1 > \frac{\beta_2}{1+\beta_2} > \delta
+&\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta \geqslant 0\\ 
+&\alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geqslant 0
  \end{aligned}
 \end{equation}
-Неотрицательность свободного коэффициента \eqref{filter3-3} является необходимым условием положительности \eqref{filter3-3}. Так как максимальное значение достигается на границе допустимой области положим:
- \begin{equation}\label{free_coef}
- \begin{aligned}
-\alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta = 0
- \end{aligned}
-\end{equation}
-Тогда из \eqref{free_coef} выразим $\delta$:
+Из \eqref{filter3-restriction1} выразим $\delta$:
+ \begin{align}
+&\delta \leqslant \frac{\beta_2}{1+\beta_2} \\
+&\delta \leqslant \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)} \label{free_coef}
+ \end{align}
+Условие \eqref{restriction-1} гарантирует, что функция \eqref{free_coef} как функция от  $\beta_1$ строго возрастает, на допустимой области параметров. Положим в \eqref{free_coef} $\beta_1 = \beta_2$, тогда:
+ \begin{align}
+\frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)} < \frac{\alpha_1^2\beta_2 - \alpha_2}{\alpha_1^2 - 2\alpha_2} < \frac{\beta_2}{1+\beta_2}
+ \end{align}
+Так как максимальное значение $\nu$ достигается на границе допустимой области. Положим:
  \begin{equation}\label{filter3_positive_numerator}
  \begin{aligned}
 \delta = \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)}
  \end{aligned}
  \end{equation}
-Для того что бы $\delta > 0$ потребуем положительность числителя \eqref{filter3_positive_numerator}, что равносильно следующему условию:
- \begin{equation}
+  Для того что бы $\delta > 0$, потребуем положительность числителя \eqref{filter3_positive_numerator}, что равносильно следующему условию:
+ \begin{equation}\label{filter3-restriction2}
  \begin{aligned}
 \alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
  \end{aligned}
  \end{equation}
-Покажем, что это условие гарантирует положительность знаменателя $\delta$:
- \begin{equation}
+Покажем, что это условие гарантирует положительность знаменателя \eqref{filter3_positive_numerator}:
+\begin{equation}
  \begin{aligned}
 \alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2) > \frac{\alpha_2(1-\beta_2)}{\beta_1}(1+\beta_1) - 2\alpha_2(1-\beta_2)= \frac{\alpha_2(1-\beta_2)(1 - \beta_1)}{\beta_1} > 0
  \end{aligned}
- \end{equation}
-Получили, что
+\end{equation}
+В результате вычислений получили, что максимальное значение $\nu$ будет при следующем наборе параметров:
+\begin{equation}\label{filter3-params}
+ \begin{aligned}
+ \tau = 0 \text{,} \quad
+ \varkappa = 1 \text{,} \quad
+ \varepsilon = 1-\delta \text{,} \quad
+ \delta = \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)}
+ \end{aligned}
+\end{equation}
+Тогда, подставив \eqref{filter3-params} в \eqref{first_th_eq} и применив \eqref{second_th_eq}, получим оценку:
  \begin{equation}
  \begin{aligned}
 \nu^2 < 4\frac{[\alpha_1^2(1-\beta_1) - \alpha_2(1-\beta_2)][\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)]}{[\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)]^2}
@@ -616,7 +633,8 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
  \begin{align}
 &W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}\label{first}\\[5pt]
 &W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\label{second}\\[5pt]
-&W(s) = \frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}\label{third}
+&W(s) = \frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}\label{third}\\
+&0<\tau_{pi},\tau_{zj} < 1, \quad \tau_{pi} \neq \tau_{zj}, \quad i=1,2, \quad j=1,2
  \end{align}
  Для \eqref{first}, \eqref{second} были получены аналитические оценки полосы захвата, которые были подтверждены численно. Полоса захвата систем ФАПЧ с фильтром, определяемым передаточной функцией \eqref{third} исследовалась ранее Леоновым~Г.\:А. Для нее был восстановлен вывод. 
  
