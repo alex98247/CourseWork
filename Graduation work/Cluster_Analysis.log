@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  27 MAR 2020 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  28 MAR 2020 14:29
 entering extended mode
 **./Cluster_Analysis.tex
 (Cluster_Analysis.tex
@@ -409,6 +409,47 @@ Package: amsthm 2017/10/31 v2.20.4
 \thm@headsep=\skip48
 \dth@everypar=\toks29
 )
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.s
+ty"
+\lst@mode=\count105
+\lst@gtempboxa=\box29
+\lst@token=\toks30
+\lst@length=\count106
+\lst@currlwidth=\dimen122
+\lst@column=\count107
+\lst@pos=\count108
+\lst@lostspace=\dimen123
+\lst@width=\dimen124
+\lst@newlines=\count109
+\lst@lineno=\count110
+\lst@maxwidth=\dimen125
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstmisc.st
+y"
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count111
+\lst@skipnumbers=\count112
+\lst@framebox=\box30
+)
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\listings.c
+fg"
+File: listings.cfg 2019/09/10 1.8c listings configuration
+))
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\color.sty"
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-cfg\color.
+cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdftex
+.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/setspace\setspace.s
 ty"
 Package: setspace 2011/12/19 v6.7a set line spacing
@@ -447,8 +488,8 @@ Package tocloft Info: The document has section divisions on input line 51.
 \cftbeforefigskip=\skip72
 \cftfigindent=\skip73
 \cftfignumwidth=\skip74
-\c@lofdepth=\count105
-\c@lotdepth=\count106
+\c@lofdepth=\count113
+\c@lotdepth=\count114
 \cftbeforelottitleskip=\skip75
 \cftafterlottitleskip=\skip76
 \cftbeforetabskip=\skip77
@@ -458,15 +499,15 @@ Package tocloft Info: The document has section divisions on input line 51.
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/titlesec\titlesec.s
 ty"
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box29
+\ttl@box=\box31
 \beforetitleunit=\skip80
 \aftertitleunit=\skip81
-\ttl@plus=\dimen122
-\ttl@minus=\dimen123
-\ttl@toksa=\toks30
-\titlewidth=\dimen124
-\titlewidthlast=\dimen125
-\titlewidthfirst=\dimen126
+\ttl@plus=\dimen126
+\ttl@minus=\dimen127
+\ttl@toksa=\toks31
+\titlewidth=\dimen128
+\titlewidthlast=\dimen129
+\titlewidthfirst=\dimen130
 )
 \mylength=\skip82
 
@@ -478,17 +519,18 @@ Package: caption 2019/10/18 v3.4a Customizing captions (AR)
 y"
 Package: caption3 2019/09/09 v1.8e caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen127
-\captionmargin@=\dimen128
-\captionwidth=\dimen129
-\caption@tempdima=\dimen130
-\caption@indent=\dimen131
-\caption@parindent=\dimen132
-\caption@hangindent=\dimen133
+\captionmargin=\dimen131
+\captionmargin@=\dimen132
+\captionwidth=\dimen133
+\caption@tempdima=\dimen134
+\caption@indent=\dimen135
+\caption@parindent=\dimen136
+\caption@hangindent=\dimen137
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count107
-\c@continuedfloat=\count108
+\c@caption@flags=\count115
+\c@continuedfloat=\count116
+Package caption Info: listings package is loaded.
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/import\import.sty"
 Package: import 2020/01/22  v 6.0
@@ -558,9 +600,9 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen134
-\Hy@linkcounter=\count109
-\Hy@pagecounter=\count110
+\@linkdim=\dimen138
+\Hy@linkcounter=\count117
+\Hy@pagecounter=\count118
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\pd1enc.def
 "
@@ -572,7 +614,7 @@ Now handling font encoding PD1 ...
 sty"
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count111
+\Hy@SavedSpaceFactor=\count119
 Package hyperref Info: Option `unicode' set `true' on input line 3490.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\puenc.def"
@@ -593,13 +635,13 @@ Package hyperref Info: Plain pages OFF on input line 4550.
 Package hyperref Info: Backreferencing OFF on input line 4555.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4788.
-\c@Hy@tempcnt=\count112
+\c@Hy@tempcnt=\count120
  ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5147.
-\XeTeXLinkMargin=\dimen135
+\XeTeXLinkMargin=\dimen139
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\bitset.s
 ty"
@@ -610,9 +652,9 @@ lc.sty"
 Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count113
-\Field@Width=\dimen136
-\Fld@charsize=\dimen137
+\Fld@menulength=\count121
+\Field@Width=\dimen140
+\Fld@charsize=\dimen141
 Package hyperref Info: Hyper figures OFF on input line 6418.
 Package hyperref Info: Link nesting OFF on input line 6423.
 Package hyperref Info: Hyper index ON on input line 6426.
@@ -627,9 +669,9 @@ LaTeX Info: Redefining \pageref on input line 6492.
 .sty"
 Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 )
-\Hy@abspage=\count114
-\c@Item=\count115
-\c@Hfootnote=\count116
+\Hy@abspage=\count122
+\c@Item=\count123
+\c@Hfootnote=\count124
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -642,8 +684,8 @@ sty"
 Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
 )
-\Fld@listcount=\count117
-\c@bookmark@seq@number=\count118
+\Fld@listcount=\count125
+\c@bookmark@seq@number=\count126
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\rerunfilec
 heck.sty"
@@ -658,9 +700,13 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip83
 )
-\c@definition=\count119
-\c@theorem=\count120
-)
+\c@definition=\count127
+\c@theorem=\count128
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/listings\lstlang1.s
+ty"
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+))
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics\graphicx.s
 ty"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
@@ -677,21 +723,17 @@ cs.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
-
-("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphics-def\pdftex
-.def"
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
-\Gin@req@height=\dimen138
-\Gin@req@width=\dimen139
+)
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count121
-\float@exts=\toks31
-\float@box=\box30
-\@float@everytoks=\toks32
-\@floatcapt=\box31
+\c@float@type=\count129
+\float@exts=\toks32
+\float@box=\box32
+\@float@everytoks=\toks33
+\@floatcapt=\box33
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\textcomp.sty"
 Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
@@ -855,8 +897,8 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/caption\subcaption.
 sty"
 Package: subcaption 2019/09/01 v1.3a Sub-captions (AR)
-\c@subfigure=\count122
-\c@subtable=\count123
+\c@subfigure=\count130
+\c@subtable=\count131
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/frontendlayer\t
 ikz.sty"
@@ -866,15 +908,15 @@ sty"
 s.sty"
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgf
 util-common.tex"
-\pgfutil@everybye=\toks33
-\pgfutil@tempdima=\dimen140
-\pgfutil@tempdimb=\dimen141
+\pgfutil@everybye=\toks34
+\pgfutil@tempdima=\dimen144
+\pgfutil@tempdimb=\dimen145
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgf
 util-common-lists.tex"))
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgf
 util-latex.def"
-\pgfutil@abb=\box32
+\pgfutil@abb=\box34
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
@@ -897,33 +939,33 @@ Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgf
 keys.code.tex"
-\pgfkeys@pathtoks=\toks34
-\pgfkeys@temptoks=\toks35
+\pgfkeys@pathtoks=\toks35
+\pgfkeys@temptoks=\toks36
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/utilities\pgf
 keysfiltered.code.tex"
-\pgfkeys@tmptoks=\toks36
+\pgfkeys@tmptoks=\toks37
 ))
-\pgf@x=\dimen142
-\pgf@y=\dimen143
-\pgf@xa=\dimen144
-\pgf@ya=\dimen145
-\pgf@xb=\dimen146
-\pgf@yb=\dimen147
-\pgf@xc=\dimen148
-\pgf@yc=\dimen149
-\pgf@xd=\dimen150
-\pgf@yd=\dimen151
+\pgf@x=\dimen146
+\pgf@y=\dimen147
+\pgf@xa=\dimen148
+\pgf@ya=\dimen149
+\pgf@xb=\dimen150
+\pgf@yb=\dimen151
+\pgf@xc=\dimen152
+\pgf@yc=\dimen153
+\pgf@xd=\dimen154
+\pgf@yd=\dimen155
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count124
-\c@pgf@countb=\count125
-\c@pgf@countc=\count126
-\c@pgf@countd=\count127
-\t@pgf@toka=\toks37
-\t@pgf@tokb=\toks38
-\t@pgf@tokc=\toks39
-\pgf@sys@id@count=\count128
+\c@pgf@counta=\count132
+\c@pgf@countb=\count133
+\c@pgf@countc=\count134
+\c@pgf@countd=\count135
+\t@pgf@toka=\toks38
+\t@pgf@tokb=\toks39
+\t@pgf@tokc=\toks40
+\pgf@sys@id@count=\count136
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\p
 gf.cfg"
@@ -942,8 +984,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\p
 gfsyssoftpath.code.tex"
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count129
-\pgfsyssoftpath@bigbuffer@items=\count130
+\pgfsyssoftpath@smallbuffer@items=\count137
+\pgfsyssoftpath@bigbuffer@items=\count138
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/systemlayer\p
 gfsysprotocol.code.tex"
@@ -957,6 +999,7 @@ cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -979,12 +1022,12 @@ alc.code.tex"
 til.code.tex")
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathp
 arser.code.tex"
-\pgfmath@dimen=\dimen152
-\pgfmath@count=\count131
-\pgfmath@box=\box33
-\pgfmath@toks=\toks40
-\pgfmath@stack@operand=\toks41
-\pgfmath@stack@operation=\toks42
+\pgfmath@dimen=\dimen156
+\pgfmath@count=\count139
+\pgfmath@box=\box35
+\pgfmath@toks=\toks41
+\pgfmath@stack@operand=\toks42
+\pgfmath@stack@operation=\toks43
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathf
 unctions.code.tex"
@@ -1006,59 +1049,59 @@ unctions.misc.code.tex")
 unctions.integerarithmetics.code.tex")))
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmathf
 loat.code.tex"
-\c@pgfmathroundto@lastzeros=\count132
+\c@pgfmathroundto@lastzeros=\count140
 ))
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfint.c
 ode.tex")
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorepoints.code.tex"
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen153
-\pgf@picmaxx=\dimen154
-\pgf@picminy=\dimen155
-\pgf@picmaxy=\dimen156
-\pgf@pathminx=\dimen157
-\pgf@pathmaxx=\dimen158
-\pgf@pathminy=\dimen159
-\pgf@pathmaxy=\dimen160
-\pgf@xx=\dimen161
-\pgf@xy=\dimen162
-\pgf@yx=\dimen163
-\pgf@yy=\dimen164
-\pgf@zx=\dimen165
-\pgf@zy=\dimen166
+\pgf@picminx=\dimen157
+\pgf@picmaxx=\dimen158
+\pgf@picminy=\dimen159
+\pgf@picmaxy=\dimen160
+\pgf@pathminx=\dimen161
+\pgf@pathmaxx=\dimen162
+\pgf@pathminy=\dimen163
+\pgf@pathmaxy=\dimen164
+\pgf@xx=\dimen165
+\pgf@xy=\dimen166
+\pgf@yx=\dimen167
+\pgf@yy=\dimen168
+\pgf@zx=\dimen169
+\pgf@zy=\dimen170
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorepathconstruct.code.tex"
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen167
-\pgf@path@lasty=\dimen168
+\pgf@path@lastx=\dimen171
+\pgf@path@lasty=\dimen172
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorepathusage.code.tex"
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen169
-\pgf@shorten@start@additional=\dimen170
+\pgf@shorten@end@additional=\dimen173
+\pgf@shorten@start@additional=\dimen174
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorescopes.code.tex"
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box34
-\pgf@hbox=\box35
-\pgf@layerbox@main=\box36
-\pgf@picture@serial@count=\count133
+\pgfpic=\box36
+\pgf@hbox=\box37
+\pgf@layerbox@main=\box38
+\pgf@picture@serial@count=\count141
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcoregraphicstate.code.tex"
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen171
+\pgflinewidth=\dimen175
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcoretransformations.code.tex"
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen172
-\pgf@pt@y=\dimen173
-\pgf@pt@temp=\dimen174
+\pgf@pt@x=\dimen176
+\pgf@pt@y=\dimen177
+\pgf@pt@temp=\dimen178
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorequick.code.tex"
@@ -1075,14 +1118,14 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorearrows.code.tex"
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen175
+\pgfarrowsep=\dimen179
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen176
-\pgf@sys@shading@range@num=\count134
-\pgf@shadingcount=\count135
+\pgf@max=\dimen180
+\pgf@sys@shading@range@num=\count142
+\pgf@shadingcount=\count143
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcoreimage.code.tex"
@@ -1091,7 +1134,7 @@ File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcoreexternal.code.tex"
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box37
+\pgfexternal@startupbox=\box39
 ))
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/basiclayer\pg
 fcorelayers.code.tex"
@@ -1112,7 +1155,7 @@ File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfmo
 duleshapes.code.tex"
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box38
+\pgfnodeparttextbox=\box40
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfmo
 duleplot.code.tex"
@@ -1121,8 +1164,8 @@ File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\p
 gfcomp-version-0-65.sty"
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen177
-\pgf@nodesepend=\dimen178
+\pgf@nodesepstart=\dimen181
+\pgf@nodesepend=\dimen182
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/pgf/compatibility\p
 gfcomp-version-1-18.sty"
@@ -1144,10 +1187,10 @@ Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/math\pgfmath.
 code.tex")
-\pgffor@iter=\dimen179
-\pgffor@skip=\dimen180
-\pgffor@stack=\toks43
-\pgffor@toks=\toks44
+\pgffor@iter=\dimen183
+\pgffor@skip=\dimen184
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
 ))
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlayer
 /tikz\tikz.code.tex"
@@ -1156,34 +1199,34 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/libraries\pgf
 libraryplothandlers.code.tex"
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count136
-\pgfplotmarksize=\dimen181
+\pgf@plot@mark@count=\count144
+\pgfplotmarksize=\dimen185
 )
-\tikz@lastx=\dimen182
-\tikz@lasty=\dimen183
-\tikz@lastxsaved=\dimen184
-\tikz@lastysaved=\dimen185
-\tikz@lastmovetox=\dimen186
-\tikz@lastmovetoy=\dimen187
-\tikzleveldistance=\dimen188
-\tikzsiblingdistance=\dimen189
-\tikz@figbox=\box39
-\tikz@figbox@bg=\box40
-\tikz@tempbox=\box41
-\tikz@tempbox@bg=\box42
-\tikztreelevel=\count137
-\tikznumberofchildren=\count138
-\tikznumberofcurrentchild=\count139
-\tikz@fig@count=\count140
+\tikz@lastx=\dimen186
+\tikz@lasty=\dimen187
+\tikz@lastxsaved=\dimen188
+\tikz@lastysaved=\dimen189
+\tikz@lastmovetox=\dimen190
+\tikz@lastmovetoy=\dimen191
+\tikzleveldistance=\dimen192
+\tikzsiblingdistance=\dimen193
+\tikz@figbox=\box41
+\tikz@figbox@bg=\box42
+\tikz@tempbox=\box43
+\tikz@tempbox@bg=\box44
+\tikztreelevel=\count145
+\tikznumberofchildren=\count146
+\tikznumberofcurrentchild=\count147
+\tikz@fig@count=\count148
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/modules\pgfmo
 dulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count141
-\pgfmatrixcurrentcolumn=\count142
-\pgf@matrix@numberofcolumns=\count143
+\pgfmatrixcurrentrow=\count149
+\pgfmatrixcurrentcolumn=\count150
+\pgf@matrix@numberofcolumns=\count151
 )
-\tikz@expandcount=\count144
+\tikz@expandcount=\count152
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/pgf/frontendlayer
 /tikz/libraries\tikzlibrarytopaths.code.tex"
@@ -1261,49 +1304,22 @@ LaTeX Font Info:    ... okay on input line 20.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: float package is loaded.
-Package caption Info: hyperref package is loaded.
-Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box43
-Package hyperref Info: Link coloring OFF on input line 20.
-
-("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.st
-y"
-Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
-
-("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\refcount.s
-ty"
-Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
-)
-("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\gettitle
-string.sty"
-Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
-)
-\c@section@level=\count145
-)
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
- (Cluster_Analysis.out) (Cluster_Analysis.out)
-\@outlinefile=\write4
-\openout4 = `Cluster_Analysis.out'.
-
+\c@lstlisting=\count153
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/context/base/mkii\supp-pd
 f.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count146
-\scratchdimen=\dimen190
-\scratchbox=\box44
-\nofMPsegments=\count147
-\nofMParguments=\count148
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count149
-\MPscratchDim=\dimen191
-\MPnumerator=\count150
-\makeMPintoPDFobject=\count151
-\everyMPtoPDFconversion=\toks46
+\scratchcounter=\count154
+\scratchdimen=\dimen194
+\scratchbox=\box45
+\nofMPsegments=\count155
+\nofMParguments=\count156
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count157
+\MPscratchDim=\dimen195
+\MPnumerator=\count158
+\makeMPintoPDFobject=\count159
+\everyMPtoPDFconversion=\toks47
 )
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/epstopdf-pkg\epstop
 df-base.sty"
@@ -1319,7 +1335,37 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 460.
-) ABD: EveryShipout initializing macros (titlepage_ru.tex
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\AtBeginShipoutBox=\box46
+Package hyperref Info: Link coloring OFF on input line 20.
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/hyperref\nameref.st
+y"
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/oberdiek\refcount.s
+ty"
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+)
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/generic/oberdiek\gettitle
+string.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count160
+)
+LaTeX Info: Redefining \ref on input line 20.
+LaTeX Info: Redefining \pageref on input line 20.
+LaTeX Info: Redefining \nameref on input line 20.
+ (Cluster_Analysis.out) (Cluster_Analysis.out)
+\@outlinefile=\write4
+\openout4 = `Cluster_Analysis.out'.
+
+
+ABD: EveryShipout initializing macros (titlepage_ru.tex
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1393,43 +1439,11 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.56 \end{titlepage}
+l.47 \end{titlepage}
                      [1
 
 
-])
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
-
- []
-
-[2
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
-
- []
-
-[3] (Cluster_Analysis.toc
+]) (Cluster_Analysis.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
@@ -1443,301 +1457,959 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `Cluster_Analysis.toc'.
 
-[4]
+[2
+
+]
 
 LaTeX Font Warning: Font shape `T2A/cmr/bx/n' in size <18> not available
-(Font)              size <17.28> substituted on input line 113.
+(Font)              size <17.28> substituted on input line 36.
 
 
 LaTeX Font Warning: Font shape `T2A/cmr/bx/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 116.
+(Font)              size <17.28> substituted on input line 39.
 
-[5] [6] [7] [8]
-Overfull \hbox (2.86037pt too wide) in paragraph at lines 289--290
-[]\T2A/cmr/m/n/12 —ледующа€ тео-ре-ма да-ет усло-вие гло-баль-ной асимп-то-ти-ч
-е-ской устой-чи-во-сти []. 
- []
-
-
-Overfull \hbox (0.20642pt too wide) in paragraph at lines 291--292
-\T2A/cmr/m/it/12 управ-л€-е-ма, все соб-ствен-ные зна-че-ни€ мат-ри-цы $\OML/cm
-m/m/it/12 A$ \T2A/cmr/m/it/12 име-ют от-ри-ца-тель-ные ве-ще-ствен-
- []
-
-[9] [10]
-LaTeX Font Info:    Calculating math sizes for size <16> on input line 323.
+[3] [4] [5] [6] [7] [8] [9] [10]
+LaTeX Font Info:    Calculating math sizes for size <16> on input line 224.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 323.
+(Font)              size <17.28> substituted on input line 224.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <16> not available
-(Font)              size <17.28> substituted on input line 323.
+(Font)              size <17.28> substituted on input line 224.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <16> not available
-(Font)              size <17.28> substituted on input line 323.
+(Font)              size <17.28> substituted on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 323.
+(hyperref)                removing `math shift' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 323.
+(hyperref)                removing `\begingroup' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 323.
+(hyperref)                removing `\endgroup' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 323.
+(hyperref)                removing `\@@over' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 323.
+(hyperref)                removing `\tau' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 323.
+(hyperref)                removing `subscript' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 323.
+(hyperref)                removing `\tau' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 323.
+(hyperref)                removing `subscript' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 323.
+(hyperref)                removing `math shift' on input line 224.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 323.
+(hyperref)                removing `math shift' on input line 245.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 343.
+(hyperref)                removing `\nu' on input line 245.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nu' on input line 343.
+(hyperref)                removing `math shift' on input line 245.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 343.
+(hyperref)                removing `math shift' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 357.
+(hyperref)                removing `\nu' on input line 259.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nu' on input line 357.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 357.
+(hyperref)                removing `math shift' on input line 259.
 
 [11]
-<images/filter1e.jpg, id=241, 1124.2pt x 843.15pt>
+<images/filter1e.jpg, id=243, 1124.2pt x 843.15pt>
 File: images/filter1e.jpg Graphic file (type jpg)
 <use images/filter1e.jpg>
-Package pdftex.def Info: images/filter1e.jpg  used on input line 399.
+Package pdftex.def Info: images/filter1e.jpg  used on input line 301.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (21.33955pt too wide) in paragraph at lines 399--400
+Overfull \hbox (21.33955pt too wide) in paragraph at lines 301--302
 [][] 
  []
 
-<images/filter1_1.jpg, id=242, 1124.2pt x 843.15pt>
+<images/filter1_1.jpg, id=244, 1124.2pt x 843.15pt>
 File: images/filter1_1.jpg Graphic file (type jpg)
 <use images/filter1_1.jpg>
-Package pdftex.def Info: images/filter1_1.jpg  used on input line 404.
+Package pdftex.def Info: images/filter1_1.jpg  used on input line 306.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
 
-Overfull \hbox (21.33955pt too wide) in paragraph at lines 404--405
+Overfull \hbox (21.33955pt too wide) in paragraph at lines 306--307
 [][] 
  []
 
-[12 <./images/filter1e.jpg> <./images/filter1_1.jpg>]
+[12] [13 <./images/filter1e.jpg> <./images/filter1_1.jpg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 417.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 417.
+(hyperref)                removing `math shift' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 417.
+(hyperref)                removing `\begingroup' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 417.
+(hyperref)                removing `\tau' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 417.
+(hyperref)                removing `subscript' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 417.
+(hyperref)                removing `superscript' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 417.
+(hyperref)                removing `\endgroup' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 417.
+(hyperref)                removing `\@@over' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 417.
+(hyperref)                removing `\tau' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 417.
+(hyperref)                removing `subscript' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 417.
+(hyperref)                removing `superscript' on input line 319.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 417.
+(hyperref)                removing `math shift' on input line 319.
 
-[13]
-<images/main.jpg, id=278, 1124.2pt x 843.15pt>
+[14]
+<images/main.jpg, id=283, 1124.2pt x 843.15pt>
 File: images/main.jpg Graphic file (type jpg)
 <use images/main.jpg>
-Package pdftex.def Info: images/main.jpg  used on input line 491.
+Package pdftex.def Info: images/main.jpg  used on input line 395.
 (pdftex.def)             Requested size: 256.0748pt x 192.05493pt.
- [14 <./images/main.jpg>]
+ [15 <./images/main.jpg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 500.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 500.
+(hyperref)                removing `math shift' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\begingroup' on input line 500.
+(hyperref)                removing `\begingroup' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 500.
+(hyperref)                removing `\tau' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 500.
+(hyperref)                removing `subscript' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 500.
+(hyperref)                removing `\tau' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 500.
+(hyperref)                removing `subscript' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\endgroup' on input line 500.
+(hyperref)                removing `\endgroup' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@@over' on input line 500.
+(hyperref)                removing `\@@over' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 500.
+(hyperref)                removing `\tau' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 500.
+(hyperref)                removing `subscript' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 500.
+(hyperref)                removing `\tau' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 500.
+(hyperref)                removing `subscript' on input line 404.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 500.
+(hyperref)                removing `math shift' on input line 404.
 
-[15] [16] [17] [18]
-Underfull \hbox (badness 1286) in paragraph at lines 622--623
-[]\T2A/cmr/m/n/12 Ujwala A. Belorkar, Ladhake S.A. Design of Low Power Phase Lo
-cked Loop
+[16] [17] [18]
+Overfull \hbox (0.55525pt too wide) in paragraph at lines 519--521
+\T2A/cmr/m/n/14.4 тром, опре-де-л€-е-мым пе-ре-да-точ-ной функ-ци-ей [] ис-сле-
+до-ва-лась ра-нее Ћео-
  []
 
-[19] [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 660.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 660.
+[19]
+
+LaTeX Font Warning: Font shape `T2A/cmr/m/n' in size <18> not available
+(Font)              size <17.28> substituted on input line 525.
+
+(code/filter1_exact.m
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 9.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+
+Package xcolor Warning: Incompatible color definition on input line 20.
+
+[20]
+
+Package xcolor Warning: Incompatible color definition on input line 30.
+
+
+Package xcolor Warning: Incompatible color definition on input line 30.
+
+
+Package xcolor Warning: Incompatible color definition on input line 30.
+
+
+Package xcolor Warning: Incompatible color definition on input line 32.
+
+
+Package xcolor Warning: Incompatible color definition on input line 32.
+
+
+Package xcolor Warning: Incompatible color definition on input line 32.
+
+
+Package xcolor Warning: Incompatible color definition on input line 33.
+
+
+Package xcolor Warning: Incompatible color definition on input line 33.
+
+
+Package xcolor Warning: Incompatible color definition on input line 33.
+
+
+Package xcolor Warning: Incompatible color definition on input line 34.
+
+
+Package xcolor Warning: Incompatible color definition on input line 34.
+
+
+Package xcolor Warning: Incompatible color definition on input line 34.
+
+
+Package xcolor Warning: Incompatible color definition on input line 34.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+) (code/filter1_analytic.m
+
+Package xcolor Warning: Incompatible color definition on input line 11.
+
+
+Package xcolor Warning: Incompatible color definition on input line 11.
+
+
+Package xcolor Warning: Incompatible color definition on input line 11.
+
+
+Package xcolor Warning: Incompatible color definition on input line 13.
+
+
+Package xcolor Warning: Incompatible color definition on input line 13.
+
+
+Package xcolor Warning: Incompatible color definition on input line 13.
+
+
+Package xcolor Warning: Incompatible color definition on input line 14.
+
+
+Package xcolor Warning: Incompatible color definition on input line 14.
+
+
+Package xcolor Warning: Incompatible color definition on input line 14.
+
+
+Package xcolor Warning: Incompatible color definition on input line 15.
+
+
+Package xcolor Warning: Incompatible color definition on input line 15.
+
+
+Package xcolor Warning: Incompatible color definition on input line 15.
+
+
+Package xcolor Warning: Incompatible color definition on input line 15.
+
+) [21] (code/filter2_exact.m
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+
+Package xcolor Warning: Incompatible color definition on input line 17.
+
+[22]
+
+Package xcolor Warning: Incompatible color definition on input line 34.
+
+
+Package xcolor Warning: Incompatible color definition on input line 34.
+
+
+Package xcolor Warning: Incompatible color definition on input line 34.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 36.
+
+
+Package xcolor Warning: Incompatible color definition on input line 37.
+
+
+Package xcolor Warning: Incompatible color definition on input line 37.
+
+
+Package xcolor Warning: Incompatible color definition on input line 37.
+
+
+Package xcolor Warning: Incompatible color definition on input line 38.
+
+
+Package xcolor Warning: Incompatible color definition on input line 38.
+
+
+Package xcolor Warning: Incompatible color definition on input line 38.
+
+
+Package xcolor Warning: Incompatible color definition on input line 38.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Package xcolor Warning: Incompatible color definition on input line 40.
+
+) (code/filter2_analytic.m
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+[23]
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 23.
+
+
+Package xcolor Warning: Incompatible color definition on input line 28.
+
+
+Package xcolor Warning: Incompatible color definition on input line 28.
+
+
+Package xcolor Warning: Incompatible color definition on input line 28.
+
+
+Package xcolor Warning: Incompatible color definition on input line 30.
+
+
+Package xcolor Warning: Incompatible color definition on input line 30.
+
+
+Package xcolor Warning: Incompatible color definition on input line 30.
+
+
+Package xcolor Warning: Incompatible color definition on input line 31.
+
+
+Package xcolor Warning: Incompatible color definition on input line 31.
+
+
+Package xcolor Warning: Incompatible color definition on input line 31.
+
+
+Package xcolor Warning: Incompatible color definition on input line 32.
+
+
+Package xcolor Warning: Incompatible color definition on input line 32.
+
+
+Package xcolor Warning: Incompatible color definition on input line 32.
+
+
+Package xcolor Warning: Incompatible color definition on input line 32.
+
+) (code/maximize.m
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3.
+
+[24] [25]) [26]
+Underfull \hbox (badness 1817) in paragraph at lines 546--547
+\T2A/cmr/m/n/14.4 Pendulum-Like Feedback Systems / ed. by H. Kurke. Wiesbaden:
+ []
+
+
+Underfull \hbox (badness 2941) in paragraph at lines 556--557
+\T2A/cmr/m/n/14.4 Electric Generator With Double Excitation // 11th Internation
+al
+ []
+
+[27]
+Underfull \hbox (badness 3536) in paragraph at lines 572--573
+[]\T2A/cmr/m/n/14.4 Kuznetsov N.V., Leonov G.A., Neittaanmaki P., Seledzhi S.M
+.,
+ []
+
+[28]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 575.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 575.
  (Cluster_Analysis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 660.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 660.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 575.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 575.
 Package rerunfilecheck Info: File `Cluster_Analysis.out' has not changed.
-(rerunfilecheck)             Checksum: F0C3E36D303E06744785C102F2C47D1E;3716.
+(rerunfilecheck)             Checksum: 22CF1C728E79419A0594205B641E4358;3803.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 660.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 575.
  ) 
 Here is how much of TeX's memory you used:
- 24102 strings out of 492484
- 423872 string characters out of 3122054
- 478789 words of memory out of 3000000
- 27874 multiletter control sequences out of 15000+200000
- 27934 words of font info for 74 fonts, out of 3000000 for 9000
+ 26627 strings out of 492484
+ 456680 string characters out of 3122054
+ 619516 words of memory out of 3000000
+ 30164 multiletter control sequences out of 15000+200000
+ 26501 words of font info for 73 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,13n,60p,2424b,798s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 60i,13n,60p,2424b,2348s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/cm-super/cm-
-super-t2a.enc}<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Alex/AppData/Local/
-Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Alex/App
-Data/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Use
-rs/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.
-pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData
-/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/A
-lex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam1
-0.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/cm-super/sfbi1728.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 
-2.9/fonts/type1/public/cm-super/sfbx1000.pfb><C:/Users/Alex/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1200.pfb><C:/Users/Alex/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Al
-ex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1728.pfb><
-C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfb
-x2074.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/c
-m-super/sfrm1000.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
-e1/public/cm-super/sfrm1200.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/cm-super/sfrm1440.pfb><C:/Users/Alex/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1728.pfb><C:/Users/Alex/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Cluster_Analysis.pdf (21 pages, 691677 bytes).
+super-ts1.enc}{C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/
+cm-super/cm-super-t2a.enc}<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Alex/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Us
+ers/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Alex/AppData/Local/Programs/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:
+/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/cm-super/sfbx1000.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/cm-super/sfbx1200.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/cm-super/sfbx1440.pfb><C:/Users/Alex/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx1728.pfb><C:/Users/Alex/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfbx2074.pfb><C:/Users/
+Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfrm0600.pfb
+><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/s
+frm1000.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/cm-super/sfrm1200.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/cm-super/sfrm1440.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/cm-super/sfrm1728.pfb><C:/Users/Alex/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/cm-super/sfti1440.pfb>
+Output written on Cluster_Analysis.pdf (29 pages, 708519 bytes).
 PDF statistics:
- 464 PDF objects out of 1000 (max. 8388607)
- 116 named destinations out of 1000 (max. 500000)
- 132 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 726 PDF objects out of 1000 (max. 8388607)
+ 314 named destinations out of 1000 (max. 500000)
+ 140 words of extra memory for PDF output out of 10000 (max. 10000000)
 

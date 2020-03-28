@@ -1,4 +1,4 @@
-function filter1_1()
+function filter1_analytic()
 
 [taoP1,taoP2] = meshgrid(0:0.01:1,0:0.01:1);
 grid = [taoP1(:) taoP2(:)];

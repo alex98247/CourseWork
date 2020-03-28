@@ -1,5 +1,5 @@
-[M1, A1, B1] = filter2_tau0_2e();
-[M2, A2, B2] = filter2_tau0_1();
+[M1, A1, B1] = filter2_exact();
+[M2, A2, B2] = filter2_analytic();
 
 for i=1:length(A1)
     A11(i) = (A1(i)-B1(i))/2;

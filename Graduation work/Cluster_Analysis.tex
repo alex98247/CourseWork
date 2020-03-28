@@ -25,83 +25,6 @@
 % Титульник в файле titlepage_en.tex
 \input{titlepage_en.tex}
  
-% НАЧАЛО ТИТУЛЬНОГО ЛИСТА
-\begin{center}
-\normalsize{Санкт-Петербургский государственный университет}\\ 
-\normalsize{Математико-механический факультет}\\
-\normalsize{\textbf{Кафедра прикладной кибернетики}}\\
-\hfill \break
-\hfill \break 
-\hfill \break
-\hfill \break
-\hfill\break
-\hfill \break
-\normalsize{Миронов Алексей Владиславович}\\
-\large{Оценка области захвата для систем ФАПЧ 3 порядка}\\
-\hfill \break
-\small{Выпускная квалификационная работа}\\
-\hfill \break
-\hfill \break
-\end{center}
- 
-\hfill \break
- 
- \small{
-\begin{flushright}
-Научный руководитель:\\
-д.ф.-м. н., профессор Юлдашев~Р.\:В.
-\break \break
-\break \break
-Рецензент:\\
-Благов~М.\:В.
-\end{flushright}
-}
-\hfill \break
-\begin{center} Санкт-Петербург \\
-2020 \end{center}
-\thispagestyle{empty} % выключаем отображение номера для этой страницы
-% КОНЕЦ ТИТУЛЬНОГО ЛИСТА
-
-% BEGIN ТOF TITLE PAGE
-\begin{center}
-\hfill \break
-\normalsize{Saint Petersburg State University}\\ 
-\normalsize{Faculty of Mathematics and Mechanics}\\
-\normalsize{\textbf{The chair of applied cybernetics}}\\
-\hfill \break
-\hfill \break 
-\hfill \break
-\hfill \break
-\hfill\break
-\hfill \break
-\normalsize{Mironov Alexey Vladislavovich}\\
-\large{Analytical estimates of the pull-in range for third-order PLLs}\\
-\hfill \break
-\small{Final qualifying work}\\
-\hfill \break
-\hfill \break
-\end{center}
- 
-\hfill \break
-\hfill \break
-\hfill \break
- \small{
-\begin{flushright}
-Scientific supervisor:\\
-assistant professor Yuldashev~R.\:V.
-\break \break
-\break \break
-Reviewer:\\
-Blagov~M.\:V.
-\end{flushright}
-}
-\hfill \break
-\begin{center} Saint-Petersburg \\
-2020 \end{center}
-\thispagestyle{empty} % выключаем отображение номера для этой страницы
-% END OF TITLE PAGE
-
-\pagebreak
 \tableofcontents
 
 
@@ -111,7 +34,7 @@ Blagov~M.\:V.
 
 \pagebreak
 \section{Введение}
-Современный мир невозможно представить без огромного количества сигналов, передающихся беспроводным способом или по электрическим схемам. Они опутывают различные сферы жизни человека. На работе, дома, в повседневной жизни, мы постоянно используем телевизоры, компьютеры, телефоны и другие устройства, передающие сигналы. С момента, когда человек научился передавать сигналы беспроводным путем, количество передаваемой информации многократно увеличилось. При этом возникла необходимость в синхронной передачи сигналов. В том числе фазовой синхронизации сигналов, которая играет важную роль в различных системах. Электрический ток в энергосетях вырабатывается синхронными генераторами, действие которых основано на принципе фазовой синхронизации \cite{ilie}. В США и России GSM связь работает на разных частотах, поэтому мобильным телефонам, требуется синхронизация частот приемника и передатчика, это позволяет туристам пользоваться одним телефоном и в России, и в США.
+Современный мир невозможно представить без огромного количества сигналов, передающихся беспроводным способом или по электрическим схемам. При этом возникла необходимость в фазовой синхронизации сигналов, которая играет важную роль в различных системах. Электрический ток в энергосетях вырабатывается синхронными генераторами, действие которых основано на принципе фазовой синхронизации \cite{ilie}. В США и России GSM связь работает на разных частотах, поэтому мобильным телефонам, требуется синхронизация частот приемника и передатчика, это позволяет туристам пользоваться одним телефоном и в России, и в США.
 
 \subsection{Примеры расфазировки}
 В телекоммуникационных системах часто возникает необходимость в фазовой синхронизации частот. Например, в гражданских системах телекоммуникации, таких как радио или телевидение, используется одна несущая частота, которая является постоянной. Многие люди даже знают частоту вещания своей любимой радиостанции. Однако для военных нужд использование одной несущей частоты несет определенные риски, связанные с тем, что постоянную частоту легко заглушить. Для решения этой проблемы военными был разработан метод скачкообразного изменения частоты сигнала \cite{ghulam}. Для этого выбирается $N$ различных частот, которые чередуются с некоторым интервалом. Для приемника сигнала это означает, что он должен уметь подстраиваться под несущую частоту очень быстро, например за 100 микросекунд, т.е. возникает необходимость в фазовой синхронизации частоты трансмиттера и ресивера. 
@@ -121,26 +44,6 @@ Blagov~M.\:V.
  \subsection{Применение ФАПЧ}
 
 Для решения проблемы расфазировки в первой половине XX века была изобретена система фазовой автоподстройки частоты \cite{appleton} (ФАПЧ)~--- система с обратной связью, используемая для синхронизации сигналов эталонного и подстраиваемого генератора, в простейшем виде состоящая из фазового детектора (компаратора), фильтра нижних частот и генератора, управляемого напряжением. Сразу после появления системы ФАПЧ начали применяться в радио и телевидении \cite{blagov}. Инженерная практика применения и теория систем ФАПЧ начали интенсивно развиваться во второй половине XX века \cite{seledji}. Сразу после реализации систем фазовой автоподстройки частоты в виде одной микросхемы, системы ФАПЧ стали широко применяться в современных телекоммуникационных системах. В настоящее время микросхемы, использующие системы фазовой автоподстройки использоются в различных электро-механических приборах \cite{best}, энергетических генераторах, системах передачи данных \cite{ashari} и навигационных системах \cite{rao} (GPS, ГЛОНАСС и Галилео).
-
-\iffalse
-Система фазовой автоподстройки частоты нашла свое применение в компьютерах и компьюторизированных системах. Рассмотрим несколько параллельно работающих процессоров, имеющих общую шину и генератор передающий тактовые импульсы. Часто возникает задача реализации алгоритмов, выполняющих одновременно некоторую последовательность операций. Эти операции должны начинаться сразу после прихода тактового импульса. Однако из-за разной длины пути от генератора до процессоров возникает рассогласованность в работе процессоров. Одним из методов устранения рассогласованности является введение специальной системы тактовых генераторов, управляемых устройствами фазовой синхронизации.
-\begin{center}
-\begin{tikzpicture}
-
-\node at (2,0) [draw, align=center, circle] (generator) {Генератор};
-\node at (5,-2) [draw, align=center, rectangle] (processor1) {P1};
-\node at (7,-2) [draw, align=center, rectangle] (processor2) {P2};
-\node at (9,-2) [draw, align=center, rectangle] (processor3) {P3};
-
-\draw[-] (generator.east) -- (11,0);
-\draw[->] (5,0) -- (processor1.north);
-\draw[->] (7,0) -- (processor2.north);
-\draw[->] (9,0) -- (processor3.north);
-
-
-\end{tikzpicture}
-\end{center}
-\fi
 
 Особенностью функционирования систем ФАПЧ является нелинейность фазы постраиваемого генератора в переходном режиме \cite{kuznetsov_nonlinear}. При постоянной частоте эталонного генератора система ФАПЧ позволяет получить различные степени синхронизации. Например, система ФАПЧ второго порядка, теоретически позволяет получить полную синхронизацию сигналов, т.е. сигнал с той же частотой и постоянную разность фаз. Одиним из недостатков систем ФАПЧ второго порядка является, недостаточное подавление высокочастотного шума, который может существенно повлиять на функционирование системы в целом. Еще одним недостатком является резкое ухудшение синхронизации частот при изменении коэффициент передачи. Именно поэтому наряду с системами ФАПЧ второго порядка исследуются системы третьего порядка. Основными преимушествами ФАПЧ третьего порядка является хорошее подавление шума и более низкая стационарная ошибка, по сравнению с системами ФАПЧ второго порядка \cite{thirdOrderPLL}. В различных телекоммуникационных системах точность синхронизации является одним из важнейших параметров, поскольку именно от точности подстройки зависит производительность системы \cite{UsageOfThirdOrder1}. Однако с увеличением точности синхронизации возрастает сложность реализации и анализа систем фазовой автоподстройки частоты. 
 
@@ -230,7 +133,7 @@ Cигнал, полученный на выходе компаратора $\ups
  &\dot{\theta}_e = \omega_e^{free} - K_{vco}(C^Tx + D\upsilon_e(\theta_e))
  \end{aligned}
 \end{equation}
-В системе \eqref{pllequations} сделаем следующие преобразования $-K_{vco}C \rightarrow C$, $-K_{vco}D \rightarrow D$. Тогда система \eqref{pllequations} принимает вид:
+В системе \eqref{pllequations} сделаем преобразования $-K_{vco}C \rightarrow C$, $-K_{vco}D \rightarrow D$. Тогда система \eqref{pllequations} принимает вид:
  \begin{equation}\label{pllequations-1}
  \begin{aligned}
  &\dot{x} = Ax + B\upsilon_e(\theta_e)\\
@@ -259,7 +162,6 @@ Cигнал, полученный на выходе компаратора $\ups
  &\dot{\theta_e} = C^Tz + D(\operatorname{sin}(\theta_e) - \gamma))
  \end{aligned}
 \end{equation}
-
 Введем опредение полосы захвата согласно \cite{kuznetsov_article}.
 \begin{definition}
 Полоса захвата~--- максимальная разность по модулю частот опорного сигнала и ГУН $|\omega_p|$ такая, что система \eqref{system} глобально асимптотически устойчива для всех $\omega_e^{free} \in (0, |\omega_p|)$.
@@ -285,7 +187,6 @@ Cигнал, полученный на выходе компаратора $\ups
 \mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
  \end{aligned}
 \end{equation}
-
 Следующая теорема дает условие глобальной асимптотической устойчивости \eqref{system}.
 \begin{theorem}[\cite{leonov}]\label{th1}
 Пусть все нули функции $\operatorname{sin}(\theta_e) - \gamma$ изолированы, пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:
@@ -320,7 +221,7 @@ Cигнал, полученный на выходе компаратора $\ups
 \pagebreak
 \section{Оценка полосы захвата}
 
-\subsection{Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
+\subsection{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
 Оценим полосу захвата для систем ФАПЧ с фильтром, определяемым передаточной функцией:
  \begin{equation}\label{filter1}
  \begin{aligned}
@@ -333,10 +234,11 @@ W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}, \quad 0<\
 \text{det}(sI-A) = s^2 + ab^{-1}s + b^{-1}
  \end{aligned}
 \end{equation}
-матрица $A$ - устойчива.Рассмотрим первое условие теоремы \ref{th1}. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. Не умаляя общности, можем положить $\varkappa = 1$. В результате преобразований \eqref{first_th_eq} принимает вид:
+матрица $A$ - устойчива. Рассмотрим первое условие теоремы \ref{th1}. Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. Не умаляя общности, можем положить $\varkappa = 1$. В результате преобразований \eqref{first_th_eq} принимает вид:
 \begin{equation}\label{first_condition}
  \begin{aligned}
-&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (- b+\tau-\delta a^2 + 2\delta b)t + (1-\varepsilon-\tau-\delta) \geqslant 0, \quad \forall t \in \mathbb{R_+}
+&\tau b^2t^3 + (\tau a^2-2 \tau b - \delta b^2)t^2 + (- b+\tau-\delta a^2 + 2\delta b)t +\\
+&+ (1-\varepsilon-\tau-\delta) \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
 
@@ -414,7 +316,7 @@ W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}, \quad 0<\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagebreak
-\subsection{Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
+\subsection{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
 Оценим полосу захвата для систем ФАПЧ с фильтром, определяемым передаточной функцией:
  \begin{equation}\label{filter2}
  \begin{aligned}
@@ -430,8 +332,9 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}, \quad 0<\tau_{p1},\tau_{z1} < 
 матрица $A$ - устойчива. Найдем $\varepsilon, \delta, \varkappa, \tau$ так, что бы максимизировать $\nu$. Для этого подставим \eqref{filter2} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену $t = s^2$. В результате преобразований \eqref{first_th_eq} принимает следующий вид:
  \begin{equation}\label{second_condition}
  \begin{aligned}
-&\tau_{p1}^4\tau t^3 +(- \tau_{z1}^4\varepsilon - \tau_{z1}^4\tau + 2\tau_{p1}^2\tau- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)t^2 +( \tau- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2\tau+ \\
-&+ 4\tau_{z1}b\varkappa- 2\tau_{p1}^2\delta)t + (\varkappa-\varepsilon - \tau - \delta)  \geqslant 0, \quad \forall t \in \mathbb{R_+}
+&\tau_{p1}^4\tau t^3 +(- \tau_{z1}^4\varepsilon - \tau_{z1}^4\tau + 2\tau_{p1}^2\tau- \tau_{p1}^4\delta + \tau_{z1}^2\tau_{p1}^2\varkappa)t^2 +\\
+&+( \tau- \tau_{z1}^2\varkappa - 2\tau_{z1}^2\varepsilon - \tau_{p1}^2\varkappa- 2\tau_{z1}^2\tau + 4\tau_{z1}b\varkappa- 2\tau_{p1}^2\delta)t + \\
+&+ (\varkappa-\varepsilon - \tau - \delta)  \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
 Положим в \eqref{second_condition} $\tau = 0$. Не умаляя общности можем считать $\varkappa = 1$. Тогда \eqref{second_condition} принимает вид:
@@ -441,7 +344,7 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}, \quad 0<\tau_{p1},\tau_{z1} < 
 &+ (1-\varepsilon - \delta)  \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
-Для того, что бы выполнялось \eqref{second_condition_tau_zero} потребуем положительность коэффициентов: 
+Для того, что бы выполнялось \eqref{second_condition_tau_zero} потребуем положительность коэффициентов при $t$, $t^2$ и положительность свободного коэффициента: 
  \begin{equation}\label{filter2_1_area}
  \begin{aligned}
 &\tau_{z1}^2\tau_{p1}^2 - \tau_{z1}^4\varepsilon - \tau_{p1}^4\delta \geqslant 0\\
@@ -449,6 +352,7 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}, \quad 0<\tau_{p1},\tau_{z1} < 
 &1-\varepsilon - \delta \geqslant 0
  \end{aligned}
 \end{equation}
+
 Оценка $\nu$ будет наибольшей, если параметры $\varepsilon$, $\delta$ лежат на границе допустимой области \eqref{filter2_1_area} и $\delta > 0$, $\varepsilon > 0$. Граница допустимой области является  выпуклым многоугольником, ограниченным прямыми $\delta = 0$, $\varepsilon = 0$ и
  \begin{equation}\label{filter2_1_area_border}
 \begin{aligned}
@@ -497,11 +401,11 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}, \quad 0<\tau_{p1},\tau_{z1} < 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \pagebreak
-\subsection{Оценка полосы захвата для систем ФАПЧ с фильтром \\ $\frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}$}
+\subsection{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}x)(1+\tau_{z2}x)}{(1+\tau_{p1}x)(1+\tau_{p2}x)}$}
 Оценим полосу захвата для систем ФАПЧ с фильтром, определяемым передаточной функцией:
  \begin{equation}\label{filter3}
  \begin{aligned}
-W(s) = \frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)}, \quad 0<\tau_{pi},\tau_{zj} < 1, \quad \tau_{pi} \neq \tau_{zj}, \quad i=1,2, \quad j=1,2
+W(s) = \frac{(1+\tau_{z1}s)(1+\tau_{z2}s)}{(1+\tau_{p1}s)(1+\tau_{p2}s)}, \enskip 0<\tau_{pi},\tau_{zj} < 1, \enskip \tau_{pi} \neq \tau_{zj}, \enskip i,j=1,2
  \end{aligned}
 \end{equation}
 Введем обозначения:
@@ -531,19 +435,19 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 \text{det}(sI-A) = s^2 + \alpha_1\alpha_2^{-1}s + \alpha_2^{-1}
  \end{aligned}
 \end{equation}
-матрица $A$ устойчива. Найдем $\varepsilon, \delta, \varkappa, \tau$ так, что бы максимизировать $\nu$. Для этого подставим \eqref{filter3-1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = x^2$. В результате преобразований \eqref{first_th_eq} принимает следующий вид:
+матрица $A$ устойчива. Найдем $\varepsilon, \delta, \varkappa, \tau$ так, что бы максимизировать $\nu$. Для этого подставим \eqref{filter3-1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Сделаем замену переменной $t = s^2$. В результате преобразований \eqref{first_th_eq} принимает следующий вид:
  \begin{equation}\label{filter3-th_first-1}
  \begin{aligned}
 &\alpha_2^2\tau t^3 + (\alpha_1^2\tau - 2\alpha_2\tau - \alpha_2^2\delta - \alpha_2^2\beta_2^2\varepsilon - \alpha_2^2\beta_2^2\tau + \alpha_2^2\beta_2\varkappa)t^2 +\\
-&+ (\tau - \alpha_2\varkappa + 2\alpha_2\delta - \alpha_1^2\delta - \alpha_1^2\beta_1^2\varepsilon - \alpha_1^2\beta_1^2\tau - \alpha_2\beta_2\varkappa + 2\alpha_2\beta_2\varepsilon + 2\alpha_2\beta_2\tau + \alpha_1^2\beta_1\varkappa)t + \\
-&+ \varkappa - \varepsilon - \tau - \delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
+&+ (\tau - \alpha_2\varkappa + 2\alpha_2\delta - \alpha_1^2\delta - \alpha_1^2\beta_1^2\varepsilon - \alpha_1^2\beta_1^2\tau - \alpha_2\beta_2\varkappa + 2\alpha_2\beta_2\varepsilon + \\
+&+2\alpha_2\beta_2\tau + \alpha_1^2\beta_1\varkappa)t + \varkappa - \varepsilon - \tau - \delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
 Положим $\tau = 0$. Не умаляя общности можем считать $\varkappa = 1$. Тогда \eqref{filter3-th_first-1} принимает вид:
  \begin{equation}\label{filter3-th_first-2}
  \begin{aligned}
-&(-\varepsilon\alpha_2^2\beta_2^2 + \alpha_2^2\beta_2 - \delta\alpha_2^2)t^2 + (-\varepsilon\alpha_1^2\beta_1^2 + \alpha_1^2\beta_1 - \delta\alpha_1^2 - \alpha_2 + 2\alpha_2\delta - \alpha_2\beta_2 + 2\alpha_2\beta_2\varepsilon)t +\\
-& + 1 - \varepsilon - \delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
+&(-\varepsilon\alpha_2^2\beta_2^2 + \alpha_2^2\beta_2 - \delta\alpha_2^2)t^2 + (-\varepsilon\alpha_1^2\beta_1^2 + \alpha_1^2\beta_1 - \delta\alpha_1^2 - \alpha_2 + 2\alpha_2\delta - \alpha_2\beta_2 +\\
+&+ 2\alpha_2\beta_2\varepsilon)t + 1 - \varepsilon - \delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
 Заметим, что $\varepsilon \leqslant 1 - \delta$ является необходимым условием справедливости \eqref{filter3-th_first-2}. Для максимизации $\nu$ положим $\varepsilon = 1-\delta$, тогда:
@@ -574,7 +478,8 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 Покажем, что это условие гарантирует положительность знаменателя \eqref{free_coef}:
 \begin{equation}
  \begin{aligned}
-\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2) > \frac{\alpha_2(1-\beta_2)}{\beta_1}(1+\beta_1) - 2\alpha_2(1-\beta_2)= \frac{\alpha_2(1-\beta_2)(1 - \beta_1)}{\beta_1} > 0
+&\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2) > \frac{\alpha_2(1-\beta_2)}{\beta_1}(1+\beta_1) - 2\alpha_2(1-\beta_2) =\\
+&= \frac{\alpha_2(1-\beta_2)(1 - \beta_1)}{\beta_1} > 0
  \end{aligned}
 \end{equation}
 Покажем, что условие \eqref{free_coef} и \eqref{filter3-restriction2} влечет выполнение \eqref{t_coef}. Из условия \eqref{filter3-restriction2} следует, что функция \eqref{free_coef} как функция от  $\beta_1$ строго возрастает, на допустимой области параметров, тогда:
@@ -615,6 +520,16 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
  Для \eqref{first}, \eqref{second} были получены аналитические оценки полосы захвата, которые были подтверждены численно. Полоса захвата систем ФАПЧ с фильтром, определяемым передаточной функцией \eqref{third} исследовалась ранее Леоновым~Г.\:А. Для нее был восстановлен вывод. 
  
  В настоящее время системы фазовой автоподстройки частоты используются в различных устройствах. Аналитические оценки, полученные в данной работе, могут быть интерсны инженерам и могут использоваться при проектировании и реализации систем ФАПЧ 3 порядка.
+ 
+ \pagebreak
+\specialsection{Листинги}
+
+\lstinputlisting{code/filter1_exact.m}
+\lstinputlisting{code/filter1_analytic.m}
+
+\lstinputlisting{code/filter2_exact.m}
+\lstinputlisting{code/filter2_analytic.m}
+\lstinputlisting{code/maximize.m}
  
 \pagebreak
 \begin{thebibliography}{20}
