@@ -122,7 +122,7 @@
 \end{equation}
 Называется передаточной функцией фильтра
 \end{definition}
-Найти оценку полосы захвата систем ФАПЧ со следующими передаточными функциями фильтров:
+Найти оценку полосы захвата систем ФАПЧ со следующими передаточными функциями фильтров:\vspace{-4mm}
 \begin{equation*}
  \begin{aligned}
 &W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \enskip
@@ -145,16 +145,16 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\\
  &\dot{\theta_e} = -K_{vco}C^T x -K_{vco}D(\operatorname{sin}(\theta_e) - \gamma))
  \end{aligned}
 \end{equation}
-\vspace{-2mm}
+\vspace{-2.5mm}
 Введем обозначение
  \begin{equation}
  \begin{aligned}
 \mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
  \end{aligned}
 \end{equation}
-\vspace{-2mm}
+\vspace{-3mm}
 \begin{theorem}[Леонов~Г.\:А.]
-Пусть все нули функции $\operatorname{sin}(\theta_e) - \gamma$ изолированы, пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0$, $\delta > 0$, $\tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:\vspace{-2mm}
+Пусть все нули функции $\operatorname{sin}(\theta_e) - \gamma$ изолированы, пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0$, $\delta > 0$, $\tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:\vspace{-2.5mm}
  \begin{align*}
 &\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\label{first_th_eq}\\
 &4\varepsilon\delta > (\varkappa\nu)^2
@@ -266,11 +266,11 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
  \end{aligned}
 \end{equation}
 Чтобы гарантировать положительность $\delta$ потребуем:\vspace{-2mm}
- \begin{equation*}
+ \begin{equation}
  \begin{aligned}
 \alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
  \end{aligned}
-\end{equation*}
+\end{equation}
 Тогда, из \eqref{filter3-params} и второго условия теоремы получим оценку:
  \begin{equation*}
  \begin{aligned}
@@ -286,7 +286,7 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 \begin{enumerate}
 \item Для передаточной функции $W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$
 была найдена оценка полосы захвата
-\item Для передаточной функции $W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$
+\item Для передаточной функции $W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$
 была найдена оценка полосы захвата
 \item Для передаточной функции $W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}$ был восстановлен вывод оценки полосы захвата
 \end{enumerate}

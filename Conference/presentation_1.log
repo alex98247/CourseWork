@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  23 MAR 2020 22:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.3.20)  28 MAR 2020 21:20
 entering extended mode
 **./presentation_1.tex
 (presentation_1.tex
@@ -1707,10 +1707,6 @@ Overfull \hbox (14.50626pt too wide) has occurred while \output is active
 [4
 
 ]
-Overfull \vbox (1.28725pt too high) detected at line 164
- []
-
-
 Overfull \hbox (14.50626pt too wide) has occurred while \output is active
  [][]  \T2A/cmss/m/n/6 ([])  
  []
@@ -1726,10 +1722,10 @@ Overfull \hbox (14.50626pt too wide) has occurred while \output is active
 
 ]
 Package epstopdf Info: Source file: <images/agregated.eps>
-(epstopdf)                    date: 2020-03-20 00:20:26
+(epstopdf)                    date: 2020-03-26 11:26:43
 (epstopdf)                    size: 305610 bytes
 (epstopdf)             Output file: <images/agregated-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-03-22 13:02:17
+(epstopdf)                    date: 2020-03-26 11:26:43
 (epstopdf)                    size: 242276 bytes
 (epstopdf)             Command: <epstopdf --outfile=images/agregated-eps-conver
 ted-to.pdf images/agregated.eps>
@@ -1761,10 +1757,10 @@ Overfull \hbox (14.50626pt too wide) has occurred while \output is active
 
 ]
 Package epstopdf Info: Source file: <images/main.eps>
-(epstopdf)                    date: 2020-03-20 12:23:47
+(epstopdf)                    date: 2020-03-26 11:26:43
 (epstopdf)                    size: 181977 bytes
 (epstopdf)             Output file: <images/main-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-03-22 13:16:00
+(epstopdf)                    date: 2020-03-26 11:26:43
 (epstopdf)                    size: 146417 bytes
 (epstopdf)             Command: <epstopdf --outfile=images/main-eps-converted-t
 o.pdf images/main.eps>
@@ -1861,7 +1857,7 @@ cal/Programs/MiKTeX 2.9/fonts/type1/public/cm-super/sfss0800.pfb><C:/Users/Alex
 super/sfss1200.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
 /public/cm-super/sfss1440.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/
 fonts/type1/public/cm-super/sfss2488.pfb>
-Output written on presentation_1.pdf (12 pages, 675144 bytes).
+Output written on presentation_1.pdf (12 pages, 675255 bytes).
 PDF statistics:
  460 PDF objects out of 1000 (max. 8388607)
  34 named destinations out of 1000 (max. 500000)
