@@ -31,7 +31,8 @@
 \author{Миронов Алексей Владиславович} % Your name
 \institute[СПБГУ] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {
-Санкт-Петербургский государственный университет\\ % Your institution for the title page
+Санкт-Петербургский государственный университет\\
+Математико-механический факультет\\% Your institution for the title page
 \vspace{0.7cm}
     Научный руководитель:  д.ф.-м. н., профессор Юлдашев Р. В. \\
     \vspace{0.7cm}
@@ -68,11 +69,22 @@
 \end{tikzpicture}
 }
 \end{center}
-Схема классической системы ФАПЧ, где $\omega_{ref}$~--- частота опорного сигнала, $\omega_{vco}$~--- частота сигнала ГУН, $\upsilon_f(t)$~--- выходной сигнал фильтра, $\omega_{vco}^{free}$~--- частота свободных колебаний ГУН, $\omega_e = \omega_{ref}-\omega_{vco}$
-\begin{definition}
-Система фазовой автоподстройки частоты (ФАПЧ)~--- система с обратной связью, подстраивающая частоту сигнала генератора, управляемого напряжением (ГУН) под частоту опорного сигнала.
-\end{definition}
-Применение системы ФАПЧ
+Система фазовой автоподстройки частоты (ФАПЧ)~--- система с обратной связью, подстраивающая частоту сигнала генератора, управляемого напряжением (ГУН) под частоту опорного сигнала.\vspace{-3.9mm}
+\begin{columns}[onlytextwidth]
+\begin{column}{.5\textwidth}
+\begin{figure}
+  \includegraphics[width=3cm]{images/AppPLL.jpg}
+\end{figure}
+\end{column}
+\hfill
+\begin{column}{.5\textwidth}
+\begin{figure}
+  \includegraphics[width=3cm]{images/AppPLL1.jpg}
+\end{figure}
+\end{column}
+\end{columns}
+
+Применение системы ФАПЧ:
 \begin{enumerate}
 \item Телекоммуникационное обородование
 \item Навигационное оборудование (GPS, Глонасс, Галилео)
@@ -83,7 +95,24 @@
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Принцип работы ФАПЧ}
+\frametitle{Математическая модель ФАПЧ}
+\begin{center}
+\resizebox{0.9\columnwidth}{!}{%
+\begin{tikzpicture}
+
+\node at (0.5,0) [draw, text width=4cm, align=center, rectangle] (a) {Фазовый детектор \par(компаратор)};
+\node at (5.2,0) [draw, label=below:{Фильтр}, align=center, rectangle] (loop_filter) {$W(s)$};
+\node at (9.6,0) [draw, label={[align=center]below:Генератор,\\управляемый напряжением}] (VCO) {$\omega_{vco}(t) = \omega_{vco}^{free}+K_{vco}\upsilon_f(t)$};
+
+\draw[->] (-3.5,0) -- (a.west) node[midway,above,inner sep=2pt] {sin($\omega_{ref}t$)};
+\draw[->] (a.east) -- (loop_filter.west) node[midway,above,inner sep=2pt] {sin($\omega_{e}t$)};
+\draw[->] (loop_filter.east) -- (VCO.west) node[midway,above,inner sep=2pt] {$\upsilon_f(t)$};
+\draw[->] (VCO.east) -- (14,0) node[midway,above,inner sep=2pt] {cos($\omega_{vco}t$)};
+\draw[->] (13.5,0) --  +(0,-2) --  +(-13,-2) --  (a.south);
+
+\end{tikzpicture}
+}
+\end{center}
 Дифференциальные уравнения ФАПЧ
  \begin{equation}\label{system}
  \begin{aligned}
@@ -91,38 +120,39 @@
  &\dot{\theta_e} = -K_{vco}C^T x -K_{vco}D(\operatorname{sin}(\theta_e) - \gamma))\text{,}
  \end{aligned}
 \end{equation}
-где $A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$~--- мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы. $K_{vco}$~--- коэффициент передачи, $\gamma$ определяется следующим образом\vspace{-1mm}
+$A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$~--- мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы, $K_{vco}$~--- коэффициент передачи.\vspace{-1mm}
  \begin{equation}\label{gamma}
  \begin{aligned}
 \gamma = \frac{\omega_e^{free}}{K_{vco}\left(D-C^T A^{-1}B\right)}\text{,}
  \end{aligned}
 \end{equation}
-где $\omega^{free}_{e}=\omega_{ref}-\omega_{free}$~--- разность частоты опорного сигнала и частоты свободных колебаний ГУН.
-\begin{definition}
-Полоса захвата~--- максимальная разность по модулю частот опорного сигнала и ГУН $|\omega_p|$ такая, что система \eqref{system} глобально асимптотически устойчива для всех $0<|\omega_e^{free}|<|\omega_p|$.
-\end{definition}
+где $\omega^{free}_{e}=\omega_{ref}-\omega_{vco}^{free}$~--- разность частоты опорного сигнала и частоты свободных колебаний ГУН.
+
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Постановка задачи}\vspace{-3mm}
- \begin{equation}
- \begin{aligned}
- &\dot{x} = Ax + B(\operatorname{sin}(\theta_e) - \gamma)\text{,}\\[0.3pt]
- &\dot{\theta_e} = -K_{vco}C^T x -K_{vco}D(\operatorname{sin}(\theta_e) - \gamma))\text{,}
- \end{aligned}
-\end{equation}\vspace{-3mm}
-\begin{definition}
-Функция  
-\begin{equation}
- \begin{aligned}
- W(s)=C^T \left(A-sI\right)^{-1}B - D
- \end{aligned}
-\end{equation}
-Называется передаточной функцией фильтра
-\end{definition}
-Найти оценку полосы захвата систем ФАПЧ со следующими передаточными функциями фильтров:\vspace{-4mm}
+\frametitle{Постановка задачи}
+\begin{center}
+\resizebox{0.9\columnwidth}{!}{%
+\begin{tikzpicture}
+
+\node at (0.5,0) [draw, text width=4cm, align=center, rectangle] (a) {Фазовый детектор \par(компаратор)};
+\node at (5.2,0) [draw, label=below:{Фильтр}, align=center, rectangle] (loop_filter) {$W(s)$};
+\node at (9.6,0) [draw, label={[align=center]below:Генератор,\\управляемый напряжением}] (VCO) {$\omega_{vco}(t) = \omega_{vco}^{free}+K_{vco}\upsilon_f(t)$};
+
+\draw[->] (-3.5,0) -- (a.west) node[midway,above,inner sep=2pt] {sin($\omega_{ref}t$)};
+\draw[->] (a.east) -- (loop_filter.west) node[midway,above,inner sep=2pt] {sin($\omega_{e}t$)};
+\draw[->] (loop_filter.east) -- (VCO.west) node[midway,above,inner sep=2pt] {$\upsilon_f(t)$};
+\draw[->] (VCO.east) -- (14,0) node[midway,above,inner sep=2pt] {cos($\omega_{vco}t$)};
+\draw[->] (13.5,0) --  +(0,-2) --  +(-13,-2) --  (a.south);
+
+\end{tikzpicture}
+}
+\end{center}
+Полоса захвата~--- максимальная разность по модулю частот опорного сигнала и ГУН $|\omega_p|$ такая, что система \eqref{system} глобально асимптотически устойчива для всех $0 \leqslant |\omega_e^{free}|<|\omega_p|$.
+Найти оценку полосы захвата систем ФАПЧ со следующими передаточными функциями фильтров:\vspace{-1mm}
 \begin{equation*}
  \begin{aligned}
 &W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \enskip
@@ -139,7 +169,7 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\\
 \begin{frame}
 \frametitle{Теорема}
 \vspace{-4mm}
- \begin{equation}
+ \begin{equation}\label{system1}
  \begin{aligned}
  &\dot{x} = Ax + B(\operatorname{sin}(\theta_e) - \gamma) \text{,}\\
  &\dot{\theta_e} = -K_{vco}C^T x -K_{vco}D(\operatorname{sin}(\theta_e) - \gamma))
@@ -153,13 +183,14 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\\
  \end{aligned}
 \end{equation}
 \vspace{-3mm}
-\begin{theorem}[Леонов~Г.\:А.]
-Пусть все нули функции $\operatorname{sin}(\theta_e) - \gamma$ изолированы, пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0$, $\delta > 0$, $\tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:\vspace{-2.5mm}
+\begin{theorem}[Леонов~Г.\:А., Райтман~Ф., Смирнова В. Б., 1992 г., Non-Local Methods for
+Pendulum-Like Feedback Systems]
+Пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0$, $\delta > 0$, $\tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:\vspace{-2.5mm}
  \begin{align*}
 &\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\label{first_th_eq}\\
 &4\varepsilon\delta > (\varkappa\nu)^2
 \end{align*}
-Тогда система \eqref{system} глобально асимптотически устойчива.
+Тогда система \eqref{system1} глобально асимптотически устойчива.
 \end{theorem}
 \end{frame}
 
@@ -167,13 +198,18 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\\
 
 \begin{frame}
 \frametitle{Передаточная функция $W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
-Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:
+Условия теоремы:\vspace{-2mm}
+ \begin{align*}
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\\
+&4\varepsilon\delta > (\varkappa\nu)^2
+\end{align*}
+Для передаточной функции фильтра:
  \begin{equation}\label{filter1}
  \begin{aligned}
 W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1
  \end{aligned}
 \end{equation}
-Оценка $\nu$ будет наибольшей при следующих значениях параметров:
+оценка $\nu$ будет наибольшей при следующих значениях параметров:
  \begin{equation*}
  \begin{aligned}
 \varkappa = 1 \text{,} \enskip  \varepsilon = 1 - \tau - \delta \text{,} \enskip \tau = \tau_{p1}\tau_{p2} + \delta(\tau_{p1}^2+\tau_{p2}^2) \text{,} \enskip \delta = \frac{1-\tau_{p1}\tau_{p2}}{2(\tau_{p1}^2+\tau_{p2}^2 + 1)}
@@ -192,13 +228,19 @@ W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}\text{,} \quad0 < \tau_{p1} < 1 \te
 \begin{frame}
 \frametitle{Передаточная функция $W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
   \begin{figure}[H] 
-  \includegraphics[width=\textwidth]{images/agregated.eps}
+  \includegraphics[width=0.8\textwidth]{images/agregated.eps}
 \caption{Слева численная оценка $\nu^2$ в MATLAB с помощью функции fmincon. Справа график $\nu^2$, построенный по \eqref{filter1_max}}
-\end{figure}\vspace{-3mm}
-Оценка для $\nu^2$:
+\end{figure}\vspace{-2mm}
+Оценка для $\nu^2$:\vspace{-2mm}
 \begin{equation}\label{filter1_max}
  \begin{aligned}
 \nu^2 < \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1}
+ \end{aligned}
+\end{equation}
+Из следующих соотношений получим оценку полосы захвата:
+ \begin{equation}
+ \begin{aligned}
+\mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}, \quad \gamma K_{vco}\left(D-C^T A^{-1}B\right)  = \omega_e^{free}
  \end{aligned}
 \end{equation}
 \end{frame}
@@ -207,11 +249,16 @@ W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}\text{,} \quad0 < \tau_{p1} < 1 \te
 
 \begin{frame}
 \frametitle{Передаточная функция $W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
-Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:
+Условия теоремы:\vspace{-2mm}
+ \begin{align*}
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\\
+&4\varepsilon\delta > (\varkappa\nu)^2
+\end{align*}
+Для передаточной функции фильтра:\vspace{-2mm}
  \begin{align}\label{filter2}
 W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad \tau_{p1} \neq \tau_{p2}
  \end{align}
-Положим $\varkappa = 1$, $\tau = 0$. Оценка $\nu$ будет наибольшей, если параметры $\varepsilon$, $\delta$ лежат на одной из граней выпуклого многоугольника, ограниченного прямыми $\delta = 0$, $\varepsilon = 0$ и \vspace{-3mm}
+положим $\varkappa = 1$, $\tau = 0$. Оценка $\nu$ будет наибольшей, если параметры $\varepsilon$, $\delta$ лежат на одной из граней многоугольника, ограниченного $\delta = 0$, $\varepsilon = 0$ и \vspace{-2mm}
  \begin{equation*}
 \begin{aligned}
 \varepsilon(\delta)=z^2 - z^4\delta \text{,} \quad \varepsilon(\delta)=q - z^2\delta \text{,}
@@ -249,33 +296,32 @@ $\nu^2$ не превосходит одного из следущих соот�
 
 \begin{frame}
 \frametitle{Передаточная функция $W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}$}
-Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:\vspace{-1mm}
+Условия теоремы:\vspace{-2mm}
+ \begin{align*}
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\\[-2mm]
+&4\varepsilon\delta > (\varkappa\nu)^2
+\end{align*}
+Для передаточной функции фильтра:\vspace{-2mm}
  \begin{equation}\label{filter3}
  \begin{aligned}
 W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2} \text{,}\quad 0 < \beta_1 < \beta_2 < 1 \text{,}\quad 0 < \alpha_1 \text{,} \alpha_2
  \end{aligned}
 \end{equation}
-Для максимизации оценки $\nu$ положим:
+оценка $\nu$ будет наибольшей при следующих значениях параметров:
 \vspace{-2mm}
  \begin{equation}\label{filter3-params}
- \begin{aligned}
  \tau = 0 \text{,} \quad
  \varkappa = 1 \text{,} \quad
  \varepsilon = 1-\delta \text{,} \quad
  \delta = \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)}
- \end{aligned}
 \end{equation}
 Чтобы гарантировать положительность $\delta$ потребуем:\vspace{-2mm}
  \begin{equation}
- \begin{aligned}
 \alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
- \end{aligned}
-\end{equation}
-Тогда, из \eqref{filter3-params} и второго условия теоремы получим оценку:
+\end{equation}\vspace{-2mm}
+Тогда получим оценку:
  \begin{equation*}
- \begin{aligned}
 \nu^2 < 4\frac{[\alpha_1^2(1-\beta_1) - \alpha_2(1-\beta_2)][\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)]}{[\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)]^2}
- \end{aligned}
  \end{equation*}
 \end{frame}
 
@@ -286,8 +332,14 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 \begin{enumerate}
 \item Для передаточной функции $W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$
 была найдена оценка полосы захвата
+\begin{figure}[H] 
+  \includegraphics[width=0.4\textwidth]{images/agregated.eps}
+\end{figure}
 \item Для передаточной функции $W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$
 была найдена оценка полосы захвата
+\begin{figure}[H] 
+  \includegraphics[width=0.4\textwidth]{images/main.eps}
+\end{figure}
 \item Для передаточной функции $W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}$ был восстановлен вывод оценки полосы захвата
 \end{enumerate}
 \end{frame}
