@@ -22,8 +22,8 @@ for i=1:length(a)
     bi = b(i);
 
     if(ai ~= bi)
-        M1 = fmincon(fun,x0,[],[],[],[],lb,ub,@con,options);
-            M(i) = -fun(M1);
+        [~, M1] = fmincon(fun,x0,[],[],[],[],lb,ub,@con,options);
+            M(i) = -M1;
             A(i) = ai;
             B(i) = bi;
             disp(i*100/length(a));
