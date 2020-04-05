@@ -1,5 +1,7 @@
-/Graduation work/Graduation work.aux
-/Graduation work/Graduation work.log
-/Graduation work/Graduation work.out
-/Graduation work/Graduation work.synctex.gz
-/Graduation work/Graduation work.toc
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.nav
+*.snm
