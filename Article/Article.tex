@@ -84,13 +84,6 @@
 \varkappa = 1 \text{,} \enskip  \varepsilon = 1 - \tau - \delta \text{,} \enskip \tau = \tau_{p1}\tau_{p2} + \delta(\tau_{p1}^2+\tau_{p2}^2) \text{,} \enskip \delta = \frac{1-\tau_{p1}\tau_{p2}}{2(\tau_{p1}^2+\tau_{p2}^2 + 1)}
  \end{aligned}
 \end{equation*}
-\Figure{\textwidth}{images/agregated.eps}{Слева численная оценка $\nu^2$ в MATLAB с помощью функции fmincon. Справа график $\nu^2$, построенный по \eqref{filter1_max}}
-Таким образом, получим следующую оценку:
-\begin{equation}\label{filter1_max}
- \begin{aligned}
-\nu^2 < \frac{(\tau_{p1}\tau_{p2} - 1)^2}{\tau_{p1}^2 + \tau_{p2}^2 + 1}
- \end{aligned}
-\end{equation} 
 \podrazdel{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
 Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:
  \begin{align}\label{filter2}
@@ -104,15 +97,7 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 
 \end{aligned}
 \end{equation*}
 где $z = \frac{\tau_{p1}}{\tau_{z1}}$, $q = 2z - \frac{1}{2} - \frac{1}{2}z^2$. 
-Тогда $4\varepsilon\delta$ определяется одним из следущих соотношений:
-\vspace{-2mm}
- \begin{equation}\label{filter2_max}
-\begin{aligned}
-\frac{q^2}{z^2}\text{,} \quad 1 \text{,} \quad \frac{4z^2}{1+z^2} \text{,} \quad \frac{4(1-q)(q-z^2)}{1-z^2} \text{,} \quad \frac{z^2-q}{z^2-1} - \left(\frac{z^2-q}{z^2-1}\right)^2
-\end{aligned}
-\end{equation}
-\vspace{-2mm}
-\Figure{0.5\textwidth}{images/main.eps}{Синим цветом представлена численная оценка $\nu^2$ согласно \eqref{first_th_eq}, \eqref{second_th_eq} в MATLAB с помощью функции fmincon. Красным цветом представлен график $\nu^2$, построенный по \eqref{filter2_max}, как максимум по всем граням многоугольника}
+Тогда $4\varepsilon\delta$ определяется как максимум по всем граням многоугольника.
 \podrazdel{Оценка полосы захвата для систем ФАПЧ с фильтром $\frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}$}
 Оценим полосу захвата ФАПЧ для фильтра с передаточной функцией:\vspace{-1mm}
  \begin{equation}\label{filter3}
