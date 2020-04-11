@@ -1,4 +1,4 @@
-function filter1()
+function [M, A, B] =  filter1()
 t = sym('t');
 
 [taoP1,taoP2] = meshgrid(0:0.01:1,0:0.01:1);

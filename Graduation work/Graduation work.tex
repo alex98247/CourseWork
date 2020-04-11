@@ -298,7 +298,7 @@ W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} = \frac{1}{1+as + bs^2}, \quad 0<\
 \subsubsection{Численное моделирование}
 \begin{figure}[H]
 \begin{subfigure}{.5\textwidth}
-  \includegraphics[width=9cm]{images/filter1e.jpg}
+  \includegraphics[width=9cm]{images/filter1_exact.jpg}
   \caption{Численная оценка $\nu^2$ в MATLAB с помощью функции fmincon.}
   \label{fig:sub1}
 \end{subfigure}%
@@ -393,8 +393,8 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}, \quad 0<\tau_{p1},\tau_{z1} < 
 \subsubsection{Численное моделирование}
 \begin{figure}[H]
 \centering
-\includegraphics[width=9cm]{images/main.jpg}
-\caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$. Синим цветом представлена численная оценка $\nu^2$ согласно \eqref{first_th_eq}, \eqref{second_th_eq} в MATLAB с помощью функции fmincon. Красным цветом представлен график $\nu^2$, построенный по \eqref{filter2_max}, как максимум по всем граням многоугольника}
+\includegraphics[width=9cm]{images/filter2_agregated.jpg}
+\caption{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$. Красным цветом представлена численная оценка $\nu^2$ согласно \eqref{first_th_eq}, \eqref{second_th_eq} в MATLAB с помощью функции fmincon. Синим цветом представлен график $\nu^2$, построенный по \eqref{filter2_max}, как максимум по всем граням многоугольника}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

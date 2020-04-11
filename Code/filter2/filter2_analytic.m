@@ -13,10 +13,9 @@ M1 = [];
 
 for i=1:length(a)
     if(a(i) > b(i))
-        tmp = 4*maximize(a(i), b(i));
-            A1(i) = a(i);
-            B1(i) = b(i);
-            M1(i) = tmp;
+        M1(i) = 4*maximize(a(i), b(i));
+        A1(i) = a(i);
+        B1(i) = b(i);
     end
 end
 

@@ -1,4 +1,4 @@
-function filter1_exact()
+function [M, A, B] = filter1_exact()
 
 [taoP1,taoP2] = meshgrid(0:0.01:1,0:0.01:1);
 grid = [taoP1(:) taoP2(:)];
@@ -8,8 +8,8 @@ b = grid(:, 1).*grid(:, 2);
 
 %x(1) = tau, x(2) = delta, x(3) = kappa
 M = [];
-A = [];
-B = [];
+A = grid(:, 1);
+B = grid(:, 2);
 fun = @(x)-(4*(x(3)-x(1)-x(2))*x(2)/(x(3))^2);
 x0 = [0.05, 0.5, 1];
 lb = [0.00000001,0.0001, 0.00001];
@@ -18,13 +18,9 @@ for i=1:length(a)
     ai = a(i);
     bi = b(i);
     options = optimoptions('fmincon','Display','off','Algorithm','sqp');
-    M1 = fmincon(fun,x0,[],[],[],[],lb,ub,@discriminant,options);
-        if((-M1(3)*bi+M1(1)-M1(2)*ai^2 + 2*M1(2)*bi) > 0 && (M1(1)*ai^2-2*M1(1)*bi - M1(2)*bi^2) > 0 && M1(1) > 0)
-            M(i) = -fun(M1);
-            A(i) = grid(i, 1);
-            B(i) = grid(i, 2);
-            disp(i/length(a));
-        end
+    [~, M1] = fmincon(fun,x0,[],[],[],[],lb,ub,@discriminant,options);
+    M(i) = -M1;
+    disp(i/length(a));
 end
 
 plot3(A, B, M,'.');
