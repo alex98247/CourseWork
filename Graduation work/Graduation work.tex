@@ -61,19 +61,19 @@
 \resizebox{\textwidth}{!}{%
 \begin{tikzpicture}
 \node at (0.5,0) [draw, text width=3cm, align=center, rectangle] (a) {Фазовый детектор \\ (компаратор)};
-\node at (4.8,0) [draw, label=below:{Фильтр}, align=center, rectangle] (loop_filter) {$W(s)$};
-\node at (9.7,0) [draw, label={[align=center]below:Генератор,\\управляемый напряжением}] (VCO) {$\omega_{vco}(t) = \omega_{vco}^{free}+K_{vco}\upsilon_f(t)$};
+\node at (5.2,0) [draw, label=below:{Фильтр}, align=center, rectangle] (loop_filter) {$W(s)$};
+\node at (10.5,0) [draw, label={[align=center]below:Генератор,\\управляемый напряжением}] (VCO) {$\omega_{vco}(t) = \omega_{vco}^{free}+K_{vco}\upsilon_f(t)$};
 
 \draw[->] (-3.3,0) -- (a.west) node[midway,above,inner sep=2pt] {sin($\omega_{ref}t$)};
-\draw[->] (a.east) -- (loop_filter.west) node[midway,above,inner sep=1pt] {sin($\omega_{e}t$)};
+\draw[->] (a.east) -- (loop_filter.west) node[midway,above,inner sep=1pt] {sin($\omega_{e}^{free}t$)};
 \draw[->] (loop_filter.east) -- (VCO.west) node[midway,above,inner sep=2pt] {$\upsilon_f(t)$};
-\draw[->] (VCO.east) -- (15,0) node[midway,above,inner sep=2pt] {cos($\omega_{vco}t$)};
-\draw[->] (13.5,0) --  +(0,-2) --  +(-13,-2) --  (a.south);
+\draw[->] (VCO.east) -- (17,0) node[midway,above,inner sep=2pt] {cos($\omega_{vco}t$)};
+\draw[->] (15,0) --  +(0,-2) --  +(-14.5,-2) --  (a.south);
 
 \end{tikzpicture}
 }
 \end{center}
-\caption{Схема классической системы ФАПЧ, где $\omega_{ref}$~--- частота опорного сигнала, $\omega_{vco}$~--- частота сигнала ГУН, $\upsilon_f(t)$~--- выходной сигнал фильтра, $\omega_{vco}^{free}$~--- частота свободных колебаний ГУН, $\omega_e = \omega_{ref}-\omega_{vco}$}
+\caption{Схема классической системы ФАПЧ, где $\omega_{ref}$~--- частота опорного сигнала, $\omega_{vco}$~--- частота сигнала ГУН, $\upsilon_f(t)$~--- выходной сигнал фильтра, $\omega_{vco}^{free}$~--- частота свободных колебаний ГУН, $\omega_e^{free} = \omega_{ref}-\omega_{vco}^{free}$}
 \end{figure}
 
 Опорный сигнал подается на вход кольца ФАПЧ. Фазовый детектор (компаратор) принимает опорный сигнал и сигнал генератора, управляемого напряжением, в результате воздействия компаратора на выходе появляется сигнал:
@@ -82,14 +82,13 @@
 \upsilon_e(\theta_{ref}(t) - \theta_{vco}(t)),
  \end{aligned}
 \end{equation*}
-где $\theta_{vco}(t)$~--- фаза подстраиваемого генератора, $\theta_{ref}(t)$~--- фаза эталонного генератора, $\upsilon_e(\theta_e(t))$~--- характеристика фазового детектора, являющаяся $2\pi$ периодической функцией. Функцию
+где $\theta_{vco}(t)$~--- фаза подстраиваемого генератора, $\theta_{ref}(t)$~--- фаза эталонного генератора, $\upsilon_e(\theta_e(t))$~--- характеристика фазового детектора, являющаяся $2\pi$-периодической функцией. Функцию
  \begin{equation}\label{phase_error}
  \begin{aligned}
 \theta_e(t) = \theta_{ref}(t) - \theta_{vco}(t)
  \end{aligned}
 \end{equation}
-называют фазовой ошибкой. На практике часто используют следующие характеристики фазового детектора: $\alpha$ $\operatorname{sin}(\theta)$.
-В настоящее время инженерами реализованы различные фазовые детекторы в виде микросхем, которые применяются в классических системах ФАПЧ и их модификациях.
+называют фазовой ошибкой. На практике часто используют следующие характеристики фазового детектора: $\alpha$ $\operatorname{sin}(\theta_e)$.
 
 Cигнал, полученный на выходе компаратора $\upsilon_e(\theta_e(t))$ поступает на вход фильтра нижних частот. Связь входного $\upsilon_e(\theta_e(t))$ и выходного $\upsilon_f(t)$ сигналов фильтра нижних частот может быть описана уранениями:
  \begin{equation}\label{linear_block_eq}
@@ -147,7 +146,7 @@ Cигнал, полученный на выходе компаратора $\ups
  \end{aligned}
 \end{equation}
 
-В данной работе будем рассматривать систему ФАПЧ с характеристикой фазового детектора $\upsilon_e(\theta_e) = \operatorname{sin}(\theta_e)$. Тогда система \eqref{system_pll} принимает вид:
+В данной работе будем рассматривать систему ФАПЧ с характеристикой фазового детектора $\upsilon_e(\theta_e) = \operatorname{sin}(\theta_e)$. Системы ФАПЧ с характеристикой фазового детектора $\operatorname{sin}(\theta_e)$ применяются в GPS ресиверах \cite{kaplan}. Тогда система \eqref{system_pll} принимает вид:
  \begin{equation}\label{system}
  \begin{aligned}
  &\dot{z} = Az + B(\operatorname{sin}(\theta_e) - \gamma)\\
@@ -156,11 +155,11 @@ Cигнал, полученный на выходе компаратора $\ups
 \end{equation}
 Введем опредение полосы захвата согласно \cite{kuznetsov_article}.
 \begin{definition}
-Полоса захвата~--- максимальная разность по модулю частот опорного сигнала и ГУН $|\omega_p|$ такая, что система \eqref{system} глобально асимптотически устойчива для всех $\omega_e^{free} \in (0, |\omega_p|)$.
+Система \eqref{system} называется глобально асимптотически устойчивой, если любое решение $x(t, x_0)$  стремится к некоторому состоянию равновесия при $t \rightarrow +\infty$.
 \end{definition}
 
 \begin{definition}
-Система \eqref{system} называется глобально асимптотически устойчивой, если любое решение $x(t, x_0)$  стремится к некоторому состоянию равновесия при $t \rightarrow +\infty$.
+Полоса захвата~--- максимальная разность по модулю частот опорного сигнала и ГУН $|\omega_p|$ такая, что система \eqref{system} глобально асимптотически устойчива для всех $\omega_e^{free} \in [0, |\omega_p|)$.
 \end{definition}
 
 \begin{definition}
@@ -173,22 +172,42 @@ Cигнал, полученный на выходе компаратора $\ups
 называется передаточной функцией фильтра.
 \end{definition}
 
+Рассмотрим систему \eqref{system_pll}. Положим что функция $\upsilon_e(\theta_e)$ непрерывно  диффкркнцируема на $\mathbb{R}$ и удовлетворяет условиям:
+\begin{equation}
+ \begin{aligned}
+ \mu_1 \leqslant \frac{d \upsilon_e(\theta_e)}{d \theta_e} \leqslant \mu_2, \quad \forall \theta_e \in \mathbb{R}
+ \end{aligned}
+\end{equation}
 Введем в рассмотрение число:
+ \begin{equation}
+ \begin{aligned}
+\nu = \int_{0}^{2\pi}\left( \upsilon_e(\theta_e) - \gamma \right)d\theta_e \left( \int_{0}^{2\pi} \mid \upsilon_e(\theta_e) - \gamma \mid d\theta_e \right)^{-1}
+ \end{aligned}
+\end{equation}
+Следующая теорема дает условие глобальной асимптотической устойчивости \eqref{system}.
+\begin{theorem}[\cite{leonov}]\label{th1}
+Пусть все нули функции $\upsilon_e(\theta_e) - \gamma$ изолированы, пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:
+ \begin{flalign}
+ &\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2- \right.\notag &&\\
+&\left. \hspace{100pt minus 1fil}-\tau\left[ 	
+\overline{W(ix)}-\mu_1^{-1} ix \right]\left[W(ix)+\mu_2^{-1} ix \right]\right) \geqslant \delta, \forall x \in \mathbb{R} \label{first_th_eq0}\\
+&\varepsilon\delta > (\varkappa\nu)^2\label{second_th_eq0}
+ \end{flalign}
+ Тогда система \eqref{system} глобально асимптотически устойчива.
+\end{theorem}
+
+При $\upsilon_e(\theta_e) = \operatorname{sin}(\theta_e)$, очевидно что $\mu_1 = -1$, $\mu_2 = 1$. Условия теоремы \eqref{first_th_eq0} и \eqref{second_th_eq0} принимают следующий вид:
+ \begin{align}
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ \overline{W(ix)}+ix \right]\left[W(ix)-ix \right]\right) \geqslant \delta \text{,} \quad
+\forall x \in \mathbb{R} \label{first_th_eq}\\
+&\varepsilon\delta > (\varkappa\nu)^2 ,\label{second_th_eq}
+ \end{align}
+$\nu$ определяется следующим образом:
  \begin{equation}
  \begin{aligned}
 \mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
  \end{aligned}
 \end{equation}
-Следующая теорема дает условие глобальной асимптотической устойчивости \eqref{system}.
-\begin{theorem}[\cite{leonov}]\label{th1}
-Пусть все нули функции $\operatorname{sin}(\theta_e) - \gamma$ изолированы, пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:
- \begin{align}
-&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,} \quad
-\forall x \in \mathbb{R} \label{first_th_eq}\\
-&\varepsilon\delta > (\varkappa\nu)^2\label{second_th_eq}
- \end{align}
- Тогда система \eqref{system} глобально асимптотически устойчива.
-\end{theorem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%                   Постановка задачи                     %%%%%%%
@@ -545,6 +564,8 @@ Ujwala~A. Belorkar, Ladhake~S.\:A. Design of Low Power Phase Locked Loop (PLL) U
 \bibitem{kuznetsov}  Leonov~G.\:A., Kuznetsov~N.\:V. Nonlinear mathematical models of phase-locked loops : stability and oscillations / Cambridge: Cambridge Scientific Publishers, 2014. P.~112--113.
 
 \bibitem{leonov}  Leonov~G.\:A., Reitmann~V., Smirnova~V.\:B. Non-Local Methods for Pendulum-Like Feedback Systems / ed. by H.~Kurke. Wiesbaden: Vieweg+Teubner Verlag, 1992. P.~72--75.
+
+\bibitem{kaplan} Kaplan~D.\:E., Hegarty~J.\:C. Understanding GPS: Principles And Applications / Boston: Artech House, 2006. P.~166--168.
 
 \end{thebibliography}
 \end{document}  
