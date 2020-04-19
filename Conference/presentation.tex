@@ -188,7 +188,7 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\\
 Pendulum-Like Feedback Systems]
 Пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0$, $\delta > 0$, $\tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:\vspace{-2.5mm}
  \begin{align*}
-&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\label{first_th_eq}\\
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ \overline{W(ix)}+ix \right]\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\label{first_th_eq}\\
 &4\varepsilon\delta > (\varkappa\nu)^2
 \end{align*}
 Тогда система \eqref{system1} глобально асимптотически устойчива.
@@ -201,7 +201,7 @@ Pendulum-Like Feedback Systems]
 \frametitle{Передаточная функция $W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}$}
 Условия теоремы:\vspace{-2mm}
  \begin{align*}
-&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\\
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ \overline{W(ix)}+ix \right]\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\\
 &4\varepsilon\delta > (\varkappa\nu)^2
 \end{align*}
 Для передаточной функции фильтра:
@@ -252,7 +252,7 @@ W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)}\text{,} \quad0 < \tau_{p1} < 1 \te
 \frametitle{Передаточная функция $W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}$}
 Условия теоремы:\vspace{-2mm}
  \begin{align*}
-&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\\
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ \overline{W(ix)}+ix \right]\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\\
 &4\varepsilon\delta > (\varkappa\nu)^2
 \end{align*}
 Для передаточной функции фильтра:\vspace{-2mm}
@@ -299,7 +299,7 @@ $\nu^2$ не превосходит одного из следущих соот�
 \frametitle{Передаточная функция $W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}$}
 Условия теоремы:\vspace{-2mm}
  \begin{align*}
-&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ W(ix)-ix \right]^T\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\\[-2mm]
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ \overline{W(ix)}+ix \right]\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\enskip\forall x \in \mathbb{R}\\[-2mm]
 &4\varepsilon\delta > (\varkappa\nu)^2
 \end{align*}
 Для передаточной функции фильтра:\vspace{-2mm}
