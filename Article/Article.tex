@@ -83,7 +83,7 @@
 &W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1
  \end{aligned}
 \end{equation}
-Подставим \eqref{filter1} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Тогда оценка $\nu$ будет наибольшей при следующих значениях параметров:
+Оценка $\nu$ будет наибольшей при следующих значениях параметров:
  \begin{equation*}
  \begin{aligned}
 \varkappa = 1 \text{,} \enskip  \varepsilon = 1 - \tau - \delta \text{,} \enskip \tau = \tau_{p1}\tau_{p2} + \delta(\tau_{p1}^2+\tau_{p2}^2) \text{,} \enskip \delta = \frac{1-\tau_{p1}\tau_{p2}}{2(\tau_{p1}^2+\tau_{p2}^2 + 1)}
@@ -94,7 +94,7 @@
  \begin{align}\label{filter2}
 W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad \tau_{p1} \neq \tau_{p2}
  \end{align}
-Подставим \eqref{filter2} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Положим $\varkappa = 1$, $\tau = 0$. Оценка $\nu$ будет наибольшей, если параметры $\varepsilon$, $\delta$ лежат на одной из граней выпуклого многоугольника, ограниченного прямыми $\delta = 0$, $\varepsilon = 0$ и 
+ Оценка $\nu$ будет наибольшей, если параметры $\varepsilon$, $\delta$ лежат на одной из граней выпуклого многоугольника, ограниченного прямыми $\delta = 0$, $\varepsilon = 0$ и 
  \begin{equation*}
 \begin{aligned}
 \varepsilon(\delta)=z^2 - z^4\delta \text{,} \quad \varepsilon(\delta)=q - z^2\delta \text{,}
@@ -110,7 +110,7 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 
 W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2} \text{,}\quad 0 < \beta_1 < \beta_2 < 1 \text{,}\quad 0 < \alpha_1 \text{,} \alpha_2
  \end{aligned}
 \end{equation}
-Подставим \eqref{filter3} в \eqref{first_th_eq} и перенесем все в левую часть неравенства. Для максимизации оценки $\nu$ положим: 
+Оценка $\nu$ будет наибольшей при следующих значениях параметров:
 \vspace{-2mm}
  \begin{equation}\label{filter3-params}
  \begin{aligned}
@@ -120,24 +120,10 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
  \delta = \frac{\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)}{\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)}
  \end{aligned}
 \end{equation}
-Чтобы гарантировать положительность $\delta$ потребуем:
- \begin{equation}\label{restriction-2}
- \begin{aligned}
-\alpha_1^2 > \frac{\alpha_2(1-\beta_2)}{\beta_1(1-\beta_1)}
- \end{aligned}
-\end{equation}
-Тогда, подставив \eqref{filter3-params} в \eqref{first_th_eq} и применив \eqref{second_th_eq}, получим оценку:
- \begin{equation}
- \begin{aligned}
-\nu^2 < 4\frac{[\alpha_1^2(1-\beta_1) - \alpha_2(1-\beta_2)][\alpha_1^2(1-\beta_1)\beta_1 - \alpha_2(1-\beta_2)]}{[\alpha_1^2(1-\beta_1^2) - 2\alpha_2(1-\beta_2)]^2}
- \end{aligned}
- \end{equation}
-Эта оценка совпадает с оценкой, полученной в \cite{kuznetsov}.
 \razdel{Заключение}
 В настоящее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный результат может быть интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.
 \begin{thebibliography}{6}
 \bibitem{best}  Best~R.\:E. Phase-Locked Loops: Design, Simulation, and Applications / New York: McGraw-Hill Education, 2007. P.~115--116.
-\bibitem{kuznetsov}  Leonov~G.\:A., Kuznetsov~N.\:V. Nonlinear mathematical models of phase-locked loops : stability and oscillations / Cambridge: Cambridge Scientific Publishers, 2014. P.~112--113.
 \bibitem{leonov}  Leonov~G.\:A., Reitmann~V., Smirnova~V.\:B. Non-Local Methods for Pendulum-Like Feedback Systems / ed. by H.~Kurke. Wiesbaden: Vieweg+Teubner Verlag, 1992. P.~72--75.
 \bibitem{kuznetsov_article} Kuznetsov~N.\:V., Leonov~G.\:A., Yuldashev~M.\:V., Yuldashev~R.\:V. Hold-In, Pull-In, and Lock-In Ranges of PLL Circuits: Rigorous Mathematical Definitions and Limitations of Classical Theory // Transactions on Circuits and Systems I: Regular Papers. 2015. Vol.~62, No~10. P.~2455.
 \bibitem{thirdOrderPLL} Feng~L., Wu~C., Jin~B., Wu~Z. A Passive Third-order Cascade PLL Filter // Trans Tech Publications. 2011. Vol. 255-260. P.~2262.
