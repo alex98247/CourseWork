@@ -91,6 +91,7 @@ W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \quad0 < \tau_{p1} < 1, \
 \end{equation}
 приводит к оценке, изображенной на рис.~\ref{img-filter1}
 \Figure{0.8\textwidth}{images/agregated.eps}{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$. Слева численная оценка $\nu^2$ в MATLAB с помощью функции fmincon. Справа график $\nu^2$, полученный из \eqref{second_th_eq} при выполнении  \eqref{first_th_eq}. \label{img-filter1}}
+\pagebreak
 
 Применение теоремы 1 к фильтру с передаточной функцией 
  \begin{equation}
@@ -99,10 +100,10 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 
  \end{aligned}
 \end{equation}
 приводит к оценке, изображенной на рис.~\ref{img-filter2}
-\Figure{0.8\textwidth}{images/main.eps}{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$. Красным цветом представлена численная оценка $\nu^2$ в MATLAB с помощью функции fmincon. Синим цветом представлен график $\nu^2$, полученный из \eqref{second_th_eq} при выполнении  \eqref{first_th_eq}. \label{img-filter2}}
+\Figure{0.8\textwidth}{images/main.eps}{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$. Красным цветом представлена численная оценка $\nu^2$ в MATLAB с помощью функции fmincon. Синим цветом представлен график $\nu^2$, полученный из \eqref{second_th_eq} при выполнении  \eqref{first_th_eq}. \label{img-filter2}}\vspace{-7mm}
 \razdel{Заключение}
-В настоящее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный результат может быть интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.
-\begin{thebibliography}{6}
+В настоящее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный результат может быть интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.\vspace{-2mm}
+\begin{thebibliography}{6}\vspace{-3mm}
 \bibitem{best}  Best~R.\:E. Phase-Locked Loops: Design, Simulation, and Applications / New York: McGraw-Hill Education, 2007. P.~115--116.
 \bibitem{leonov}  Leonov~G.\:A., Reitmann~V., Smirnova~V.\:B. Non-Local Methods for Pendulum-Like Feedback Systems / ed. by H.~Kurke. Wiesbaden: Vieweg+Teubner Verlag, 1992. P.~72--75.
 \bibitem{kuznetsov_article} Kuznetsov~N.\:V., Leonov~G.\:A., Yuldashev~M.\:V., Yuldashev~R.\:V. Hold-In, Pull-In, and Lock-In Ranges of PLL Circuits: Rigorous Mathematical Definitions and Limitations of Classical Theory // Transactions on Circuits and Systems I: Regular Papers. 2015. Vol.~62, No~10. P.~2455.
