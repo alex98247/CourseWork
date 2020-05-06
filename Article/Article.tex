@@ -17,10 +17,10 @@
 \title{Оценка полосы захвата для систем ФАПЧ 3 порядка}
 
 \renewcommand{\thefootnote}{ }
-{\footnotetext{{\it Миронов Алексей Владиславович} -- студент, Санкт-Петербургский государственный университет; e-mail: alexmir2015@yandex.ru}}
-{\footnotetext{{\it Юлдашев Ренат Владимирович} -- профессор, Санкт-Петербургский государственный университет; e-mail: renatyv@pm.me}}
-{\footnotetext{{\it Юлдашев Марат Владимирович} -- профессор, Санкт-Петербургский государственный университет}}
-{\footnotetext{{\it Кузнецов Николай Владимирович} -- профессор, Санкт-Петербургский государственный университет}}
+{\footnotetext{{\it Миронов Алексей Владиславович} -- студент, Санкт-Петербургский государственный университет; e-mail: alexmir2015@yandex.ru, тел.:+7(812)321-31-33}}
+{\footnotetext{{\it Юлдашев Ренат Владимирович} -- профессор, Санкт-Петербургский государственный университет; e-mail: renatyv@pm.me, тел.:+7(812)321-31-33}}
+{\footnotetext{{\it Юлдашев Марат Владимирович} -- профессор, Санкт-Петербургский государственный университет; e-mail: maratyv@gmail.com, тел.:+7(812)321-31-33}}
+{\footnotetext{{\it Кузнецов Николай Владимирович} -- профессор, Санкт-Петербургский государственный университет; e-mail: nkuznetsov239@gmail.com, тел.:+7(812)321-31-33}}
 
 % если по ГРАНТУ
 {\footnotetext{Работа выполнена в рамках проекта Ведущих научных школ НШ-2624.2020.1}}
@@ -37,78 +37,74 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \razdel{Введение}
-Система фазовой автоподстройки частоты~--- система с обратной связью, подстраивающая частоту сигнала генератора, управляемого напряжением (ГУН) под частоту опорного сигнала. В настоящее время системы ФАПЧ применяются в телекоммуникационном оборудовании \cite{best}, навигационных системах \cite{rao} и д.\,р. Основными параметрами ФАПЧ являются полосы удержания, захвата и захвата без проскальзывания \cite{shahgildyan}. В данной работе исследуются оценки полосы захвата для некоторых систем ФАПЧ 3 порядка, которые отличаются хорошим подавлением шума и низкой стационарной ошибкой, по сравнению с системами ФАПЧ 2 порядка \cite{thirdOrderPLL}.
+Система фазовой автоподстройки частоты (ФАПЧ)~--- система с обратной связью, подстраивающая частоту сигнала генератора, управляемого напряжением (ГУН) под частоту опорного сигнала. В настоящее время системы ФАПЧ применяются в телекоммуникационном оборудовании \cite{best}, навигационных системах \cite{rao} и др. Основными параметрами ФАПЧ являются полосы удержания, захвата и захвата без проскальзывания \cite{shahgildyan}. В данной работе исследуются оценки полосы захвата для некоторых систем ФАПЧ третьего порядка, которые отличаются хорошим подавлением шума и низкой стационарной ошибкой, по сравнению с системами ФАПЧ второго порядка \cite{thirdOrderPLL}.
 \razdel{Математическая модель ФАПЧ}
 \Figure{\textwidth}{images/PLL.eps}{Схема классической системы ФАПЧ, где $\omega_{ref}$~--- частота опорного сигнала, $\omega_{vco}$~--- частота сигнала ГУН, $\upsilon_f(t)$~--- выходной сигнал фильтра, $\omega_{vco}^{free}$~--- частота свободных колебаний ГУН, $\omega_e = \omega_{ref}-\omega_{vco}$\label{pll_circuit}}
-Хорошо известна система дифференциальных уравнений, описывающих ФАПЧ \cite{kuznetsov_article}, рис.~\ref{pll_circuit}
+Хорошо известна система дифференциальных уравнений, описывающих ФАПЧ \cite{kuznetsov_article}, рис.~\ref{pll_circuit},
  \begin{equation}\label{system}
  \begin{aligned}
  &\dot{x} = Ax + B(\operatorname{sin}(\theta_e) - \gamma)\text{,}\\[0.3pt]
  &\dot{\theta_e} = -K_{vco}C^T x -K_{vco}D(\operatorname{sin}(\theta_e) - \gamma))\text{,}
  \end{aligned}
 \end{equation}
-где $A$~--- постоянная матрица $n \times n$, $B$ и $C$ постоянные $n$~--- мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы. $W(s)=C^T \left(A-sI\right)^{-1}B - D$~--- передаточная функция фильтра. Здесь будем рассматривать фильтры третьего порядка со следующими передточными функциями:
- \begin{align}
-&W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \quad0 < \tau_{p1} < 1, \quad 0 < \tau_{p2} <1 \label{filter1} \\
-&W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad \tau_{p1} \neq \tau_{p2} \label{filter2} \\
-&W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2} \text{,}\quad 0 < \beta_1 < \beta_2 < 1 \text{,}\quad 0 < \alpha_1 \text{,} \alpha_2. \label{filter3}
- \end{align}
-Коэффициент передачи ГУН равен $K_{vco}$, а величина $\gamma$ определяется следующим образом:\vspace{-1mm}
- \begin{equation}\label{gamma}
+где $A$~--- постоянная ($n \times n$)-матрица, $B$ и $C$~--- постоянные $n$-мерные векторы, $D$~--- константа, $x(t)$~--- $n$-мерный вектор состояний системы, $W(s)=C^T \left(A-sI\right)^{-1}B - D$~--- передаточная функция фильтра. Здесь будем рассматривать фильтры третьего порядка со следующими передточными функциями
+ \begin{align*}
+&W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \quad0 < \tau_{p1} < 1, \quad 0 < \tau_{p2} <1, \\
+&W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad \tau_{p1} \neq \tau_{p2}, \\
+&W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2} \text{,}\quad 0 < \beta_1 < \beta_2 < 1 \text{,}\quad 0 < \alpha_1, \quad 0 < \alpha_2.
+ \end{align*}
+Коэффициент передачи ГУН равен $K_{vco}$, величина $\gamma$ определяется следующим образом\vspace{-1mm}
+ \begin{equation*}
  \begin{aligned}
-\gamma = \frac{\omega_e^{free}}{K_{vco}\left(D-C^T A^{-1}B\right)}\text{,}
+\gamma = \frac{\omega_e^{free}}{K_{vco}\left(D-C^T A^{-1}B\right)},
  \end{aligned}
-\end{equation}
+\end{equation*}
 где $\omega^{free}_{e}=\omega_{ref}-\omega_{free}$~--- разность частоты опорного сигнала и частоты свободных колебаний ГУН. При этом предполагается, что эталонный генератор работает на постоянной частоте.
 \razdel{Оценка области захвата}
 Введем определение полосы захвата согласно \cite{kuznetsov_article}.
 \Definition {Полоса захвата~--- максимальная разность по модулю частот опорного сигнала и ГУН $|\omega_p|$ такая, что система \eqref{system} глобально асимптотически устойчива для всех $0<|\omega_e^{free}|<|\omega_p|$.}
-\Definition {Система \eqref{system} называется глобально асимптотически устойчивой, если любое решение $x(t, x_0)$  стремится к некоторому состоянию равновесия при $t \rightarrow +\infty$}.\\
-Введем в рассмотрение число:\vspace{-1mm}
- \begin{equation}
- \begin{aligned}
-\mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}
- \end{aligned}
-\end{equation}
-Следующая теорема дает условие глобальной асимптотической \\ устойчивости \eqref{system}.
+\Definition {Система \eqref{system} называется глобально асимптотически устойчивой, если любое решение $x(t, x_0)$  стремится к некоторому состоянию равновесия при $t \rightarrow +\infty$}.
+
+Введем в рассмотрение число\vspace{-1mm}
+ \begin{equation*}
+\mid\nu\mid = \frac{0,5\pi\gamma}{\gamma \operatorname{arcsin} (\gamma) + \sqrt{1-\gamma^2}}.
+\end{equation*}
+Следующая теорема дает условие глобальной асимптотической устойчивости \eqref{system}.
 \TheoremCite{leonov}{
 Пусть все нули функции $\operatorname{sin}(\theta_e) - \gamma$ изолированы, пара $(A, B)$ вполне управляема, все собственные значения матрицы $A$ имеют отрицательные вещественные части и существуют числа $\varepsilon > 0, \delta > 0, \tau \geqslant 0$, и $\varkappa$, такие что имеют место неравенства:\vspace{-2mm}
  \begin{align}
 &\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ \overline{W(ix)}+ix \right]\left[W(ix)+ix \right]\right) \geqslant \delta \text{,}\label{first_th_eq}\\
-&\hspace{250pt minus 1fil} \forall x \in \mathbb{R}\notag \hfilneg \\
-&\varepsilon\delta > (\varkappa\nu)^2\label{second_th_eq}
+&\hspace{250pt minus 1fil} \forall x \in \mathbb{R}, \notag \hfilneg \\
+&\varepsilon\delta > (\varkappa\nu)^2. \label{second_th_eq}
 \end{align}
 Тогда система \eqref{system} глобально асимптотически устойчива.
 }
 
 Теорема 1 может быть использована для получения аналитических оценок полосы захвата. Для этого необходимо выбрать $\varepsilon, \delta, \varkappa, \tau$, удовлетворяющие \eqref{first_th_eq} так, чтобы максимизировать $\nu$. Из максимальности $\nu$ получим максимальный $\omega_e^{free}$, при котором система \eqref{system} глобально асимптотически устойчива.
+\Figure{\textwidth}{images/agregated.eps}{Слева~--- численная оценка $\nu^2$ в MATLAB с помощью функции fmincon; cправа~--- график $\nu^2$, полученный из \eqref{second_th_eq} при выполнении \eqref{first_th_eq}. \label{img-filter1}}
 
 Применение теоремы 1 к фильтру с передаточной функцией 
- \begin{equation}
- \begin{aligned}
-W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \quad0 < \tau_{p1} < 1, \quad 0 < \tau_{p2} <1
- \end{aligned}
-\end{equation}
+ \begin{equation*}
+W(s) = \frac{1}{(1+\tau_{p1}s)(1+\tau_{p2}s)} \text{,} \quad0 < \tau_{p1} < 1, \quad 0 < \tau_{p2} <1,
+\end{equation*}
 приводит к оценке, изображенной на рис.~\ref{img-filter1}
-\Figure{0.8\textwidth}{images/agregated.eps}{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$. Слева численная оценка $\nu^2$ в MATLAB с помощью функции fmincon. Справа график $\nu^2$, полученный из \eqref{second_th_eq} при выполнении  \eqref{first_th_eq}. \label{img-filter1}}
-\pagebreak
 
 Применение теоремы 1 к фильтру с передаточной функцией 
- \begin{equation}
- \begin{aligned}
-W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad \tau_{p1} \neq \tau_{p2}
- \end{aligned}
-\end{equation}
+ \begin{equation*}
+W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 \text{,} \quad 0 < \tau_{p2} <1 \text{,} \quad \tau_{p1} \neq \tau_{p2},
+\end{equation*}
 приводит к оценке, изображенной на рис.~\ref{img-filter2}
-\Figure{0.8\textwidth}{images/main.eps}{График зависимости $\nu^2$ от $\tau_{p1}, \tau_{p2}$. Красным цветом представлена численная оценка $\nu^2$ в MATLAB с помощью функции fmincon. Синим цветом представлен график $\nu^2$, полученный из \eqref{second_th_eq} при выполнении  \eqref{first_th_eq}. \label{img-filter2}}\vspace{-7mm}
+\Figure{\textwidth}{images/main.eps}{Слева~--- численная оценка $\nu^2$ в MATLAB с помощью функции fmincon; cправа~--- график $\nu^2$, полученный из \eqref{second_th_eq} при выполнении  \eqref{first_th_eq}. \label{img-filter2}}
+
 \razdel{Заключение}
-В настоящее время системы фазовой автоподстройки частоты и их модификации применяются во многих системах, где требуется синхронизация частот. Полученный результат может быть интересен инженерам и может использоваться при проектировании и реализации систем ФАПЧ третьего порядка.\vspace{-2mm}
-\begin{thebibliography}{6}\vspace{-3mm}
-\bibitem{best}  Best~R.\:E. Phase-Locked Loops: Design, Simulation, and Applications / New York: McGraw-Hill Education, 2007. P.~115--116.
-\bibitem{leonov}  Leonov~G.\:A., Reitmann~V., Smirnova~V.\:B. Non-Local Methods for Pendulum-Like Feedback Systems / ed. by H.~Kurke. Wiesbaden: Vieweg+Teubner Verlag, 1992. P.~72--75.
-\bibitem{kuznetsov_article} Kuznetsov~N.\:V., Leonov~G.\:A., Yuldashev~M.\:V., Yuldashev~R.\:V. Hold-In, Pull-In, and Lock-In Ranges of PLL Circuits: Rigorous Mathematical Definitions and Limitations of Classical Theory // Transactions on Circuits and Systems I: Regular Papers. 2015. Vol.~62, No~10. P.~2455.
-\bibitem{thirdOrderPLL} Feng~L., Wu~C., Jin~B., Wu~Z. A Passive Third-order Cascade PLL Filter // Trans Tech Publications. 2011. Vol. 255-260. P.~2262.
-\bibitem{shahgildyan}  Шахгильдян~В.\:В., Ляховкин~А.\:А. Системы фазовой автоподстройки частоты / М.:~Изд-во Связь, 1972. P.~15--19.
-\bibitem{rao}  Rao~R.\:B., Kunysz~W., Fante~R., McDonald~K., GPS/GNSS Antennas / Boston: Artech House, 2013. P.~50--51.
+В настоящее время системы фазовой автоподстройки частоты и их модификации применяются в различных устройствах, где требуется синхронизация частот. Полученный результат может быть интересен инженерам при проектировании и реализации систем ФАПЧ третьего порядка.
+\pagebreak
+\begin{thebibliography}{6}
+\bibitem{best}  Best~R.\:E. Phase-Locked Loops: Design, Simulation, and Applications. New York: McGraw-Hill Education, 2007. 421~p.
+\bibitem{rao}  Rao~R.\:B., Kunysz~W., Fante~R., McDonald~K. GPS/GNSS Antennas. Boston: Artech House, 2013. 420~p.
+\bibitem{shahgildyan}  Шахгильдян~В.\:В., Ляховкин~А.\:А. Системы фазовой автоподстройки частоты. М.:~Изд-во <<Связь>>, 1972. 447~с.
+\bibitem{thirdOrderPLL} Feng~L., Wu~C., Jin~B., Wu~Z. A Passive Third-order Cascade PLL Filter // Trans Tech Publications. 2011. Vol. 255--260. P.~2262--2266.
+\bibitem{kuznetsov_article} Kuznetsov~N.\:V., Leonov~G.\:A., Yuldashev~M.\:V., Yuldashev~R.\:V. Hold-In, Pull-In, and Lock-In Ranges of PLL Circuits: Rigorous Mathematical Definitions and Limitations of Classical Theory // Transactions on Circuits and Systems I: Regular Papers. 2015. Vol.~62, No~10. P.~2454--2464.
+\bibitem{leonov}  Leonov~G.\:A., Reitmann~V., Smirnova~V.\:B. Non-Local Methods for Pendulum-Like Feedback Systems. Wiesbaden: Vieweg+Teubner Verlag, 1992. 242~p.
 \end{thebibliography}
 \end{document}
