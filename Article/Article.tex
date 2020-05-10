@@ -96,6 +96,13 @@ W(s) = \frac{(1+\tau_{z1}s)^2}{(1+\tau_{p1}s)^2}\text{,} \quad0 < \tau_{p1} < 1 
 приводит к оценке, изображенной на рис.~\ref{img-filter2}
 \Figure{\textwidth}{images/main.eps}{Слева~--- численная оценка $\nu^2$ в MATLAB с помощью функции fmincon; cправа~--- график $\nu^2$, полученный из \eqref{second_th_eq} при выполнении  \eqref{first_th_eq}. \label{img-filter2}}
 
+Применение теоремы 1 к фильтру с передаточной функцией 
+ \begin{equation*}
+W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2} \text{,}\quad 0 < \beta_1 < \beta_2 < 1 \text{,}\quad 0 < \alpha_1, \quad 0 < \alpha_2,
+\end{equation*}
+приводит к оценке, изображенной на рис.~\ref{img-filter3}
+\Figure{0.5\textwidth}{images/filter3.eps}{График $\nu^2$, полученный из \eqref{second_th_eq} при выполнении  \eqref{first_th_eq}, при $\alpha_1 = 300$, $\alpha_2 = 30$. \label{img-filter3}}
+
 \razdel{Заключение}
 В настоящее время системы фазовой автоподстройки частоты и их модификации применяются в различных устройствах, где требуется синхронизация частот. Полученный результат может быть интересен инженерам при проектировании и реализации систем ФАПЧ третьего порядка.
 \pagebreak

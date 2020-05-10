@@ -5,3 +5,5 @@
 *.toc
 *.nav
 *.snm
+images/*.pdf
+**/images/*.pdf
