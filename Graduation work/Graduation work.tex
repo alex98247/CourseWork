@@ -72,11 +72,11 @@
 \end{figure}
 
 Опорный сигнал подается на вход кольца ФАПЧ. Фазовый детектор (компаратор) принимает опорный сигнал и сигнал генератора, управляемого напряжением, в результате воздействия на выходе компаратора имеем:
- \begin{equation*}
+ \begin{equation}
  \begin{aligned}
 \upsilon_e(\theta_{ref}(t) - \theta_{vco}(t)),
  \end{aligned}
-\end{equation*}
+\end{equation}
 где $\theta_{vco}(t)$~--- фаза подстраиваемого генератора, $\theta_{ref}(t)$~--- фаза эталонного генератора, $\upsilon_e(\theta_e(t))$~--- характеристика фазового детектора, являющаяся $2\pi$-периодической функцией. Функцию
  \begin{equation}\label{phase_error}
  \begin{aligned}
@@ -95,13 +95,13 @@
 где $A$~--- постоянная матрица $n \times n$, $B, C \in \mathbb{R}^n$  постоянные $n$-мерные векторы, $D$~--- константа, $x(t) \in \mathbb{R}^n$~--- вектор состояний системы. Для практических применений инженерами были физически реализованы аналоговые фильтры в виде RL-цепей, RLC-цепей и др.
 
 Выходной сигнал фильтра нижних частот поступает на вход генератора, управляемого напряжением:
- \begin{equation}\label{VCO_eq}
+ \begin{equation}\retainlabel{VCO_eq}
  \begin{aligned}
 \dot{\theta}_{vco}(t) = \omega_{vco}(t) = \omega^{free}_{vco} + K_{vco}\upsilon_f(t),
  \end{aligned}
 \end{equation}
 где $\omega^{free}_{vco}$~--- частота свободных колебаний ГУН, $K_{vco}$~--- коэффициент передачи. При этом полагаем, что эталонный генератор работает на постоянной частоте:
- \begin{equation}
+ \begin{equation}\retainlabel{const_freq}
  \begin{aligned}
 \dot{\theta}_{ref}(t) = \omega_{ref}(t) \equiv \omega_{ref}.
  \end{aligned}
@@ -112,7 +112,7 @@
 \omega_e^{free} \equiv \omega_{ref} - \omega^{free}_{vco}.
  \end{aligned}
 \end{equation}
-Из \eqref{phase_error} и \eqref{linear_block_eq}-\eqref{constant_frequency} получим систему дифференциальных уравнений, описывающих ФАПЧ:
+Из \eqref{phase_error} и \eqref{linear_block_eq}--\eqref{constant_frequency} получим систему дифференциальных уравнений, описывающих ФАПЧ:
  \begin{equation}\label{pllequations}
  \begin{aligned}
  &\dot{x} = Ax + B\upsilon_e(\theta_e)\\
@@ -185,7 +185,7 @@
  \begin{align}
  &\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ 	
 \overline{W(ix)}-\mu_1^{-1} ix \right]\left[W(ix)+\mu_2^{-1} ix \right]\right) \geqslant \delta, \notag \\
-&\hspace{385pt minus 1fil} \forall x \in \mathbb{R} \label{first_th_eq0} \\
+&\hspace{380pt minus 1fil} \forall x \in \mathbb{R} \label{first_th_eq0} \\
 &\varepsilon\delta > (\varkappa\nu)^2. \label{second_th_eq0}
  \end{align}
  Тогда система \eqref{system} глобально асимптотически устойчива.
@@ -193,8 +193,8 @@
 
 При $\upsilon_e(\theta_e) = \operatorname{sin}(\theta_e)$, очевидно что $\mu_1 = -1$, $\mu_2 = 1$. Условия теоремы \eqref{first_th_eq0} и \eqref{second_th_eq0} принимают следующий вид соответственно:
  \begin{align}
-&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ \overline{W(ix)}+ix \right]\left[W(ix)+ix \right]\right) \geqslant \delta \text{,} \quad
-\forall x \in \mathbb{R} \label{first_th_eq}\\
+&\operatorname{Re}\left( \varkappa W(ix)- \varepsilon\left[W(ix)\right]^2-\tau\left[ \overline{W(ix)}+ix \right]\left[W(ix)+ix \right]\right) \geqslant \delta, \notag \\
+&\hspace{375pt minus 1fil} \forall x \in \mathbb{R} \label{first_th_eq}\\
 &\varepsilon\delta > (\varkappa\nu)^2.\label{second_th_eq}
  \end{align}
 Подставим $\upsilon_e(\theta_e) = \operatorname{sin}(\theta_e)$ в \eqref{nu}, тогда $\nu$ определяется следующим образом:
@@ -419,15 +419,15 @@ W(s) = \frac{1+\alpha_1\beta_1s + \alpha_2\beta_2s^2}{1+\alpha_1s + \alpha_2s^2}
 Положим $\tau = 0$. Не умаляя общности можем считать $\varkappa = 1$. Тогда \eqref{filter3-th_first-1} принимает вид:
  \begin{equation}\label{filter3-th_first-2}
  \begin{aligned}
-&(-\varepsilon\alpha_2^2\beta_2^2 + \alpha_2^2\beta_2 - \delta\alpha_2^2)t^2 + (-\varepsilon\alpha_1^2\beta_1^2 + \alpha_1^2\beta_1 - \delta\alpha_1^2 - \alpha_2 + 2\alpha_2\delta - \alpha_2\beta_2 +\\
-&+ 2\alpha_2\beta_2\varepsilon)t + 1 - \varepsilon - \delta \geqslant 0, \quad \forall t \in \mathbb{R_+}.
+&(-\varepsilon\alpha_2^2\beta_2^2 + \alpha_2^2\beta_2 - \delta\alpha_2^2)t^2 + (-\varepsilon\alpha_1^2\beta_1^2 + \alpha_1^2\beta_1 - \delta\alpha_1^2 - \alpha_2 + 2\alpha_2\delta -\\
+&- \alpha_2\beta_2 + 2\alpha_2\beta_2\varepsilon)t + 1 - \varepsilon - \delta \geqslant 0, \quad \forall t \in \mathbb{R_+}.
  \end{aligned}
 \end{equation}
 Заметим, что $\varepsilon \leqslant 1 - \delta$ является необходимым условием справедливости \eqref{filter3-th_first-2}. Для максимизации $\nu$ положим $\varepsilon = 1-\delta$, тогда:
  \begin{equation}\label{filter3-3}
  \begin{aligned}
-&(\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta)t + \alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta - \alpha_1^2\beta_1^2 + \\
-&\alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
+&(\alpha_2^2\beta_2 - \alpha_2^2\delta - \alpha_2^2\beta_2^2 + \alpha_2^2\beta_2^2\delta)t + \alpha_2\beta_2 - \alpha_2 + 2\alpha_2\delta + \alpha_1^2\beta_1 - \alpha_1^2\delta -  \\
+&-\alpha_1^2\beta_1^2 +\alpha_1^2\beta_1^2\delta - 2\alpha_2\beta_2\delta \geqslant 0, \quad \forall t \in \mathbb{R_+}
  \end{aligned}
 \end{equation}
 Необходимым и достаточным условием справедливости \eqref{filter3-3} является неотрицательность коэффициента при $t$ и свободного коэффициента:

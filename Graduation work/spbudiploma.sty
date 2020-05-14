@@ -127,6 +127,10 @@
     %emph=[2]{word1,word2}, emphstyle=[2]{style},    
 }
 
+% Нумерация только тех формул, на которые в тексте присутствует ссылка
+\usepackage{autonum}
+
+\newcommand{\retainlabel}[1]{\label{#1}\sbox0{\ref{#1}}}
 
 % Список литературы
 \renewenvironment{thebibliography}[1]
