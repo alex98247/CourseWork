@@ -21,11 +21,24 @@ for i=1:length(a)
     ai = a(i);
     bi = b(i);
 
-    if(ai ~= bi)
+    if(ai > bi)
        [~, M1] = fmincon(fun,x0,[],[],[],[],lb,ub,@con,options);
-       M(i) = -M1;
-       A(i) = ai;
-       B(i) = bi;
+       M = [M -M1];
+       A = [A ai];
+       B = [B bi];
+       disp(i*100/length(a));
+    end
+end
+
+for i=1:length(a)
+    ai = a(i);
+    bi = b(i);
+
+    if(ai < bi)
+       [~, M1] = fmincon(fun,x0,[],[],[],[],lb,ub,@con,options);
+       M = [M -M1];
+       A = [A ai];
+       B = [B bi];
        disp(i*100/length(a));
     end
 end

@@ -7,22 +7,25 @@ grid = [taoP1(:) taoZ1(:)];
 a = grid(:, 1);
 b = grid(:, 2);
 
-A1 = [];
-B1 = [];
-M1 = [];
+A = [];
+B = [];
+M = [];
 
 for i=1:length(a)
     if(a(i) > b(i))
-        M1(i) = 4*maximize(a(i), b(i));
-        A1(i) = a(i);
-        B1(i) = b(i);
+        M = [M 4*maximize(a(i), b(i))];
+        A = [A a(i)];
+        B = [B b(i)];
     end
 end
 
-%Symmetry with respect to a line x=y
-A = [A1, B1];
-B = [B1, A1];
-M = [M1, M1];
+for i=1:length(a)
+    if(a(i) < b(i))
+        M = [M 4*maximize(b(i), a(i))];
+        A = [A a(i)];
+        B = [B b(i)];
+    end
+end
 
 plot3(A, B, M, '.');
 axis equal
