@@ -1,6 +1,6 @@
 function [M, A, B] = filter1_exact()
 
-[taoP1,taoP2] = meshgrid(0:0.01:1,0:0.01:1);
+[taoP1,taoP2] = meshgrid(0.01:0.01:0.99,0.01:0.01:0.99);
 grid = [taoP1(:) taoP2(:)];
 
 a = grid(:, 1)+grid(:, 2);
